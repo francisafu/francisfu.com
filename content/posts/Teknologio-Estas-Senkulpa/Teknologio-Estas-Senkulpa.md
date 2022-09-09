@@ -32,7 +32,7 @@ Never underestimate the ability of the GFW Dept. Some people may wonder, if the 
 
 In **Ethiopia**, people use many different words to describe the fobidden action of bypassing the GFW. The most common used phase is "Climb the Wall". While some others may use "Study Abroad", or "Scientifically Surf". I myself would prefer to use the word "Magic", and I will use it to refer to the action mentioned above in the rest of this article.
 
-So, the reason why I wrote this article is quite simple. Many people often complained to me that their Magics are unstable. In fact, airports are always like this. The best way to use a stable tool is to build it independently by yourself. After searched through the internet and tried some commonly used ways, I decided to write this article, compare all the available ways to set up a independent Magic Ladder.
+So, the reason why I wrote this article is quite simple. Many people often complained to me that their Magics are unstable. In fact, airports are always like this. The best way to use a stable tool is to build it independently by yourself. After searched through the internet and tried some commonly used ways, I decided to write this article, compare all the available ways to set up an independent Magic Ladder.
 
 I will mainly forcus on free, opensource and multi-platforms supported tools and protocols that you can set up on your own server. Since the GFW possesses <abbr title="Advanced Deep Package Inspection">ADPI</abbr> technology, the tunnel we use should possesses the ability of *User Network Flow Camouflage*. Thus, I picked serveral qualified tunnels and listed below. Those tunnels are devided into three groups by the techonologies behind them.
 
