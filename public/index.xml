@@ -24,7 +24,7 @@
     <item>
       <title>Win平台编译SQLCipher</title>
       <link>/posts/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/</link>
-      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>/posts/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/</guid>
       <description>&lt;p&gt;最近一个项目需要用到嵌入式数据库，自然就想到了SQLite。但是由于开源的SQLite是不支持加密的，官方的SEE加密服务需要2000美元，我等自然是没有这个经济实力的。搜索一番，找到了&lt;a href=&#34;/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/https://www.zetetic.net/&#34;&gt;Zetetic&lt;/a&gt;公司的SQLCipher，社区版开源并且需要自行编译，商业版在社区版基础上优化了查询速度和数据库体积，同时给了各个平台的预编译文件。由于SQLite在Windows上编译较为繁琐，特此记录编译过程。&lt;/p&gt;</description>
