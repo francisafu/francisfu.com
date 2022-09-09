@@ -22,15 +22,6 @@
     </item>
     
     <item>
-      <title>Hugo静态页面生成器指南</title>
-      <link>/posts/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/</link>
-      <pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/</guid>
-      <description>&lt;p&gt;从Hexo到Statiq再到Hugo，三年的时间内我尝试了不同的几种静态页面生成器。最终选择了Hugo也是因为感觉到，它还是最方便好用的一种。在此记录一下Hugo的使用方式以及Eureka主题的搭建和配置。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Win平台编译SQLCipher</title>
       <link>/posts/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/</link>
       <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
@@ -55,42 +46,6 @@
       
       <guid>/posts/windows10%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97/windows10%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97/</guid>
       <description>&lt;p&gt;Windows10到现在也已经来到了20H2版本，随着系统和安装工具的更新，在这里我也更新一下三年前这篇教程，重新给大家介绍一下Windows10装机的全过程。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 1</title>
-      <link>/docs/example-doc/chapter-1/</link>
-      <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/example-doc/chapter-1/</guid>
-      <description>&lt;p&gt;This is chapter 1 of example doc.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 1</title>
-      <link>/docs/example-doc/nested-chapter/chapter-1/</link>
-      <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/example-doc/nested-chapter/chapter-1/</guid>
-      <description>&lt;p&gt;This is chapter 1 of nested chapter.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 2</title>
-      <link>/docs/example-doc/chapter-2/</link>
-      <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/example-doc/chapter-2/</guid>
-      <description>&lt;p&gt;This is chapter 2 of example doc.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 2</title>
-      <link>/docs/example-doc/nested-chapter/chapter-2/</link>
-      <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/example-doc/nested-chapter/chapter-2/</guid>
-      <description>&lt;p&gt;This is chapter 2 of nested chapter.&lt;/p&gt;</description>
     </item>
     
   </channel>
