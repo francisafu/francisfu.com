@@ -71,7 +71,7 @@ IKEv2 has a very practical automatic reconnection feature. When the user tempora
 
 #### 2.1.3 OpenConnect
 
-OpenConnect, or we can also call it [ocserv](https://gitlab.com/openconnect/ocserv), is a compatible server of Cisco Anyconnect. Anyconnect is a Cisco proprietary technology, and its server can only run on Cisco devices. OpenConnect solves this problem. Its goal is to run a server compatible with AnyConnect protocol on relatively Linux devices, so people can use the protocol without buying Cisco devices.
+OpenConnect, or we can also call it [ocserv](https://gitlab.com/openconnect/ocserv), is a compatible server of Cisco Anyconnect. Anyconnect is a Cisco proprietary technology, and its server can only run on Cisco devices. OpenConnect solves this problem. Its goal is to run a server compatible with AnyConnect protocol on relatively Linux devices, so people can use the protocol without buying any Cisco devices.
 Since many multinational companies use Cisco AnyConnect to build their private network,blocking AnyConnect will have disastrous consequences. Therefore, although the handshake feature of AnyConnect is quite obvious, it can still be used normally. However, it's said that nowadays, the GFW is able to identify OpenConnect from AnyConnect, then you may still have the chance to be banned. 
 
 * Pros
