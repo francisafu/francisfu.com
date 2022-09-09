@@ -27,7 +27,7 @@ draft: false
 git clone https://github.com/sqlcipher/sqlcipher.git
 ```
 
-![Git Clone](/images/Win平台编译SQLCipher//images/Win平台编译SQLCipher/GitClone.png)
+![Git Clone](/images/Win平台编译SQLCipher/GitClone.png)
 
 
 ### 2. 安装ActiveTcl

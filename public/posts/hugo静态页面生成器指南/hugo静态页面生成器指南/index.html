@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Hugo静态页面生成器指南 | CRuffians</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/atom-one-dark.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script defer type="text/javascript" src="/js/fontawesome.min.9752512940171b911738b90a817d9254506fba75e861aaf198888e9da783309706b11fcc04943b5dc843c7a4af2156ce.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hud7a356e7696a15f5ea146fd6c0356522_1916359_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hud7a356e7696a15f5ea146fd6c0356522_1916359_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="从Hexo到Statiq再到Hugo，三年的时间内我尝试了不同的几种静态页面生成器。最终选择了Hugo也是因为感觉到，它还是最方便好用的一种。在此记录一下Hugo的使用方式以及Eureka主题的搭建和配置。">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"随笔",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Hugo静态页面生成器指南",
+      "item":"/posts/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/"
+    },
+    "headline": "Hugo静态页面生成器指南 | CRuffians","datePublished": "2022-09-02T00:00:00+00:00",
+    "dateModified": "2022-09-02T00:00:00+00:00",
+    "wordCount":  854 ,
+    "author": {
+        "@type": "Person",
+        "name": ["Francis Fu"]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "Francis Fu",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "\u003cp\u003e从Hexo到Statiq再到Hugo，三年的时间内我尝试了不同的几种静态页面生成器。最终选择了Hugo也是因为感觉到，它还是最方便好用的一种。在此记录一下Hugo的使用方式以及Eureka主题的搭建和配置。\u003c\/p\u003e"
+}
+</script><meta property="og:title" content="Hugo静态页面生成器指南 | CRuffians" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/posts/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/" />
+
+
+
+
+<meta property="og:description" content="从Hexo到Statiq再到Hugo，三年的时间内我尝试了不同的几种静态页面生成器。最终选择了Hugo也是因为感觉到，它还是最方便好用的一种。在此记录一下Hugo的使用方式以及Eureka主题的搭建和配置。" />
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="CRuffians" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-09-02T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2022-09-02T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">CRuffians</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">随笔</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">合辑</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">Hugo静态页面生成器指南</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2022-09-02</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>2分钟阅读时长</span>
+  </div>
+
+  
+
+  
+</div>
+
+
+  
+  
+
+  <p>从Hexo到Statiq再到Hugo，三年的时间内我尝试了不同的几种静态页面生成器。最终选择了Hugo也是因为感觉到，它还是最方便好用的一种。在此记录一下Hugo的使用方式以及Eureka主题的搭建和配置。</p>
+<h2 id="标题">标题</h2>
+<p>同常规Markdown语法一样，依次提供 <code>&lt;h1&gt;</code>—<code>&lt;h6&gt;</code> HTML标签。</p>
+<h1 id="h1">H1</h1>
+<h2 id="h2">H2</h2>
+<h3 id="h3">H3</h3>
+<h4 id="h4">H4</h4>
+<h5 id="h5">H5</h5>
+<h6 id="h6">H6</h6>
+<h2 id="段落">段落</h2>
+<p>也和常规Markdown语法一样。比如这里是一段话。</p>
+<p>空一行后的这里是另一段话。<br>
+不空行并在句末加两个空格为另起一行。</p>
+<h2 id="引用">引用</h2>
+<p>Eureka支持两种方式的引用，即附带注释和不带注释的引用。</p>
+<h4 id="不带注释的引用">不带注释的引用</h4>
+<blockquote>
+<p>这是一段引用<br>
+<strong>注意：</strong> 你可以在引用中使用 <em>Markdown语法标记</em> 。</p>
+</blockquote>
+<h4 id="附带注释的引用">附带注释的引用</h4>
+<blockquote>
+<p>度尽劫波兄弟在，相逢一笑泯恩仇。<br>
+— <cite>鲁迅 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite></p>
+</blockquote>
+<h2 id="列表">列表</h2>
+<p>和常规Markdown列表语法基本相同。</p>
+<h4 id="有序列表">有序列表</h4>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+<h4 id="无序列表">无序列表</h4>
+<ul>
+<li>有一个列表项</li>
+<li>另一个列表项</li>
+<li>第三个列表项</li>
+</ul>
+<h4 id="层级列表">层级列表</h4>
+<ul>
+<li>水果
+<ul>
+<li>苹果</li>
+<li>橘子</li>
+<li>香蕉</li>
+</ul>
+</li>
+<li>清单
+<ul>
+<li>牛奶</li>
+<li>鸡蛋</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码">代码</h2>
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;Example HTML5 Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;Test&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="表格">表格</h2>
+<p>表格并不是Markdown基础语法的一部分，但是Hugo原生支持建立表格，并且可以在表格中使用Markdown语法。</p>
+<table>
+<thead>
+<tr>
+<th>斜体</th>
+<th>粗体</th>
+<th>代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>italics</em></td>
+<td><strong>bold</strong></td>
+<td><code>code</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="科学公式">科学公式</h2>
+<p>Eureka支持使用KaTeX渲染科学公式，比如可以使用行内公式：$E=mc^2$。</p>
+<p>也可以渲染复杂的公式，比如：</p>
+<div>
+\[ \int u \frac{dv}{dx}\, dx=uv-\int \frac{du}{dx}v\,dx \]
+</div>
+<p>矩阵：</p>
+<div>
+\[ \begin{pmatrix} a&b\\c&d \end{pmatrix} \quad
+\begin{bmatrix} a&b\\c&d \end{bmatrix} \quad
+\begin{Bmatrix} a&b\\c&d \end{Bmatrix} \quad
+\begin{vmatrix} a&b\\c&d \end{vmatrix} \]
+</div>
+<p>多行公式：</p>
+<div>
+\[\begin{aligned}
+x ={}& a+b+c+{} \\
+&d+e+f+g
+\end{aligned}\]
+</div>
+<h2 id="图表">图表</h2>
+<p>Eureka支持使用Mermaid渲染图表。为了能够正确渲染表格、图表和流程图，请确保<code>config.yaml</code>中的<code>markup.goldmark.renderer.unsafe</code>的值为true。</p>
+<p>Mermaid流程图渲染示例:</p>
+<div class="mermaid">
+  graph TD
+  A[Client] -->|tcp_123| B(Load Balancer)
+  B -->|tcp_456| C[Server1]
+  B -->|tcp_456| D[Server2]
+</div>
+<h2 id="其他元素缩写脚标角标键盘按键高亮标记">其他元素——缩写，脚标，角标，键盘按键，高亮标记</h2>
+<p><abbr title="Graphics Interchange Format">GIF</abbr>是一种位图图片格式。</p>
+<p>H<sub>2</sub>O</p>
+<p>X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup></p>
+<p>按下<kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd>以访问任务管理器。</p>
+<p>大多数<mark>口腔癌</mark>都是由于不良的生活习惯导致的。</p>
+<h2 id="行内html和css">行内HTML和CSS</h2>
+<p><svg class="canon" xmlns="http://www.w3.org/2000/svg" overflow="visible" viewBox="0 0 496 373" height="373" width="496"><g fill="none"><path stroke="#000" stroke-width=".75" d="M.599 372.348L495.263 1.206M.312.633l494.95 370.853M.312 372.633L247.643.92M248.502.92l246.76 370.566M330.828 123.869V1.134M330.396 1.134L165.104 124.515"></path><path stroke="#ED1C24" stroke-width=".75" d="M275.73 41.616h166.224v249.05H275.73zM54.478 41.616h166.225v249.052H54.478z"></path><path stroke="#000" stroke-width=".75" d="M.479.375h495v372h-495zM247.979.875v372"></path><ellipse cx="498.729" cy="177.625" rx=".75" ry="1.25"></ellipse><ellipse cx="247.229" cy="377.375" rx=".75" ry="1.25"></ellipse></g></svg></p>
+<p><a href="https://en.wikipedia.org/wiki/Canons_of_page_construction#Van_de_Graaf_canon">The Van de Graaf Canon</a></p>
+
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>这句话出自鲁迅的<a href="https://so.gushiwen.cn/shiwenv_7917bc0ef7c4.aspx">《题三义塔》</a> ，作于1933年6月21日。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</article>
+
+
+      
+
+      
+
+
+
+      
+        <div class="py-2">
+  
+    <div class="my-8 flex flex-col items-center md:flex-row">
+      <a href="/authors/francis-fu/" class="md:me-4 text-primary-text h-24 w-24">
+        
+        
+          <img
+            src="/images/icon.png"
+            class="bg-primary-bg w-full rounded-full"
+            alt="Avatar"
+          />
+        
+      </a>
+      <div class="mt-4 w-full md:mt-0 md:w-auto">
+        <a
+          href="/authors/francis-fu/"
+          class="mb-2 block border-b pb-1 text-lg font-bold"
+        >
+          <h3>Francis Fu</h3>
+        </a>
+        <span class="block pb-2">The Less You Know, The Further You Go.</span>
+        
+          
+          
+          
+          
+          <a href="mailto:mail@francisfu.net" class="me-2">
+            <i class="fas fa-envelope"></i>
+          </a>
+        
+          
+          
+          
+          
+          <a href="https://github.com/francisafu" class="me-2">
+            <i class="fab fa-github"></i>
+          </a>
+        
+          
+          
+          
+          
+          <a href="/index.xml" class="me-2">
+            <i class="fas fa-rss"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+</div>
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="/posts/teknologio-estas-senkulpa/teknologio-estas-senkulpa/" class="block">Teknologio Estas Senkulpa</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="/posts/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/" class="block">Win平台编译SQLCipher</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#标题">标题</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#h2">H2</a>
+      <ul>
+        <li><a href="#h3">H3</a>
+          <ul>
+            <li><a href="#h4">H4</a>
+              <ul>
+                <li><a href="#h5">H5</a>
+                  <ul>
+                    <li><a href="#h6">H6</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#段落">段落</a></li>
+    <li><a href="#引用">引用</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#不带注释的引用">不带注释的引用</a></li>
+            <li><a href="#附带注释的引用">附带注释的引用</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#列表">列表</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#有序列表">有序列表</a></li>
+            <li><a href="#无序列表">无序列表</a></li>
+            <li><a href="#层级列表">层级列表</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#代码">代码</a></li>
+    <li><a href="#表格">表格</a></li>
+    <li><a href="#科学公式">科学公式</a></li>
+    <li><a href="#图表">图表</a></li>
+    <li><a href="#其他元素缩写脚标角标键盘按键高亮标记">其他元素——缩写，脚标，角标，键盘按键，高亮标记</a></li>
+    <li><a href="#行内html和css">行内HTML和CSS</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text"><a href="https://www.francisfu.net/">Francis Fu</a> &copy; 2017-2022
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+    </footer>
+  </body>
+</html>
