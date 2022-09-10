@@ -1,6 +1,6 @@
 ---
 title: Win平台编译SQLCipher
-toc: true
+toc: false
 authors:
   - Francis Fu
 tags:

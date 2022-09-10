@@ -1,12 +1,13 @@
 ---
 title: Teknologio Estas Senkulpa
-toc: true
+toc: false
 authors:
   - Francis Fu
 tags:
 categories:
 series:
 date: '2022-09-08'
+thumbnail: "images/Teknologio-Estas-Senkulpa/1984.jpg"
 draft: false
 ---
 
@@ -18,9 +19,9 @@ draft: false
 
 <!--more-->
 
-## Notice
-
+{{< notice warning >}}
 *If you find that there are many words that you don't understand when reading this article, and you need a dictionary or translation software to complete the reading, please **STOP reading this article** immediately -- this article is not for you. This article is a professional article for developers, programmers and  telecommunications engineers. In addition, this article will not teach you any technology, only theoretical introductions and test results.*
+{{< /notice >}}
 
 ## 1. Preface
 

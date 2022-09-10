@@ -8,7 +8,7 @@ categories:
 series:
 date: '2020-10-16'
 lastmod: '2020-10-16'
-draft: true
+draft: false
 ---
 
 This is the root of example doc.

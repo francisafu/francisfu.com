@@ -1,6 +1,6 @@
 ---
 title: Windows10装机指南
-toc: true
+toc: false
 authors:
   - Francis Fu
 tags:
