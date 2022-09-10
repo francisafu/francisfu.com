@@ -7,7 +7,7 @@ tags:
 categories:
 series:
 date: '2022-09-02'
-draft: true
+draft: false
 ---
 
 从Hexo到Statiq再到Hugo，三年的时间内我尝试了不同的几种静态页面生成器。最终选择了Hugo也是因为感觉到，它还是最方便好用的一种。在此记录一下Hugo的使用方式以及Eureka主题的搭建和配置。

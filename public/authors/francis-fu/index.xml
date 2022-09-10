@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>Hugo静态页面生成器指南</title>
+      <link>/posts/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/</guid>
+      <description>&lt;p&gt;从Hexo到Statiq再到Hugo，三年的时间内我尝试了不同的几种静态页面生成器。最终选择了Hugo也是因为感觉到，它还是最方便好用的一种。在此记录一下Hugo的使用方式以及Eureka主题的搭建和配置。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Win平台编译SQLCipher</title>
       <link>/posts/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/</link>
       <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>

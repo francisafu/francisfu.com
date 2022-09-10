@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Win平台编译SQLCipher | CRuffians</title>
+<title>Hugo静态页面生成器指南 | CRuffians</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
@@ -75,7 +75,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hud7a356e7696a15f5ea146fd6c0356522_1916359_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="最近一个项目需要用到嵌入式数据库，自然就想到了SQLite。但是由于开源的SQLite是不支持加密的，官方的SEE加密服务需要2000美元，我等自然是没有这个经济实力的。搜索一番，找到了Zetetic公司的SQLCipher，社区版开源并且需要自行编译，商业版在社区版基础上优化了查询速度和数据库体积，同时给了各个平台的预编译文件。由于SQLite在Windows上编译较为繁琐，特此记录编译过程。">
+  content="从Hexo到Statiq再到Hugo，三年的时间内我尝试了不同的几种静态页面生成器。最终选择了Hugo也是因为感觉到，它还是最方便好用的一种。在此记录一下Hugo的使用方式以及Eureka主题的搭建和配置。">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -87,8 +87,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"Win平台编译SQLCipher",
-      "item":"/posts/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/"}]
+      "name":"Hugo静态页面生成器指南",
+      "item":"/posts/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/"}]
 }
 </script>
 
@@ -100,11 +100,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/posts/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/"
+        "@id": "/posts/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/"
     },
-    "headline": "Win平台编译SQLCipher | CRuffians","datePublished": "2021-08-13T00:00:00+00:00",
-    "dateModified": "2021-08-13T00:00:00+00:00",
-    "wordCount":  1097 ,
+    "headline": "Hugo静态页面生成器指南 | CRuffians","datePublished": "2022-09-02T00:00:00+00:00",
+    "dateModified": "2022-09-02T00:00:00+00:00",
+    "wordCount":  854 ,
     "author": {
         "@type": "Person",
         "name": ["Francis Fu"]
@@ -117,21 +117,21 @@
             "url": "/images/icon.png"
         }
         },
-    "description": "\u003cp\u003e最近一个项目需要用到嵌入式数据库，自然就想到了SQLite。但是由于开源的SQLite是不支持加密的，官方的SEE加密服务需要2000美元，我等自然是没有这个经济实力的。搜索一番，找到了\u003ca href=\u0022\/images\/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher\/https:\/\/www.zetetic.net\/\u0022\u003eZetetic\u003c\/a\u003e公司的SQLCipher，社区版开源并且需要自行编译，商业版在社区版基础上优化了查询速度和数据库体积，同时给了各个平台的预编译文件。由于SQLite在Windows上编译较为繁琐，特此记录编译过程。\u003c\/p\u003e"
+    "description": "\u003cp\u003e从Hexo到Statiq再到Hugo，三年的时间内我尝试了不同的几种静态页面生成器。最终选择了Hugo也是因为感觉到，它还是最方便好用的一种。在此记录一下Hugo的使用方式以及Eureka主题的搭建和配置。\u003c\/p\u003e"
 }
-</script><meta property="og:title" content="Win平台编译SQLCipher | CRuffians" />
+</script><meta property="og:title" content="Hugo静态页面生成器指南 | CRuffians" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/posts/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/" />
+<meta property="og:url" content="/posts/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/" />
 
 
 
 
-<meta property="og:description" content="最近一个项目需要用到嵌入式数据库，自然就想到了SQLite。但是由于开源的SQLite是不支持加密的，官方的SEE加密服务需要2000美元，我等自然是没有这个经济实力的。搜索一番，找到了Zetetic公司的SQLCipher，社区版开源并且需要自行编译，商业版在社区版基础上优化了查询速度和数据库体积，同时给了各个平台的预编译文件。由于SQLite在Windows上编译较为繁琐，特此记录编译过程。" />
+<meta property="og:description" content="从Hexo到Statiq再到Hugo，三年的时间内我尝试了不同的几种静态页面生成器。最终选择了Hugo也是因为感觉到，它还是最方便好用的一种。在此记录一下Hugo的使用方式以及Eureka主题的搭建和配置。" />
 
 
 
@@ -148,10 +148,10 @@
 
 
 
-<meta property="article:published_time" content="2021-08-13T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2022-09-02T00:00:00&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2021-08-13T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2022-09-02T00:00:00&#43;00:00" />
 
 
 
@@ -239,7 +239,7 @@
       class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
     >
       <article class="prose">
-  <h1 class="mb-4">Win平台编译SQLCipher</h1>
+  <h1 class="mb-4">Hugo静态页面生成器指南</h1>
 
   <div
   class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
@@ -247,12 +247,12 @@
   <div class="me-6 my-2">
     <i class="fas fa-calendar me-1"></i>
     <span
-      >2021-08-13</span
+      >2022-09-02</span
     >
   </div>
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>3分钟阅读时长</span>
+    <span>2分钟阅读时长</span>
   </div>
 
   
@@ -264,92 +264,138 @@
   
   
 
-  <p>最近一个项目需要用到嵌入式数据库，自然就想到了SQLite。但是由于开源的SQLite是不支持加密的，官方的SEE加密服务需要2000美元，我等自然是没有这个经济实力的。搜索一番，找到了<a href="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/https://www.zetetic.net/">Zetetic</a>公司的SQLCipher，社区版开源并且需要自行编译，商业版在社区版基础上优化了查询速度和数据库体积，同时给了各个平台的预编译文件。由于SQLite在Windows上编译较为繁琐，特此记录编译过程。</p>
-<h3 id="0-准备工作">0. 准备工作</h3>
+  <p>从Hexo到Statiq再到Hugo，三年的时间内我尝试了不同的几种静态页面生成器。最终选择了Hugo也是因为感觉到，它还是最方便好用的一种。在此记录一下Hugo的使用方式以及Eureka主题的搭建和配置。</p>
+<h2 id="标题">标题</h2>
+<p>同常规Markdown语法一样，依次提供 <code>&lt;h1&gt;</code>—<code>&lt;h6&gt;</code> HTML标签。</p>
+<h1 id="h1">H1</h1>
+<h2 id="h2">H2</h2>
+<h3 id="h3">H3</h3>
+<h4 id="h4">H4</h4>
+<h5 id="h5">H5</h5>
+<h6 id="h6">H6</h6>
+<h2 id="段落">段落</h2>
+<p>也和常规Markdown语法一样。比如这里是一段话。</p>
+<p>空一行后的这里是另一段话。<br>
+不空行并在句末加两个空格为另起一行。</p>
+<h2 id="引用">引用</h2>
+<p>Eureka支持两种方式的引用，即附带注释和不带注释的引用。</p>
+<h4 id="不带注释的引用">不带注释的引用</h4>
+<blockquote>
+<p>这是一段引用<br>
+<strong>注意：</strong> 你可以在引用中使用 <em>Markdown语法标记</em> 。</p>
+</blockquote>
+<h4 id="附带注释的引用">附带注释的引用</h4>
+<blockquote>
+<p>度尽劫波兄弟在，相逢一笑泯恩仇。<br>
+— <cite>鲁迅 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite></p>
+</blockquote>
+<h2 id="列表">列表</h2>
+<p>和常规Markdown列表语法基本相同。</p>
+<h4 id="有序列表">有序列表</h4>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+<h4 id="无序列表">无序列表</h4>
 <ul>
-<li>Windows 11 专业版 21H2 64位</li>
-<li>Visual Studio Community 2019 16.11.0（包含“使用C++的桌面开发”工作负载）</li>
-<li><a href="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/https://www.activestate.com/products/tcl/downloads/">ActiveState ActiveTcl 8.6 Community Edition</a></li>
-<li><a href="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/https://slproweb.com/products/Win32OpenSSL.html">Win64 OpenSSL v1.1.1k</a></li>
+<li>有一个列表项</li>
+<li>另一个列表项</li>
+<li>第三个列表项</li>
 </ul>
-<h3 id="1-克隆源码">1. 克隆源码</h3>
-<pre><code>git clone https://github.com/sqlcipher/sqlcipher.git
+<h4 id="层级列表">层级列表</h4>
+<ul>
+<li>水果
+<ul>
+<li>苹果</li>
+<li>橘子</li>
+<li>香蕉</li>
+</ul>
+</li>
+<li>清单
+<ul>
+<li>牛奶</li>
+<li>鸡蛋</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码">代码</h2>
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;Example HTML5 Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;Test&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
-<p><img src="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/GitClone.png" alt="Git Clone"></p>
-<h3 id="2-安装activetcl">2. 安装ActiveTcl</h3>
-<p>双击打开下载好的安装包，使用默认选项（Typical）安装即可。</p>
-<h3 id="3-安装openssl">3. 安装OpenSSL</h3>
-<p>双击打开下载好的安装包，在安装过程中，将目标路径改为 <em>C:\dev\OpenSSL-Win64</em>：</p>
-<p><img src="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/OpenSSL_ChangeDir.png" alt="OpenSSL installation path"></p>
-<p>然后在选项中设置 <em>.DLLs</em> 文件存放在OpenSSL binaries (<em>/bin</em>) 路径中：</p>
-<p><img src="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/OpenSSL_BinariesDirectory.png" alt="OpenSSL binaries directory"></p>
-<p>之后，开始安装：</p>
-<p><img src="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/OpenSSL_Ready2Install.png" alt="OpenSSL binaries directory"></p>
-<h3 id="4-编辑makefilemsc文件">4. 编辑Makefile.msc文件</h3>
-<p>安装好所需的环境后，在克隆的源码路径下，编辑 <em>Makefile.msc</em> 文件，使其适配我们的编译环境。</p>
-<p>我们需要禁用增量链接来使编译不出错。默认情况下， <em>nmake</em> 会使用增量链接。</p>
-<p>向 <em>LDLFLAGS</em> 变量添加 <em>/INCREMENTAL:NO</em> ：</p>
-<pre><code>LDFLAGS = $(LDFLAGS) /INCREMENTAL:NO
-</code></pre>
-<p><img src="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/DisableIncrementalLinking.png" alt="LDLFLAGS Disable nmake incremental linking"></p>
-<p>之后将 <em>-DSQLITE_TEMP_STORE</em> 的值从1改为2，并向 <em>TCC</em> 和 <em>RCC</em> 变量添加 <em>-DSQLITE_HAS_CODEC</em> 和 <em>-IC:\dev\OpenSSL-Win64\include</em>。</p>
-<pre><code>TCC = $(TCC) -DSQLITE_TEMP_STORE=2
-RCC = $(RCC) -DSQLITE_TEMP_STORE=2
+<h2 id="表格">表格</h2>
+<p>表格并不是Markdown基础语法的一部分，但是Hugo原生支持建立表格，并且可以在表格中使用Markdown语法。</p>
+<table>
+<thead>
+<tr>
+<th>斜体</th>
+<th>粗体</th>
+<th>代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>italics</em></td>
+<td><strong>bold</strong></td>
+<td><code>code</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="科学公式">科学公式</h2>
+<p>Eureka支持使用KaTeX渲染科学公式，比如可以使用行内公式：$E=mc^2$。</p>
+<p>也可以渲染复杂的公式，比如：</p>
+<div>
+\[ \int u \frac{dv}{dx}\, dx=uv-\int \frac{du}{dx}v\,dx \]
+</div>
+<p>矩阵：</p>
+<div>
+\[ \begin{pmatrix} a&b\\c&d \end{pmatrix} \quad
+\begin{bmatrix} a&b\\c&d \end{bmatrix} \quad
+\begin{Bmatrix} a&b\\c&d \end{Bmatrix} \quad
+\begin{vmatrix} a&b\\c&d \end{vmatrix} \]
+</div>
+<p>多行公式：</p>
+<div>
+\[\begin{aligned}
+x ={}& a+b+c+{} \\
+&d+e+f+g
+\end{aligned}\]
+</div>
+<h2 id="图表">图表</h2>
+<p>Eureka支持使用Mermaid渲染图表。为了能够正确渲染表格、图表和流程图，请确保<code>config.yaml</code>中的<code>markup.goldmark.renderer.unsafe</code>的值为true。</p>
+<p>Mermaid流程图渲染示例:</p>
+<div class="mermaid">
+  graph TD
+  A[Client] -->|tcp_123| B(Load Balancer)
+  B -->|tcp_456| C[Server1]
+  B -->|tcp_456| D[Server2]
+</div>
+<h2 id="其他元素缩写脚标角标键盘按键高亮标记">其他元素——缩写，脚标，角标，键盘按键，高亮标记</h2>
+<p><abbr title="Graphics Interchange Format">GIF</abbr>是一种位图图片格式。</p>
+<p>H<sub>2</sub>O</p>
+<p>X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup></p>
+<p>按下<kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd>以访问任务管理器。</p>
+<p>大多数<mark>口腔癌</mark>都是由于不良的生活习惯导致的。</p>
+<h2 id="行内html和css">行内HTML和CSS</h2>
+<p><svg class="canon" xmlns="http://www.w3.org/2000/svg" overflow="visible" viewBox="0 0 496 373" height="373" width="496"><g fill="none"><path stroke="#000" stroke-width=".75" d="M.599 372.348L495.263 1.206M.312.633l494.95 370.853M.312 372.633L247.643.92M248.502.92l246.76 370.566M330.828 123.869V1.134M330.396 1.134L165.104 124.515"></path><path stroke="#ED1C24" stroke-width=".75" d="M275.73 41.616h166.224v249.05H275.73zM54.478 41.616h166.225v249.052H54.478z"></path><path stroke="#000" stroke-width=".75" d="M.479.375h495v372h-495zM247.979.875v372"></path><ellipse cx="498.729" cy="177.625" rx=".75" ry="1.25"></ellipse><ellipse cx="247.229" cy="377.375" rx=".75" ry="1.25"></ellipse></g></svg></p>
+<p><a href="https://en.wikipedia.org/wiki/Canons_of_page_construction#Van_de_Graaf_canon">The Van de Graaf Canon</a></p>
 
-TCC = $(TCC) -DSQLITE_HAS_CODEC
-RCC = $(RCC) -DSQLITE_HAS_CODEC
-
-TCC = $(TCC) -IC:\dev\OpenSSL-Win64\include
-RCC = $(RCC) -IC:\dev\OpenSSL-Win64\include
-</code></pre>
-<p><img src="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/TCC_RCC_Flags.png" alt="TCC and RCC flags"></p>
-<p>向 <em>LTLIBPATHS</em> 变量添加 <em>/LIBPATH:C:\dev\OpenSSL-Win64\lib /LIBPATH:C:\dev\OpenSSL-Win64\lib\VC</em> ，并将 <em>capi.lib</em>、<em>padlock.lib</em>、<em>libcrypto.lib</em>、<em>libssl.lib</em> 添加到 <em>LTLIBS</em> 变量中。</p>
-<p>注意，这些文件实际上就是刚刚安装的OpenSSL的库文件。如果你选择了其他路径去安装，请根据实际情况进行修改。</p>
-<pre><code>LTLIBPATHS = $(LTLIBPATHS) /LIBPATH:C:\dev\OpenSSL-Win64\lib /LIBPATH:C:\dev\OpenSSL-Win64\lib\VC
-LTLIBS = $(LTLIBS) capi.lib padlock.lib libcrypto.lib libssl.lib
-</code></pre>
-<p><img src="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/OpenSSL_Libs.png" alt="LTLIBPATHS and LTLIBS OpenSSL libs"></p>
-<h3 id="5-修改名称">5. 修改名称</h3>
-<p>注意，此步骤是可选步骤，可以跳过此步骤直接编译得到默认名称（SQLite）的文件。</p>
-<p>修改如下内容：</p>
-<ul>
-<li>SQLITE3DLL - 应改为sqlcipher</li>
-</ul>
-<p><img src="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/Change_DLL_Name.png" alt="Change DLL Name"></p>
-<ul>
-<li>SQLITE3LIB - 应改为sqlcipher</li>
-</ul>
-<p><img src="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/Change_Lib_Name.png" alt="Change Import Library Name"></p>
-<ul>
-<li>SQLITE3EXE - 应改为sqlcipher</li>
-</ul>
-<p><img src="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/Change_EXE_Name.png" alt="Change Shell Executable Name"></p>
-<ul>
-<li>SQLITE3EXEPDB - 应改为sqlcipher</li>
-</ul>
-<p><img src="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/Change_PDB_Name.png" alt="Change PDB Name"></p>
-<ul>
-<li>最后，对该文件进行一次大小写敏感的全文检索，将sqlite3.def替换为sqlcipher3.def（应该找到5处）：</li>
-</ul>
-<p><img src="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/Change_DEFs.png" alt="Change .def file names"></p>
-<h3 id="6-最终编译">6. 最终编译</h3>
-<p>在开始菜单查找并打开 <em><strong>x64</strong> Native Tools Command Prompt for VS 2019</em>，切换到源码路径，建立一个新目录并在其中执行 <em>nmake</em> 来编译SQLCipher：</p>
-<pre><code>mkdir compile
-cd compile
-nmake /f ..\Makefile.msc TOP=..\
-</code></pre>
-<p>之后就可以看到SQLCipher已经编译成功。</p>
-<p><img src="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/SQLCipherCompiled.png" alt="SQLCipher compile results"></p>
-<p>将 <em>libcrypto-1_1-x64.dll</em> 和 <em>libssl-1_1-x64.dll</em> 复制到输出目录以确保程序可以正常运行：</p>
-<pre><code>copy c:\dev\OpenSSL-Win64\*.dll .\
-</code></pre>
-<p><img src="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/Copy_OpenSSL_DLLs.png" alt="Copy OpenSSL DLLs"></p>
-<p>至此，SQLCipher已经可以正常使用了。</p>
-<p><img src="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/SQLCipherRunning.png" alt="Running SQLCipher"></p>
-<p><img src="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/Export.png" alt="Runnig SQLCipher"></p>
-<p><strong>最后：</strong></p>
-<p><strong>非常感谢SQLite社区、Zetetic公司及其社区将这些产品作为开源代码提供。</strong></p>
-<p><strong>本文受<a href="/images/Win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91SQLCipher/https://github.com/carlosbet/sqlcipher/wiki/Compiling">carlosbet</a>启发完成，图片均源自链接原文，在此对您的工作深表感谢。</strong></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>这句话出自鲁迅的<a href="https://so.gushiwen.cn/shiwenv_7917bc0ef7c4.aspx">《题三义塔》</a> ，作于1933年6月21日。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
 </article>
 
 
@@ -422,13 +468,13 @@ nmake /f ..\Makefile.msc TOP=..\
         <span class="text-primary-text block font-bold"
           >上一页</span
         >
-        <a href="/posts/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/" class="block">Hugo静态页面生成器指南</a>
+        <a href="/posts/teknologio-estas-senkulpa/teknologio-estas-senkulpa/" class="block">Teknologio Estas Senkulpa</a>
       
     </div>
     <div class="mt-4 md:mt-0 md:text-right">
       
         <span class="text-primary-text block font-bold">下一页</span>
-        <a href="/posts/%E9%AD%94%E8%B6%A3%E5%AE%89%E5%8D%93%E7%B3%BB%E7%BB%9F%E5%88%B7%E6%9C%BA%E6%95%99%E7%A8%8B/%E9%AD%94%E8%B6%A3%E5%AE%89%E5%8D%93%E7%B3%BB%E7%BB%9F%E5%88%B7%E6%9C%BA%E6%95%99%E7%A8%8B/" class="block">魔趣安卓系统刷机教程</a>
+        <a href="/posts/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/win%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91sqlcipher/" class="block">Win平台编译SQLCipher</a>
       
     </div>
   </div>
@@ -455,17 +501,55 @@ nmake /f ..\Makefile.msc TOP=..\
 >
   <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#标题">标题</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#h2">H2</a>
       <ul>
-        <li><a href="#0-准备工作">0. 准备工作</a></li>
-        <li><a href="#1-克隆源码">1. 克隆源码</a></li>
-        <li><a href="#2-安装activetcl">2. 安装ActiveTcl</a></li>
-        <li><a href="#3-安装openssl">3. 安装OpenSSL</a></li>
-        <li><a href="#4-编辑makefilemsc文件">4. 编辑Makefile.msc文件</a></li>
-        <li><a href="#5-修改名称">5. 修改名称</a></li>
-        <li><a href="#6-最终编译">6. 最终编译</a></li>
+        <li><a href="#h3">H3</a>
+          <ul>
+            <li><a href="#h4">H4</a>
+              <ul>
+                <li><a href="#h5">H5</a>
+                  <ul>
+                    <li><a href="#h6">H6</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
+    <li><a href="#段落">段落</a></li>
+    <li><a href="#引用">引用</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#不带注释的引用">不带注释的引用</a></li>
+            <li><a href="#附带注释的引用">附带注释的引用</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#列表">列表</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#有序列表">有序列表</a></li>
+            <li><a href="#无序列表">无序列表</a></li>
+            <li><a href="#层级列表">层级列表</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#代码">代码</a></li>
+    <li><a href="#表格">表格</a></li>
+    <li><a href="#科学公式">科学公式</a></li>
+    <li><a href="#图表">图表</a></li>
+    <li><a href="#其他元素缩写脚标角标键盘按键高亮标记">其他元素——缩写，脚标，角标，键盘按键，高亮标记</a></li>
+    <li><a href="#行内html和css">行内HTML和CSS</a></li>
   </ul>
 </nav>
 </div>
