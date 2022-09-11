@@ -9,7 +9,7 @@ favicon = "favicons/"
 customCss = ["css/custom.css"]
 # example ["js/custom.js"]
 customJs = ["js/custom.js"] 
-mainSections = ["posts"]
+mainSections = ["post"]
 images = ["images/icon.png"]
 doNotLoadAnimations = false
 # Form Spree Contact Form
