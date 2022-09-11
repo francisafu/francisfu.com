@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/Lora-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/Lora-Bold.woff2') format('woff2');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/Lora-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/Lora-Italic.woff2') format('woff2');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NotoSerifSC';
+  src: url('../fonts/NotoSerifSC-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'NotoSerifSC';
+  src: url('../fonts/NotoSerifSC-Bold.woff2') format('woff2');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'NotoSerifSC';
+  src: url('../fonts/NotoSerifSC-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NotoSerifSC';
+  src: url('../fonts/NotoSerifSC-Italic.woff2') format('woff2');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'JetBrainsMono';
+  src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff2');
+}
+
+code {
+  font-family: 'JetBrainsMono', normal !important;
+}
+
+* {
+  font-family: 'Lora', 'NotoSerifSC', normal;
+}
