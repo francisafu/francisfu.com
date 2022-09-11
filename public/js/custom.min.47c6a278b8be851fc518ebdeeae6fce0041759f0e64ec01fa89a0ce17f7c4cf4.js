@@ -1,0 +1,1 @@
+window.onload=function(){var e=document.getElementsByTagName("pre");Array.from(e).forEach(function(e){var t=e.getElementsByTagName("span");Array.from(t).forEach(function(e){e.firstChild.nodeType===Node.TEXT_NODE&&(e.style["font-family"]="jetbrainsmono,normal")})})}

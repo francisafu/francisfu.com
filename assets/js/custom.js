@@ -4,7 +4,7 @@ window.onload = function () {
     var span = itemA.getElementsByTagName('span');
     Array.from(span).forEach(function (itemB) {
       if (itemB.firstChild.nodeType === Node.TEXT_NODE) {
-        itemB.style['font-family'] = 'jetbrainsmono';
+        itemB.style['font-family'] = 'jetbrainsmono,normal';
       }
     });
   });
