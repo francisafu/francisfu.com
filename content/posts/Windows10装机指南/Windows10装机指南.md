@@ -3,9 +3,6 @@ title: Windows10装机指南
 toc: false
 authors:
   - Francis Fu
-tags:
-categories:
-series:
 date: '2020-11-17'
 draft: false
 ---

@@ -3,9 +3,6 @@ title: Teknologio Estas Senkulpa
 toc: false
 authors:
   - Francis Fu
-tags:
-categories:
-series:
 date: '2022-09-08'
 thumbnail: "images/Teknologio-Estas-Senkulpa/1984.jpg"
 draft: false
@@ -278,7 +275,7 @@ The XRay(VLess + XTLS) Youtube Result:
 
 According to the above information and data, as well as my actual test situation, I was deeply impressed by the Ttojan-Go. It was really fast, and what's more, due to the large amount of data transfer, my poor VPS cannot bear the test case. Each time after I tested Trojan-Go, the CPU and memory usage raised up to over 80%, thus when I tried to run the second test case, network speed will drop down. I have to reboot the VPS manually. 
 
-However, when we concerned about the stream media, those VPNs are much better than TLS. The best one when watching 4K video is OpenVPN(UDP). And it's the only one without too much lags. Since my direct ping to my server is pretty, a little lags when streaming 4K is OK for me.
+However, when we concerned about the stream media, those VPNs are much better than TLS. The best one when watching 4K video is OpenVPN(UDP). And it's the only one without too much lags. Since my direct ping to my server is pretty high, a little lags when streaming 4K is OK for me.
 
 I must point out that I'm quite disappointed by the XRay(VLess + XTLS). It's performance was not as good as expected, especially when streaming videos, the average speed is only about 6000-8000kbps. Maybe my settings are wrong, while I haven't used CDN in the test. If I use CDN, I think its speed will be much slower.
 

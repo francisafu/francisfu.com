@@ -1,18 +1,16 @@
 ---
-title: Hugo静态页面生成器指南
+title: Hugo/Anatole语法参考
 toc: false
 authors:
   - Francis Fu
-tags:
-categories:
 series:
-date: '2022-09-02'
-thumbnail: "images/landscape.jpg"
+  - Hugo Manual
+date: '2022-09-09'
 math: true
-draft: true
+draft: false
 ---
 
-从Hexo到Statiq再到Hugo，三年的时间内我尝试了不同的几种静态页面生成器。最终选择了Hugo也是因为感觉到，它还是最方便好用的一种。在此记录一下Hugo的使用方式以及Anatole主题的搭建和配置。
+此文章系Hugo以及Anatole主题所支持的Markdown语法规则参考及演示
 
 <!--more-->
 
@@ -36,7 +34,7 @@ draft: true
 
 ## 引用
 
-Eureka支持两种方式的引用，即附带注释和不带注释的引用。
+Anatole支持两种方式的引用，即附带注释和不带注释的引用。
 
 #### 不带注释的引用
 
@@ -101,10 +99,13 @@ Eureka支持两种方式的引用，即附带注释和不带注释的引用。
 
 ## 科学公式
 
-- To enable KaTex globally set the parameter `math` to `true` in a project's configuration
-- To enable KaTex on a per page basis include the parameter `math: true` in content files
+Anatole支持使用KaTeX渲染科学公式。
 
-Eureka支持使用KaTeX渲染科学公式，比如可以使用行内公式：\\(E=mc^2\\) 。
+全局启用KaTeX：在`params.toml`中设置：`[math]enable = false use = "katex"`
+
+单页启用KaTex：在Front Matter中设置：`math: true`
+
+可以使用行内公式：\\(E=mc^2\\) 
 
 也可以渲染复杂的公式，比如：
 
@@ -133,22 +134,15 @@ x ={}& a+b+c+{} \\
 
 ## 图表
 
-Eureka支持使用Mermaid渲染图表。为了能够正确渲染表格、图表和流程图，请确保`config.yaml`中的`markup.goldmark.renderer.unsafe`的值为true。
+Anatole支持使用Mermaid渲染图表。为了能够正确渲染表格、图表和流程图，请确保`config.toml`中的`markup.goldmark.renderer.unsafe`的值为true，`params.toml`中设置`[mermaid]enable = true`
 
 Mermaid流程图渲染示例:
 
 ```mermaid
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->>John: Hello John, how are you?
-    loop Healthcheck
-        John->>John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts <br/>prevail!
-    John-->>Alice: Great!
-    John->>Bob: How about you?
-    Bob-->>John: Jolly good!
+graph TD
+  A[Client] -->|tcp_123| B(Load Balancer)
+  B -->|tcp_456| C[Server1]
+  B -->|tcp_456| D[Server2]
 ```
 
 ## 其他元素——缩写，脚标，角标，键盘按键，高亮标记
@@ -175,21 +169,11 @@ X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 </style>
 {{< /css.inline >}}
 
-## 图像代码
+## 图片
 
-Hugo has `figure` shortcode built-in, so you can easily add figure captions or hyperlink rel attributes to images. Documentations can be found here:
+Anatole支持使用不同的短代码渲染图像。默认图像使用Markdown标准语法：`![]()`
 
-https://gohugo.io/content-management/shortcodes/#figure
-
-This theme has 3 CSS classes made for figure elements:
-
-- `big`: images will break the width limit of main content area.
-- `left`: images will float to the left.
-- `right`: images will float to the right.
-
-If a figure has no class set, the image will behave just like a normal markdown image: `![]()`.
-
-Here are some examples; please be aware that these styles only take effect when the page width is over 1300px.
+短代码示例如下，注意这些用例只在页面可视区宽度大于1300px时生效。
 
 {{< figure src="https://via.placeholder.com/1600x800" alt="image" caption="figure-normal (without any classes)" >}}
 
@@ -199,9 +183,9 @@ Here are some examples; please be aware that these styles only take effect when 
 
 {{< figure src="https://via.placeholder.com/1600x800" alt="image" caption="figure-small" class="small" >}}
 
-Pellentesque posuere sem nec nunc varius, id hendrerit arcu consequat. Maecenas commodo, sapien ut gravida porttitor, dolor risus facilisis enim, eget pharetra nibh nisl porttitor sapien. Proin finibus elementum ligula sit amet hendrerit. Praesent et erat sodales ante accumsan pharetra non eu nulla. Sed vehicula consequat lorem, a fermentum ante faucibus quis. Aliquam erat volutpat. In vitae tincidunt dui. Proin sit amet ligula sodales, elementum tortor et, venenatis sem. Maecenas non nisl erat. Curabitur nec velit eros. Ut cursus lacus nisi, non pretium libero euismod et. Fusce luctus in nisi quis sollicitudin. Aenean nec blandit ligula. Duis ac felis lorem. Proin tellus tellus, dictum nec tempus sit amet, venenatis ac felis. Sed in pharetra nulla, non mollis sem.
-
 {{< figure src="https://via.placeholder.com/1600x800" alt="image" caption="figure-tiny" class="tiny" >}}
+
+Pellentesque posuere sem nec nunc varius, id hendrerit arcu consequat. Maecenas commodo, sapien ut gravida porttitor, dolor risus facilisis enim, eget pharetra nibh nisl porttitor sapien. Proin finibus elementum ligula sit amet hendrerit. 
 
 {{< figure src="https://via.placeholder.com/400x280" alt="image" caption="figure-left" class="left" >}}
 
@@ -211,78 +195,44 @@ In a libero varius, luctus ligula et, bibendum tortor. Sed sit amet dui malesuad
 
 Pellentesque eu consequat nunc. Vivamus eu eros ut nulla dapibus molestie in id tortor. Cras viverra ligula erat, tincidunt hendrerit diam blandit nec. Cras id urna vel dolor dictum mattis. Vestibulum congue erat ac eros molestie accumsan. Maecenas lorem nibh, maximus vel justo eget, facilisis egestas lectus. Mauris eu est ut odio blandit consequat id feugiat eros. Fusce id suscipit mi, et lacinia lectus. Mauris a arcu placerat dolor iaculis feugiat nec non mi. Ut porttitor elit tortor, eget tempus velit mollis eu. Aliquam sem nulla, dictum cursus mauris ac, semper ullamcorper leo.
 
-## Rich Content Short Code
+## 文章标题图
 
-Hugo ships with several [Built-in Shortcodes](https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes) for rich content, along with a [Privacy Config](https://gohugo.io/about/hugo-and-gdpr/) and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.
+Anatole支持渲染文章标题图，需要在Front Matter中加入：`thumbnail: "images/xxx.jpg"`。
 
-## <!--more-->
+注意，如想完整显示标题图，完整尺寸（桌面端）应为750x240px，核心尺寸（移动端）应为350x240px。
 
-## YouTube Privacy Enhanced Shortcode
+## 通知
 
-{{< youtube ZJthWmvUzzc >}}
+Anatole支持三种通知类型如下。
 
-<br>
-
----
-
-## Twitter Simple Shortcode
-
-{{< twitter_simple 1085870671291310081 >}}
-
-<br>
-
----
-
-## Vimeo Simple Shortcode
-
-{{< vimeo_simple 48912912 >}}
-
-The notice shortcode supports three different types of disclaimers. These are as following:
-
-## Info Notice
-
-```
-{{%/* notice info */%}}
-Lorem Impsum..
-{{%/* /notice */%}}
-```
+### 关于
 
 {{< notice info >}}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 {{< /notice >}}
 
-## Update Notice
-
-```
-{{%/* notice update */%}}
-Lorem Impsum..
-{{%/* /notice */%}}
-```
+### 更新
 
 {{< notice update >}}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 {{< /notice >}}
 
-## Warning Notice
-
-```
-{{%/* notice warning */%}}
-Lorem Impsum..
-{{%/* /notice */%}}
-```
+### 警告
 
 {{< notice warning >}}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 {{< /notice >}}
 
-## Redirect
+## 页面重定向
 
-Front Matter:
+Anatole可以用过如下代码实现页面重定向。
+
+Front Matter中加入：
 
 ```
 redirectUrl="https://gohugo.io"
 ```
-In page:
+页面内加入：
 
 ```
 Forwarding to [gohugo](https://gohugo.io) using 'redirectUrl'

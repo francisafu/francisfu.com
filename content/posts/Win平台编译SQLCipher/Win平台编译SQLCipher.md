@@ -3,9 +3,6 @@ title: Win平台编译SQLCipher
 toc: false
 authors:
   - Francis Fu
-tags:
-categories:
-series:
 date: '2021-08-13'
 draft: false
 ---
