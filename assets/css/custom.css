@@ -51,8 +51,13 @@
   src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'SourceHanSansCN';
+  src: url('../fonts/SourceHanSansCN-Regular.woff2') format('woff2');
+}
+
 code {
-  font-family: 'JetBrainsMono', normal !important;
+  font-family: 'JetBrainsMono', 'SourceHanSansCN', normal !important;
 }
 
 * {
