@@ -7,8 +7,8 @@
   [[main]]
   name = "合辑"
   weight = 200
-  identifier = "docs"
-  url = "/doc/"
+  identifier = "series"
+  url = "/series/"
 
   [[footer]]
   name = "Powered by Hugo with Anatole Theme"

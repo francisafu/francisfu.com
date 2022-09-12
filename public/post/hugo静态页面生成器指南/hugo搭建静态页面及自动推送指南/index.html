@@ -93,7 +93,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
 
-  <link rel="canonical" href="https://www.francisfu.net/post/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E6%8C%87%E5%8D%97/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%8F%8A%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81%E6%8C%87%E5%8D%97/" />
+  <link rel="canonical" href="https://www.francisfu.net/post/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%8F%8A%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81%E6%8C%87%E5%8D%97/" />
 
   
   
@@ -139,10 +139,10 @@
   <meta property="og:title" content="Hugo搭建静态页面及自动推送指南" />
 <meta property="og:description" content="最近把个人主页从Statiq全面转移到Hugo上了。五年的时间内，从Hexo到Statiq再到Hugo，我尝试了不同的几种静态页面生成器。最终选择了Hugo也是因为感觉，它还是最方便好用的一种。在此记录一下Hugo的使用方式、我所选用的Anatole主题的搭建和配置，以及配合GitHub Webhook实现代码自动更新推送的流程。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.francisfu.net/post/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E6%8C%87%E5%8D%97/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%8F%8A%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81%E6%8C%87%E5%8D%97/" /><meta property="og:image" content="https://www.francisfu.net/images/icon.png"/><meta property="article:section" content="post" />
+<meta property="og:url" content="https://www.francisfu.net/post/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%8F%8A%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81%E6%8C%87%E5%8D%97/" /><meta property="og:image" content="https://www.francisfu.net/images/icon.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-09-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-09-10T00:00:00+00:00" /><meta property="og:site_name" content="CRuffians" />
-<meta property="og:see_also" content="https://www.francisfu.net/post/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E6%8C%87%E5%8D%97/hugo-anatole%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/" />
+
 
 
 
@@ -172,7 +172,7 @@
         "isFamilyFriendly": "true",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/www.francisfu.net\/post\/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E6%8C%87%E5%8D%97\/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%8F%8A%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81%E6%8C%87%E5%8D%97\/"
+            "@id": "https:\/\/www.francisfu.net\/post\/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97\/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%8F%8A%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81%E6%8C%87%E5%8D%97\/"
         },
         "author" : {
             "@type": "Person",
@@ -215,7 +215,7 @@
       ]
 
     ,
-        "url" : "https:\/\/www.francisfu.net\/post\/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E6%8C%87%E5%8D%97\/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%8F%8A%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81%E6%8C%87%E5%8D%97\/",
+        "url" : "https:\/\/www.francisfu.net\/post\/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97\/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%8F%8A%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81%E6%8C%87%E5%8D%97\/",
         "wordCount" : "298",
         "genre" : [ ],
         "keywords" : [ ]
@@ -385,7 +385,7 @@
           <li class="nav__list-item">
             <a
               
-              href="/doc/"
+              href="/series/"
               
               title=""
               >合辑</a
@@ -574,10 +574,10 @@
 <h3>系列阅读</h3>
 <ul>
   
-    <li><a href="/post/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E6%8C%87%E5%8D%97/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%8F%8A%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81%E6%8C%87%E5%8D%97/">Hugo搭建静态页面及自动推送指南</a></li>
+    <li><a href="/post/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%8F%8A%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81%E6%8C%87%E5%8D%97/">Hugo搭建静态页面及自动推送指南</a></li>
 
   
-    <li><a href="/post/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E6%8C%87%E5%8D%97/hugo-anatole%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/">Hugo/Anatole语法参考</a></li>
+    <li><a href="/post/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo-anatole%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/">Hugo/Anatole语法参考</a></li>
 
   
 </ul>

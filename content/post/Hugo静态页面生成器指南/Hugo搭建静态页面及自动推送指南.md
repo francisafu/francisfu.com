@@ -4,7 +4,7 @@ toc: false
 authors:
   - Francis Fu
 series:
-  - Hugo Manual
+  - Hugo静态页面生成器指南
 date: '2022-09-10'
 math: true
 draft: false

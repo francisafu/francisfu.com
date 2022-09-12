@@ -4,7 +4,7 @@ toc: false
 authors:
   - Francis Fu
 series:
-  - Hugo Manual
+  - Hugo静态页面生成器指南
 date: '2022-09-09'
 math: true
 draft: false
@@ -205,7 +205,7 @@ Anatole支持渲染文章标题图，需要在Front Matter中加入：`thumbnail
 
 Anatole支持三种通知类型如下。
 
-### 关于
+### 信息
 
 {{< notice info >}}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
