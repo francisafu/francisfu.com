@@ -6,73 +6,11 @@
     <description>Recent content in Posts on CRuffians</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 15 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.francisfu.net/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>PHP开发环境配置</title>
-      <link>https://www.francisfu.net/post/php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.francisfu.net/post/php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
-      
-        <description>&lt;p&gt;最近因为手上的一些WEB项目，重新开始使用PHP进行开发。早年使用PHP时一般用XAMPP+VSCode配置简易环境，最近项目体量较大，再加上涉及到多版本切换问题，于是配置了一套PHPStorm+PHPStudy的开发环境，在此对配置过程进行记录。&lt;/p&gt;
-&lt;h2 id=&#34;1-演示环境&#34;&gt;1. 演示环境&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Windows 11 专业版 21H2 x64&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.xp.cn/&#34;&gt;PHPStudy(小皮面板) 8.1.1.3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jetbrains.com/&#34;&gt;PHPStorm 2022.2.3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;PHP 7.4.3 nts&lt;/li&gt;
-&lt;li&gt;XDebug 3.0.4&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;2-软件安装&#34;&gt;2. 软件安装&lt;/h2&gt;
-&lt;p&gt;下载安装软件后设置好相关属性配置即可。启动服务器（我选择用Nginx），访问localhost，如出现PHPStudy界面，则一切正常。&lt;/p&gt;
-&lt;p&gt;之后，在PHPStudy安装目录下的WEB路径中建立站点文件夹，用来存放网站文件。对应站点链接为：localhost/路径名&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/files.png&#34; alt=&#34;files&#34;&gt;&lt;/p&gt;
-&lt;p&gt;建议在WEB路径下存放一个phpinfo.php文件，内容为&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;phpinfo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;通过localhost/phpinfo.php访问，用以查看当前环境的phpinfo。&lt;/p&gt;
-&lt;p&gt;再从&lt;a href=&#34;https://www.phpmyadmin.net/&#34;&gt;官网&lt;/a&gt;下载phpmyadmin，将放置在WEB路径中，通过localhost/phpmyadmin访问。如果是在开发环境，可以将&lt;code&gt;config.sample.inc.php&lt;/code&gt;文件重命名为&lt;code&gt;config.inc.php&lt;/code&gt;，并添加如下代码实现自动登录：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$cfg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Servers&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;auth_type&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;config&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$cfg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Servers&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;host&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;数据库服务器&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$cfg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Servers&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;数据库用户名&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$cfg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Servers&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;password&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;数据库密码&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之后在&lt;a href=&#34;https://xdebug.org/&#34;&gt;官网&lt;/a&gt;下载正确版本的XDebug，复制到PHPStudy对应的php-cli目录下的ext目录中，在php.ini文件后进行配置。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[Xdebug]
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;zend_extension=路径/php_xdebug.dll
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.idekey = PHPSTORM
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.mode = develop,debug
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.discover_client_host=true
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.remote_cookie_expire_time = 3600
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.client_port=9000
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.client_host=&amp;#34;localhost&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.start_with_request=yes
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.remote_handler = &amp;#34;dbgp&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.var_display_max_depth = 15
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.var_display_max_data  = 2048
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;最后一步，在你需要调试的浏览器上安装&lt;a href=&#34;https://www.jetbrains.com/help/phpstorm/browser-debugging-extensions.html&#34;&gt;XDebug Helper&lt;/a&gt;插件，配置其idekey为“PHPSTORM”。&lt;/p&gt;
-&lt;p&gt;大功告成！重启WNMP环境！&lt;/p&gt;
-&lt;h2 id=&#34;3-配置phpstorm&#34;&gt;3. 配置PHPStorm&lt;/h2&gt;
-&lt;p&gt;打开PHPStorm并载入项目，点击 &lt;strong&gt;文件——设置&lt;/strong&gt; ，点击左侧的 &lt;strong&gt;PHP&lt;/strong&gt; 板块，设置对应的PHP版本和解释器。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/phpcli.png&#34; alt=&#34;phpcli&#34;&gt;&lt;/p&gt;
-&lt;p&gt;之后在左侧选择PHP板块下方的 &lt;strong&gt;调试&lt;/strong&gt; 板块，将 &lt;strong&gt;Xdebug——调试端口&lt;/strong&gt; 设置为“9000”。点击展开左侧调试板块，选择下方的 &lt;strong&gt;DBGp代理&lt;/strong&gt; 板块，配置IDE键，主机和端口。上述信息需要与php.ini中的信息保持一致。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/dbgp.png&#34; alt=&#34;dbgp&#34;&gt;&lt;/p&gt;
-&lt;p&gt;最后选择左侧的 &lt;strong&gt;服务器&lt;/strong&gt; 板块，点击加号添加一个服务器，名称随便起，主机填写PHPStudy站点根路径，点击 &lt;strong&gt;应用——确定&lt;/strong&gt; 进行保存。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/server.png&#34; alt=&#34;server&#34;&gt;&lt;/p&gt;
-&lt;p&gt;接下来在菜单栏中依次展开 &lt;strong&gt;工具——部署——配置&lt;/strong&gt; 点击加号新增服务器，选择 &lt;strong&gt;本地或挂载文件夹&lt;/strong&gt; ，文件夹处选取项目目录，URL处填写站点地址，确定保存。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/deploy.png&#34; alt=&#34;deploy&#34;&gt;&lt;/p&gt;
-&lt;p&gt;然后在PHPStorm界面右上角 &lt;strong&gt;当前文件&lt;/strong&gt; 处点击，选择 &lt;strong&gt;编辑配置&lt;/strong&gt; ，加号新增配置，下拉列表中选择 &lt;strong&gt;PHP网页&lt;/strong&gt; 。名称随便填，服务器选择前面设置好的，起始URL填写网站根路径，浏览器根据需要用来调试的浏览器进行选择。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/debug.png&#34; alt=&#34;debug&#34;&gt;&lt;/p&gt;
-&lt;p&gt;下方 &lt;strong&gt;调试预配置&lt;/strong&gt; 区有个蓝色高亮的 &lt;strong&gt;验证&lt;/strong&gt; 字样，点击它，在弹出的验证对话框中核对设置，无误点击 &lt;strong&gt;验证&lt;/strong&gt; ，如验证通过可关闭此对话框并保存配置。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/verify.png&#34; alt=&#34;verify&#34;&gt;&lt;/p&gt;
-&lt;p&gt;全部配置好之后，打个断点测试一下，可以愉快的开始调试了！&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/test.png&#34; alt=&#34;test&#34;&gt;&lt;/p&gt;</description>
-      
-    </item>
-    
+    <lastBuildDate>Thu, 20 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.francisfu.net/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>装修笔记（二）定制篇</title>
       <link>https://www.francisfu.net/post/%E6%88%BF%E5%B1%8B%E8%A3%85%E4%BF%AE%E7%AC%94%E8%AE%B0/%E8%A3%85%E4%BF%AE%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%AE%9A%E5%88%B6%E7%AF%87/</link>
-      <pubDate>Fri, 30 Sep 2022 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.francisfu.net/post/%E6%88%BF%E5%B1%8B%E8%A3%85%E4%BF%AE%E7%AC%94%E8%AE%B0/%E8%A3%85%E4%BF%AE%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%AE%9A%E5%88%B6%E7%AF%87/</guid>
       
@@ -174,6 +112,68 @@
 &lt;center&gt;洗衣机台面&lt;/center&gt;
 &lt;h2 id=&#34;6-甲醛问题&#34;&gt;6. 甲醛问题&lt;/h2&gt;
 &lt;p&gt;我没有测甲醛含量，因为现在只是定制柜安装好了，家具还都没有安装呢。我计划在全部装修完毕后再去测一下总体甲醛含量。总的而言，从直观嗅觉上去感受的话，全友这个生态板是基本没有什么味道的，甚至凑近了闻也闻不出味道来。当然话说回来，甲醛含量和气味大小并不成正比，我没有武断地说它的甲醛含量就一定小，我只是客观的描述一下基本闻不到什么气味的客观事实。好了，本文就到此为止了，敬请期待下一篇——电器篇！&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>PHP开发环境配置</title>
+      <link>https://www.francisfu.net/post/php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.francisfu.net/post/php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      
+        <description>&lt;p&gt;最近因为手上的一些WEB项目，重新开始使用PHP进行开发。早年使用PHP时一般用XAMPP+VSCode配置简易环境，最近项目体量较大，再加上涉及到多版本切换问题，于是配置了一套PHPStorm+PHPStudy的开发环境，在此对配置过程进行记录。&lt;/p&gt;
+&lt;h2 id=&#34;1-演示环境&#34;&gt;1. 演示环境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows 11 专业版 21H2 x64&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.xp.cn/&#34;&gt;PHPStudy(小皮面板) 8.1.1.3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.jetbrains.com/&#34;&gt;PHPStorm 2022.2.3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;PHP 7.4.3 nts&lt;/li&gt;
+&lt;li&gt;XDebug 3.0.4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-软件安装&#34;&gt;2. 软件安装&lt;/h2&gt;
+&lt;p&gt;下载安装软件后设置好相关属性配置即可。启动服务器（我选择用Nginx），访问localhost，如出现PHPStudy界面，则一切正常。&lt;/p&gt;
+&lt;p&gt;之后，在PHPStudy安装目录下的WEB路径中建立站点文件夹，用来存放网站文件。对应站点链接为：localhost/路径名&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/files.png&#34; alt=&#34;files&#34;&gt;&lt;/p&gt;
+&lt;p&gt;建议在WEB路径下存放一个phpinfo.php文件，内容为&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;phpinfo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;通过localhost/phpinfo.php访问，用以查看当前环境的phpinfo。&lt;/p&gt;
+&lt;p&gt;再从&lt;a href=&#34;https://www.phpmyadmin.net/&#34;&gt;官网&lt;/a&gt;下载phpmyadmin，将放置在WEB路径中，通过localhost/phpmyadmin访问。如果是在开发环境，可以将&lt;code&gt;config.sample.inc.php&lt;/code&gt;文件重命名为&lt;code&gt;config.inc.php&lt;/code&gt;，并添加如下代码实现自动登录：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$cfg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Servers&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;auth_type&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;config&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$cfg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Servers&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;host&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;数据库服务器&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$cfg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Servers&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;数据库用户名&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$cfg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Servers&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;password&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;数据库密码&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之后在&lt;a href=&#34;https://xdebug.org/&#34;&gt;官网&lt;/a&gt;下载正确版本的XDebug，复制到PHPStudy对应的php-cli目录下的ext目录中，在php.ini文件后进行配置。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[Xdebug]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;zend_extension=路径/php_xdebug.dll
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.idekey = PHPSTORM
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.mode = develop,debug
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.discover_client_host=true
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.remote_cookie_expire_time = 3600
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.client_port=9000
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.client_host=&amp;#34;localhost&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.start_with_request=yes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.remote_handler = &amp;#34;dbgp&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.var_display_max_depth = 15
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.var_display_max_data  = 2048
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;最后一步，在你需要调试的浏览器上安装&lt;a href=&#34;https://www.jetbrains.com/help/phpstorm/browser-debugging-extensions.html&#34;&gt;XDebug Helper&lt;/a&gt;插件，配置其idekey为“PHPSTORM”。&lt;/p&gt;
+&lt;p&gt;大功告成！重启WNMP环境！&lt;/p&gt;
+&lt;h2 id=&#34;3-配置phpstorm&#34;&gt;3. 配置PHPStorm&lt;/h2&gt;
+&lt;p&gt;打开PHPStorm并载入项目，点击 &lt;strong&gt;文件——设置&lt;/strong&gt; ，点击左侧的 &lt;strong&gt;PHP&lt;/strong&gt; 板块，设置对应的PHP版本和解释器。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/phpcli.png&#34; alt=&#34;phpcli&#34;&gt;&lt;/p&gt;
+&lt;p&gt;之后在左侧选择PHP板块下方的 &lt;strong&gt;调试&lt;/strong&gt; 板块，将 &lt;strong&gt;Xdebug——调试端口&lt;/strong&gt; 设置为“9000”。点击展开左侧调试板块，选择下方的 &lt;strong&gt;DBGp代理&lt;/strong&gt; 板块，配置IDE键，主机和端口。上述信息需要与php.ini中的信息保持一致。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/dbgp.png&#34; alt=&#34;dbgp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;最后选择左侧的 &lt;strong&gt;服务器&lt;/strong&gt; 板块，点击加号添加一个服务器，名称随便起，主机填写PHPStudy站点根路径，点击 &lt;strong&gt;应用——确定&lt;/strong&gt; 进行保存。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/server.png&#34; alt=&#34;server&#34;&gt;&lt;/p&gt;
+&lt;p&gt;接下来在菜单栏中依次展开 &lt;strong&gt;工具——部署——配置&lt;/strong&gt; 点击加号新增服务器，选择 &lt;strong&gt;本地或挂载文件夹&lt;/strong&gt; ，文件夹处选取项目目录，URL处填写站点地址，确定保存。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/deploy.png&#34; alt=&#34;deploy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后在PHPStorm界面右上角 &lt;strong&gt;当前文件&lt;/strong&gt; 处点击，选择 &lt;strong&gt;编辑配置&lt;/strong&gt; ，加号新增配置，下拉列表中选择 &lt;strong&gt;PHP网页&lt;/strong&gt; 。名称随便填，服务器选择前面设置好的，起始URL填写网站根路径，浏览器根据需要用来调试的浏览器进行选择。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/debug.png&#34; alt=&#34;debug&#34;&gt;&lt;/p&gt;
+&lt;p&gt;下方 &lt;strong&gt;调试预配置&lt;/strong&gt; 区有个蓝色高亮的 &lt;strong&gt;验证&lt;/strong&gt; 字样，点击它，在弹出的验证对话框中核对设置，无误点击 &lt;strong&gt;验证&lt;/strong&gt; ，如验证通过可关闭此对话框并保存配置。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/verify.png&#34; alt=&#34;verify&#34;&gt;&lt;/p&gt;
+&lt;p&gt;全部配置好之后，打个断点测试一下，可以愉快的开始调试了！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/test.png&#34; alt=&#34;test&#34;&gt;&lt;/p&gt;</description>
       
     </item>
     
