@@ -7,9 +7,6 @@
 ><head>
   <title>
     
-      
-        Hugo静态页面生成器指南 |
-
       Francis Fu
 
   </title>
@@ -93,10 +90,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
 
-  <link rel="canonical" href="https://www.francisfu.net/series/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/" />
+  <link rel="canonical" href="https://www.francisfu.net/" />
 
   
-  <link rel="alternate" type="application/rss+xml" href="/series/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/index.xml" title="CRuffians" />
+  <link rel="alternate" type="application/rss+xml" href="/index.xml" title="CRuffians" />
 
 
   
@@ -133,22 +130,34 @@
   <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.francisfu.net/images/icon.png"/>
 
-<meta name="twitter:title" content="Hugo静态页面生成器指南"/>
+<meta name="twitter:title" content=""/>
 <meta name="twitter:description" content="The Less You Know, The Further You Go."/>
 
 
 
   
-  <meta property="og:title" content="Hugo静态页面生成器指南" />
+  <meta property="og:title" content="" />
 <meta property="og:description" content="The Less You Know, The Further You Go." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.francisfu.net/series/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/" /><meta property="og:image" content="https://www.francisfu.net/images/icon.png"/><meta property="og:site_name" content="CRuffians" />
+<meta property="og:url" content="https://www.francisfu.net/" /><meta property="og:image" content="https://www.francisfu.net/images/icon.png"/><meta property="og:site_name" content="CRuffians" />
 
 
 
 
   
-  
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "CRuffians",
+      "url": "https:\/\/www.francisfu.net",
+      "description": "The Less You Know, The Further You Go.",
+      "thumbnailUrl": "https:\/\/www.francisfu.net",
+      "license": "Francis Fu 2017-{{ YEAR }}"
+    }
+  </script>
+
+
 
 </head>
 <body
@@ -177,9 +186,9 @@
         alt="profile picture"
       />
       
-        <div class="sidebar__introduction-title">
+        <h1 class="sidebar__introduction-title">
           <a href="/">CRuffians</a>
-        </div>
+        </h1>
 
       
       <div class="sidebar__introduction-description">
@@ -289,6 +298,9 @@
           <li class="nav__list-item">
             <a
               
+                class="nav__link--active"
+
+              
               href="/"
               
               title=""
@@ -350,53 +362,115 @@
 </div>
 </header>
   <div
-    class="archive 
+    class="post 
       animated fadeInDown
 
     "
   >
-    
-      <div class="archive__heading">2022</div>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            <a class="archive__list-title" href="/post/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%8F%8A%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81%E6%8C%87%E5%8D%97/" title="Hugo搭建静态页面及自动推送指南">Hugo搭建静态页面及自动推送指南</a>
-            <div class="archive__list-date">
-              
-                
-                  2022.09.10
+    <div class="post__content">
+      <!--
+This file is left intentionally empty by default to be backwards compatible with the initial theme setup.
 
+Although the theme has advanced a little bit and it now allows to specify the content on the main page (even if the list of posts/articles is not intended).
+This can be:
+- with the list of posts/articles (default: `mainSections = ["post"]) or
+- without the list of posts/articles (by setting `mainSections = [""]`)
 
-                
+Markdown supported, ie:
 
+```
+# Welcome
 
-              
-            </div>
-          </li>
-        </ul>
+- Hugo 🚀
+- Hugo theme 🚀
 
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            <a class="archive__list-title" href="/post/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo-anatole%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/" title="Hugo/Anatole语法参考">Hugo/Anatole语法参考</a>
-            <div class="archive__list-date">
-              
-                
-                  2022.09.09
+Don't forget to check the README.md file!
+```
 
-
-                
-
-
-              
-            </div>
-          </li>
-        </ul>
-
-      
-
+Remember that you can also specify a section header for the posts below by configuring the `mainSectionsTitle` parameter in the front matter of this file.
+-->
+    </div>
 
     
+  </div>
+
+  
+
+  
+  
+    <div
+      class="post 
+        animated fadeInDown
+
+      "
+    >
+      
+      <div class="post__content">
+        <h3><a href="/post/%E6%88%BF%E5%B1%8B%E8%A3%85%E4%BF%AE%E7%AC%94%E8%AE%B0/%E8%A3%85%E4%BF%AE%E7%AC%94%E8%AE%B0%E4%B8%89%E5%AE%B6%E7%94%B5%E7%AF%87/">装修笔记（三）家电篇</a></h3>
+        
+          <p>本文主要是想分享一下我在家电选购时的一些心得体会，以及部分我找到的低价渠道。</p>
+
+        
+        <a href="/post/%E6%88%BF%E5%B1%8B%E8%A3%85%E4%BF%AE%E7%AC%94%E8%AE%B0/%E8%A3%85%E4%BF%AE%E7%AC%94%E8%AE%B0%E4%B8%89%E5%AE%B6%E7%94%B5%E7%AF%87/">继续阅读</a></div>
+
+      
+      <div class="post__footer">
+        <em class="fas fa-calendar-day"></em>
+        <span class="post__footer-date"
+          >
+            
+              0001.01.01
+
+
+            
+
+
+          </span
+        >
+        
+
+        
+      </div>
+    </div>
+
+  
+  <div class="pagination">
+    
+  <ul class="pagination__list">
+    
+    
+    
+      <li class="pagination__list-item">
+        <a class="page-link" href="/">
+          <i class="fa fa-angle-left" aria-label="Previous"></i>
+        </a>
+      </li>
+
+    
+    
+      
+        <li class="pagination__list-item">
+          <a class="page-link" href="/">1</a>
+        </li>
+
+      
+
+
+    
+      
+        <li class="pagination__list-item">
+          <span class="page-link current">2</span>
+        </li>
+
+      
+
+
+    
+    
+  </ul>
+
+
+
   </div>
 
 
