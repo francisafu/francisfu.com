@@ -3,6 +3,8 @@ title: Windows10装机指南
 toc: false
 authors:
   - Francis Fu
+series:
+  - PC那点事儿
 date: '2020-11-17'
 draft: false
 ---

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PC那点事儿 on CRuffians</title>
+    <link>https://www.francisfu.net/series/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/</link>
+    <description>Recent content in PC那点事儿 on CRuffians</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.francisfu.net/series/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows10装机指南</title>
+      <link>https://www.francisfu.net/post/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/windows10%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.francisfu.net/post/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/windows10%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97/</guid>
+      
+        <description>&lt;p&gt;Windows10到现在也已经来到了20H2版本，随着系统和安装工具的更新，在这里我也更新一下三年前这篇教程，重新给大家介绍一下Windows10装机的全过程。&lt;/p&gt;
+&lt;h2 id=&#34;1准备工作&#34;&gt;1.准备工作&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;虽然我个人觉得并无必要，但是我想了一下，还是要提醒下准备装机的朋友：&lt;br&gt;
+在安装系统之前，一定要备份数据。&lt;br&gt;
+如果你正在使用Windows7，请将系统盘&lt;strong&gt;所在硬盘&lt;/strong&gt;有用数据备份；如果正在使用Windows10，请将系统盘&lt;strong&gt;分区&lt;/strong&gt;有用数据备份。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;首先，要下载系统镜像制作启动U盘。点击&lt;a href=&#34;https://www.microsoft.com/zh-cn/software-download/windows10&#34;&gt;这个页面&lt;/a&gt;中的
+「立即下载工具」下载Windows10媒体创建工具，你会得到一个「MediaCreationTool」。&lt;br&gt;
+接下来就是打开这个工具。我比较推荐的选项是：「为另一台电脑创建安装介质」—— 默认 ——「ISO文件」。&lt;br&gt;
+这样你将会得到一个Windows10的ISO镜像。一般我们下载64位Windows10这个版本。&lt;br&gt;
+第二步是在&lt;a href=&#34;http://rufus.ie/&#34;&gt;这个页面&lt;/a&gt;下载Rufus Portable，一款开源的免费启动盘制作工具。&lt;br&gt;
+感谢它的作者Pete Batard开发出功能强大的Rufus并将它无私的开源。&lt;br&gt;
+打开Rufus之前请在电脑上插入要作为启动盘的U盘。必须保证8G以上，而且是空U盘，因为下一步会将其格式化。&lt;br&gt;
+打开Rufus后会自动检测USB设备，如果你插有多个U盘，
+一定注意不要弄错了盘符避免误删重要数据。&lt;br&gt;
+引导类型选择默认的「镜像文件」，点击右侧的「选择」，找到并选择前面下载的Windows10 ISO镜像。&lt;br&gt;
+「分区类型」一栏应选择「GPT」，「目标系统类型」选择「UEFI」，然后单击下面「开始」执行操作。&lt;br&gt;
+待上述操作结束后，关闭Rufus，你就拥有了一个Windows10启动盘。至此，你已经完成了所有的准备工作，可以开始装机了。&lt;/p&gt;
+&lt;h2 id=&#34;2装机进程&#34;&gt;2.装机进程&lt;/h2&gt;
+&lt;h3 id=&#34;21-引导设置&#34;&gt;2.1 引导设置&lt;/h3&gt;
+&lt;p&gt;一般来说我们大部分人的电脑默认都是「光驱——硬盘——USB」这样的引导顺序。所以在使用U盘重装系统时必须先修改BIOS，设置为U盘在硬盘之前的引导顺序。&lt;br&gt;
+进BIOS的方法，Legacy（Win7）和UEFI（Win10）引导模式是不同的。由于Win7用户较少，在此不多赘述，可以自行上网搜索，下面我将讲解下Win10如何进入BIOS。&lt;br&gt;
+首先点击桌面左下角的「开始」图标，点击「设置」，选择「系统更新与安全」。&lt;br&gt;
+选择「恢复」-「立即重新启动」，重启电脑进入高级设置。&lt;br&gt;
+选择下方的「疑难解答」，进入后点击「高级选项」。&lt;br&gt;
+选择最后的「UEFI固件设置」进入后，点击「重启」。&lt;br&gt;
+等待电脑重启后就进入bios可以进行设置了。重启之前首先要插入刚刚制作好的启动U盘。&lt;br&gt;
+进入BIOS后只需将U盘引导设置为第一顺位即可，无需做其他更改，保存并退出重启。
+这部分如果有不太明确的，可以看这个&lt;a href=&#34;https://jingyan.baidu.com/article/fdffd1f88f589ff3e98ca1da.html&#34;&gt;图文链接&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;22-分区方案&#34;&gt;2.2 分区方案&lt;/h3&gt;
+&lt;h4 id=&#34;221-修改分区表&#34;&gt;2.2.1 修改分区表&lt;/h4&gt;
+&lt;p&gt;此部分内容仅适用于Windows7以及其他使用MBR分区方案升级Windows10时使用。已经采用GPT方案的（如大部分Win10）可以&lt;strong&gt;直接略过&lt;/strong&gt;。&lt;br&gt;
+在进入装机界面后，如果使用MBR分区方案，会发现无论哪个分区都显示无法安装系统。&lt;br&gt;
+这时候在键盘上按下「Shift+F10」，调出命令行，依次输入以下命令。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;diskpart
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;list disk
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;:: 找到上一命令执行后回显结果中，待安装系统的磁盘的编号。  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;:: 可以用磁盘空间大小分辨，假设为第0号
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;select disk 0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;clean
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;convert gpt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;完成后关闭命令行，并且关闭安装进程，重启电脑并重新开始安装过程。&lt;br&gt;
+此时可以看到硬盘分区表已经重建，可以正常进入安装系统过程。&lt;/p&gt;
+&lt;h4 id=&#34;22-格式化分区&#34;&gt;2.2. 格式化分区&lt;/h4&gt;
+&lt;p&gt;如果你的电脑在重装之前已经存在系统，那么在安装开始之前，Win10安装程序会询问你是需要 「升级旧系统」还是「全新安装系统」。&lt;br&gt;
+我个人建议选择重新安装而不是升级，因为升级旧系统这个功能我认为微软开发的并不是很易用。&lt;br&gt;
+在选择系统分区界面可以使用「新建」和「格式化」功能建立分区。注意建立分区时输入的数值单位是MB，如按照GB计算需要乘1024转换。&lt;br&gt;
+比如需要建立100GB分区则为100x1024=102400MB。C盘建议大小为100-120GB。分区结束后即可安装系统。&lt;/p&gt;
+&lt;h3 id=&#34;23-系统激活&#34;&gt;2.3 系统激活&lt;/h3&gt;
+&lt;p&gt;一般来说我们装机都是选用64位Windows10专业版进行安装。家庭版在功能上有缩水，并不推荐。&lt;br&gt;
+原则上我们的安装过程到这里已经结束了，后面一直「下一步」就行。还有一些是用户自定义设置例如用户名、密码等，无需赘述。&lt;br&gt;
+需要注意的是安装过程中会要求输入序列号。序列号的话，家庭版市售价888元，购买后可以在Win10商城里以488元的价格升级专业版。建议购买正版。&lt;br&gt;
+&lt;strong&gt;注意！！下述内容仅供学习交流、经验分享之用，切勿用于实践！！
+本文作者不对任何在阅读本文之后进行的违反《中华人民共和国著作权法》、《计算机软件保护条例》等相关法律的行为承担直接或者连带责任！！&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;其他获得序列号的途径还有X宝，直接搜索「Win10序列号」，10-20元就可以买到。不用担心不能用，都是真的。&lt;br&gt;
+它们只不过是厂家专用版的而已，不是个人零售版的，但是实际二者没有区别。解释起来比较复杂，放心用就好。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;3收尾工作&#34;&gt;3.收尾工作&lt;/h2&gt;
+&lt;h3 id=&#34;31-驱动程序&#34;&gt;3.1 驱动程序&lt;/h3&gt;
+&lt;p&gt;经历前面的步骤我们的电脑已经基本可以使用了。但是如果不安装驱动程序的话可能某些组件无法正常工作，最常见的就是显卡了。&lt;br&gt;
+那么关于驱动程序应当如何安装，这里我讲两个方法。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从官方网站上安装。&lt;br&gt;
+很多OEM厂商提供官方的驱动程序安装源，如联想、戴尔、华硕等传统大厂和微星、雷神等新派游戏本厂。&lt;br&gt;
+你只需要下载所有的对应型号和对应系统的驱动程序包然后依次安装。有的厂商提供驱动下载器，你也只需按要求操作即可。&lt;br&gt;
+建议这样安装后校验驱动如果没有问题，将安装包或下载器保存起来以便下一次重装系统时用。校验方法见下文。&lt;/li&gt;
+&lt;li&gt;从第三方驱动软件里下载。&lt;br&gt;
+市面上常见的第三方驱动管理有驱动精灵、驱动大师、百度腾讯360旗下的产品等。这些软件操作容易，傻瓜化安装很方便。&lt;br&gt;
+但我并不推荐作为首选，因为他们的原理是识别并匹配你计算机的硬件，然后提供对应的驱动。这种途径不如从官网上下载“稳妥”。&lt;br&gt;
+我个人最推荐的是驱动精灵，尤其喜欢它的「万能网卡版」，解决重装系统时缺少网卡驱动十分顺手，建议常备。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最重要的一点是，无论用哪种途径安装驱动，一定记得：&lt;br&gt;
+&lt;strong&gt;要先安装集成显卡驱动再安装独立显卡驱动！！&lt;/strong&gt;&lt;br&gt;
+尤其在使用自动化工具时很容易忽视这一点。第二点我想强调的是：&lt;br&gt;
+&lt;strong&gt;一定要去英伟达或AMD官网下载独显驱动！！&lt;/strong&gt;&lt;br&gt;
+无论用厂商提供的驱动还是第三方提供的驱动，都不要用他的独显驱动，要从英伟达或者AMD的官网下载。&lt;br&gt;
+英伟达显卡用户&lt;a href=&#34;https://www.nvidia.cn/geforce/geforce-experience/&#34;&gt;在这里&lt;/a&gt;下载GeForce Experience。&lt;br&gt;
+AMD显卡用户&lt;a href=&#34;https://www.amd.com/zh-hans/support&#34;&gt;在这里&lt;/a&gt;下载AMD Adrenalin。&lt;br&gt;
+使用这两款软件可以下载自己电脑显卡对应的最新驱动。
+安装好驱动之后可以在「此电脑」上&lt;em&gt;右键——管理——设备管理器&lt;/em&gt; 中校验驱动情况，如果全部正常安装没有缺失，&lt;br&gt;
+就不会显示错误。如果有问题会在对应的设备左下角显示一个黄色感叹号，提示缺少驱动。&lt;/p&gt;
+&lt;h3 id=&#34;32-系统设置&#34;&gt;3.2 系统设置&lt;/h3&gt;
+&lt;h4 id=&#34;321-桌面设置&#34;&gt;3.2.1 桌面设置&lt;/h4&gt;
+&lt;p&gt;进入系统之后第一件事应该是调整画面和显示的相关设置。目前Windows10通常可以较好的识别并匹配屏幕分辨率。&lt;br&gt;
+如果分辨率有误，桌面上&lt;em&gt;右键——显示设置&lt;/em&gt;可以调整分辨率和文字大小。在 &lt;em&gt;个性化——主题——桌面图标设置&lt;/em&gt;
+里面可以选择需要出现在桌面上的系统图标。左下角「开始」图标旁边可以看到Win10最强大的助手：Cortana。&lt;br&gt;
+我想说如果你用她的频率很高那可以保留，如果你像我一样不常使用她，不妨在任务栏上 &lt;em&gt;右键——Cortana——隐藏&lt;/em&gt; 。&lt;br&gt;
+如果不喜欢长长的搜索框，也可以在任务栏上 &lt;em&gt;右键——搜索——隐藏&lt;/em&gt; 。
+这样能让你的任务栏看起来更整洁。随便打开一个文件夹，在工具栏里面勾选「文件扩展名」和「隐藏的项目」，有利于日常反病毒。&lt;br&gt;
+左边资源管理器里面有一栏「快速访问」，右键点击它——选项 取消「隐私」栏目里面的两个对勾，点击「清除」删除历史记录。这样有利于个人隐私的保护。同时，在对话框最上方有一个「打开文件资源管理器时打开」，建议设置为「此电脑」，比较符合国人的使用习惯。&lt;/p&gt;
+&lt;h4 id=&#34;322-高级设置&#34;&gt;3.2.2 高级设置&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;下面的设置较为高级，有一定计算机基础的朋友可以尝试。&lt;/strong&gt;&lt;br&gt;
+我一般会通过缩小系统文件的方式给C盘“瘦身”。如果你开启了“显示系统隐藏文件”，在C盘中你会看到两个大文件：pagefile.sys和hiberfil.sys。&lt;br&gt;
+前者是系统的分页文件，即虚拟内存，是用于弥补物理内存可能出现的不足情况设置的，其大小可达到物理内存的一至二倍。&lt;br&gt;
+后者是休眠文件，由于Windows系统休眠时内存不工作，故需要将休眠文件转存到硬盘中，下次热启动时直接读取。其大小一般等同于或略大于物理内存。&lt;br&gt;
+以我的电脑为例，物理内存16G，pagefile.sys 20G，hiberfil.sys 16G。我C盘110G的空间被这两个文件占用了36G。&lt;br&gt;
+“瘦身”方法也很简单，打开开始菜单，直接输入「cmd」，在搜索到的「命令提示符」上右键——以管理员身份运行 ，输入命令：&lt;br&gt;
+&lt;code&gt;powercfg -h off&lt;/code&gt;&lt;br&gt;
+并回车确认。这条命令的作用是关闭休眠服务。其结果可能会导致耗电量较大，但如果你一直使用外接电源，那么这个方法可以节省C盘空间。&lt;br&gt;
+分页文件的处理相对复杂。打开一个文件夹，在左侧资源管理器中「此电脑」上&lt;em&gt;右键——属性——高级系统设置&lt;/em&gt;，&lt;br&gt;
+在弹出的设置窗口切换到&lt;em&gt;高级——性能设置——高级——虚拟内存更改&lt;/em&gt;。取消「自动管理所有驱动器分页文件大小」对勾去除，&lt;br&gt;
+选择C盘，自定义大小1024-2048。再选择任何一个空间较大的其他盘符，设置为「系统管理的大小」，然后&lt;em&gt;设置——确定&lt;/em&gt;。&lt;br&gt;
+执行完操作后重启计算机即可。&lt;/p&gt;
+&lt;h3 id=&#34;33-必备软件&#34;&gt;3.3 必备软件&lt;/h3&gt;
+&lt;h4 id=&#34;331-office&#34;&gt;3.3.1 Office&lt;/h4&gt;
+&lt;p&gt;终于大功告成了，到了最后一步，安装软件了。首先我们来安装Office。&lt;br&gt;
+订阅Office365一年只需要399元，如果你有edu结尾的邮箱还是免费的。能用正版还是尽量支持正版，我还是希望能有更多的人建立版权意识。&lt;br&gt;
+&lt;strong&gt;注意！！下述内容仅供学习交流、经验分享之用，切勿用于实践！！
+本文作者不对任何在阅读本文之后进行的违反《中华人民共和国著作权法》、《计算机软件保护条例》等相关法律的行为承担直接或者连带责任！！&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这里我给大家分享一个神器，叫「Office Tool Plus」，是由国人开发的强大Office辅助安装工具。&lt;br&gt;
+在&lt;a href=&#34;https://otp.landian.vip/zh-cn/&#34;&gt;官网&lt;/a&gt;可以下载软件，具体的操作不多赘述，可以参考&lt;a href=&#34;https://www.coolhub.top/archives/42&#34;&gt;这个教程&lt;/a&gt;，一步步完成部署、激活即可。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;332-装机必备&#34;&gt;3.3.2 装机必备&lt;/h4&gt;
+&lt;p&gt;在这里我给出一个我认为装机必备的简单软件列表。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adobe Acrobat&lt;/li&gt;
+&lt;li&gt;PotPlayer&lt;/li&gt;
+&lt;li&gt;7-Zip&lt;/li&gt;
+&lt;li&gt;微信PC版&lt;/li&gt;
+&lt;li&gt;Everything&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;4结语&#34;&gt;4.结语&lt;/h2&gt;
+&lt;p&gt;装机到此结束了。Enjoy it！&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

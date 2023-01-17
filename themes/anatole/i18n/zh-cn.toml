@@ -46,3 +46,6 @@ other = "更新"
 
 [series_posts]
 other = "系列阅读"
+
+[table_of_contents]
+other = "目录"

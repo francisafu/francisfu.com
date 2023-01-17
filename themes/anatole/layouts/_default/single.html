@@ -59,7 +59,7 @@
       {{- partial "expirationnote.html" . -}}
 
       {{- if (eq .Params.toc true) -}}
-        <h3>Table of Contents</h3>
+        <h3>{{ i18n "table_of_contents" }}</h3>
         {{ .TableOfContents }}
 
 
