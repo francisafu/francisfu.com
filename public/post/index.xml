@@ -6,7 +6,76 @@
     <description>Recent content in Posts on CRuffians</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 20 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.francisfu.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.francisfu.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker助力本地环境搭建</title>
+      <link>https://www.francisfu.net/post/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.francisfu.net/post/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      
+        <description>&lt;p&gt;我之前一直是在本机上搭建各种运行环境，包括VS、SQL SERVER、PHPStudy、NodeJS、Python等。听闻Docker for Windows现在已经很好用了，遂决定尝试一下，并将环境搭建和IDE配置流程在此做一记录。&lt;/p&gt;
+&lt;p&gt;我涉及到迁移到Docker的环境主要是三个：SQL SERVER、LNMP和NodeJS。C#开发环境我最常用，而且跟VS深度绑定，必须在本机安装。Python本身比较精简，本地安装也很方便，就不迁移到Docker上去了。本机系统环境为：Windows11专业版 21H2 x64开启HyperV功能，i7-1185G7开启硬件虚拟化，16GB内存。&lt;/p&gt;
+&lt;h2 id=&#34;1-安装docker&#34;&gt;1. 安装Docker&lt;/h2&gt;
+&lt;p&gt;首先在官网下载&lt;a href=&#34;https://www.docker.com/products/docker-desktop/&#34;&gt;Docker Desktop for Windows&lt;/a&gt;。Windows版的Docker支持两种后端技术方案：WSL2和HyperV。我个人建议使用WSL2作为后端。关于两种不同后端的系统要求和区别可以&lt;a href=&#34;https://docs.docker.com/desktop/install/windows-install/&#34;&gt;参考这里&lt;/a&gt;。下载的同时打开终端，依次输入下述两个指令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;wsl&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;-install&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;wsl&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;-update&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;安装并更新好WSL2后，打开安装包并安装Docker Desktop for Windows。安装好后，打开 &lt;em&gt;%UserProfile%/.docker/daemon.json&lt;/em&gt; 文件，在最后追加下面一段：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;#34;registry-mirrors&amp;#34;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;http://hub-mirror.c.163.com&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://registry.docker-cn.com&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;更换为国内镜像源。找到 &lt;em&gt;%UserProfile%/.wslconfig&lt;/em&gt; 文件，如没有此文件则需要建立一个，修改内容为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[wsl2]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;processors=2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;memory=4GB
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;swap=2GB
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中，processors是给虚拟机分配的核心数，默认和宿主机一样，这里我设置为两个（50%）。memory是虚拟机最大可以占用的内存，默认为50%总内存。我设置为4G（25%）。swap是虚拟机允许使用的最大交换空间，默认为25%总内存，我设置为2G（12.5%）。如果宿主机硬件资源丰富，也可以不设置这里。&lt;/p&gt;
+&lt;p&gt;之后就是双击启动Docker Desktop即可。&lt;/p&gt;
+&lt;h2 id=&#34;2-安装sql-server&#34;&gt;2. 安装SQL SERVER&lt;/h2&gt;
+&lt;p&gt;在Docker Hub中可以找到SQL SERVER的&lt;a href=&#34;https://hub.docker.com/_/microsoft-mssql-server&#34;&gt;官方镜像&lt;/a&gt;。启动Docker后，在终端中依次使用如下命令拉取镜像并创建容器：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;docker&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pull&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mcr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;microsoft&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;com&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mssql&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;server&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;2022&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;-latest&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;docker&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;run&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;ACCEPT_EULA=Y&amp;#34;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-e&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;SA_PASSWORD=@Qwe1234&amp;#34;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-p&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1433&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;1433&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;-memory&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;2000M&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;-name&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sqlserver&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-d&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mcr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;microsoft&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;com&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mssql&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;server&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;2022&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;-latest&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;返回Docker Desktop中可以看到已经拉取好的镜像和运行中的容器，镜像总大小为1.6G。&lt;/p&gt;
+&lt;p&gt;使用SSMS连接时，服务器名为localhost，用户名sa，密码为上边设置的@Qwe1234。&lt;/p&gt;
+&lt;h2 id=&#34;3-安装lnmp和nodejs&#34;&gt;3. 安装LNMP和NodeJS&lt;/h2&gt;
+&lt;p&gt;在这里我用了整整3天的时间。最开始我试图从GitHub或者DockerHub上找到合适的镜像，但是事实上经过很多次尝试后，我发现没有能使我用得称心如意的。无奈之下，我只能自己编写Dockerfile进行搭建。由于是初次接触Docker，查找资料反复尝试花费了很多时间和精力。所幸，最终结果很不错，成功的完成了一个LNMP和NodeJS的集成开发环境。项目已经开源，可以通过下方链接查看源码或者拉取镜像：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub：https://github.com/francisafu/DockerLNMP&lt;/li&gt;
+&lt;li&gt;DockerHub：https://hub.docker.com/r/francisafu/lnmp&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;镜像的具体参数和使用方法在ReadMe里都有进行详细阐述，在此就不过多赘述了。下文主要就PHP+XDebug环境配合IDEA+PHP插件进行开发做详细描述。网上很多文章提供的都是过时的信息，我自己在配置IDE的时候走了很多弯路，对配置过程做一个记录，也可以防止更多的人踩坑。&lt;/p&gt;
+&lt;h2 id=&#34;4-配置idea&#34;&gt;4. 配置IDEA&lt;/h2&gt;
+&lt;p&gt;软件前提：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;IntelliJ IDEA Ultimate 2022.3.1&lt;/li&gt;
+&lt;li&gt;插件：PHP&lt;/li&gt;
+&lt;li&gt;插件：PHP Docker&lt;/li&gt;
+&lt;li&gt;插件：PHP Remote Interpreter&lt;/li&gt;
+&lt;li&gt;插件：Chinese ​(Simplified)​ Language Pack / 中文语言包&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;运行Docker Desktop，按照GitHub上的指示拉取镜像并启动容器。打开PHPStorm，载入项目，点击 &lt;strong&gt;文件——设置&lt;/strong&gt; ，点击左侧的 &lt;strong&gt;构建、执行、部署&lt;/strong&gt; 板块，点击 &lt;strong&gt;Docker&lt;/strong&gt; 子版块，在右侧添加一个Docker进程。这一步除了起个名字外不需要任何设置，如添加成功，下方会提示“连接成功”。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/Docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/docker.png&#34; alt=&#34;docker&#34;&gt;&lt;/p&gt;
+&lt;p&gt;之后展开左侧的 &lt;strong&gt;语言和框架&lt;/strong&gt; 板块，点击 &lt;strong&gt;PHP&lt;/strong&gt; 子版块，在右侧 &lt;strong&gt;解释器&lt;/strong&gt; 处点击省略号，弹窗左上角点击加号，选择 &lt;strong&gt;From Docker, Vagrant, VM, WSL, Remote&lt;/strong&gt; 。选择 &lt;strong&gt;Docker&lt;/strong&gt; ，在服务器处选择刚刚建立的Docker进程，镜像名称下拉菜单里选择前面拉取的镜像，点击确定。经过程序分析，会自动显示镜像中的PHP解释器。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/Docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/dockercli.png&#34; alt=&#34;dockercli&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击确定后返回上一级菜单，在右侧 &lt;strong&gt;路径映射&lt;/strong&gt; 处点击文件夹图标，新增一个映射。由于在镜像中，web目录默认在/var/www下，我本地的路径是~/PHP，而项目目录结构是/test/index.php，所以我们要将本地的test目录映射到容器中（实际上默认已经是映射的，但是仍然需要在IDEA中手动配置一下）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/Docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/pathmapping.png&#34; alt=&#34;pathmapping&#34;&gt;&lt;/p&gt;
+&lt;p&gt;之后在左侧选择正下方的 &lt;strong&gt;服务器&lt;/strong&gt; 板块，新建一台服务器，主机名为localhost，做好路径映射如图。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/Docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/server.png&#34; alt=&#34;server&#34;&gt;&lt;/p&gt;
+&lt;p&gt;接再来在左侧点击PHP板块下方的 &lt;strong&gt;调试&lt;/strong&gt; 板块（不展开），在上方 &lt;strong&gt;预配置&lt;/strong&gt; 区域里，点击第三步中的红色小电话图标，点击后它将变为绿色，代表已经开始侦听PHP调试连接。这时再点击第一步中蓝色高亮的 &lt;strong&gt;验证&lt;/strong&gt; 字样，选择第二项“本地Web服务器或共享文件夹”，路径默认为项目根目录，URL填写项目URL，在我这里是“localhost/test”，点击下方的 &lt;strong&gt;验证&lt;/strong&gt; ，如验证通过可关闭此对话框并保存配置。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/Docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/verify.png&#34; alt=&#34;verify&#34;&gt;&lt;/p&gt;
+&lt;p&gt;之后关闭设置窗口。在IDE主界面右上角 &lt;strong&gt;当前文件&lt;/strong&gt; 处点击，选择 &lt;strong&gt;编辑配置&lt;/strong&gt; ，加号新增配置，下拉列表中选择 &lt;strong&gt;PHP网页&lt;/strong&gt; 。服务器选择前面设置好的，起始URL填写网站根路径，浏览器根据需要用来调试的浏览器进行选择。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/Docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/debug.png&#34; alt=&#34;debug&#34;&gt;&lt;/p&gt;
+&lt;p&gt;最后一步，在需要用来调试的浏览器上安装&lt;a href=&#34;https://www.jetbrains.com/help/phpstorm/browser-debugging-extensions.html&#34;&gt;XDebug Helper&lt;/a&gt;插件，配置其idekey为“PHPSTORM”。&lt;/p&gt;
+&lt;p&gt;全部配置好之后，就愉快的开始调试了。我们先进行一个测试。下图中的源码，启动侦听后点击右上角绿色箭头，可以看到网页直接显示了，断点没有生效。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/Docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/code.png&#34; alt=&#34;code&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在浏览器插件中启动Debug选项，重新运行网页文件，可以看到断点中断成功，调试信息正确显示。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/Docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/breakpoint.png&#34; alt=&#34;breakpoint&#34;&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>装修笔记（二）定制篇</title>
       <link>https://www.francisfu.net/post/%E6%88%BF%E5%B1%8B%E8%A3%85%E4%BF%AE%E7%AC%94%E8%AE%B0/%E8%A3%85%E4%BF%AE%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%AE%9A%E5%88%B6%E7%AF%87/</link>
@@ -113,68 +182,6 @@
 &lt;center&gt;洗衣机台面&lt;/center&gt;
 &lt;h2 id=&#34;6-甲醛问题&#34;&gt;6. 甲醛问题&lt;/h2&gt;
 &lt;p&gt;我没有测甲醛含量，因为现在只是定制柜安装好了，家具还都没有安装呢。我计划在全部装修完毕后再去测一下总体甲醛含量。总的而言，从直观嗅觉上去感受的话，全友这个生态板是基本没有什么味道的，甚至凑近了闻也闻不出味道来。当然话说回来，甲醛含量和气味大小并不成正比，我没有武断地说它的甲醛含量就一定小，我只是客观的描述一下基本闻不到什么气味的客观事实。好了，本文就到此为止了，敬请期待下一篇——电器篇！&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>PHP开发环境配置</title>
-      <link>https://www.francisfu.net/post/php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.francisfu.net/post/php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
-      
-        <description>&lt;p&gt;最近因为手上的一些WEB项目，重新开始使用PHP进行开发。早年使用PHP时一般用XAMPP+VSCode配置简易环境，最近项目体量较大，再加上涉及到多版本切换问题，于是配置了一套PHPStorm+PHPStudy的开发环境，在此对配置过程进行记录。&lt;/p&gt;
-&lt;h2 id=&#34;1-演示环境&#34;&gt;1. 演示环境&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Windows 11 专业版 21H2 x64&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.xp.cn/&#34;&gt;PHPStudy(小皮面板) 8.1.1.3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jetbrains.com/&#34;&gt;PHPStorm 2022.2.3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;PHP 7.4.3 nts&lt;/li&gt;
-&lt;li&gt;XDebug 3.0.4&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;2-软件安装&#34;&gt;2. 软件安装&lt;/h2&gt;
-&lt;p&gt;下载安装软件后设置好相关属性配置即可。启动服务器（我选择用Nginx），访问localhost，如出现PHPStudy界面，则一切正常。&lt;/p&gt;
-&lt;p&gt;之后，在PHPStudy安装目录下的WEB路径中建立站点文件夹，用来存放网站文件。对应站点链接为：localhost/路径名&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/files.png&#34; alt=&#34;files&#34;&gt;&lt;/p&gt;
-&lt;p&gt;建议在WEB路径下存放一个phpinfo.php文件，内容为&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;phpinfo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;通过localhost/phpinfo.php访问，用以查看当前环境的phpinfo。&lt;/p&gt;
-&lt;p&gt;再从&lt;a href=&#34;https://www.phpmyadmin.net/&#34;&gt;官网&lt;/a&gt;下载phpmyadmin，将放置在WEB路径中，通过localhost/phpmyadmin访问。如果是在开发环境，可以将&lt;code&gt;config.sample.inc.php&lt;/code&gt;文件重命名为&lt;code&gt;config.inc.php&lt;/code&gt;，并添加如下代码实现自动登录：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$cfg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Servers&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;auth_type&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;config&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$cfg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Servers&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;host&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;数据库服务器&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$cfg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Servers&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;数据库用户名&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$cfg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Servers&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;password&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;数据库密码&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之后在&lt;a href=&#34;https://xdebug.org/&#34;&gt;官网&lt;/a&gt;下载正确版本的XDebug，复制到PHPStudy对应的php-cli目录下的ext目录中，在php.ini文件后进行配置。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[Xdebug]
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;zend_extension=路径/php_xdebug.dll
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.idekey = PHPSTORM
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.mode = develop,debug
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.discover_client_host=true
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.remote_cookie_expire_time = 3600
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.client_port=9000
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.client_host=&amp;#34;localhost&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.start_with_request=yes
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.remote_handler = &amp;#34;dbgp&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.var_display_max_depth = 15
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdebug.var_display_max_data  = 2048
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;最后一步，在你需要调试的浏览器上安装&lt;a href=&#34;https://www.jetbrains.com/help/phpstorm/browser-debugging-extensions.html&#34;&gt;XDebug Helper&lt;/a&gt;插件，配置其idekey为“PHPSTORM”。&lt;/p&gt;
-&lt;p&gt;大功告成！重启WNMP环境！&lt;/p&gt;
-&lt;h2 id=&#34;3-配置phpstorm&#34;&gt;3. 配置PHPStorm&lt;/h2&gt;
-&lt;p&gt;打开PHPStorm并载入项目，点击 &lt;strong&gt;文件——设置&lt;/strong&gt; ，点击左侧的 &lt;strong&gt;PHP&lt;/strong&gt; 板块，设置对应的PHP版本和解释器。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/phpcli.png&#34; alt=&#34;phpcli&#34;&gt;&lt;/p&gt;
-&lt;p&gt;之后在左侧选择PHP板块下方的 &lt;strong&gt;调试&lt;/strong&gt; 板块，将 &lt;strong&gt;Xdebug——调试端口&lt;/strong&gt; 设置为“9000”。点击展开左侧调试板块，选择下方的 &lt;strong&gt;DBGp代理&lt;/strong&gt; 板块，配置IDE键，主机和端口。上述信息需要与php.ini中的信息保持一致。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/dbgp.png&#34; alt=&#34;dbgp&#34;&gt;&lt;/p&gt;
-&lt;p&gt;最后选择左侧的 &lt;strong&gt;服务器&lt;/strong&gt; 板块，点击加号添加一个服务器，名称随便起，主机填写PHPStudy站点根路径，点击 &lt;strong&gt;应用——确定&lt;/strong&gt; 进行保存。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/server.png&#34; alt=&#34;server&#34;&gt;&lt;/p&gt;
-&lt;p&gt;接下来在菜单栏中依次展开 &lt;strong&gt;工具——部署——配置&lt;/strong&gt; 点击加号新增服务器，选择 &lt;strong&gt;本地或挂载文件夹&lt;/strong&gt; ，文件夹处选取项目目录，URL处填写站点地址，确定保存。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/deploy.png&#34; alt=&#34;deploy&#34;&gt;&lt;/p&gt;
-&lt;p&gt;然后在PHPStorm界面右上角 &lt;strong&gt;当前文件&lt;/strong&gt; 处点击，选择 &lt;strong&gt;编辑配置&lt;/strong&gt; ，加号新增配置，下拉列表中选择 &lt;strong&gt;PHP网页&lt;/strong&gt; 。名称随便填，服务器选择前面设置好的，起始URL填写网站根路径，浏览器根据需要用来调试的浏览器进行选择。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/debug.png&#34; alt=&#34;debug&#34;&gt;&lt;/p&gt;
-&lt;p&gt;下方 &lt;strong&gt;调试预配置&lt;/strong&gt; 区有个蓝色高亮的 &lt;strong&gt;验证&lt;/strong&gt; 字样，点击它，在弹出的验证对话框中核对设置，无误点击 &lt;strong&gt;验证&lt;/strong&gt; ，如验证通过可关闭此对话框并保存配置。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/verify.png&#34; alt=&#34;verify&#34;&gt;&lt;/p&gt;
-&lt;p&gt;全部配置好之后，打个断点测试一下，可以愉快的开始调试了！&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/test.png&#34; alt=&#34;test&#34;&gt;&lt;/p&gt;</description>
       
     </item>
     
