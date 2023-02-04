@@ -463,8 +463,8 @@
 <p>我涉及到迁移到Docker的环境主要是三个：SQL SERVER、LNMP和NodeJS。C#开发环境我最常用，而且跟VS深度绑定，必须在本机安装。Python本身比较精简，本地安装也很方便，就不迁移到Docker上去了。本机系统环境为：Windows11专业版 21H2 x64开启HyperV功能，i7-1185G7开启硬件虚拟化，16GB内存。</p>
 <h2 id="1-安装docker">1. 安装Docker</h2>
 <p>首先在官网下载<a href="https://www.docker.com/products/docker-desktop/">Docker Desktop for Windows</a>。Windows版的Docker支持两种后端技术方案：WSL2和HyperV。我个人建议使用WSL2作为后端。关于两种不同后端的系统要求和区别可以<a href="https://docs.docker.com/desktop/install/windows-install/">参考这里</a>。下载的同时打开终端，依次输入下述两个指令：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">wsl</span> <span class="p">-</span><span class="n">-install</span>
-</span></span><span class="line"><span class="cl"><span class="n">wsl</span> <span class="p">-</span><span class="n">-update</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wsl --install
+</span></span><span class="line"><span class="cl">wsl --update
 </span></span></code></pre></div><p>安装并更新好WSL2后，打开安装包并安装Docker Desktop for Windows。安装好后，打开 <em>%UserProfile%/.docker/daemon.json</em> 文件，在最后追加下面一段：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#34;registry-mirrors&#34;: [
 </span></span><span class="line"><span class="cl">    &#34;http://hub-mirror.c.163.com&#34;,
@@ -480,9 +480,9 @@
 <p>之后就是双击启动Docker Desktop即可。</p>
 <h2 id="2-安装sql-server">2. 安装SQL SERVER</h2>
 <p>在Docker Hub中可以找到SQL SERVER的<a href="https://hub.docker.com/_/microsoft-mssql-server">官方镜像</a>。启动Docker后，在终端中依次使用如下命令拉取镜像并创建容器：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">docker</span> <span class="n">pull</span> <span class="n">mcr</span><span class="p">.</span><span class="py">microsoft</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">mssql</span><span class="p">/</span><span class="n">server</span><span class="err">:</span><span class="mf">2022</span><span class="n">-latest</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker pull mcr.microsoft.com/mssql/server:2022-latest
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">docker</span> <span class="n">run</span>  <span class="n">-e</span> <span class="s2">&#34;ACCEPT_EULA=Y&#34;</span> <span class="n">-e</span> <span class="s2">&#34;SA_PASSWORD=@Qwe1234&#34;</span> <span class="n">-p</span> <span class="mf">1433</span><span class="err">:</span><span class="mf">1433</span>  <span class="p">-</span><span class="n">-memory</span> <span class="mf">2000M</span> <span class="p">-</span><span class="n">-name</span> <span class="n">sqlserver</span> <span class="n">-d</span> <span class="n">mcr</span><span class="p">.</span><span class="py">microsoft</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">mssql</span><span class="p">/</span><span class="n">server</span><span class="err">:</span><span class="mf">2022</span><span class="n">-latest</span>
+</span></span><span class="line"><span class="cl">docker run  -e &#34;ACCEPT_EULA=Y&#34; -e &#34;SA_PASSWORD=@Qwe1234&#34; -p 1433:1433  --memory 2000M --name sqlserver -d mcr.microsoft.com/mssql/server:2022-latest
 </span></span></code></pre></div><p>返回Docker Desktop中可以看到已经拉取好的镜像和运行中的容器，镜像总大小为1.6G。</p>
 <p>使用SSMS连接时，服务器名为localhost，用户名sa，密码为上边设置的@Qwe1234。</p>
 <h2 id="3-安装lnmp和nodejs">3. 安装LNMP和NodeJS</h2>

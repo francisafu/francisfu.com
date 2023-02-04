@@ -18,7 +18,7 @@ draft: false
 
 首先在官网下载[Docker Desktop for Windows](https://www.docker.com/products/docker-desktop/)。Windows版的Docker支持两种后端技术方案：WSL2和HyperV。我个人建议使用WSL2作为后端。关于两种不同后端的系统要求和区别可以[参考这里](https://docs.docker.com/desktop/install/windows-install/)。下载的同时打开终端，依次输入下述两个指令：
 
-```powershell
+```
 wsl --install
 wsl --update
 ```
@@ -50,7 +50,7 @@ swap=2GB
 
 在Docker Hub中可以找到SQL SERVER的[官方镜像](https://hub.docker.com/_/microsoft-mssql-server)。启动Docker后，在终端中依次使用如下命令拉取镜像并创建容器：
 
-```powershell
+```
 docker pull mcr.microsoft.com/mssql/server:2022-latest
 
 docker run  -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=@Qwe1234" -p 1433:1433  --memory 2000M --name sqlserver -d mcr.microsoft.com/mssql/server:2022-latest
