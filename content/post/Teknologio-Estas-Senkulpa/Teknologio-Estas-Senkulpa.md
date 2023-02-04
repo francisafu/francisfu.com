@@ -5,7 +5,7 @@ authors:
   - Francis Fu
 date: '2022-09-08'
 thumbnail: "images/Teknologio-Estas-Senkulpa/1984.jpg"
-draft: true
+draft: false
 ---
 
 > In the end the Party would announce that two and two made five, and you would have to believe it.
