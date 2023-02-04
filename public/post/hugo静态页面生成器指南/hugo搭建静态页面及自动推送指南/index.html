@@ -549,8 +549,8 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># 复制密钥并粘贴到GitHub</span>
 </span></span><span class="line"><span class="cl">sudo -u root ssh -T git@github.com
 </span></span></code></pre></div><p>之后登录宝塔面板，在「软件商店-&gt;宝塔插件」处搜索并安装<strong>宝塔WebHook</strong>。添加到主面板后，在主面板点击它，新建一个WebHook。这里需要注意，和常见的接收到信息后拉取同步整个仓库不同的是，Hugo渲染输出页面只存在于仓库的<em>public</em>路径下，所以我们需要设置为只同步该路径下的内容，其余文件不需要同步。具体配置代码如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># !/bin/bash</span>
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#! /bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">echo</span> <span class="s2">&#34;&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 输出当前时间</span>
 </span></span><span class="line"><span class="cl">date --date<span class="o">=</span><span class="s1">&#39;0 days ago&#39;</span> <span class="s2">&#34;+%Y-%m-%d %H:%M:%S&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;-------开始-------&#34;</span>
