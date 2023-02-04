@@ -126,12 +126,12 @@ git push origin master
 sudo apt install git
 git config --global user.name "yourname"
 git config --global user.email "your_email@youremail.com"
-sudo ssh-keygen -t rsa -C “xxxxx@xxxxx.com”
+sudo ssh-keygen -t rsa -C "xxxxx@xxxxx.com"
 sudo cat /root/.ssh/id_rsa.pub
 # 复制密钥并粘贴到GitHub
 sudo -u root ssh -T git@github.com
 ```
-之后登录宝塔面板，在「软件管理->宝塔插件」处搜索并安装**WebHook**。添加到主面板后，在主面板点击它，新建一个WebHook。这里需要注意，和常见的接收到信息后拉取同步整个仓库不同的是，Hugo渲染输出页面只存在于仓库的*public*路径下，所以我们需要设置为只同步该路径下的内容，其余文件不需要同步。具体配置代码如下：
+之后登录宝塔面板，在「软件商店->宝塔插件」处搜索并安装**宝塔WebHook**。添加到主面板后，在主面板点击它，新建一个WebHook。这里需要注意，和常见的接收到信息后拉取同步整个仓库不同的是，Hugo渲染输出页面只存在于仓库的*public*路径下，所以我们需要设置为只同步该路径下的内容，其余文件不需要同步。具体配置代码如下：
 
 ```bash
 # !/bin/bash
@@ -162,8 +162,8 @@ sudo echo public/ >> .git/info/sparse-checkout
 git reset --hard origin/main
 sudo git pull 
 # 移动文件
-sudo mv /www/wwwroot/your_file_path/public/* /www/wwwroot/your_file_path/
-sudo rm -rf /www/wwwroot/your_file_path/public
+sudo mv $gitPath/public/* $gitPath/
+sudo rm -rf $gitPath/public
 echo "-----拉取成功-----"
 exit
 ```

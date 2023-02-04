@@ -544,11 +544,11 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install git
 </span></span><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;yourname&#34;</span>
 </span></span><span class="line"><span class="cl">git config --global user.email <span class="s2">&#34;your_email@youremail.com&#34;</span>
-</span></span><span class="line"><span class="cl">sudo ssh-keygen -t rsa -C “xxxxx@xxxxx.com”
+</span></span><span class="line"><span class="cl">sudo ssh-keygen -t rsa -C <span class="s2">&#34;xxxxx@xxxxx.com&#34;</span>
 </span></span><span class="line"><span class="cl">sudo cat /root/.ssh/id_rsa.pub
 </span></span><span class="line"><span class="cl"><span class="c1"># 复制密钥并粘贴到GitHub</span>
 </span></span><span class="line"><span class="cl">sudo -u root ssh -T git@github.com
-</span></span></code></pre></div><p>之后登录宝塔面板，在「软件管理-&gt;宝塔插件」处搜索并安装<strong>WebHook</strong>。添加到主面板后，在主面板点击它，新建一个WebHook。这里需要注意，和常见的接收到信息后拉取同步整个仓库不同的是，Hugo渲染输出页面只存在于仓库的<em>public</em>路径下，所以我们需要设置为只同步该路径下的内容，其余文件不需要同步。具体配置代码如下：</p>
+</span></span></code></pre></div><p>之后登录宝塔面板，在「软件商店-&gt;宝塔插件」处搜索并安装<strong>宝塔WebHook</strong>。添加到主面板后，在主面板点击它，新建一个WebHook。这里需要注意，和常见的接收到信息后拉取同步整个仓库不同的是，Hugo渲染输出页面只存在于仓库的<em>public</em>路径下，所以我们需要设置为只同步该路径下的内容，其余文件不需要同步。具体配置代码如下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># !/bin/bash</span>
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 输出当前时间</span>
@@ -577,8 +577,8 @@
 </span></span><span class="line"><span class="cl">git reset --hard origin/main
 </span></span><span class="line"><span class="cl">sudo git pull 
 </span></span><span class="line"><span class="cl"><span class="c1"># 移动文件</span>
-</span></span><span class="line"><span class="cl">sudo mv /www/wwwroot/your_file_path/public/* /www/wwwroot/your_file_path/
-</span></span><span class="line"><span class="cl">sudo rm -rf /www/wwwroot/your_file_path/public
+</span></span><span class="line"><span class="cl">sudo mv <span class="nv">$gitPath</span>/public/* <span class="nv">$gitPath</span>/
+</span></span><span class="line"><span class="cl">sudo rm -rf <span class="nv">$gitPath</span>/public
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;-----拉取成功-----&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="nb">exit</span>
 </span></span></code></pre></div><p>设置好后保存，在WebHook右侧点击“测试”，可以在“日志”中查看代码执行情况。如果一切正常，那么点击“查看密钥”处可以看到密钥，复制它。来到GitHub仓库，在仓库设置的左侧有一个“Webhooks”选项卡，点击它，添加一个Webhook，在Payload URL处填写：</p>
