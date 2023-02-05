@@ -22,9 +22,8 @@
 &lt;ul&gt;
 &lt;li&gt;Just import the following subscription link into the corresponding client.&lt;/li&gt;
 &lt;li&gt;Use a client that atleast support SS + SSR + VMess + Trojan.&lt;/li&gt;
-&lt;li&gt;Group 1: All filtered high speed nodes to use and will be updated every 2 hours.&lt;/li&gt;
-&lt;li&gt;Group 2: Public nodes that are stable to use and will be updated every 12 hours.&lt;/li&gt;
-&lt;li&gt;Group 3: Some free airports only provide 1GB traffic or have limited time to use. These nodes will be updated every 2 hours. Set the auto-update option on your client to get fresh nodes when using them.&lt;/li&gt;
+&lt;li&gt;Group 1: Public nodes that are stable to use and will be updated every 12 hours.&lt;/li&gt;
+&lt;li&gt;Group 2: Some free airports only provide 1GB traffic or have limited time to use. These nodes will be updated every 2 hours. Set the auto-update option on your client to get fresh nodes when using them.&lt;/li&gt;
 &lt;li&gt;If an IP is repeated more than once, it&amp;rsquo;s usually because of the different ports.&lt;/li&gt;
 &lt;li&gt;Depending on your internet provider and location, some nodes might not work.&lt;/li&gt;
 &lt;/ul&gt;
@@ -32,25 +31,19 @@
 &lt;p&gt;Nodes filtered using speedtest measurement will be stored in following files:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Group 1 (High speed nodes)&lt;/p&gt;
+&lt;p&gt;Group 1 (Contains free public nodes)&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://francisfu.com/nodes/nodes/G1B.txt&#34;&gt;Base64&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://francisfu.com/nodes/nodes/G2M.txt&#34;&gt;Mixed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://francisfu.com/nodes/nodes/G1C.txt&#34;&gt;Clash&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Group 2 (Contains free public nodes)&lt;/p&gt;
+&lt;p&gt;Group 2 (Contains only free airports)&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://francisfu.com/nodes/nodes/G2B.txt&#34;&gt;Base64&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://francisfu.com/nodes/nodes/G2M.txt&#34;&gt;Mixed&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://francisfu.com/nodes/nodes/G2C.txt&#34;&gt;Clash&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Group 3 (Contains only free airports)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://francisfu.com/nodes/nodes/G3B.txt&#34;&gt;Base64&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://francisfu.com/nodes/nodes/G3M.txt&#34;&gt;Mixed&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://francisfu.com/nodes/nodes/G3C.txt&#34;&gt;Clash&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -81,9 +74,9 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;For Example:
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;(OutputFormat) = clash
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;(SubUrl) = https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;(SubUrl) = https://francisfu.com/nodes/nodes/G1B.txt
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://pub-api-1.bianyuan.xyz/sub?target=clash&amp;amp;url=https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml&amp;amp;insert=false
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://pub-api-1.bianyuan.xyz/sub?target=clash&amp;amp;url=https://francisfu.com/nodes/nodes/G1B.txt&amp;amp;insert=false
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Now you can use the link above to import the subs into your client
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;softwares&#34;&gt;Softwares&lt;/h2&gt;

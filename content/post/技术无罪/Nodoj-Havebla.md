@@ -21,9 +21,8 @@ The speed measurement function is implemented in the *GitHub Actions* environmen
 
 - Just import the following subscription link into the corresponding client.
 - Use a client that atleast support SS + SSR + VMess + Trojan.
-- Group 1: All filtered high speed nodes to use and will be updated every 2 hours.
-- Group 2: Public nodes that are stable to use and will be updated every 12 hours.
-- Group 3: Some free airports only provide 1GB traffic or have limited time to use. These nodes will be updated every 2 hours. Set the auto-update option on your client to get fresh nodes when using them.
+- Group 1: Public nodes that are stable to use and will be updated every 12 hours.
+- Group 2: Some free airports only provide 1GB traffic or have limited time to use. These nodes will be updated every 2 hours. Set the auto-update option on your client to get fresh nodes when using them.
 - If an IP is repeated more than once, it's usually because of the different ports.
 - Depending on your internet provider and location, some nodes might not work.
 
@@ -31,18 +30,15 @@ The speed measurement function is implemented in the *GitHub Actions* environmen
 
 Nodes filtered using speedtest measurement will be stored in following files:  
 
-* Group 1 (High speed nodes)
+* Group 1 (Contains free public nodes)
   - [Base64](https://francisfu.com/nodes/nodes/G1B.txt)
+  - [Mixed](https://francisfu.com/nodes/nodes/G2M.txt)
+  - [Clash](https://francisfu.com/nodes/nodes/G1C.txt)
 
-* Group 2 (Contains free public nodes)
+* Group 2 (Contains only free airports)
   - [Base64](https://francisfu.com/nodes/nodes/G2B.txt)
   - [Mixed](https://francisfu.com/nodes/nodes/G2M.txt)
   - [Clash](https://francisfu.com/nodes/nodes/G2C.txt)
-
-* Group 3 (Contains only free airports)
-  - [Base64](https://francisfu.com/nodes/nodes/G3B.txt)
-  - [Mixed](https://francisfu.com/nodes/nodes/G3M.txt)
-  - [Clash](https://francisfu.com/nodes/nodes/G3C.txt)
 
 ### Manual Subs Conversion
 
@@ -62,9 +58,9 @@ https://pub-api-1.bianyuan.xyz/sub?target=(OutputFormat)&url=(SubUrl)&insert=fal
 
 For Example:
 (OutputFormat) = clash
-(SubUrl) = https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml
+(SubUrl) = https://francisfu.com/nodes/nodes/G1B.txt
 
-https://pub-api-1.bianyuan.xyz/sub?target=clash&url=https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml&insert=false
+https://pub-api-1.bianyuan.xyz/sub?target=clash&url=https://francisfu.com/nodes/nodes/G1B.txt&insert=false
 
 Now you can use the link above to import the subs into your client
 ```

@@ -216,7 +216,7 @@
 
     ,
         "url" : "https:\/\/www.francisfu.net\/post\/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA\/nodoj-havebla\/",
-        "wordCount" : "610",
+        "wordCount" : "588",
         "genre" : [ ],
         "keywords" : [ ]
     }
@@ -462,9 +462,8 @@
 <ul>
 <li>Just import the following subscription link into the corresponding client.</li>
 <li>Use a client that atleast support SS + SSR + VMess + Trojan.</li>
-<li>Group 1: All filtered high speed nodes to use and will be updated every 2 hours.</li>
-<li>Group 2: Public nodes that are stable to use and will be updated every 12 hours.</li>
-<li>Group 3: Some free airports only provide 1GB traffic or have limited time to use. These nodes will be updated every 2 hours. Set the auto-update option on your client to get fresh nodes when using them.</li>
+<li>Group 1: Public nodes that are stable to use and will be updated every 12 hours.</li>
+<li>Group 2: Some free airports only provide 1GB traffic or have limited time to use. These nodes will be updated every 2 hours. Set the auto-update option on your client to get fresh nodes when using them.</li>
 <li>If an IP is repeated more than once, it&rsquo;s usually because of the different ports.</li>
 <li>Depending on your internet provider and location, some nodes might not work.</li>
 </ul>
@@ -472,25 +471,19 @@
 <p>Nodes filtered using speedtest measurement will be stored in following files:</p>
 <ul>
 <li>
-<p>Group 1 (High speed nodes)</p>
+<p>Group 1 (Contains free public nodes)</p>
 <ul>
 <li><a href="https://francisfu.com/nodes/nodes/G1B.txt">Base64</a></li>
+<li><a href="https://francisfu.com/nodes/nodes/G2M.txt">Mixed</a></li>
+<li><a href="https://francisfu.com/nodes/nodes/G1C.txt">Clash</a></li>
 </ul>
 </li>
 <li>
-<p>Group 2 (Contains free public nodes)</p>
+<p>Group 2 (Contains only free airports)</p>
 <ul>
 <li><a href="https://francisfu.com/nodes/nodes/G2B.txt">Base64</a></li>
 <li><a href="https://francisfu.com/nodes/nodes/G2M.txt">Mixed</a></li>
 <li><a href="https://francisfu.com/nodes/nodes/G2C.txt">Clash</a></li>
-</ul>
-</li>
-<li>
-<p>Group 3 (Contains only free airports)</p>
-<ul>
-<li><a href="https://francisfu.com/nodes/nodes/G3B.txt">Base64</a></li>
-<li><a href="https://francisfu.com/nodes/nodes/G3M.txt">Mixed</a></li>
-<li><a href="https://francisfu.com/nodes/nodes/G3C.txt">Clash</a></li>
 </ul>
 </li>
 </ul>
@@ -521,9 +514,9 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">For Example:
 </span></span><span class="line"><span class="cl">(OutputFormat) = clash
-</span></span><span class="line"><span class="cl">(SubUrl) = https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml
+</span></span><span class="line"><span class="cl">(SubUrl) = https://francisfu.com/nodes/nodes/G1B.txt
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">https://pub-api-1.bianyuan.xyz/sub?target=clash&amp;url=https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml&amp;insert=false
+</span></span><span class="line"><span class="cl">https://pub-api-1.bianyuan.xyz/sub?target=clash&amp;url=https://francisfu.com/nodes/nodes/G1B.txt&amp;insert=false
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Now you can use the link above to import the subs into your client
 </span></span></code></pre></div><h2 id="softwares">Softwares</h2>
