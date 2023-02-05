@@ -3,8 +3,9 @@ title: Teknologio Estas Senkulpa
 toc: false
 authors:
   - Francis Fu
+series:
+  - 技术无罪
 date: '2022-09-08'
-thumbnail: "images/Teknologio-Estas-Senkulpa/1984.jpg"
 draft: false
 ---
 
@@ -22,13 +23,13 @@ draft: false
 
 ## 1. Preface
 
-Today I'd like to talk about the *Great Firewall (GFW)* of **Ethiopia**, the principles behind it, and the methods to bypass it. 
+Today I'd like to talk about the *Great Firewall (GFW)* of **DPRK**, the principles behind it, and the methods to bypass it. 
 
-Planed in 1998 and established in 2002, the GFW Project was lead by Prof. Fang Binxing. Basically, it's an *Intrusion Prevention System*, combined with a *Detection-Attack Double Phase Model*.
+Planed in 1998 and established in 2002, the GFW Project was lead by Professor Fang. Basically, it's an *Intrusion Prevention System*, combined with a *Detection-Attack Double Phase Model*.
 
-Never underestimate the ability of the GFW Dept. Some people may wonder, if the GFW Dept is as powerful as others said, why they can still use their own way to go through it. Actually, in Ethiopia, all technologies should command by the politics, and serve for the politics. Though the GFW may have the ability to block some of the protocols, if they were not command to do so, they would not deploy those functions.
+Never underestimate the ability of the GFW Dept. Some people may wonder, if the GFW Dept is as powerful as others said, why they can still use their own way to go through it. Actually, in **DPRK**, all technologies should command by the politics, and serve for the politics. Though the GFW may have the ability to block some of the protocols, if they were not command to do so, they would not deploy those functions.
 
-In **Ethiopia**, people use many different words to describe the fobidden action of bypassing the GFW. The most common used phase is "Climb the Wall". While some others may use "Study Abroad", or "Scientifically Surf". I myself would prefer to use the word "Magic", and I will use it to refer to the action mentioned above in the rest of this article.
+In **DPRK**, people use many different words to describe the fobidden action of bypassing the GFW. The most common used phase is "Climb the Wall". While some others may use "Study Abroad", or "Scientifically Surf". I myself would prefer to use the word "Magic", and I will use it to refer to the action mentioned above in the rest of this article.
 
 So, the reason why I wrote this article is quite simple. Many people often complained to me that their Magics are unstable. In fact, airports are always like this. The best way to use a stable tool is to build it independently by yourself. After searched through the internet and tried some commonly used ways, I decided to write this article, compare all the available ways to set up an independent Magic Ladder.
 
@@ -98,13 +99,13 @@ SOCKS, which stands for Socket Secure, is an Internet protocol that exchanges ne
 
 Socks5 born the **MOST FAMOUS** magic ladder -- ShadowSocks(SS). Created in 2012,  ShadowSocks is not a proxy on its own, but (typically) is the client software to help connect to a third-party Socks5 proxy, which is similar to an SSH tunnel. Once connected, internet traffic can then be directed through the proxy. Unlike an SSH tunnel, ShadowSocks can also proxy UDP traffic.
 
-ShadowSocks was once most commonly used tool, until August 2015, the creator was *invited to have a cup of tea* by the **Ethiopia** police, and all the source code of ShadowSocks were removed from github.
+ShadowSocks was once most commonly used tool, until August 2015, the creator was *invited to have a cup of tea* by the **DPRK** police, and all the source code of ShadowSocks were removed from github.
 
 ##### 2.2.1.2 ShadowSocksR
 
 After the SS project stopped, another developer claims that SS is easy to be detected by GFW, so improvements have been made in terms of confusion and protocol, making it harder to detect, and fully compatible with SS. The improved project is called [ShadowSocksR(SSR)](https://github.com/ShadowsocksR-Live/shadowsocksr).
 
-Well, nowadays, it seems no differnces between the SS and the SSR. In the massacre of magic ladder each year when holding **the Great Meetings in Ethiopia**, the victims are mainly use SS or SSR proxies.
+Well, nowadays, it seems no differnces between the SS and the SSR. In the massacre of magic ladder each year when holding **the Great Meetings in DPRK**, the victims are mainly use SS or SSR proxies.
 
 ##### 2.2.1.3 SSRoT
 
@@ -193,85 +194,85 @@ Test Methods:
 
 The laptop connection speed under WIFI: 
 
-![WIFI](/images/Teknologio-Estas-Senkulpa/01wifi-st.png)
+![WIFI](/images/技术无罪/Teknologio-Estas-Senkulpa/01wifi-st.png)
 
 The laptop ping server:
 
-![Ping](/images/Teknologio-Estas-Senkulpa/02ping.png)
+![Ping](/images/技术无罪/Teknologio-Estas-Senkulpa/02ping.png)
 
 The server connection speed under BBR(FQ):
 
-![Server](/images/Teknologio-Estas-Senkulpa/03bbr-st.png)
+![Server](/images/技术无罪/Teknologio-Estas-Senkulpa/03bbr-st.png)
 
 ### 3.2 [IKEv2](https://github.com/abiyo/Strongswan-install)
 
 The IKEv2 SpeedTest Result:
 
-![IKEv2-SpeedTest](/images/Teknologio-Estas-Senkulpa/ikev-st.png)
+![IKEv2-SpeedTest](/images/技术无罪/Teknologio-Estas-Senkulpa/ikev-st.png)
 
 The IKEv2 Fast Result:
 
-![IKEv2-Fast](/images/Teknologio-Estas-Senkulpa/ikev-ft.png)
+![IKEv2-Fast](/images/技术无罪/Teknologio-Estas-Senkulpa/ikev-ft.png)
 
 The IKEv2 Youtube Result:
 
-![IKEv2-Youtube](/images/Teknologio-Estas-Senkulpa/ikev-ut.png)
+![IKEv2-Youtube](/images/技术无罪/Teknologio-Estas-Senkulpa/ikev-ut.png)
 
 ### 3.3 [OpenVPN(UDP)](https://www.cyberciti.biz/faq/ubuntu-20-04-lts-set-up-openvpn-server-in-5-minutes/)
 
 The OpenVPN(UDP) SpeedTest Result:
 
-![OpenVPN(UDP)-SpeedTest](/images/Teknologio-Estas-Senkulpa/ovpn-st.png)
+![OpenVPN(UDP)-SpeedTest](/images/技术无罪/Teknologio-Estas-Senkulpa/ovpn-st.png)
 
 The OpenVPN(UDP) Fast Result:
 
-![OpenVPN(UDP)-Fast](/images/Teknologio-Estas-Senkulpa/ovpn-ft.png)
+![OpenVPN(UDP)-Fast](/images/技术无罪/Teknologio-Estas-Senkulpa/ovpn-ft.png)
 
 The OpenVPN(UDP) Youtube Result:
 
-![OpenVPN(UDP)-Youtube](/images/Teknologio-Estas-Senkulpa/ovpn-ut.png)
+![OpenVPN(UDP)-Youtube](/images/技术无罪/Teknologio-Estas-Senkulpa/ovpn-ut.png)
 
 ### 3.4 [SSRoT](https://palitechsociety.blogspot.com/2019/08/shadowsocksr-over-tls-ssrot-server.html)
 
 The SSRoT SpeedTest Result:
 
-![SSRoT-SpeedTest](/images/Teknologio-Estas-Senkulpa/rot-st.png)
+![SSRoT-SpeedTest](/images/技术无罪/Teknologio-Estas-Senkulpa/rot-st.png)
 
 The SSRoT Fast Result:
 
-![SSRoT-Fast](/images/Teknologio-Estas-Senkulpa/rot-ft.png)
+![SSRoT-Fast](/images/技术无罪/Teknologio-Estas-Senkulpa/rot-ft.png)
 
 The SSRoT Youtube Result:
 
-![SSRoT-Youtube](/images/Teknologio-Estas-Senkulpa/rot-ut.png)
+![SSRoT-Youtube](/images/技术无罪/Teknologio-Estas-Senkulpa/rot-ut.png)
 
 ### 3.5 [Trojan-Go](https://github.com/jinwyp/one_click_script)
 
 The Trojan-Go SpeedTest Result:
 
-![Trojan-Go-SpeedTest](/images/Teknologio-Estas-Senkulpa/tjn-st.png)
+![Trojan-Go-SpeedTest](/images/技术无罪/Teknologio-Estas-Senkulpa/tjn-st.png)
 
 The Trojan-Go Fast Result:
 
-![Trojan-Go-Fast](/images/Teknologio-Estas-Senkulpa/tjn-ft.png)
+![Trojan-Go-Fast](/images/技术无罪/Teknologio-Estas-Senkulpa/tjn-ft.png)
 
 The Trojan-Go Youtube Result:
 
-![Trojan-Go-Youtube](/images/Teknologio-Estas-Senkulpa/tjn-ut.png)
+![Trojan-Go-Youtube](/images/技术无罪/Teknologio-Estas-Senkulpa/tjn-ut.png)
 
 ### 3.6 [XRay(VLess + XTLS)](https://seakfind.github.io/2021/10/10/X-UI/)
 
 The XRay(VLess + XTLS) SpeedTest Result:
 
-![XRay(VLess + XTLS)](/images/Teknologio-Estas-Senkulpa/xry-st.png)
+![XRay(VLess + XTLS)](/images/技术无罪/Teknologio-Estas-Senkulpa/xry-st.png)
 
 The XRay(VLess + XTLS) Fast Result:
 
-![XRay(VLess + XTLS)](/images/Teknologio-Estas-Senkulpa/xry-ft.png)
+![XRay(VLess + XTLS)](/images/技术无罪/Teknologio-Estas-Senkulpa/xry-ft.png)
 
 The XRay(VLess + XTLS) Youtube Result:
 
-![XRay(VLess + XTLS)](/images/Teknologio-Estas-Senkulpa/xry-ut.png)
+![XRay(VLess + XTLS)](/images/技术无罪/Teknologio-Estas-Senkulpa/xry-ut.png)
 
 According to the above information and data, as well as my actual test situation, I was deeply impressed by the Ttojan-Go. It was really fast, and what's more, due to the large amount of data transfer, my poor VPS cannot bear the test case. Each time after I tested Trojan-Go, the CPU and memory usage raised up to over 80%, thus when I tried to run the second test case, network speed will drop down. I have to reboot the VPS manually. 
 

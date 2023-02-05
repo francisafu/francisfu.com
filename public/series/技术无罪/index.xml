@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术无罪 on CRuffians</title>
+    <link>https://www.francisfu.net/series/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/</link>
+    <description>Recent content in 技术无罪 on CRuffians</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 04 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.francisfu.net/series/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nodoj Havebla</title>
+      <link>https://www.francisfu.net/post/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/nodoj-havebla/</link>
+      <pubDate>Sat, 04 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.francisfu.net/post/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/nodoj-havebla/</guid>
+      
+        <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This webpage is basically based on the GitHub Repository: &lt;a href=&#34;https://github.com/mahdibland/V2RayAggregator/&#34;&gt;V2RayAggregator&lt;/a&gt;. Thanks to the great efforts made by the authors and all of those who share the free nodes to everyone. They fight for the freedom and liberty. They are true warriors.&lt;/p&gt;
+&lt;p&gt;The speed measurement function is implemented in the &lt;em&gt;GitHub Actions&lt;/em&gt; environment using &lt;a href=&#34;https://github.com/xxf098/LiteSpeedTest&#34;&gt;LiteSpeedTest&lt;/a&gt;, so there are many nodes in the United States, which cannot well represent the node availability in the domestic network environment.&lt;/p&gt;
+&lt;h2 id=&#34;instructions--usage&#34;&gt;Instructions &amp;amp; Usage&lt;/h2&gt;
+&lt;h3 id=&#34;tips&#34;&gt;Tips&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Just import the following subscription link into the corresponding client.&lt;/li&gt;
+&lt;li&gt;Use a client that atleast support SS + SSR + VMess + Trojan.&lt;/li&gt;
+&lt;li&gt;Group 1: All filtered high speed nodes to use and will be updated every 2 hours.&lt;/li&gt;
+&lt;li&gt;Group 2: Public nodes that are stable to use and will be updated every 12 hours.&lt;/li&gt;
+&lt;li&gt;Group 3: Some free airports only provide 1GB traffic or have limited time to use. These nodes will be updated every 2 hours. Set the auto-update option on your client to get fresh nodes when using them.&lt;/li&gt;
+&lt;li&gt;If an IP is repeated more than once, it&amp;rsquo;s usually because of the different ports.&lt;/li&gt;
+&lt;li&gt;Depending on your internet provider and location, some nodes might not work.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ready-to-import&#34;&gt;Ready to import&lt;/h3&gt;
+&lt;p&gt;Nodes filtered using speedtest measurement will be stored in following files:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Group 1 (High speed nodes)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://francisfu.com/nodes/nodes/G1B&#34;&gt;Base64&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Group 2 (Contains free public nodes)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://francisfu.com/nodes/nodes/G2B&#34;&gt;Base64&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://francisfu.com/nodes/nodes/G2M&#34;&gt;Mixed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://francisfu.com/nodes/nodes/G2C&#34;&gt;Clash&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Group 3 (Contains only free airports)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://francisfu.com/nodes/nodes/G3B&#34;&gt;Base64&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://francisfu.com/nodes/nodes/G3M&#34;&gt;Mixed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://francisfu.com/nodes/nodes/G3C&#34;&gt;Clash&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;manual-subs-conversion&#34;&gt;Manual Subs Conversion&lt;/h3&gt;
+&lt;p&gt;If your client does not support the formats that provided here, use below services to convert them to your client format.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://sub.v1.mk/&#34;&gt;sub-web-modify&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://bianyuan.xyz/&#34;&gt;bianyuan&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div
+  class=&#34;notice
+    notice--warning
+
+  &#34;
+&gt;
+  &lt;span
+    class=&#34;notice__title
+      notice__title--warning
+
+    &#34;
+  &gt;警告&lt;/span&gt;&lt;div class=&#34;notice__content&#34;&gt;
+    &lt;strong&gt;Do not use these APIs for your personal airport subs! Please run the subconverter locally.&lt;/strong&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t like the groups and rules that are already set, you can simply use bianyuan API like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://pub-api-1.bianyuan.xyz/sub?target=(OutputFormat)&amp;amp;url=(SubUrl)&amp;amp;insert=false
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;For Example:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;(OutputFormat) = clash
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;(SubUrl) = https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://pub-api-1.bianyuan.xyz/sub?target=clash&amp;amp;url=https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml&amp;amp;insert=false
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Now you can use the link above to import the subs into your client
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;softwares&#34;&gt;Softwares&lt;/h2&gt;
+&lt;h3 id=&#34;best-clients-for-each-os&#34;&gt;Best Clients For Each OS&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;OS&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Best Client&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Alternatives&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;IOS&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Quantumult - Shadowrocket&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;NapsternetV&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Android&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Surfboard - Clash For Android&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;V2rayNg&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Windows&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Clash For Windows - V2rayN - Nekoray&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Qv2ray&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Linux&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Clash For Windows&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Qv2ray&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;MacOS&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Clash For Windows&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Qv2ray&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;desktop-clients&#34;&gt;Desktop Clients&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;MacOS&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Linux&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Windows&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Brief description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://github.com/Fndroid/clash_for_windows_pkg/releases&#34;&gt;CFW&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://github.com/Fndroid/clash_for_windows_pkg/releases&#34;&gt;CFW&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://github.com/Fndroid/clash_for_windows_pkg/releases&#34;&gt;CFW&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;SS, SSR, Trojan, Vmess, VLESS protocol support, strong policy offload capability.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://github.com/Qv2ray/Qv2ray/releases&#34;&gt;Qv2ray&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://github.com/Qv2ray/Qv2ray/releases&#34;&gt;Qv2ray&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://github.com/Qv2ray/Qv2ray/releases&#34;&gt;Qv2ray&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;SS, SSR, Trojan, Vmess, VLESS, Trojan-Go protocol support (relevant plugins need to be installed).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;×&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;×&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://github.com/2dust/v2rayN/releases&#34;&gt;V2rayN&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;SS, Trojan, Vmess, VLESS protocol support, with speed measurement, delay measurement function, support subscription, QR code, clipboard import and manual configuration.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;×&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;×&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://github.com/TheMRLL/winxray/releases&#34;&gt;WinXray&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;SS, SSR, Trojan, Vmess, VLESS protocol support, support automatic connection to the fastest node.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://nssurge.com/&#34;&gt;Surge&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;×&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;×&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;SS, Trojan, Vmess protocol support, well-known network debugging tools, powerful strategy offloading ability, need to pay.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://github.com/yichengchen/clashX/releases&#34;&gt;ClashX&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;×&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;×&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;SS, SSR, Trojan, Vmess protocol support, occupy less resources.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://github.com/yanue/V2rayU/releases&#34;&gt;V2rayU&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;×&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;×&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;SS, Trojan, Vmess protocol support, support subscription, QR code, clipboard import, manual configuration, QR code sharing, similar to V2RayN.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;mobile-clients&#34;&gt;Mobile Clients&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;iOS/iPadOS&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Android&lt;/th&gt;
+&lt;th&gt;Brief description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://apps.apple.com/us/app/shadowrocket/id932747118&#34;&gt;Shadowrocket&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.v2cross.proxy&#34;&gt;Shadowrocket&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;SS, SSR, Trojan, Vmess, VLESS protocol support, the iOS side needs to be purchased in the non-country App Store, the US price is $2.99; the Android side is not the same author as the iOS side, does not support the SSR protocol, free and built-in free nodes.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://nssurge.com/&#34;&gt;Surge&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;×&lt;/td&gt;
+&lt;td&gt;SS, Trojan, Vmess protocol support, well-known network debugging tools on the iOS side, chargeable.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;×&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.getsurfboard&#34;&gt;Surfboard&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;SS, SSR, Vmess Protocol support, Android network debugging software, compatible with Surge 2 configuration.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;×&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://github.com/Kr328/ClashForAndroid/releases&#34;&gt;CFA&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;SS, SSR, Trojan, Vmess Protocol support.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;×&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://github.com/SagerNet/SagerNet/releases&#34;&gt;SagerNet&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;SS, SSR, Trojan, Vmess, VLESS Protocol support.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;×&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://github.com/2dust/v2rayNG/releases&#34;&gt;V2rayNG&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;SS, Trojan, Vmess, VLESS protocol support, v2ray kernel.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Teknologio Estas Senkulpa</title>
+      <link>https://www.francisfu.net/post/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/teknologio-estas-senkulpa/</link>
+      <pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.francisfu.net/post/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/teknologio-estas-senkulpa/</guid>
+      
+        <description>&lt;blockquote&gt;
+&lt;p&gt;In the end the Party would announce that two and two made five, and you would have to believe it.&lt;/p&gt;
+&lt;p&gt;— &lt;cite&gt;George Orwell &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div
+  class=&#34;notice
+    notice--warning
+
+  &#34;
+&gt;
+  &lt;span
+    class=&#34;notice__title
+      notice__title--warning
+
+    &#34;
+  &gt;警告&lt;/span&gt;&lt;div class=&#34;notice__content&#34;&gt;
+    &lt;em&gt;If you find that there are many words that you don&amp;rsquo;t understand when reading this article, and you need a dictionary or translation software to complete the reading, please &lt;strong&gt;STOP reading this article&lt;/strong&gt; immediately &amp;ndash; this article is not for you. This article is a professional article for developers, programmers and  telecommunications engineers. In addition, this article will not teach you any technology, only theoretical introductions and test results.&lt;/em&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;1-preface&#34;&gt;1. Preface&lt;/h2&gt;
+&lt;p&gt;Today I&amp;rsquo;d like to talk about the &lt;em&gt;Great Firewall (GFW)&lt;/em&gt; of &lt;strong&gt;DPRK&lt;/strong&gt;, the principles behind it, and the methods to bypass it.&lt;/p&gt;
+&lt;p&gt;Planed in 1998 and established in 2002, the GFW Project was lead by Professor Fang. Basically, it&amp;rsquo;s an &lt;em&gt;Intrusion Prevention System&lt;/em&gt;, combined with a &lt;em&gt;Detection-Attack Double Phase Model&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Never underestimate the ability of the GFW Dept. Some people may wonder, if the GFW Dept is as powerful as others said, why they can still use their own way to go through it. Actually, in &lt;strong&gt;DPRK&lt;/strong&gt;, all technologies should command by the politics, and serve for the politics. Though the GFW may have the ability to block some of the protocols, if they were not command to do so, they would not deploy those functions.&lt;/p&gt;
+&lt;p&gt;In &lt;strong&gt;DPRK&lt;/strong&gt;, people use many different words to describe the fobidden action of bypassing the GFW. The most common used phase is &amp;ldquo;Climb the Wall&amp;rdquo;. While some others may use &amp;ldquo;Study Abroad&amp;rdquo;, or &amp;ldquo;Scientifically Surf&amp;rdquo;. I myself would prefer to use the word &amp;ldquo;Magic&amp;rdquo;, and I will use it to refer to the action mentioned above in the rest of this article.&lt;/p&gt;
+&lt;p&gt;So, the reason why I wrote this article is quite simple. Many people often complained to me that their Magics are unstable. In fact, airports are always like this. The best way to use a stable tool is to build it independently by yourself. After searched through the internet and tried some commonly used ways, I decided to write this article, compare all the available ways to set up an independent Magic Ladder.&lt;/p&gt;
+&lt;p&gt;I will mainly forcus on free, opensource and multi-platforms supported tools and protocols that you can set up on your own server. Since the GFW possesses &lt;abbr title=&#34;Advanced Deep Package Inspection&#34;&gt;ADPI&lt;/abbr&gt; technology, the tunnel we use should possesses the ability of &lt;em&gt;User Network Flow Camouflage&lt;/em&gt;. Thus, I picked serveral qualified tunnels and listed below. Those tunnels are devided into three groups by the techonologies behind them.&lt;/p&gt;
+&lt;h2 id=&#34;2-theory-introduction&#34;&gt;2. Theory Introduction&lt;/h2&gt;
+&lt;h3 id=&#34;21-vpns&#34;&gt;2.1 VPNs&lt;/h3&gt;
+&lt;p&gt;VPN, the abbreviation of &lt;em&gt;Virtual Private Network&lt;/em&gt;, was commonly used world wide to traverse NAT or protect oneself when surfing the internet. Otherwise, it can also used as a kind of magic ladder.&lt;/p&gt;
+&lt;h4 id=&#34;211-ikev2&#34;&gt;2.1.1 IKEv2&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/strongswan/strongswan&#34;&gt;IKEv2&lt;/a&gt;, also known as the &amp;ldquo;Internet Key Exchange v2&amp;rdquo;, is based on IPSec tunnel protocol. Jointly developed by Microsoft and Cisco, it has been merged into windows 7 and above as a built in function.&lt;/p&gt;
+&lt;p&gt;IKEv2 has a very practical automatic reconnection feature. When the user temporarily loses the Internet connection, it will automatically re-establish the VPN connection after re-gain the Internet.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pros
+&lt;ul&gt;
+&lt;li&gt;It is faster than PPTP and L2TP, and does not involve overhead on &lt;abbr title=&#34;Point-to-Point Protocols&#34;&gt;PPP&lt;/abbr&gt;&lt;/li&gt;
+&lt;li&gt;Stable, especially when switching networks or reconnecting after a short time of network connection loss&lt;/li&gt;
+&lt;li&gt;Highly security. It supports AES-128, AES-192, AES-256 and 3DES encryption algorithms&lt;/li&gt;
+&lt;li&gt;Easy to install and configure on the client side&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cons
+&lt;ul&gt;
+&lt;li&gt;Setting up IKEv2 on the server is really difficult, which is also the hidden danger of many problems&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;212-openvpn&#34;&gt;2.1.2 OpenVPN&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/OpenVPN/openvpn&#34;&gt;OpenVPN&lt;/a&gt; uses OpenSSL library and SSL v3 / TLS v1 protocol to provide a powerful and reliable VPN solution by integrating with other technologies.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pros
+&lt;ul&gt;
+&lt;li&gt;Highly configurable&lt;/li&gt;
+&lt;li&gt;Highly Security (if &lt;abbr title=&#34;Perfect Forward Secrecy&#34;&gt;PFS&lt;/abbr&gt; is used, it would be even safe for &lt;abbr title=&#34;National Security Agency&#34;&gt;NSA&lt;/abbr&gt;)&lt;/li&gt;
+&lt;li&gt;Firewall (normal) bypassing&lt;/li&gt;
+&lt;li&gt;Multiple encryption algorithms&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cons
+&lt;ul&gt;
+&lt;li&gt;Third party software is required&lt;/li&gt;
+&lt;li&gt;Although efforts are being made to improve the support for mobile devices, it&amp;rsquo;s still not as perfect as desktop devices&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;213-openconnect&#34;&gt;2.1.3 OpenConnect&lt;/h4&gt;
+&lt;p&gt;OpenConnect, or we can also call it &lt;a href=&#34;https://gitlab.com/openconnect/ocserv&#34;&gt;ocserv&lt;/a&gt;, is a compatible server of Cisco Anyconnect. Anyconnect is a Cisco proprietary technology, and its server can only run on Cisco devices. OpenConnect solves this problem. Its goal is to run a server compatible with AnyConnect protocol on relatively Linux devices, so people can use the protocol without buying any Cisco devices.
+Since many multinational companies use Cisco AnyConnect to build their private network,blocking AnyConnect will have disastrous consequences. Therefore, although the handshake feature of AnyConnect is quite obvious, it can still be used normally. However, it&amp;rsquo;s said that nowadays, the GFW is able to identify OpenConnect from AnyConnect, then you may still have the chance to be banned.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pros
+&lt;ul&gt;
+&lt;li&gt;Can be pretend as normal enterprise tunnel&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cons
+&lt;ul&gt;
+&lt;li&gt;Hard to set up&lt;/li&gt;
+&lt;li&gt;probably be blocked&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;214-tinc&#34;&gt;2.1.4 Tinc&lt;/h4&gt;
+&lt;p&gt;Well, actually I don&amp;rsquo;t know why I wrote &lt;a href=&#34;https://github.com/gsliepen/tinc&#34;&gt;Tinc&lt;/a&gt; here. It&amp;rsquo;s mainly used to set up a private tunnel to traverse NAT or build up personal virtual LAN. However, I found an &lt;a href=&#34;http://blog.emzee.be/posts/fuck-games-for-windows-via-tinc/&#34;&gt;article&lt;/a&gt; of how to set up Tinc as magic ladder. Since there&amp;rsquo;s not many people to do so, I thought it would probably be a nice approach and may worth a try (though it&amp;rsquo;s so difficult to set everythings up). Link is given above, you can take a look by yourself.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No Pros and Cons, since I never tried this.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;22-proxies&#34;&gt;2.2 Proxies&lt;/h3&gt;
+&lt;p&gt;A proxy server is a server application that acts as an intermediary between a client requesting a resource and the server providing that resource. Normally, proxies lack encryption, and that’s what differentiates a VPN and a proxy.&lt;/p&gt;
+&lt;h4 id=&#34;221-socks&#34;&gt;2.2.1 SOCKS&lt;/h4&gt;
+&lt;p&gt;When talk about proxies, you cannot avoid saying anything about SOCKS, especially SOCKS5.&lt;/p&gt;
+&lt;p&gt;SOCKS, which stands for Socket Secure, is an Internet protocol that exchanges network packets between a client and server through a proxy server. Practically, a SOCKS server proxies TCP connections to an arbitrary IP address, and provides a means for UDP packets to be forwarded. As a protocol defined in RFC 1928, SOCKS5 is an incompatible extension of the SOCKS4 protocol; it offers more choices for authentication and adds support for IPv6 and UDP, the latter of which can be used for DNS lookups.&lt;/p&gt;
+&lt;h5 id=&#34;2211-shadowsocks&#34;&gt;2.2.1.1 ShadowSocks&lt;/h5&gt;
+&lt;p&gt;Socks5 born the &lt;strong&gt;MOST FAMOUS&lt;/strong&gt; magic ladder &amp;ndash; ShadowSocks(SS). Created in 2012,  ShadowSocks is not a proxy on its own, but (typically) is the client software to help connect to a third-party Socks5 proxy, which is similar to an SSH tunnel. Once connected, internet traffic can then be directed through the proxy. Unlike an SSH tunnel, ShadowSocks can also proxy UDP traffic.&lt;/p&gt;
+&lt;p&gt;ShadowSocks was once most commonly used tool, until August 2015, the creator was &lt;em&gt;invited to have a cup of tea&lt;/em&gt; by the &lt;strong&gt;DPRK&lt;/strong&gt; police, and all the source code of ShadowSocks were removed from github.&lt;/p&gt;
+&lt;h5 id=&#34;2212-shadowsocksr&#34;&gt;2.2.1.2 ShadowSocksR&lt;/h5&gt;
+&lt;p&gt;After the SS project stopped, another developer claims that SS is easy to be detected by GFW, so improvements have been made in terms of confusion and protocol, making it harder to detect, and fully compatible with SS. The improved project is called &lt;a href=&#34;https://github.com/ShadowsocksR-Live/shadowsocksr&#34;&gt;ShadowSocksR(SSR)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Well, nowadays, it seems no differnces between the SS and the SSR. In the massacre of magic ladder each year when holding &lt;strong&gt;the Great Meetings in DPRK&lt;/strong&gt;, the victims are mainly use SS or SSR proxies.&lt;/p&gt;
+&lt;h5 id=&#34;2213-ssrot&#34;&gt;2.2.1.3 SSRoT&lt;/h5&gt;
+&lt;p&gt;Forked from the original SSR, yet another developer take over senior&amp;rsquo;s work. First developed in 2019, &lt;a href=&#34;https://github.com/ShadowsocksR-Live/shadowsocksr-native&#34;&gt;SSRoT&lt;/a&gt; focus on the network traffic of &amp;ldquo;SSR over TLS&amp;rdquo;. It has been proved that this is probably the only SOCKS plan that still alive currently, and pretty worth a try.&lt;/p&gt;
+&lt;h5 id=&#34;2214-other-socks-implementions&#34;&gt;2.2.1.4 Other SOCKS Implementions&lt;/h5&gt;
+&lt;p&gt;Besides all those ShadowSocks-like plans, there are some other implemetion of SOCKS proxy, such as &lt;a href=&#34;https://github.com/mohanson/daze&#34;&gt;Daze&lt;/a&gt;, &lt;a href=&#34;https://github.com/txthinking/brook&#34;&gt;Brook&lt;/a&gt;, and &lt;a href=&#34;https://github.com/gwuhaolin/lightsocks&#34;&gt;Lightsocks&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;All these plans are proved to be killed when &lt;strong&gt;the Great Meetings&lt;/strong&gt; held. You can have a try if you really curious about them. Since they are still in active development, so there&amp;rsquo;s may be a chance to success. Note that all technologies based on the SOCKS proxy without encryption and obfuscation, are not stable and quite danger, due to the recognition algorithm of GFW.&lt;/p&gt;
+&lt;h4 id=&#34;222-v2ray--trojan--xray&#34;&gt;2.2.2 V2Ray &amp;amp; Trojan &amp;amp; XRay&lt;/h4&gt;
+&lt;p&gt;After ShadowSocks been blocked by the GFW, a developer called &amp;ldquo;Victoria Raymond&amp;rdquo; created another great magic ladder in 2015, and named it &amp;ldquo;V2Ray&amp;rdquo;. Afterwards, he build up a &lt;em&gt;HUGE&lt;/em&gt; environment consists of a set of tools surrounding it, called &amp;ldquo;&lt;a href=&#34;https://www.v2ray.com/&#34;&gt;Project V&lt;/a&gt;&amp;rdquo;. Nevertheless, after two years of active maintained, Victoria Raymond disappeared. Nobody could find him anymore, just like Satoshi Nakamoto. So other people forked his code and rebuild his &lt;em&gt;empire&lt;/em&gt;, thus we have the brand new &amp;ldquo;&lt;a href=&#34;https://www.v2fly.org/&#34;&gt;Project V&lt;/a&gt;&amp;rdquo;, and the core project is called &amp;ldquo;V2Fly&amp;rdquo;.&lt;/p&gt;
+&lt;h5 id=&#34;2221-vmess--vmessaead&#34;&gt;2.2.2.1 VMess &amp;amp; VMessAEAD&lt;/h5&gt;
+&lt;p&gt;When we talk about V2Ray, we always refer to the VMess Protocol. &lt;a href=&#34;https://github.com/v2fly/v2ray-core&#34;&gt;VMess&lt;/a&gt;, the first original protocol designed by V2Ray, is a protocol based on TCP. All data was transmitted by TCP. It&amp;rsquo;s a stateless protocol, that is, the client and the server can directly transmit data without handshaking, and each data transmission has no impact on other data transmissions before it or after it. The client of VMess initiates a request, and the server determines whether the request comes from a legitimate client. If the verification passes, the request is forwarded and the obtained response is sent back to the client. VMess uses an asymmetric format, that is, the request sent by the client and the response from the server use different formats.&lt;/p&gt;
+&lt;p&gt;VMess has the built in function of obfuscation and encryption. So the security of it is indisputable. However, is&amp;rsquo;t not unbreakable &amp;ndash; by &lt;a href=&#34;https://github.com/v2ray/v2ray-core/issues/2523&#34;&gt;Replay-Attack&lt;/a&gt;, GFW can accurately determine whether it is a VMess service. The damage of this event to VMess is fatal, so VMessAEAD was born later.&lt;/p&gt;
+&lt;p&gt;Another problem is, VMess&amp;rsquo; data is not masqueraded, so it&amp;rsquo;s still possible to identify it. Therefore, VMess protocol is usually used with some camouflage methods such as &amp;ldquo;V2Ray + WS + TLS + CDN&amp;rdquo; and &amp;ldquo;V2ray + HTTP2 + TLS + CDN&amp;rdquo;, etc.&lt;/p&gt;
+&lt;h5 id=&#34;2222-trojan--trojan-go&#34;&gt;2.2.2.2 Trojan &amp;amp; Trojan-Go&lt;/h5&gt;
+&lt;p&gt;The design of VMess itself focuses on safety. On the premise of ensuring safety, people has a higher pursuit of speed and performance. So another tool with a new design idea came into view: Trojan.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/trojan-gfw/trojan&#34;&gt;Trojan&lt;/a&gt; can be considered as a simplified version of V2Ray&amp;rsquo;s &amp;ldquo;WS + TLS&amp;rdquo; mode. It is faster than V2Ray, and its camouflage is more realistic than V2Ray,which made GFW more difficult to recognize.&lt;/p&gt;
+&lt;p&gt;Trojan disguises data as normal HTTPS communication by listening to port 443, and truly completes the TLS handshake to trick GFW into thinking it&amp;rsquo;s HTTPS, so that it will not be recognized. Trojan processes HTTPS requests from the outside. If it&amp;rsquo;s legal, Trojan provides services for the requests. Otherwise, Trojan forwards the traffic to caddy, nginx or other web servers, and they will provide web services for them. Based on the whole interaction process, this can make your VPS more like a normal web server, because all the behaviors of Trojan are consistent with those web servers, no additional features are introduced, thus achieve the effect of being difficult to identify.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/p4gefau1t/trojan-go&#34;&gt;Trojan-Go&lt;/a&gt; is a Trojan implemented using Go, which is functionally a superset of Trojan. Compared with the original Trojan, Trojan-Go has some more functions, such as: multiplexing (SMUX) to reduce delay, improve concurrency performance, CDN traffic transfer, etc.&lt;/p&gt;
+&lt;h5 id=&#34;2223-vlesstls&#34;&gt;2.2.2.3 VLess(TLS)&lt;/h5&gt;
+&lt;p&gt;Since Trojan&amp;rsquo;s idea is feasible, why add a layer of custom encryption protocols such as VMess to TLS? Double safety insurances is unnecessary for most users and may cost performance loss. So VLess protocol came into being.&lt;/p&gt;
+&lt;p&gt;The major differences between VLess and VMess are as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;VLess does not depend on system time&lt;/li&gt;
+&lt;li&gt;VLess does not have encryption, TLS and other encryptions should be used&lt;/li&gt;
+&lt;li&gt;VLess supports streaming and fallback, which is more concise, efficient and secure than nginx streaming forwarding&lt;/li&gt;
+&lt;li&gt;When using TLS, VLess is faster and has better performance than VMess, since VLess doesn&amp;rsquo;t encrypt and decrypt data&lt;/li&gt;
+&lt;li&gt;V2Fly officials have higher expectations and stricter restrictions on VLess&lt;/li&gt;
+&lt;li&gt;VLess is more flexible in encryption and is not as highly coupled as VMess&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;2224-xray&#34;&gt;2.2.2.4 XRay&lt;/h5&gt;
+&lt;p&gt;So, as you can see above, VLess protocol needs TLS. A brilliant developer called RPRX, creatively come up an idea &amp;ndash; why not use it to hide the data, so that we do not need encryption and decryption anymore?&lt;/p&gt;
+&lt;p&gt;Then we have the great protocol &amp;ndash; XTLS.When using TLS proxy, HTTPS data actually goes through two layers of TLS: the outer layer is the proxy TLS, and the inner layer is the HTTPS TLS. XTLS seamlessly splices these two genuine TLS, so that the agent hardly needs to encrypt and decrypt HTTPS traffic, only plays the role of traffic transition, so that greatly improves performance.&lt;/p&gt;
+&lt;p&gt;The XTLS protocol also comes from the V2Fly community, however, because of the &lt;a href=&#34;https://github.com/XTLS/Go/issues/9&#34;&gt;license problem&lt;/a&gt;, it has been removed from v2ray-core since 4.33.0. Finally, RPRX independently established XRay community, and named it &lt;a href=&#34;https://xtls.github.io/&#34;&gt;&amp;ldquo;Project X&amp;rdquo;&lt;/a&gt;. In short, XRay is a branch of V2Ray and a superset of V2Ray. Moreover, XRay has better performance, faster speed and more frequent update iterations. Whether XTLS is natively supported is one of the biggest differences between XRay and V2Ray.&lt;/p&gt;
+&lt;p&gt;Combined VLess TLS and XTLS, there are a few ways to build the tunnel:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;VLess + TCP + TLS&lt;/li&gt;
+&lt;li&gt;VLess + TCP + TLS + WS&lt;/li&gt;
+&lt;li&gt;VLess + TCP + XTLS&lt;/li&gt;
+&lt;li&gt;VLess + HTTP2 + h2c&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Among all these above, the most suggested way currently is definetely VLess+TCP+XTLS.&lt;/p&gt;
+&lt;h4 id=&#34;223-http-proxy&#34;&gt;2.2.3 HTTP Proxy&lt;/h4&gt;
+&lt;p&gt;There is only one HTTP proxy I would like to mention here, &lt;a href=&#34;https://github.com/coyove/goflyway&#34;&gt;GoFlyway&lt;/a&gt;. It uses pure HTTP POST requests to relay TCP connections. There is no connect involved nor needed because GoFlyway is designed mainly for those people who are behind a connect-less HTTP proxy or want to accelerate connections through static CDNs. Some people proved it work well, while some others report their server ip get blocked. Since it was last updated in Feburary 2020, I&amp;rsquo;m not sure it&amp;rsquo;s still work now.&lt;/p&gt;
+&lt;h3 id=&#34;23-commercial-plans&#34;&gt;2.3 Commercial Plans&lt;/h3&gt;
+&lt;p&gt;Well, actually I don&amp;rsquo;t wanna talk a lot about those commercial plans. But there are two I have to mention here, &lt;a href=&#34;https://getlantern.org/&#34;&gt;Lantern&lt;/a&gt; and &lt;a href=&#34;https://psiphon.ca/&#34;&gt;Psiphon&lt;/a&gt;. They are all very popular when came out, and soon being blocked by the GFW. &lt;em&gt;VERY SOON.&lt;/em&gt; Besides, at first they are all free and opensource. After being blocked, they became commercial plans. Obviously, they are weapons of hostile forces abroad, and what&amp;rsquo;s more, they failed. LOL.&lt;/p&gt;
+&lt;h2 id=&#34;3-performance-test&#34;&gt;3. Performance Test&lt;/h2&gt;
+&lt;p&gt;In this section, I will show you the performance test result of IKEv2, OpenVPN(UDP), SSRoT, Trojan-Go and XRay(VLess + XTLS). These are the most common use and proved to be available and stable plans.&lt;/p&gt;
+&lt;p&gt;Test Environment:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;VPS with 1 vCore, 1024MB Memory, 15GB SSD, Shared 5Gbps Connection, installed Ubuntu 20.04LTS with BBR(FQ), IP in Canada&lt;/li&gt;
+&lt;li&gt;China Unicom 5G mobile phone provides local network through WIFI hotspot to the laptop&lt;/li&gt;
+&lt;li&gt;IPv4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Test Methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://speedtest.net/&#34;&gt;Ookla SpeedTest.net&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fast.com/&#34;&gt;Netflix Fast.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtube.com/&#34;&gt;Youtube Nerd Data of Random 4K Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;31-infrastructures&#34;&gt;3.1 Infrastructures&lt;/h3&gt;
+&lt;p&gt;The laptop connection speed under WIFI:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/01wifi-st.png&#34; alt=&#34;WIFI&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The laptop ping server:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/02ping.png&#34; alt=&#34;Ping&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The server connection speed under BBR(FQ):&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/03bbr-st.png&#34; alt=&#34;Server&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;32-ikev2httpsgithubcomabiyostrongswan-install&#34;&gt;3.2 &lt;a href=&#34;https://github.com/abiyo/Strongswan-install&#34;&gt;IKEv2&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The IKEv2 SpeedTest Result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/ikev-st.png&#34; alt=&#34;IKEv2-SpeedTest&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The IKEv2 Fast Result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/ikev-ft.png&#34; alt=&#34;IKEv2-Fast&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The IKEv2 Youtube Result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/ikev-ut.png&#34; alt=&#34;IKEv2-Youtube&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;33-openvpnudphttpswwwcybercitibizfaqubuntu-20-04-lts-set-up-openvpn-server-in-5-minutes&#34;&gt;3.3 &lt;a href=&#34;https://www.cyberciti.biz/faq/ubuntu-20-04-lts-set-up-openvpn-server-in-5-minutes/&#34;&gt;OpenVPN(UDP)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The OpenVPN(UDP) SpeedTest Result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/ovpn-st.png&#34; alt=&#34;OpenVPN(UDP)-SpeedTest&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The OpenVPN(UDP) Fast Result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/ovpn-ft.png&#34; alt=&#34;OpenVPN(UDP)-Fast&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The OpenVPN(UDP) Youtube Result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/ovpn-ut.png&#34; alt=&#34;OpenVPN(UDP)-Youtube&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;34-ssrothttpspalitechsocietyblogspotcom201908shadowsocksr-over-tls-ssrot-serverhtml&#34;&gt;3.4 &lt;a href=&#34;https://palitechsociety.blogspot.com/2019/08/shadowsocksr-over-tls-ssrot-server.html&#34;&gt;SSRoT&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The SSRoT SpeedTest Result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/rot-st.png&#34; alt=&#34;SSRoT-SpeedTest&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The SSRoT Fast Result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/rot-ft.png&#34; alt=&#34;SSRoT-Fast&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The SSRoT Youtube Result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/rot-ut.png&#34; alt=&#34;SSRoT-Youtube&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;35-trojan-gohttpsgithubcomjinwypone_click_script&#34;&gt;3.5 &lt;a href=&#34;https://github.com/jinwyp/one_click_script&#34;&gt;Trojan-Go&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The Trojan-Go SpeedTest Result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/tjn-st.png&#34; alt=&#34;Trojan-Go-SpeedTest&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The Trojan-Go Fast Result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/tjn-ft.png&#34; alt=&#34;Trojan-Go-Fast&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The Trojan-Go Youtube Result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/tjn-ut.png&#34; alt=&#34;Trojan-Go-Youtube&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;36-xrayvless--xtlshttpsseakfindgithubio20211010x-ui&#34;&gt;3.6 &lt;a href=&#34;https://seakfind.github.io/2021/10/10/X-UI/&#34;&gt;XRay(VLess + XTLS)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The XRay(VLess + XTLS) SpeedTest Result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/xry-st.png&#34; alt=&#34;XRay(VLess + XTLS)&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The XRay(VLess + XTLS) Fast Result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/xry-ft.png&#34; alt=&#34;XRay(VLess + XTLS)&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The XRay(VLess + XTLS) Youtube Result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.francisfu.net/images/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/Teknologio-Estas-Senkulpa/xry-ut.png&#34; alt=&#34;XRay(VLess + XTLS)&#34;&gt;&lt;/p&gt;
+&lt;p&gt;According to the above information and data, as well as my actual test situation, I was deeply impressed by the Ttojan-Go. It was really fast, and what&amp;rsquo;s more, due to the large amount of data transfer, my poor VPS cannot bear the test case. Each time after I tested Trojan-Go, the CPU and memory usage raised up to over 80%, thus when I tried to run the second test case, network speed will drop down. I have to reboot the VPS manually.&lt;/p&gt;
+&lt;p&gt;However, when we concerned about the stream media, those VPNs are much better than TLS. The best one when watching 4K video is OpenVPN(UDP). And it&amp;rsquo;s the only one without too much lags. Since my direct ping to my server is pretty high, a little lags when streaming 4K is OK for me.&lt;/p&gt;
+&lt;p&gt;I must point out that I&amp;rsquo;m quite disappointed by the XRay(VLess + XTLS). It&amp;rsquo;s performance was not as good as expected, especially when streaming videos, the average speed is only about 6000-8000kbps. Maybe my settings are wrong, while I haven&amp;rsquo;t used CDN in the test. If I use CDN, I think its speed will be much slower.&lt;/p&gt;
+&lt;h2 id=&#34;4-summary&#34;&gt;4. Summary&lt;/h2&gt;
+&lt;p&gt;Well, for me, I would probably consider a two-way plan, combined with a TLS plan (maybe Trojan) as Plan A, and a VPN plan (maybe IKEv2) as Plan B. In the future, I plan to write a bash script, which will automatically install either one of them from the above five plans. A five-in-one script. If I finished, I will update this article and append that link.&lt;/p&gt;
+&lt;p&gt;The title of the this article is an Espranto sentence, which means that &lt;em&gt;Technology is innocent&lt;/em&gt;. Only those who use it may commit crimes. Never use technology to do anything illegal or criminal. When browsing the Internet, you must pay attention to what can be done and what can not be done. Always look before you leap.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Freedom is the freedom to say that two plus two make four. If that is granted, all else follows.&lt;/p&gt;
+&lt;p&gt;— &lt;cite&gt;George Orwell &lt;sup id=&#34;fnref1:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;George Orwell &amp;ndash; &lt;a href=&#34;http://www.george-orwell.org/1984/6.html&#34;&gt;&lt;em&gt;1984&lt;/em&gt; Part 1, Chapter 7&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
