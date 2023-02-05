@@ -32,17 +32,17 @@ The speed measurement function is implemented in the *GitHub Actions* environmen
 Nodes filtered using speedtest measurement will be stored in following files:  
 
 * Group 1 (High speed nodes)
-  - [Base64](https://francisfu.com/nodes/nodes/G1B)
+  - [Base64](https://francisfu.com/nodes/nodes/G1B.txt)
 
 * Group 2 (Contains free public nodes)
-  - [Base64](https://francisfu.com/nodes/nodes/G2B)
-  - [Mixed](https://francisfu.com/nodes/nodes/G2M)
-  - [Clash](https://francisfu.com/nodes/nodes/G2C)
+  - [Base64](https://francisfu.com/nodes/nodes/G2B.txt)
+  - [Mixed](https://francisfu.com/nodes/nodes/G2M.txt)
+  - [Clash](https://francisfu.com/nodes/nodes/G2C.txt)
 
 * Group 3 (Contains only free airports)
-  - [Base64](https://francisfu.com/nodes/nodes/G3B)
-  - [Mixed](https://francisfu.com/nodes/nodes/G3M)
-  - [Clash](https://francisfu.com/nodes/nodes/G3C)
+  - [Base64](https://francisfu.com/nodes/nodes/G3B.txt)
+  - [Mixed](https://francisfu.com/nodes/nodes/G3M.txt)
+  - [Clash](https://francisfu.com/nodes/nodes/G3C.txt)
 
 ### Manual Subs Conversion
 
