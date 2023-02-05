@@ -67,35 +67,11 @@ Now you can use the link above to import the subs into your client
 
 ## Softwares
 
-### Best Clients For Each OS
+| Platform | Recommended       | Alternatives                                    |
+|----------|-------------------|-------------------------------------------------|
+| IOS      | Quantumult        | Shadowrocket/NapsternetV/Surge                  |
+| Android  | Surfboard         | Clash For Android/V2rayNg/Shadowrocket/SagerNet |
+| Windows  | Clash For Windows | V2rayN/Nekoray/Qv2ray/WinXray                   |
+| MacOS    | Clash For Windows | Qv2ray/Surge/ClashX/V2rayU                      |
+| Linux    | Clash For Windows | Qv2ray                                          |
 
-|    OS   |              Best Client               | Alternatives |
-|:-------:|:--------------------------------------:|:------------:|
-|   IOS   |        Quantumult - Shadowrocket       |  NapsternetV |
-| Android |      Surfboard - Clash For Android     |    V2rayNg   |
-| Windows |   Clash For Windows - V2rayN - Nekoray |    Qv2ray    |
-|  Linux  |           Clash For Windows            |    Qv2ray    |
-|  MacOS  |           Clash For Windows            |    Qv2ray    |
-
-### Desktop Clients
-
-|                              MacOS                               |                              Linux                               |                                       Windows                                       | Brief description                                                                                         |
-| :--------------------------------------------------------------: | :--------------------------------------------------------------: | :---------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------- |
-| [CFW](https://github.com/Fndroid/clash_for_windows_pkg/releases) | [CFW](https://github.com/Fndroid/clash_for_windows_pkg/releases) | [CFW](https://github.com/Fndroid/clash_for_windows_pkg/releases) | SS, SSR, Trojan, Vmess, VLESS protocol support, strong policy offload capability.                                         |
-|       [Qv2ray](https://github.com/Qv2ray/Qv2ray/releases)        |       [Qv2ray](https://github.com/Qv2ray/Qv2ray/releases)        |                 [Qv2ray](https://github.com/Qv2ray/Qv2ray/releases)                 | SS, SSR, Trojan, Vmess, VLESS, Trojan-Go protocol support (relevant plugins need to be installed).                            |
-|                                ×                                 |                                ×                                 |                 [V2rayN](https://github.com/2dust/v2rayN/releases)                  | SS, Trojan, Vmess, VLESS protocol support, with speed measurement, delay measurement function, support subscription, QR code, clipboard import and manual configuration.  |
-|                                ×                                 |                                ×                                 |               [WinXray](https://github.com/TheMRLL/winxray/releases)                | SS, SSR, Trojan, Vmess, VLESS protocol support, support automatic connection to the fastest node.                                   |                                                                   |                                                               |
-|                  [Surge](https://nssurge.com/)                   |                                ×                                 |                                          ×                                          | SS, Trojan, Vmess protocol support, well-known network debugging tools, powerful strategy offloading ability, need to pay.                         |
-|     [ClashX](https://github.com/yichengchen/clashX/releases)     |                                ×                                 |                                          ×                                          | SS, SSR, Trojan, Vmess protocol support, occupy less resources.                                                  |
-|        [V2rayU](https://github.com/yanue/V2rayU/releases)        |                                ×                                 |                                          ×                                          | SS, Trojan, Vmess protocol support, support subscription, QR code, clipboard import, manual configuration, QR code sharing, similar to V2RayN. |
-
-### Mobile Clients
-
-|                               iOS/iPadOS                                |                                      Android                                       | Brief description                                                                                                                                                  |
-| :---------------------------------------------------------------------: | :--------------------------------------------------------------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Shadowrocket](https://apps.apple.com/us/app/shadowrocket/id932747118)  |  [Shadowrocket](https://play.google.com/store/apps/details?id=com.v2cross.proxy)   | SS, SSR, Trojan, Vmess, VLESS protocol support, the iOS side needs to be purchased in the non-country App Store, the US price is $2.99; the Android side is not the same author as the iOS side, does not support the SSR protocol, free and built-in free nodes. |
-|                      [Surge](https://nssurge.com/)                      |                                         ×                                          | SS, Trojan, Vmess protocol support, well-known network debugging tools on the iOS side, chargeable.                                                                                              |
-|                                    ×                                    |    [Surfboard](https://play.google.com/store/apps/details?id=com.getsurfboard)     | SS, SSR, Vmess Protocol support, Android network debugging software, compatible with Surge 2 configuration.                                                                                          |
-|                                    ×                                    |    [CFA](https://github.com/Kr328/ClashForAndroid/releases)     | SS, SSR, Trojan, Vmess Protocol support.                                                                                                                         |
-|                                    ×                                    |             [SagerNet](https://github.com/SagerNet/SagerNet/releases)              | SS, SSR, Trojan, Vmess, VLESS Protocol support.                                                                                                                  |
-|                                    ×                                    |                [V2rayNG](https://github.com/2dust/v2rayNG/releases)                | SS, Trojan, Vmess, VLESS protocol support, v2ray kernel.                                                                                                           |
