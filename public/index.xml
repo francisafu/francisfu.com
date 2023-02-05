@@ -14,8 +14,7 @@
       
       <guid>https://www.francisfu.net/post/%E6%8A%80%E6%9C%AF%E6%97%A0%E7%BD%AA/nodoj-havebla/</guid>
       
-        <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;This webpage is basically based on the GitHub Repository: &lt;a href=&#34;https://github.com/mahdibland/V2RayAggregator/&#34;&gt;V2RayAggregator&lt;/a&gt;. Thanks to the great efforts made by the authors and all of those who share the free nodes to everyone. They fight for the freedom and liberty. They are true warriors.&lt;/p&gt;
+        <description>&lt;p&gt;This webpage is basically based on the GitHub Repository: &lt;a href=&#34;https://github.com/mahdibland/V2RayAggregator/&#34;&gt;V2RayAggregator&lt;/a&gt;. Thanks to the great efforts made by the authors and all of those who share the free nodes to everyone. They fight for the freedom and liberty. They are true warriors.&lt;/p&gt;
 &lt;p&gt;The speed measurement function is implemented in the &lt;em&gt;GitHub Actions&lt;/em&gt; environment using &lt;a href=&#34;https://github.com/xxf098/LiteSpeedTest&#34;&gt;LiteSpeedTest&lt;/a&gt;, so there are many nodes in the United States, which cannot well represent the node availability in the domestic network environment.&lt;/p&gt;
 &lt;h2 id=&#34;instructions--usage&#34;&gt;Instructions &amp;amp; Usage&lt;/h2&gt;
 &lt;h3 id=&#34;tips&#34;&gt;Tips&lt;/h3&gt;
@@ -213,8 +212,7 @@
 &lt;td&gt;SS, Trojan, Vmess, VLESS protocol support, v2ray kernel.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;
-</description>
+&lt;/table&gt;</description>
       
     </item>
     
