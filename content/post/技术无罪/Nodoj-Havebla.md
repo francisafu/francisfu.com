@@ -30,15 +30,16 @@ The speed measurement function is implemented in the *GitHub Actions* environmen
 
 Nodes filtered using speedtest measurement will be stored in following files:  
 
-* Group 1 (Contains free public nodes)
-  - [Base64](https://francisfu.com/nodes/nodes/G1B.txt)
-  - [Mixed](https://francisfu.com/nodes/nodes/G2M.txt)
-  - [Clash](https://francisfu.com/nodes/nodes/G1C.txt)
+* All Untested Nodes
+  - [all_proxies](https://francisfu.com/nodes/all_proxies.yml)
 
-* Group 2 (Contains only free airports)
-  - [Base64](https://francisfu.com/nodes/nodes/G2B.txt)
-  - [Mixed](https://francisfu.com/nodes/nodes/G2M.txt)
-  - [Clash](https://francisfu.com/nodes/nodes/G2C.txt)
+* All Tested Nodes
+  - [Clash](https://francisfu.com/nodes/clash_all.yml)
+  - [Surge4](https://francisfu.com/nodes/surge_all.ini)
+
+* Selected Tested Nodes
+  - [Clash](https://francisfu.com/nodes/clash_part.yml)
+  - [Surge4](https://francisfu.com/nodes/surge_part.ini)
 
 ### Manual Subs Conversion
 
@@ -69,8 +70,8 @@ Now you can use the link above to import the subs into your client
 
 | Platform | Recommended       | Alternatives                                    |
 |----------|-------------------|-------------------------------------------------|
-| IOS      | Quantumult        | Shadowrocket/NapsternetV/Surge                  |
-| Android  | Surfboard         | Clash For Android/V2rayNg/Shadowrocket/SagerNet |
+| IOS      | QuantumultX        | Shadowrocket/Loon/Surge                  |
+| Android  | Surfboard         | Clash For Android/V2rayNg/Shadowrocket/SagerNet/Matsuri |
 | Windows  | Clash For Windows | V2rayN/Nekoray/Qv2ray/WinXray                   |
 | MacOS    | Clash For Windows | Qv2ray/Surge/ClashX/V2rayU                      |
 | Linux    | Clash For Windows | Qv2ray                                          |
