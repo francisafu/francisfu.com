@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="zh-cn"
+  data-theme=""
+  class="html"
+><head>
+  <title>
+    
+      
+        安卓Parcel漏洞攻击案例分析 |
+
+      Francis Fu
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.109.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Francis Fu" />
+  <meta
+    name="description"
+    content="The Less You Know, The Further You Go."
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.b2e0cb07595e3519ab1193bb421914e06c0e26b0cc561fef23b3c6131d4d2ffa.css"
+      integrity="sha256-suDLB1leNRmrEZO7QhkU4GwOJrDMVh/vI7PGEx1NL/o="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.31b0a1f317f55c529a460897848c97436bb138b19c399b37de70d463a8bf6ed5.css"
+    integrity="sha256-MbCh8xf1XFKaRgiXhIyXQ2uxOLGcOZs33nDUY6i/btU="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/css/custom.min.5c4cbf6d8f6939470c66a2bf8d9131b624f0a09b594bf46c49b76b1e6339ee37.css"
+      integrity="sha256-XEy/bY9pOUcMZqK/jZExtiTwoJtZS/RsSbdrHmM57jc="
+      crossorigin="anonymous"
+      media="screen"
+    />
+
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7f3c2281c7f965ce3c64888aa452793252a0416909c181097f81d0a0f7d1624e.css"
+    integrity="sha256-fzwigcf5Zc48ZIiKpFJ5MlKgQWkJwYEJf4HQoPfRYk4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.35fc032da8ede6681675d20a2f862fb9e1045c1d512d495fcf862c054daffef2.css"
+    integrity="sha256-NfwDLajt5mgWddIKL4YvueEEXB1RLUlfz4YsBU2v/vI="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.3b92357925ea7284f0c6b0378396f39f470f7842ed9702f337e667c4026bf837.css"
+    integrity="sha256-O5I1eSXqcoTwxrA3g5bzn0cPeELtlwLzN&#43;ZnxAJr&#43;Dc="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.ebb1096e1976e8cc4e2532cfa050b8f30eb13b8eb06be5cee3e38eb426b838ea.css"
+    integrity="sha256-67EJbhl26MxOJTLPoFC48w6xO46wa&#43;XO4&#43;OOtCa4OOo="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://www.francisfu.net/post/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.738c0e3a493854876aeab9e2316fd43f1936aeeac4cc6b3e60bb26456dba72ad.js"
+      integrity="sha256-c4wOOkk4VIdq6rniMW/UPxk2rurEzGs&#43;YLsmRW26cq0="
+      crossorigin="anonymous"
+    ></script>
+
+  <script
+      type="text/javascript"
+      src="/js/custom.min.47c6a278b8be851fc518ebdeeae6fce0041759f0e64ec01fa89a0ce17f7c4cf4.js"
+      integrity="sha256-R8aieLi&#43;hR/FGOve6ub84AQXWfDmTsAfqJoM4X98TPQ="
+      crossorigin="anonymous"
+    ></script>
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.francisfu.net/images/icon.png"/>
+
+<meta name="twitter:title" content="安卓Parcel漏洞攻击案例分析"/>
+<meta name="twitter:description" content="本文旨在用通俗易懂的文字描述最近一段时间被爆出的“并夕夕”安卓版APP利用Parcel漏洞对用户进行攻击的原理和过程。"/>
+
+
+
+  
+  <meta property="og:title" content="安卓Parcel漏洞攻击案例分析" />
+<meta property="og:description" content="本文旨在用通俗易懂的文字描述最近一段时间被爆出的“并夕夕”安卓版APP利用Parcel漏洞对用户进行攻击的原理和过程。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.francisfu.net/post/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/" /><meta property="og:image" content="https://www.francisfu.net/images/icon.png"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-03-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-03-09T00:00:00+00:00" /><meta property="og:site_name" content="CRuffians" />
+
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "安卓Parcel漏洞攻击案例分析",
+        "headline": "安卓Parcel漏洞攻击案例分析",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003e本文旨在用通俗易懂的文字描述最近一段时间被爆出的“并夕夕”安卓版APP利用Parcel漏洞对用户进行攻击的原理和过程。\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "zh-cn",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.francisfu.net\/post\/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90\/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Francis Fu"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Francis Fu"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Francis Fu"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Francis Fu"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-03-09T00:00:00.00Z",
+        "datePublished": "2023-03-09T00:00:00.00Z",
+        "dateModified": "2023-03-09T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Francis Fu",
+            "url": "https://www.francisfu.net",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/www.francisfu.net\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+        
+        "https://www.francisfu.net/images/icon.png"
+
+
+      
+      ]
+
+    ,
+        "url" : "https:\/\/www.francisfu.net\/post\/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90\/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90\/",
+        "wordCount" : "179",
+        "genre" : [ ],
+        "keywords" : [ ]
+    }
+  </script>
+
+
+
+</head>
+<body
+    
+      class="body theme--light"
+
+    
+  >
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/icon.png"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">CRuffians</a>
+        </div>
+
+      
+      <div class="sidebar__introduction-description">
+        <p>The Less You Know, The Further You Go.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:mail@francisfu.net"
+            target="_blank"
+            rel="noopener"
+            aria-label="E-Mail"
+            title="E-Mail"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/francisafu/"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li class="sidebar__list-item">
+          <a
+            href="/index.xml"
+            target="_blank"
+            rel="noopener"
+            aria-label="RSS"
+            title="RSS"
+          >
+            <i class="fas fa-rss fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Francis Fu 2017-2023
+
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="https://themes.gohugo.io/themes/anatole/"
+          
+            target="_blank" rel="noopener noreferrer"
+
+          
+          title=""
+        >
+          Powered by Hugo with Anatole Theme
+        </a>
+      </li>
+
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/"
+              
+              title=""
+              >文章</a
+            >
+          </li>
+
+        
+
+
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/series/"
+              
+              title=""
+              >合辑</a
+            >
+          </li>
+
+        
+
+
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/portfolio/"
+              
+              title=""
+              >关于</a
+            >
+          </li>
+
+        
+
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+
+    "
+  >
+    
+    <div class="post__content">
+      <h1>安卓Parcel漏洞攻击案例分析</h1>
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  2023.03.09
+
+
+                
+
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">阅读时间 1 分钟</span>
+          </li>
+        </ul>
+
+      <p>本文旨在用通俗易懂的文字描述最近一段时间被爆出的“并夕夕”安卓版APP利用Parcel漏洞对用户进行攻击的原理和过程。</p>
+<div
+  class="notice
+    notice--warning
+
+  "
+>
+  <span
+    class="notice__title
+      notice__title--warning
+
+    "
+  >警告</span><div class="notice__content">
+    <em>省流：如果你正在使用安卓手机，最好的处理方式是：1.立即卸载“并夕夕”；2.备份数据；3.刷机恢复至出厂设置；4.更新至安卓13。如果正在使用苹果手机则不受<strong>本次</strong>攻击影响。但是需要提醒的是：出轨只有零次和无数次。</em>
+  </div>
+</div>
+
+<h2 id="1-技术背景">1. 技术背景</h2>
+<p>安卓中一个核心的对象传递机制是 <em>Parcel</em> 。一个对象如果希望被通过 <em>Parcel</em> 进行传递，那么它需要定义 <em>readFromParcel</em> 和 <em>writeToParcel</em> 接口函数，并实现 <em>Parcelable</em> 接口。从理论上来讲，匹配序列化和反序列化函数应当是<strong>自反等效</strong>的，但系统ROM的开发者在编程过程中可能会出现不匹配的情况，例如写入的时候使用了<em>长整型变量</em>，读取的时候却使用了<em>整数型变量</em>。这类问题在运行过程中一般不会引起注意，也不会导致崩溃或错误，但在攻击者的精心布局下，却可最终利用 Settings和system_server进程，将这个微小的错误转化为 <strong>LaunchAnyWhere</strong> 提权。</p>
+<p>安卓近年来累计已修复上百个这类漏洞，并在 Android 13 中对 Parcel 机制做了全面改革，彻底杜绝了大部分此类攻击。然而对于鸿蒙和绝大部分未升级到 Android 13 的设备和用户来说，他们仍处于危险之中。</p>
+<p>近年来公布漏洞一览：</p>
+<table>
+<thead>
+<tr>
+<th>漏洞编号</th>
+<th>序列化对象</th>
+<th>公布时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CVE-2017-0806</td>
+<td>GateKeeperResponse</td>
+<td>2017.01</td>
+</tr>
+<tr>
+<td>CVE-2017-13286</td>
+<td>OutputConfiguration</td>
+<td>2018.04</td>
+</tr>
+<tr>
+<td>CVE-2017-13287</td>
+<td>VerifyCredentialResponse</td>
+<td>2018.04</td>
+</tr>
+<tr>
+<td>CVE-2017-13288</td>
+<td>PeriodicAdvertisingReport</td>
+<td>2018.04</td>
+</tr>
+<tr>
+<td>CVE-2017-13289</td>
+<td>ParcelableRttResults</td>
+<td>2018.04</td>
+</tr>
+<tr>
+<td>CVE-2017-13311</td>
+<td>SparseMappingTable</td>
+<td>2018.05</td>
+</tr>
+<tr>
+<td>CVE-2017-13315</td>
+<td>DcParamObject</td>
+<td>2018.05</td>
+</tr>
+<tr>
+<td>CVE-2021-0970</td>
+<td>GpsNavigationMessage</td>
+<td>2021.12</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-邪恶行径">2. 邪恶行径</h2>
+<p>上述攻击所涉及的多个安卓漏洞目前已全部修复。但是在2022年，仍然有无良知名互联网厂商持续挖掘安卓OEM相关漏洞，在其公开发布的APP中实现对目前市场主流手机系统的漏洞攻击。该互联网厂商在自家看似无害的APP里，利用上文提到的安卓 Parcel 序列化与反序列化不匹配系列漏洞，结合“堆风水”(Bundle-FengShui)攻击技术，实现 0day/Nday攻击，从而绕过安卓系统校验，获取系统最高权限，通过APP实际控制了用户的整个手机系统。</p>
+<p>在提权控制手机系统之后，该 APP 即开启了一系列的违规操作，绕过隐私合规监管，大肆收集用户的隐私信息，包括社交媒体账户资料、位置信息、WiFi 信息、基站信息甚至路由器信息等。</p>
+<p>同时，该 APP 进一步使用的另一个黑客技术手段，是利用手机厂商 OEM 代码中导出的 root-path FileContentProvider， 进行 System App 和敏感系统应用文件读写，进而突破沙箱机制、绕开权限系统改写系统关键配置文件为自身进行后台保活，修改用户桌面配置隐藏自身或欺骗用户实现防卸载（假卸载）。此外，还进一步通过覆盖动态代码文件的方式劫持其他应用注入后门执行代码，进行更加隐蔽的长期后台驻留，甚至还实现了和间谍软件类似的遥控机制，通过远端“云控开关”控制非法行为的启动与暂停，来躲避实时检测。最终，该互联网厂商通过上述一系列隐蔽的黑客技术手段，在其合法 APP 的背后，达到了一系列目的：</p>
+<ul>
+<li>隐蔽安装，提升装机量</li>
+<li>修改系统自启动、关联启动设置</li>
+<li>开启通知权限，监听通知内容</li>
+<li>修改系统设置，使用户无法卸载</li>
+<li>攻击竞争对手软件</li>
+<li>窃取用户隐私敏感数据</li>
+<li>逃避隐私合规监管</li>
+</ul>
+<h2 id="3-攻击推演">3. 攻击推演</h2>
+<blockquote>
+<p><em>鉴于6.50版本PDD软件已经移除了攻击代码，本文根据参考文献中案例分析，以6.49版APK安装包为基准。</em></p>
+</blockquote>
+<h3 id="31-提权代码">3.1 提权代码</h3>
+<p>解压apk文件，找到中提权代码所在的文件位置：</p>
+<p>pinduoduo-6-49-0.zip\assets\component\com.xunmeng.pinduoduo.AliveBaseAbility.7z\com.xunmeng.pinduoduo.AliveBaseAbility\vmp_src\mw1.bin</p>
+<p>该文件是一个加VMP壳的dex文件，脱壳后可还原出代码，其中包含针对不同手机厂商系统的多个用于提权的漏洞利用代码。此处不多赘述，毕竟提权只是它攻击的第一步。</p>
+<h3 id="32-恶意代码">3.2 恶意代码</h3>
+<p>提权后，根据检测到当前不同的手机型号和系统类型，动态下发dex文件进行恶意代码执行。参考文献链接中有包含所有下发的dex文件的Github仓库，可以使用<a href="https://github.com/tp7309/TTDeDroid">TTDeDroid</a>直接打开查看源码进行分析。本文只对已解包分析明确，并对系统有较大危害的dex恶意代码进行罗列。</p>
+<h4 id="321-监听通知">3.2.1 监听通知</h4>
+<ol>
+<li>
+<p>95cd95ab4d694ad8bdf49f07e3599fb3.dex</p>
+<ul>
+<li>对象：小米手机</li>
+<li>功能：获取用户通知的标题；获取发生通知的 APP 包名；获取通知发送时间；获取通知的密钥和频道ID</li>
+<li>类名：com.google.android.sd.biz_dynamic_dex.xm_ntf_info.XMGetNtfInfoExecutor</li>
+</ul>
+</li>
+<li>
+<p>0fc0e98ac2e54bc29401efaddfc8ad7f.dex</p>
+<ul>
+<li>对象：小米手机</li>
+<li>功能：如检测到用户关闭PDD通知权限，则自动强制打开</li>
+<li>类名：com.google.android.sd.biz_dynamic_dex.xm_permission.XMPermissionExecutor</li>
+</ul>
+</li>
+<li>
+<p>2eb20dc580aaa5186ee4a4ceb2374669.dex</p>
+<ul>
+<li>对象：VIVO手机</li>
+<li>功能：如检测到用户关闭PDD通知权限，则自动强制打开</li>
+<li>类名：com.google.android.sd.biz_dynamic_dex.vivo_open_push.VivoOpenPushExecutor</li>
+</ul>
+</li>
+<li>
+<p>67c9e686004f45158e94002e8e781192.dex</p>
+<ul>
+<li>对象：OPPO手机</li>
+<li>功能：如检测到用户关闭PDD通知权限，则自动强制打开
+*类名：com.google.android.sd.biz_dynamic_dex.oppo_notification_ut.OppoNotificationUTExecutor</li>
+</ul>
+</li>
+<li>
+<p>a3937709-b9cc-48fd-8918-163c9cb7c2df.dex</p>
+<ul>
+<li>对象：华为手机</li>
+<li>功能：强制打开鸿蒙系统的通知监听权限</li>
+<li>类名：com.google.android.sd.biz_dynamic_dex.hw_notification_listener.HWNotificationListenerExecutor</li>
+</ul>
+</li>
+<li>
+<p>257682c986ab449ab9e7c8ae7682fa61.dex</p>
+<ul>
+<li>对象：华为手机</li>
+<li>功能：如检测到用户关闭PDD通知权限，则自动强制打开</li>
+<li>类名：com.google.android.sd.biz_dynamic_dex.hw_permission.HwPermissionExecutor</li>
+</ul>
+</li>
+<li>
+<p>ab8ed4c3482c42a1b8baef558ee79deb.dex</p>
+<ul>
+<li>对象：所有安卓</li>
+<li>功能：实时监听并收集所有系统通知</li>
+<li>类名：com.google.android.sd.biz_dynamic_dex.ud_notification_listener.UdNotificationListenerExecutor</li>
+</ul>
+</li>
+<li>
+<p>4f260398-e9d1-4390-bbb9-eeb49c07bf3c.dex</p>
+<ul>
+<li>对象：所有安卓</li>
+<li>功能：实时监听并收集所有软件通知</li>
+<li>类名：com.google.android.sd.biz_dynamic_dex.notification_listener.NotificationListenerExecutor</li>
+</ul>
+</li>
+</ol>
+<h4 id="322-数据获取">3.2.2 数据获取</h4>
+<ol>
+<li>35604479f8854b5d90bc800e912034fc.dex
+<ul>
+<li>类名 ：com.google.android.sd.biz_dynamic_dex.usage_event_all.UsageEventAllExecutor</li>
+</ul>
+</li>
+<li>b50477f70bd14479a50e6fa34e18b2a0.dex
+<ul>
+<li>
+<p>类名：com.google.android.sd.biz_dynamic_dex.usage_event.UsageEventExecutor</p>
+</li>
+<li>
+<p>对象：所有安卓</p>
+</li>
+<li>
+<p>功能：获取用户的使用手机的数据，如某个APP启动/关闭/挂起时间、挂起、后台服务变化、设置变化、熄屏亮屏、开关机等</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="323-后台保活">3.2.3 后台保活</h4>
+<ol>
+<li>
+<p>e723d560-c2ee-461e-b2a1-96f85b614f2b.dex</p>
+<ul>
+<li>对象：所有安卓</li>
+<li>功能：获取自启动权限并设置自启动</li>
+<li>类名：com.google.android.sd.biz_dynamic_dex.oppo_boot_perm.OppoBootPermExecutor</li>
+</ul>
+</li>
+<li>
+<p>8b56d820-cac2-4ca0-8a3a-1083c5cca7ae.dex</p>
+<ul>
+<li>对象：VIVO手机</li>
+<li>功能：软件后台保活</li>
+<li>类名：com.google.android.sd.biz_dynamic_dex.vivo_association_start.VivoAssociationStartExecutor</li>
+</ul>
+</li>
+<li>
+<p>7c6e6702-e461-4315-8631-eee246aeba95.dex</p>
+<ul>
+<li>对象：华为手机</li>
+<li>功能：关闭华为耗电精灵</li>
+<li>类名：com.google.android.sd.biz_dynamic_dex.hw_hide_power_window.HidePowerWindowExecutor</li>
+</ul>
+</li>
+</ol>
+<h4 id="324-回滚卸载">3.2.4 回滚卸载</h4>
+<ol>
+<li>d643e0f9a68342bc8403a69e7ee877a7.dex
+<ul>
+<li>类名：com.google.android.sd.biz_dynamic_dex.vivo_rollback_uninstall.VivoRollbackUninstallExecutor</li>
+</ul>
+</li>
+<li>be7a2b643d7e8543f49994ffeb0ee0b6.dex
+<ul>
+<li>类名：com.google.android.sd.biz_dynamic_dex.vivo_official_uninstall.OfficialUntiUninstallV3</li>
+</ul>
+</li>
+<li>183bb87aa7d744a195741ce524577dd0.dex
+<ul>
+<li>类名：com.google.android.sd.biz_dynamic_dex.vivo_official_uninstall.VivoOfficialUninstallExecutor</li>
+<li>对象：VIVO手机</li>
+<li>功能：检测到用户卸载APP之后，将回滚到某特定的预置版本</li>
+</ul>
+</li>
+</ol>
+<h2 id="4-应对策略">4. 应对策略</h2>
+<p>首先需要明确，Android 13中目前已经不存在可用的Parcel序列化与反序列化漏洞。其次。PDD版本6.50+中目前已经移除了恶意代码。此外，已经被恶意代码入侵的手机，卸载APP或者单纯更新系统并不能完全去除后门及漏洞利用代码段。</p>
+<p>所以，如果手机不幸中招，首先应该卸载PDD软件。之后备份重要个人数据，备份好以后进行彻底刷机，利用Fastboot/Recovery模式全面格式化手机并重新刷入完整ROM包。如果硬件支持的话，尽可能使用Android 13。</p>
+<h2 id="参考文献">参考文献：</h2>
+<ol>
+<li><a href="https://mp.weixin.qq.com/s/P_EYQxOEupqdU0BJMRqWsw">「 深蓝洞察 」2022 年度最“不可赦”漏洞</a></li>
+<li><a href="https://www.zhihu.com/question/587624599/answer/2927765317">dex文件源码分析</a></li>
+<li><a href="https://github.com/davinci1010/pinduoduo_backdoor">davinci1010/pinduoduo_backdoor</a></li>
+</ol>
+</div>
+    <div class="post__footer">
+      
+
+      
+    </div>
+
+    
+  </div>
+
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Francis Fu 2017-2023
+
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="https://themes.gohugo.io/themes/anatole/"
+          
+            target="_blank" rel="noopener noreferrer"
+
+          
+          title=""
+        >
+          Powered by Hugo with Anatole Theme
+        </a>
+      </li>
+
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script></body>
+</html>
