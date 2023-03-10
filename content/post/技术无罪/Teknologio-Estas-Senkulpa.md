@@ -6,7 +6,7 @@ authors:
 series:
   - 技术无罪
 date: '2022-09-08'
-draft: false
+draft: true
 ---
 
 > In the end the Party would announce that two and two made five, and you would have to believe it.
