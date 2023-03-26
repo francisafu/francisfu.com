@@ -62,11 +62,11 @@ enableEmoji = true
     title = ""
   [[menu.main]]
     weight = 3
-    identifier = ""
+    identifier = "ChatGPT"
     pre = ""
     post = ""
-    name = "关于"
-    url = ""
+    name = "ChatGPT"
+    url = "https://gpt.francisfu.com"
     title = ""
 
 [params]
