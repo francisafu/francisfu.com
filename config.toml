@@ -352,6 +352,7 @@ enableEmoji = true
         # 或者
         # someCSS = "https://cdn.example.com/some.css"
       [params.page.library.js]
+        vercel = "js/_custom.js"
         # someJavascript = "some.js"
         # 位于 "assets/"
         # 或者
