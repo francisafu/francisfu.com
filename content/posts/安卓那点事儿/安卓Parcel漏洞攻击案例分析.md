@@ -1,6 +1,7 @@
 ---
 title: 安卓Parcel漏洞攻击案例分析
 author: Francis Fu
+categories: [安卓那点事儿]
 date: 2023-03-09
 lastmod: 2020-03-09
 draft: false
