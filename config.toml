@@ -1,7 +1,7 @@
 baseURL = "https://francisfu.com/"
 
 # 更改使用 Hugo 构建网站时使用的默认主题
-theme = "LoveIt"
+theme = "FixIt"
 
 # 网站标题
 title = "CRuffians"
@@ -62,11 +62,39 @@ enableEmoji = true
     title = ""
   [[menu.main]]
     weight = 3
-    identifier = "ChatGPT"
+    identifier = "ai"
+    pre = ""
+    post = ""
+    name = "AI"
+    url = ""
+    title = ""
+    [[menu.main]]
+    weight = 4
+    identifier = "gpt"
+    # 父级菜单项的标识符 (identifier)
+    parent = "ai"
     pre = ""
     post = ""
     name = "ChatGPT"
     url = "https://gpt.francisfu.com"
+    title = ""
+    [[menu.main]]
+    weight = 5
+    identifier = "cgs"
+    parent = "ai"
+    pre = ""
+    post = ""
+    name = "Prompts"
+    url = "https://cgs.francisfu.com"
+    title = ""
+    [[menu.main]]
+    weight = 6
+    identifier = "peg"
+    parent = "ai"
+    pre = ""
+    post = ""
+    name = "PE Guide"
+    url = "https://peg.francisfu.com"
     title = ""
 
 [params]
@@ -293,7 +321,7 @@ enableEmoji = true
         serverURLs = ""
         #  emoji 数据文件名称, 默认是 "google.yml"
         # ["apple.yml", "google.yml", "facebook.yml", "twitter.yml"]
-        # 位于 "themes/LoveIt/assets/lib/valine/emoji/" 目录
+        # 位于 "themes/FixIt/assets/lib/valine/emoji/" 目录
         # 可以在你的项目下相同路径存放你自己的数据文件:
         # "assets/lib/valine/emoji/"
         emoji = ""
@@ -414,7 +442,7 @@ enableEmoji = true
   [params.cdn]
     # CDN 数据文件名称, 默认不启用
     # ["jsdelivr.yml"]
-    # 位于 "themes/LoveIt/assets/data/cdn/" 目录
+    # 位于 "themes/FixIt/assets/data/cdn/" 目录
     # 可以在你的项目下相同路径存放你自己的数据文件:
     # "assets/data/cdn/"
     data = ""

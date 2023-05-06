@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>MIUI 14刷机及Magisk安装 - CRuffians</title><meta name="Description" content="The Less You Know, The Further You Go."><meta property="og:title" content="MIUI 14刷机及Magisk安装" />
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>MIUI 14刷机及Magisk安装 - CRuffians</title><meta name="author" content="Francis Fu">
+<meta name="author-link" content="https://francisfu.com/">
+<meta name="description" content="这两天休息在家，研究了一下小米MIUI 14刷机的方式，主要是结合Magisk模块安装和后续的一系列操作，在此作一简单记录。" /><meta name="keywords" content='Hugo, FixIt' /><meta itemprop="name" content="MIUI 14刷机及Magisk安装">
+<meta itemprop="description" content="这两天休息在家，研究了一下小米MIUI 14刷机的方式，主要是结合Magisk模块安装和后续的一系列操作，在此作一简单记录。"><meta itemprop="datePublished" content="2023-04-24T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-04-24T00:00:00+00:00" />
+<meta itemprop="wordCount" content="7743"><meta itemprop="image" content="https://francisfu.com/icon.png"/>
+<meta itemprop="keywords" content="" /><meta property="og:title" content="MIUI 14刷机及Magisk安装" />
 <meta property="og:description" content="这两天休息在家，研究了一下小米MIUI 14刷机的方式，主要是结合Magisk模块安装和后续的一系列操作，在此作一简单记录。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://francisfu.com/miui14%E5%88%B7%E6%9C%BA%E5%8F%8Amagisk%E5%AE%89%E8%A3%85/" /><meta property="og:image" content="https://francisfu.com/icon.png"/><meta property="article:section" content="posts" />
@@ -15,102 +22,203 @@
 
 <meta name="twitter:title" content="MIUI 14刷机及Magisk安装"/>
 <meta name="twitter:description" content="这两天休息在家，研究了一下小米MIUI 14刷机的方式，主要是结合Magisk模块安装和后续的一系列操作，在此作一简单记录。"/>
-<meta name="application-name" content="My cool site">
-<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://francisfu.com/miui14%E5%88%B7%E6%9C%BA%E5%8F%8Amagisk%E5%AE%89%E8%A3%85/" /><link rel="prev" href="https://francisfu.com/ai%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%88%91%E8%A7%81/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "MIUI 14刷机及Magisk安装",
-        "inLanguage": "zh-CN",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/francisfu.com\/miui14%E5%88%B7%E6%9C%BA%E5%8F%8Amagisk%E5%AE%89%E8%A3%85\/"
-        },"genre": "posts","wordcount":  7745 ,
-        "url": "https:\/\/francisfu.com\/miui14%E5%88%B7%E6%9C%BA%E5%8F%8Amagisk%E5%AE%89%E8%A3%85\/","datePublished": "2023-04-24T00:00:00+00:00","dateModified": "2023-04-24T00:00:00+00:00","license": "Francis Fu © All Rights Reserved","publisher": {
-            "@type": "Organization",
-            "name": ""},"author": {
-                "@type": "Person",
-                "name": "Francis Fu"
-            },"description": ""
-    }
-    </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
-
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://francisfu.com/miui14%E5%88%B7%E6%9C%BA%E5%8F%8Amagisk%E5%AE%89%E8%A3%85/" /><link rel="prev" href="https://francisfu.com/ai%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%88%91%E8%A7%81/" /><link rel="next" href="https://francisfu.com/ai%E6%9D%BF%E5%9D%97%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "MIUI 14刷机及Magisk安装",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/francisfu.com\/miui14%E5%88%B7%E6%9C%BA%E5%8F%8Amagisk%E5%AE%89%E8%A3%85\/"
+    },"genre": "posts","wordcount":  7743 ,
+    "url": "https:\/\/francisfu.com\/miui14%E5%88%B7%E6%9C%BA%E5%8F%8Amagisk%E5%AE%89%E8%A3%85\/","datePublished": "2023-04-24T00:00:00+00:00","dateModified": "2023-04-24T00:00:00+00:00","license": "Francis Fu © All Rights Reserved","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Francis Fu"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="CRuffians"><span class="header-title-text">CRuffians</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >分类</a></li><li class="menu-item has-children">
+              <a
+                class="menu-link"
+                href="/"
+                
+                
+              >AI</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://gpt.francisfu.com"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        >ChatGPT</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://cgs.francisfu.com"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        >Prompts</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://peg.francisfu.com"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        >PE Guide</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
     <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="CRuffians">CRuffians</a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="https://gpt.francisfu.com" rel="noopener noreffer" target="_blank"> ChatGPT </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
+      <div class="header-title">
+        <a href="/" title="CRuffians"><span class="header-title-text">CRuffians</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
     </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="CRuffians">CRuffians</a>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
             </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        取消
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="https://gpt.francisfu.com" title="" rel="noopener noreffer" target="_blank">ChatGPT</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
-    </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                >文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                >分类</a></li><li
+              class="menu-item"
+            ><span class="nested-item">
+                  <a
+                    class="menu-link"
+                    href="/"
+                    
+                    
+                  >AI</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://gpt.francisfu.com"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        >ChatGPT</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://cgs.francisfu.com"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        >Prompts</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://peg.francisfu.com"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        >PE Guide</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
 </header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">目录</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">MIUI 14刷机及Magisk安装</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://francisfu.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Francis Fu</a>
-</span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%AE%89%E5%8D%93%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>安卓那点事儿</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-04-24">2023-04-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 7745 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 16 分钟&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>MIUI 14刷机及Magisk安装</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://francisfu.com/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    Francis Fu</a></span>
+          <span class="post-category">收录于 <a href="/categories/%E5%AE%89%E5%8D%93%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 安卓那点事儿</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2023-04-24 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-04-24">2023-04-24</time></span>&nbsp;<span title="更新于 2023-04-24 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-04-24">2023-04-24</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 7743 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 16 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#0理论铺垫">0.理论铺垫</a></li>
     <li><a href="#1准备工作">1.准备工作</a></li>
@@ -130,16 +238,16 @@
     <li><a href="#9结语">9.结语</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>这两天休息在家，研究了一下小米MIUI 14刷机的方式，主要是结合Magisk模块安装和后续的一系列操作，在此作一简单记录。</p>
+      </div><div class="content" id="content"><p>这两天休息在家，研究了一下小米MIUI 14刷机的方式，主要是结合Magisk模块安装和后续的一系列操作，在此作一简单记录。</p>
 <p>两年前我写了一篇魔趣ROM的刷机教程。两年后，「斯人已逝」，魔趣ROM官方停止了更新。国产第三方ROM的时代一去不返了，此后只能研究折腾官方ROM了。而夹带私货的官方ROM，无论选哪个，都是吃屎一般的感觉，只不过某些屎相比其他的，可能还稍微容易让人下咽一些。本文的环境是：<strong>小米11，MIUI 14.0.8.0</strong>。在工作开始之前，需要先了解一个概念：Virtual A/B Partition。</p>
 <div class="details admonition warning open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><em>如果在操作过程中遇到无法下载的情况，请考虑网络因素。</em></div>
-        </div>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
+    <div class="details-content">
+      <div class="admonition-content"><em>如果在操作过程中遇到无法下载的情况，请考虑网络因素。</em></div>
+    </div>
+  </div>
 <h2 id="0理论铺垫">0.理论铺垫</h2>
 <p>安卓系统为智能手机的普及立下了汗马功劳，可是开源所导致的碎片化问题，一直是谷歌心中难以掩饰的痛。为了改变这一现状，谷歌进行了许多尝试，例如在An­droid 7.0引入的「A/​B 无缝系统更新」，An­droid 8.0时推出的「Pro­ject Tre­ble」，都是为了铺平无障碍更新系统的道路，减轻更新失败导致设备故障的风险，以便厂商可以更轻松地推送系统更新。</p>
 <p>而在Android 11版本，谷歌使用了名为「vir­tual A/​B」的新分区，并将其率先使用在Pixel 5 上。「vir­tual A/​B」更新系统的方法与「A/​B」类似，核心功能也相同。在系统进行OTA更新时，如果更新失败，则会自动回滚到上一个系统，成功开机进入之后才会将新数据写入到系统中。且系统更新可在待机状态下完成，无需重启等待新数据写入，可谓是极大地改善了更新系统时的用户体验。只是「A/​B」需要准备两个相同的分区，会占用更多的存储空间，而「vir­tual A/​B」删除了「cache」和「re­cov­ery」分区，「sys­tem」分区只保留一个，以解决上述空间占用问题。</p>
@@ -150,8 +258,7 @@
 <h2 id="1准备工作">1.准备工作</h2>
 <p>刷机之前，请务必备份手机里所有重要的个人数据，包括但不限于：通讯录、照片、应用数据等。刷机过程中会清除全部个人数据，所以一定一定做好备份！</p>
 <h2 id="2手机解锁">2.手机解锁</h2>
-<p>现在不少手机是锁BootLoader的，BootLoader对于嵌入式设备（如ARM架构）而言类似于PC设备的BIOS。出于对设备安全性的考虑，厂商会锁定BootLoader以防止恶意程序或者不法分子篡改。那么如果我们要更换操作系统，第一步就是需要解锁BootLoader。很多国产手机厂商已经不支持解锁BL了，不过小米截至目前都是允许的。小米手机的解锁请参考<a href="http://www.miui.com/unlock/download.html" target="_blank" rel="noopener noreffer">这个页面</a>
-，先下载手机解锁程序到电脑上，解压缩后，依次执行如下步骤：</p>
+<p>现在不少手机是锁BootLoader的，BootLoader对于嵌入式设备（如ARM架构）而言类似于PC设备的BIOS。出于对设备安全性的考虑，厂商会锁定BootLoader以防止恶意程序或者不法分子篡改。那么如果我们要更换操作系统，第一步就是需要解锁BootLoader。很多国产手机厂商已经不支持解锁BL了，不过小米截至目前都是允许的。小米手机的解锁请参考<a href="http://www.miui.com/unlock/download.html"target="_blank" rel="external nofollow noopener noreferrer">这个页面</a>，先下载手机解锁程序到电脑上，解压缩后，依次执行如下步骤：</p>
 <ol>
 <li>在电脑上打开小米手机解锁程序（miflash_unlock.exe）；</li>
 <li>同意条款，登录小米账户，进入待解锁界面；</li>
@@ -165,13 +272,10 @@
 解锁后手机会自动重启，如果解锁成功，在启动界面下方会出现一把打开的小锁头图标和「unlocked」字样。此时标志着解锁成功。</li>
 </ol>
 <h2 id="3提取引导文件">3.提取引导文件</h2>
-<p>Magisk模块的刷入需要通过修补系统引导文件「boot.img」的方式去完成，所以我们需要下载对应系统版本的线刷包，然后提取引导文件。小米的ROM可以在<a href="https://miuirom.org/" target="_blank" rel="noopener noreffer">这个网址</a>
-找到。搜索「mi 11」关键字后，找到对应的手机型号和系统版本，我使用的是国行14.0.8.0ROM，对应的在网站上名称是「MIUI China 14.0.8.0.TKBCNXM」。在下载链接处可以看到两个链接，分别是「Recovery」和「Fastboot」，前者是卡刷包，后者是线刷包。我们这里下载线刷包。下载好的文件解压缩后即可在根目录下找到boot.img文件，将他复制到手机中去。</p>
+<p>Magisk模块的刷入需要通过修补系统引导文件「boot.img」的方式去完成，所以我们需要下载对应系统版本的线刷包，然后提取引导文件。小米的ROM可以在<a href="https://miuirom.org/"target="_blank" rel="external nofollow noopener noreferrer">这个网址</a>找到。搜索「mi 11」关键字后，找到对应的手机型号和系统版本，我使用的是国行14.0.8.0ROM，对应的在网站上名称是「MIUI China 14.0.8.0.TKBCNXM」。在下载链接处可以看到两个链接，分别是「Recovery」和「Fastboot」，前者是卡刷包，后者是线刷包。我们这里下载线刷包。下载好的文件解压缩后即可在根目录下找到boot.img文件，将他复制到手机中去。</p>
 <h2 id="4安装magisk">4.安装Magisk</h2>
-<p>首先<a href="https://github.com/topjohnwu/Magisk/releases" target="_blank" rel="noopener noreffer">在此处</a>
-下载Magisk Man­ager安装并打开，目前最新版是v26.1。打开后右上角有一个「安装」，点击「选择并修补一个文件」，从文件管理器中选择刚才复制过来的boot.img文件。Magisk会自动修补它，并将修补好的文件放在 /Download 目录下，名为「magisk_patched_xxxxx.img」。将这个修补好的文件复制到电脑，为下一步刷入做准备。</p>
-<p>在本文附件中下载<a href="" rel="">ADB工具箱</a>
-并解压到电脑中，连接手机到电脑，在「开发者选项」中打开手机的「USB调试」功能。双击工具箱中的「打开CMD命令行.bat」，依次输入下述命令：</p>
+<p>首先<a href="https://github.com/topjohnwu/Magisk/releases"target="_blank" rel="external nofollow noopener noreferrer">在此处</a>下载Magisk Man­ager安装并打开，目前最新版是v26.1。打开后右上角有一个「安装」，点击「选择并修补一个文件」，从文件管理器中选择刚才复制过来的boot.img文件。Magisk会自动修补它，并将修补好的文件放在 /Download 目录下，名为「magisk_patched_xxxxx.img」。将这个修补好的文件复制到电脑，为下一步刷入做准备。</p>
+<p>在本文附件中下载<a href="">ADB工具箱</a>并解压到电脑中，连接手机到电脑，在「开发者选项」中打开手机的「USB调试」功能。双击工具箱中的「打开CMD命令行.bat」，依次输入下述命令：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -202,15 +306,12 @@
 </div>
 </div><p>刷入成功后，输入<code>fastboot reboot</code>命令重启手机，不出意外的话，再次打开Magisk就可以看到已经成功的激活了。</p>
 <h2 id="5文件管理">5.文件管理</h2>
-<p>root手机以后，我们需要在<a href="https://rootexplorer.co/" target="_blank" rel="noopener noreffer">这个链接</a>
-下载Root Explorer，也就是大名鼎鼎的RE文件管理器。再获取root权限后，它可以浏览整个手机的文件系统，为后续编辑系统核心目录文件做好铺垫。下载下来的是安卓apk程序包，直接打开安装即可。</p>
+<p>root手机以后，我们需要在<a href="https://rootexplorer.co/"target="_blank" rel="external nofollow noopener noreferrer">这个链接</a>下载Root Explorer，也就是大名鼎鼎的RE文件管理器。再获取root权限后，它可以浏览整个手机的文件系统，为后续编辑系统核心目录文件做好铺垫。下载下来的是安卓apk程序包，直接打开安装即可。</p>
 <p>安装好启动程序，在Magisk中可以看到它索取root权限，点击授权，即可正常访问所有目录。可以尝试访问 /data/adb 目录做测试，后续我们也会主要用到这个目录。</p>
 <h2 id="6神隐土遁">6.神隐土遁</h2>
 <p>由于Magisk模块是一种root的手段，如果不加以隐藏，将导致很多金融类APP和游戏类APP无法正常使用。金融类比如微信支付、支付宝、各种银行官方APP等，主要是基于防止资金被盗的考虑。游戏类比如王者荣耀、英雄联盟等，主要是基于防止外挂的考虑。这个时候就需要隐藏Magisk和root权限。首先是安装我们所需要的两个模块：自动神仙救砖、Shamiko和LSPosed。</p>
-<p>「自动神仙救砖」模块是玩Magisk必刷的模块，而且是要第一个刷的。它可以在出现模块冲突导致死机变砖时，自动禁用所有模块并重启进入系统。类似于Windows的「安全模式」。由于是2021年发布于论坛的，官方链接已经早不可考，可以在<a href="" rel="">附件</a>
-中下载。Magisk模块都是压缩包，下载后复制到手机上，从软件内部选择并安装即可。</p>
-<p>「Shamiko」和「LSPosed」模块都可以在<a href="https://lsposed.org/" target="_blank" rel="noopener noreffer">这个链接</a>
-找到。在安装这两个模块之前，首先要在Magisk中开启Zygisk选项。这里需要插播一条理论介绍，关于什么是Zygisk。</p>
+<p>「自动神仙救砖」模块是玩Magisk必刷的模块，而且是要第一个刷的。它可以在出现模块冲突导致死机变砖时，自动禁用所有模块并重启进入系统。类似于Windows的「安全模式」。由于是2021年发布于论坛的，官方链接已经早不可考，可以在<a href="">附件</a>中下载。Magisk模块都是压缩包，下载后复制到手机上，从软件内部选择并安装即可。</p>
+<p>「Shamiko」和「LSPosed」模块都可以在<a href="https://lsposed.org/"target="_blank" rel="external nofollow noopener noreferrer">这个链接</a>找到。在安装这两个模块之前，首先要在Magisk中开启Zygisk选项。这里需要插播一条理论介绍，关于什么是Zygisk。</p>
 <h3 id="61-zygisk">6.1 Zygisk</h3>
 <p>Zygisk和曾经非常主流，但是现在已经被废弃的Riru一样，都是Zygote注入工具。那么Zygote是什么？在安卓中，负责孵化新进程的父进程叫做Zygote，安卓上的应用进程都是由Zygote进程孵化的。众所周知，安卓是Linux内核，安卓系统上运行的一切程序都是放在Dalvik虚拟机上的，Zygote也不例外。事实上，它是安卓系统运行的第一个Dalvik虚拟机进程，是由Linux内核启动的用户级进程Init所创建的。</p>
 <p>那么Zygisk和Riru区别在哪？Riru是Magisk老版本内置的Zygote注入器，配合Magisk Hide功能，可以完美的将Magisk隐藏到Zygote进程中，防止被子级进程发现Magisk的存在。但是由于Magisk的核心开发者被谷歌「招安」，承诺不再提供隐蔽Magisk功能，Magisk Hide功能就被从v24版本中移除了。与之不同的是，Zygisk能为Magisk模块提供更深入、更强悍的核心修改能力。它有一个排除列表，可以撤销Magisk及模块所产生的所有更改。这样用户就能手动划定Magisk起作用的范围。但是，该功能跟Riru不同，不能避免root被检测到，没有任何隐藏作用。即使将某些程序加入排除列表，它们依旧可以发现Zygisk/Magisk的存在，只是模块对其无法生效而已。如果用户要隐藏root，只能借助其他方式，比如Shamiko。此外，Zygisk和Riru是无法共存的，当前版本Magisk中自带Zygisk，而且也是未来一段时间的主流Zygote注入解决方案。</p>
@@ -232,22 +333,19 @@
 </ol>
 <p>LSPoesd针对这些问题作出了改进：1.拿出砍刀大砍特砍，无用的功能与代码统统砍掉，更精简的代码意味着更佳的性能表现。2.去掉了全局模式与黑白名单机制。在使用LSPosed时，必须针对各个插件选择该插件将会注入的应用，也就是其“作用域”。这样虽然引入了额外的操作，但有效防止了过多无用的注入引起的卡顿问题或隐私问题。换言之，LSPosed并未在原理上进行大的调整，重点在于引导用户「正确合法」地使用Xposed框架，确保Xposed框架和插件都不会做多余的事。同时，LSPosed还引入了新的Xposed API，允许插件自动告知管理器它所需要的作用域，无需手动设置。3.管理器不再作为单独app，成为SystemUI的一部分并通过拨号或者快捷方式启动。4.加入native层注入的支持（旧版Xposed模块通常只支持Java层注入）5.维护全新的Xposed模块仓库，取代XDA所维护的那个年久失修的仓库。</p>
 <p>鉴于有如此多的优点和好处，我们自然要选择LSPosed框架。刷入Magisk并重启手机后，LSPosed即开始正常工作了。如果建立了桌面快捷方式，可以看到它是一个蓝色的X形创可贴。如果不小心忘记了建立，也可以在拨号界面输入「*#*#5776733#*#*」（即LSPOSED的九键数字）唤出LSPosed主界面。</p>
-<p>LSPosed下，我最需要安装的是这个插件：<a href="https://github.com/MinaMichita/AntiAntiDefraud/releases" target="_blank" rel="noopener noreffer">AntiAntiDefraud</a>
-。自从MIUI 14后，小米在系统中加入了反诈模块，自动扫描手机中安装的软件包并上传至广东机房，同时将副本上传至腾讯天御安防系统。我个人非常反感这种泄露隐私的行为。MIUI届的大佬「MinaMichita」开发了这款XPosed插件，屏蔽上传链接，阻止列表上传。下载APK文件并安装后，在LSPosed中授权启用插件即可正常使用，日志中可以查看屏蔽器是否生效，具体可以参考Github上Readme文档中的说明。</p>
+<p>LSPosed下，我最需要安装的是这个插件：<a href="https://github.com/MinaMichita/AntiAntiDefraud/releases"target="_blank" rel="external nofollow noopener noreferrer">AntiAntiDefraud</a>。自从MIUI 14后，小米在系统中加入了反诈模块，自动扫描手机中安装的软件包并上传至广东机房，同时将副本上传至腾讯天御安防系统。我个人非常反感这种泄露隐私的行为。MIUI届的大佬「MinaMichita」开发了这款XPosed插件，屏蔽上传链接，阻止列表上传。下载APK文件并安装后，在LSPosed中授权启用插件即可正常使用，日志中可以查看屏蔽器是否生效，具体可以参考Github上Readme文档中的说明。</p>
 <h2 id="8transparent-proxy">8.Transparent Proxy</h2>
 <div class="details admonition warning open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><em>此章节为高级用法，非专业人士请勿尝试。</em></div>
-        </div>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
+    <div class="details-content">
+      <div class="admonition-content"><em>此章节为高级用法，非专业人士请勿尝试。</em></div>
+    </div>
+  </div>
 <p>This is the most important part of the whole article, about how to set up a transparent proxy with Magisk. While using proxies or VPNs, you may face some problems, like, you have to install some apks, or a VPN connection may show up in the notification bar and leave a record in your phone. This may cause great influence, you know what I mean. A transparent proxy is, as it&rsquo;s name, a proxy that no one can see, and will left almost nothing in your phone. I will show you how to do so.</p>
-<p>First, download the Magisk module <a href="https://github.com/CHIZI-0618/box4magisk/releases" target="_blank" rel="noopener noreffer">box4magisk</a>
-. I use the latest version (v4.6). Install the module in the Magisk.</p>
-<p>The module support mutiple core of 3rd generation proxies, such as: clash, clash.meta, sing-box, v2ray-core and Xray-core. Here I choose to use Clash. Then we need to download clash-core from <a href="https://github.com/Dreamacro/clash/releases/tag/premium" target="_blank" rel="noopener noreffer">this link</a>
-. I choose the Premium version(clash-linux-armv7-2023.04.16.gz), which will support more functions. Unzip the file, extract the clash core and rename it into &ldquo;clash&rdquo;, copy it into the phone and place it under /data/adb/box/bin/ .</p>
+<p>First, download the Magisk module <a href="https://github.com/CHIZI-0618/box4magisk/releases"target="_blank" rel="external nofollow noopener noreferrer">box4magisk</a>. I use the latest version (v4.6). Install the module in the Magisk.</p>
+<p>The module support mutiple core of 3rd generation proxies, such as: clash, clash.meta, sing-box, v2ray-core and Xray-core. Here I choose to use Clash. Then we need to download clash-core from <a href="https://github.com/Dreamacro/clash/releases/tag/premium"target="_blank" rel="external nofollow noopener noreferrer">this link</a>. I choose the Premium version(clash-linux-armv7-2023.04.16.gz), which will support more functions. Unzip the file, extract the clash core and rename it into &ldquo;clash&rdquo;, copy it into the phone and place it under /data/adb/box/bin/ .</p>
 <p>Now you have to set up the proxy config file. I tried a lot here, the default version of config.yaml under clash folder have multiple bugs. Here is an example of config.yaml file content under the clash folder:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -717,41 +815,39 @@
 <p>Therefore, when you finished all three config files, place them into the right place, restart the module, you can see from the log at /data/adb/box/run and check if your proxy works great.</p>
 <h2 id="9结语">9.结语</h2>
 <p>至此，小米11/MIUI 14刷机过程就全部结束了。希望国产ROM能有健康的发展，也期待有一天网络环境可以越来越好，个人隐私可以越来越安全。</p></div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>更新于 2023-04-24</span>
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/miui14%E5%88%B7%E6%9C%BA%E5%8F%8Amagisk%E5%AE%89%E8%A3%85/index.md" target="_blank">阅读原始文档</a>
-                        </span></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
-        </div>
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-04-24 00:00:00">更新于 2023-04-24&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="/miui14%E5%88%B7%E6%9C%BA%E5%8F%8Amagisk%E5%AE%89%E8%A3%85/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
+      <div class="post-info-share">
+        <span></span>
+      </div>
     </div>
+  </div>
 
-    <div class="post-info-more">
-        <section class="post-tags"></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
-        </section>
-    </div>
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
 
-    <div class="post-nav"><a href="/ai%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%88%91%E8%A7%81/" class="prev" rel="prev" title="AI技术之我见"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>AI技术之我见</a></div>
+  <div class="post-nav"><a href="/ai%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%88%91%E8%A7%81/" class="post-nav-item" rel="prev" title="AI技术之我见"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>AI技术之我见</a>
+      <a href="/ai%E6%9D%BF%E5%9D%97%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" class="post-nav-item" rel="next" title="AI板块使用说明">AI板块使用说明<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-</article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://francisfu.com/" target="_blank">Francis Fu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
-        </div>
-    </footer></div>
-
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript" src="/js/_custom.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://francisfu.com/"target="_blank" rel="external nofollow noopener noreferrer">Francis Fu</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/js/_custom.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script src="/js/theme.min.js" defer></script><script src="/js/custom.min.js" defer></script></body>
 </html>

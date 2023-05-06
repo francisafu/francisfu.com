@@ -282,3 +282,9 @@ The title of the this article is an Espranto sentence, which means that *Technol
 >
 > — <cite>George Orwell [^1]</cite>
 
+
+---
+
+> 作者: [Francis Fu](https://francisfu.com/)  
+> URL: https://francisfu.com/teknologio-estas-senkulpa/  
+

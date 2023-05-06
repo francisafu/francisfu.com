@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>安卓Parcel漏洞攻击案例分析 - CRuffians</title><meta name="Description" content="The Less You Know, The Further You Go."><meta property="og:title" content="安卓Parcel漏洞攻击案例分析" />
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>安卓Parcel漏洞攻击案例分析 - CRuffians</title><meta name="author" content="Francis Fu">
+<meta name="author-link" content="https://francisfu.com/">
+<meta name="description" content="本文旨在用通俗易懂的文字描述最近一段时间被爆出的“并夕夕”安卓版APP利用Parcel漏洞对用户进行攻击的原理和过程。" /><meta name="keywords" content='Hugo, FixIt' /><meta itemprop="name" content="安卓Parcel漏洞攻击案例分析">
+<meta itemprop="description" content="本文旨在用通俗易懂的文字描述最近一段时间被爆出的“并夕夕”安卓版APP利用Parcel漏洞对用户进行攻击的原理和过程。"><meta itemprop="datePublished" content="2023-03-09T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-03-09T00:00:00+00:00" />
+<meta itemprop="wordCount" content="3566"><meta itemprop="image" content="https://francisfu.com/icon.png"/>
+<meta itemprop="keywords" content="" /><meta property="og:title" content="安卓Parcel漏洞攻击案例分析" />
 <meta property="og:description" content="本文旨在用通俗易懂的文字描述最近一段时间被爆出的“并夕夕”安卓版APP利用Parcel漏洞对用户进行攻击的原理和过程。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://francisfu.com/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/" /><meta property="og:image" content="https://francisfu.com/icon.png"/><meta property="article:section" content="posts" />
@@ -15,102 +22,203 @@
 
 <meta name="twitter:title" content="安卓Parcel漏洞攻击案例分析"/>
 <meta name="twitter:description" content="本文旨在用通俗易懂的文字描述最近一段时间被爆出的“并夕夕”安卓版APP利用Parcel漏洞对用户进行攻击的原理和过程。"/>
-<meta name="application-name" content="My cool site">
-<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://francisfu.com/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/" /><link rel="prev" href="https://francisfu.com/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" /><link rel="next" href="https://francisfu.com/ai%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%88%91%E8%A7%81/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "安卓Parcel漏洞攻击案例分析",
-        "inLanguage": "zh-CN",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/francisfu.com\/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90\/"
-        },"genre": "posts","wordcount":  3566 ,
-        "url": "https:\/\/francisfu.com\/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90\/","datePublished": "2023-03-09T00:00:00+00:00","dateModified": "2020-03-09T00:00:00+00:00","license": "Francis Fu © All Rights Reserved","publisher": {
-            "@type": "Organization",
-            "name": ""},"author": {
-                "@type": "Person",
-                "name": "Francis Fu"
-            },"description": ""
-    }
-    </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
-
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://francisfu.com/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/" /><link rel="prev" href="https://francisfu.com/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" /><link rel="next" href="https://francisfu.com/ai%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%88%91%E8%A7%81/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "安卓Parcel漏洞攻击案例分析",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/francisfu.com\/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90\/"
+    },"genre": "posts","wordcount":  3566 ,
+    "url": "https:\/\/francisfu.com\/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90\/","datePublished": "2023-03-09T00:00:00+00:00","dateModified": "2020-03-09T00:00:00+00:00","license": "Francis Fu © All Rights Reserved","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Francis Fu"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="CRuffians"><span class="header-title-text">CRuffians</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >分类</a></li><li class="menu-item has-children">
+              <a
+                class="menu-link"
+                href="/"
+                
+                
+              >AI</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://gpt.francisfu.com"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        >ChatGPT</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://cgs.francisfu.com"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        >Prompts</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://peg.francisfu.com"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        >PE Guide</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
     <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="CRuffians">CRuffians</a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="https://gpt.francisfu.com" rel="noopener noreffer" target="_blank"> ChatGPT </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
+      <div class="header-title">
+        <a href="/" title="CRuffians"><span class="header-title-text">CRuffians</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
     </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="CRuffians">CRuffians</a>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
             </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        取消
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="https://gpt.francisfu.com" title="" rel="noopener noreffer" target="_blank">ChatGPT</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
-    </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                >文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                >分类</a></li><li
+              class="menu-item"
+            ><span class="nested-item">
+                  <a
+                    class="menu-link"
+                    href="/"
+                    
+                    
+                  >AI</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://gpt.francisfu.com"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        >ChatGPT</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://cgs.francisfu.com"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        >Prompts</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://peg.francisfu.com"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        >PE Guide</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
 </header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">目录</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">安卓Parcel漏洞攻击案例分析</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://francisfu.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Francis Fu</a>
-</span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%AE%89%E5%8D%93%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>安卓那点事儿</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-09">2023-03-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3566 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 8 分钟&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>安卓Parcel漏洞攻击案例分析</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://francisfu.com/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    Francis Fu</a></span>
+          <span class="post-category">收录于 <a href="/categories/%E5%AE%89%E5%8D%93%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 安卓那点事儿</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2023-03-09 00:00:00"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-03-09">2023-03-09</time></span>&nbsp;<span title="更新于 2020-03-09 00:00:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2020-03-09">2020-03-09</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3566 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 8 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#1-技术背景">1. 技术背景</a></li>
     <li><a href="#2-邪恶行径">2. 邪恶行径</a></li>
@@ -131,15 +239,15 @@
     <li><a href="#参考文献">参考文献</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>本文旨在用通俗易懂的文字描述最近一段时间被爆出的“并夕夕”安卓版APP利用Parcel漏洞对用户进行攻击的原理和过程。</p>
+      </div><div class="content" id="content"><p>本文旨在用通俗易懂的文字描述最近一段时间被爆出的“并夕夕”安卓版APP利用Parcel漏洞对用户进行攻击的原理和过程。</p>
 <div class="details admonition warning open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>省流<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><em>如果你正在使用安卓手机并安装了“并夕夕”，最好的处理方式是：1.立即卸载“并夕夕”；2.备份数据；3.刷机恢复至出厂设置；4.更新至安卓13。如果正在使用苹果手机则不受<strong>本次</strong>攻击影响。但是需要提醒的是：出轨只有零次和无数次。</em></div>
-        </div>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>省流<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
+    <div class="details-content">
+      <div class="admonition-content"><em>如果你正在使用安卓手机并安装了“并夕夕”，最好的处理方式是：1.立即卸载“并夕夕”；2.备份数据；3.刷机恢复至出厂设置；4.更新至安卓13。如果正在使用苹果手机则不受<strong>本次</strong>攻击影响。但是需要提醒的是：出轨只有零次和无数次。</em></div>
+    </div>
+  </div>
 <h2 id="1-技术背景">1. 技术背景</h2>
 <p>安卓中一个核心的对象传递机制是 <em>Parcel</em> 。一个对象如果希望被通过 <em>Parcel</em> 进行传递，那么它需要定义 <em>readFromParcel</em> 和 <em>writeToParcel</em> 接口函数，并实现 <em>Parcelable</em> 接口。从理论上来讲，匹配序列化和反序列化函数应当是<strong>自反等效</strong>的，但系统ROM的开发者在编程过程中可能会出现不匹配的情况，例如写入的时候使用了<em>长整型变量</em>，读取的时候却使用了<em>整数型变量</em>。这类问题在运行过程中一般不会引起注意，也不会导致崩溃或错误，但在攻击者的精心布局下，却可最终利用 Settings和system_server进程，将这个微小的错误转化为 <strong>LaunchAnyWhere</strong> 提权。</p>
 <p>安卓近年来累计已修复上百个这类漏洞，并在 Android 13 中对 Parcel 机制做了全面改革，彻底杜绝了大部分此类攻击。然而对于鸿蒙和绝大部分未升级到 Android 13 的设备和用户来说，他们仍处于危险之中。</p>
@@ -217,8 +325,7 @@
 <p>pinduoduo-6-49-0.zip\assets\component\com.xunmeng.pinduoduo.AliveBaseAbility.7z\com.xunmeng.pinduoduo.AliveBaseAbility\vmp_src\mw1.bin</p>
 <p>该文件是一个加VMP壳的dex文件，脱壳后可还原出代码，其中包含针对不同手机厂商系统的多个用于提权的漏洞利用代码。此处不多赘述，毕竟提权只是它攻击的第一步。</p>
 <h3 id="32-恶意代码">3.2 恶意代码</h3>
-<p>提权后，根据检测到当前不同的手机型号和系统类型，动态下发dex文件进行恶意代码执行。参考文献链接中有包含所有下发的dex文件的Github仓库，可以使用<a href="https://github.com/tp7309/TTDeDroid" target="_blank" rel="noopener noreffer">TTDeDroid</a>
-直接打开查看源码进行分析。本文只对已解包分析明确，并对系统有较大危害的dex恶意代码进行罗列。</p>
+<p>提权后，根据检测到当前不同的手机型号和系统类型，动态下发dex文件进行恶意代码执行。参考文献链接中有包含所有下发的dex文件的Github仓库，可以使用<a href="https://github.com/tp7309/TTDeDroid"target="_blank" rel="external nofollow noopener noreferrer">TTDeDroid</a>直接打开查看源码进行分析。本文只对已解包分析明确，并对系统有较大危害的dex恶意代码进行罗列。</p>
 <h4 id="321-监听通知">3.2.1 监听通知</h4>
 <ol>
 <li>
@@ -359,49 +466,43 @@
 <p>所以，如果手机不幸中招，首先应该卸载PDD软件。之后备份重要个人数据，备份好以后进行彻底刷机，利用Fastboot/Recovery模式全面格式化手机并重新刷入完整ROM包。如果硬件支持的话，尽可能使用Android 13。</p>
 <h2 id="参考文献">参考文献</h2>
 <ol>
-<li><a href="https://mp.weixin.qq.com/s/P_EYQxOEupqdU0BJMRqWsw" target="_blank" rel="noopener noreffer">「 深蓝洞察 」2022 年度最“不可赦”漏洞</a>
-</li>
-<li><a href="https://www.zhihu.com/question/587624599/answer/2927765317" target="_blank" rel="noopener noreffer">dex文件源码分析</a>
-</li>
-<li><a href="https://github.com/davinci1010/pinduoduo_backdoor" target="_blank" rel="noopener noreffer">davinci1010/pinduoduo_backdoor</a>
-</li>
+<li><a href="https://mp.weixin.qq.com/s/P_EYQxOEupqdU0BJMRqWsw"target="_blank" rel="external nofollow noopener noreferrer">「 深蓝洞察 」2022 年度最“不可赦”漏洞</a></li>
+<li><a href="https://www.zhihu.com/question/587624599/answer/2927765317"target="_blank" rel="external nofollow noopener noreferrer">dex文件源码分析</a></li>
+<li><a href="https://github.com/davinci1010/pinduoduo_backdoor"target="_blank" rel="external nofollow noopener noreferrer">davinci1010/pinduoduo_backdoor</a></li>
 </ol></div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>更新于 2020-03-09</span>
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/index.md" target="_blank">阅读原始文档</a>
-                        </span></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
-        </div>
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2020-03-09 00:00:00">更新于 2020-03-09&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
+      <div class="post-info-share">
+        <span></span>
+      </div>
     </div>
+  </div>
 
-    <div class="post-info-more">
-        <section class="post-tags"></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
-        </section>
-    </div>
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
 
-    <div class="post-nav"><a href="/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="prev" rel="prev" title="Docker助力本地环境搭建"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Docker助力本地环境搭建</a>
-            <a href="/ai%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%88%91%E8%A7%81/" class="next" rel="next" title="AI技术之我见">AI技术之我见<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-nav-item" rel="prev" title="Docker助力本地环境搭建"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Docker助力本地环境搭建</a>
+      <a href="/ai%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%88%91%E8%A7%81/" class="post-nav-item" rel="next" title="AI技术之我见">AI技术之我见<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-</article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://francisfu.com/" target="_blank">Francis Fu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
-        </div>
-    </footer></div>
-
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript" src="/js/_custom.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://francisfu.com/"target="_blank" rel="external nofollow noopener noreferrer">Francis Fu</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/js/_custom.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script src="/js/theme.min.js" defer></script><script src="/js/custom.min.js" defer></script></body>
 </html>

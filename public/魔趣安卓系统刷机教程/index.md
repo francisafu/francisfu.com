@@ -99,3 +99,9 @@ getprop("ro.display.series") == "Sagit" || abort("E3004: This package is for \"S
 如果你刷入了Magisk，正式进入系统后请先联网，然后打开Magisk，这时它会提示你要安装Magisk软件，下载安装即可。因为之前我们刷入的是它的底层包，它需要配合上层应用一起使用。安装后你就可以纵情享受Root至高无上的权限了。Magisk的使用这里不多赘述，网上自行百度有好多奇技淫巧。  
 我这里只说一个我认为比较有用的：全局字体。关注“宁静之雨”公众号，这是一个搞机达人小姐姐创办的，她是Magisk字体模块的高玩，公众号里有好多Magisk字体模块，下载后拷贝到手机中，用Magisk加载就可以享受被谷歌安卓开发小组阉割掉的“中文多字重显示”功能了，拥有苹果手机般美妙的字体渲染，你说它不香吗？喜欢的朋友可以自行下载并刷入体验。
 
+
+---
+
+> 作者: [Francis Fu](https://francisfu.com/)  
+> URL: https://francisfu.com/%E9%AD%94%E8%B6%A3%E5%AE%89%E5%8D%93%E7%B3%BB%E7%BB%9F%E5%88%B7%E6%9C%BA%E6%95%99%E7%A8%8B/  
+

@@ -152,3 +152,9 @@ pinduoduo-6-49-0.zip\assets\component\com.xunmeng.pinduoduo.AliveBaseAbility.7z\
 1. [「 深蓝洞察 」2022 年度最“不可赦”漏洞](https://mp.weixin.qq.com/s/P_EYQxOEupqdU0BJMRqWsw)
 2. [dex文件源码分析](https://www.zhihu.com/question/587624599/answer/2927765317)
 3. [davinci1010/pinduoduo_backdoor](https://github.com/davinci1010/pinduoduo_backdoor)
+
+---
+
+> 作者: [Francis Fu](https://francisfu.com/)  
+> URL: https://francisfu.com/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/  
+

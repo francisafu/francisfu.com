@@ -375,3 +375,9 @@ Therefore, when you finished all three config files, place them into the right p
 ## 9.结语
 
 至此，小米11/MIUI 14刷机过程就全部结束了。希望国产ROM能有健康的发展，也期待有一天网络环境可以越来越好，个人隐私可以越来越安全。
+
+---
+
+> 作者: [Francis Fu](https://francisfu.com/)  
+> URL: https://francisfu.com/miui14%E5%88%B7%E6%9C%BA%E5%8F%8Amagisk%E5%AE%89%E8%A3%85/  
+

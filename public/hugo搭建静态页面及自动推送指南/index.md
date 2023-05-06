@@ -1,7 +1,7 @@
 # Hugo搭建静态页面及自动推送指南
 
 
-最近把个人主页从Statiq全面转移到Hugo上了。五年的时间内，从Hexo到Statiq再到Hugo，我尝试了不同的几种静态页面生成器。最终选择了Hugo也是因为感觉，它还是最方便好用的一种。在此记录一下Hugo的使用方式、我所选用的LoveIt主题的搭建和配置，以及配合GitHub Webhook实现代码自动更新推送的流程。
+最近把个人主页从Statiq全面转移到Hugo上了。五年的时间内，从Hexo到Statiq再到Hugo，我尝试了不同的几种静态页面生成器。最终选择了Hugo也是因为感觉，它还是最方便好用的一种。在此记录一下Hugo的使用方式、我所选用的FixIt主题的搭建和配置，以及配合GitHub Webhook实现代码自动更新推送的流程。
 
 <!--more-->
 
@@ -19,13 +19,13 @@ hugo new site your_project_name
 ```
 建立项目文件夹，并初始化项目。
 
-之后，从LoveIt主题的[Github仓库](https://github.com/dillonzq/LoveIt)下载全部文件，复制到本地项目的*themes/anatole/*目录中。再将主题文件夹中的*exampleSite/config*目录及内容拷贝到项目根目录下，并删除原项目自带的`config.toml`文件。至此，所有基本环境已经搭建完成。
+之后，从FixIt主题的[Github仓库](https://github.com/hugo-fixit/FixIt)下载全部文件，复制到本地项目的*themes/anatole/*目录中。再将主题文件夹中的*exampleSite/config*目录及内容拷贝到项目根目录下，并删除原项目自带的`config.toml`文件。至此，所有基本环境已经搭建完成。
 
-LoveIt主题的配置可以参考[官方文档](https://hugoloveit.com/zh-cn/)，整体较为简单，并且主题随带的默认配置已经很合适了。主题中包含大量支持自定义的元素，可以根据需求自行调整。
+FixIt主题的配置可以参考[官方文档](https://fixit.lruihao.cn/zh-cn/categories/documentation/)，整体较为简单，并且主题随带的默认配置已经很合适了。主题中包含大量支持自定义的元素，可以根据需求自行调整。
 
 ## 2. 版本管理
 
-建立好项目以后，就可以在项目目录下的*content*目录中进行写作了。如果掌握不好写作的格式要求，可以将*themes/anatole/exampleSite/content*目录下的内容拷贝到项目*content*目录中，这些示例文档都是可以参考的案例。Markdown语法部分也可以参考我在这个系列中的第二篇文章——[Hugo/LoveIt语法参考](/posts/hugo静态页面生成器指南/hugo-loveit语法参考/)。
+建立好项目以后，就可以在项目目录下的*content*目录中进行写作了。如果掌握不好写作的格式要求，可以将*themes/anatole/exampleSite/content*目录下的内容拷贝到项目*content*目录中，这些示例文档都是可以参考的案例。Markdown语法部分也可以参考我在这个系列中的第二篇文章——[Hugo/FixIt语法参考](/posts/hugo静态页面生成器指南/hugo-fixit语法参考/)。
 
 文章编写完成后，终端中使用命令`hugo server`可以在*localhost:1313*进行预览，此模式下支持热编辑。如渲染效果满意，使用命令`hugo`可以进行渲染生成。常用命令如下：
 
@@ -131,4 +131,10 @@ https://宝塔面板地址/hook?access_key=复制的密钥
 Content Type选择“application/json”，SSL verification根据情况设置，其他不要改动，保存Webhook。
 
 接下来就是更新本地代码，推送到GitHub上，然后查看自动拉取情况了。
+
+
+---
+
+> 作者: [Francis Fu](https://francisfu.com/)  
+> URL: https://francisfu.com/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%8F%8A%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81%E6%8C%87%E5%8D%97/  
 

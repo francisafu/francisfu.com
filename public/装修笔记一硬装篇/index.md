@@ -257,3 +257,9 @@
 
 ![过道筒灯](/images/房屋装修笔记/装修笔记（一）硬装篇/过道筒灯.jpg)
 <center>过道筒灯</center>
+
+---
+
+> 作者: [Francis Fu](https://francisfu.com/)  
+> URL: https://francisfu.com/%E8%A3%85%E4%BF%AE%E7%AC%94%E8%AE%B0%E4%B8%80%E7%A1%AC%E8%A3%85%E7%AF%87/  
+

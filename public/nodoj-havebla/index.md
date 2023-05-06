@@ -67,3 +67,9 @@ Now you can use the link above to import the subs into your client
 | Linux    | Clash For Windows | Qv2ray                                          |
 
 
+
+---
+
+> 作者: [Francis Fu](https://francisfu.com/)  
+> URL: https://francisfu.com/nodoj-havebla/  
+
