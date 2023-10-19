@@ -4,7 +4,23 @@
     <link>https://francisfu.com/posts/</link>
     <description>所有文章 | CRuffians</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>mail@francisfu.com (Francis Fu)</managingEditor>
-      <webMaster>mail@francisfu.com (Francis Fu)</webMaster><copyright>Francis Fu © All Rights Reserved</copyright><lastBuildDate>Sat, 08 Jul 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://francisfu.com/posts/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>mail@francisfu.com (Francis Fu)</webMaster><copyright>Francis Fu © All Rights Reserved</copyright><lastBuildDate>Thu, 19 Oct 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://francisfu.com/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>酒桌常用纸牌玩法</title>
+  <link>https://francisfu.com/%E9%85%92%E6%A1%8C%E5%B8%B8%E7%94%A8%E7%BA%B8%E7%89%8C%E7%8E%A9%E6%B3%95/</link>
+  <pubDate>Thu, 19 Oct 2023 00:00:00 &#43;0000</pubDate>
+  <author>Francis Fu</author>
+  <guid>https://francisfu.com/%E9%85%92%E6%A1%8C%E5%B8%B8%E7%94%A8%E7%BA%B8%E7%89%8C%E7%8E%A9%E6%B3%95/</guid>
+  <description><![CDATA[<p>本人早年参与过多次酒局，与三五好友把酒言欢，纵享欢乐。特此对席间所玩娱乐项目作一记录，以便不时之需。</p>]]></description>
+</item>
+<item>
+  <title>懒人餐饮清单</title>
+  <link>https://francisfu.com/%E6%87%92%E4%BA%BA%E9%A4%90%E9%A5%AE%E6%B8%85%E5%8D%95/</link>
+  <pubDate>Thu, 19 Oct 2023 00:00:00 &#43;0000</pubDate>
+  <author>Francis Fu</author>
+  <guid>https://francisfu.com/%E6%87%92%E4%BA%BA%E9%A4%90%E9%A5%AE%E6%B8%85%E5%8D%95/</guid>
+  <description><![CDATA[<p>烹饪，对于我和太太而言实属难事，我二人均不会下厨做饭。所以简记一些快手餐谱，以便随时查阅，也可起到评测鉴别之作用。</p>]]></description>
+</item>
+<item>
   <title>屈臣氏苏打水评测</title>
   <link>https://francisfu.com/%E5%B1%88%E8%87%A3%E6%B0%8F%E8%8B%8F%E6%89%93%E6%B0%B4%E8%AF%84%E6%B5%8B/</link>
   <pubDate>Sat, 08 Jul 2023 00:00:00 &#43;0000</pubDate>
@@ -67,22 +83,6 @@
   <author>Francis Fu</author>
   <guid>https://francisfu.com/%E8%A3%85%E4%BF%AE%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%AE%9A%E5%88%B6%E7%AF%87/</guid>
   <description><![CDATA[<p>本文接续前文，记述下全屋定制柜的流程和最终的成果。</p>]]></description>
-</item>
-<item>
-  <title>装修笔记（一）硬装篇</title>
-  <link>https://francisfu.com/%E8%A3%85%E4%BF%AE%E7%AC%94%E8%AE%B0%E4%B8%80%E7%A1%AC%E8%A3%85%E7%AF%87/</link>
-  <pubDate>Thu, 29 Sep 2022 00:00:00 &#43;0000</pubDate>
-  <author>Francis Fu</author>
-  <guid>https://francisfu.com/%E8%A3%85%E4%BF%AE%E7%AC%94%E8%AE%B0%E4%B8%80%E7%A1%AC%E8%A3%85%E7%AF%87/</guid>
-  <description><![CDATA[<p>21年年末，随着房屋的交付，我也算是拥有了人生的第一套房。感谢父母的养育之恩，让我能够在这个“掏空六个钱包”的年代也有房可住。感谢兄弟的手足之情，在交首付面临捉襟见肘的窘境时，若不是几位兄弟的慷慨解囊，也无法渡过难关。感谢我对象的鼎力支持，在后期的装修工作中，方案设计、主材挑选、家电采购方面都起到了至关重要的作用。感谢在北京职场结识的几位老总，家具行业建树颇丰，在我添置家具时不遗余力的给予帮助。现在装修整体业已接近尾声，在这里简单记录一下自己装修的过程，对有装修需求的朋友也可以做一个参考。</p>]]></description>
-</item>
-<item>
-  <title>Hugo搭建静态页面及自动推送指南</title>
-  <link>https://francisfu.com/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%8F%8A%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81%E6%8C%87%E5%8D%97/</link>
-  <pubDate>Sat, 10 Sep 2022 00:00:00 &#43;0000</pubDate>
-  <author>Francis Fu</author>
-  <guid>https://francisfu.com/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%8F%8A%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81%E6%8C%87%E5%8D%97/</guid>
-  <description><![CDATA[<p>最近把个人主页从Statiq全面转移到Hugo上了。五年的时间内，从Hexo到Statiq再到Hugo，我尝试了不同的几种静态页面生成器。最终选择了Hugo也是因为感觉，它还是最方便好用的一种。在此记录一下Hugo的使用方式、我所选用的FixIt主题的搭建和配置，以及配合GitHub Webhook实现代码自动更新推送的流程。</p>]]></description>
 </item>
 </channel>
 </rss>
