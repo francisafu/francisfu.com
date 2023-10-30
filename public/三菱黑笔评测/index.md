@@ -1,11 +1,5 @@
----
-title: 三菱黑笔评测
-author: Francis Fu
-categories: [评测合辑]
-date: 2023-07-08
-lastmod: 2023-10-30
-draft: false
----
+# 三菱黑笔评测
+
 
 有些朋友可能知道，我是一个三菱笔粉丝，日常基本主力使用各类三菱中性笔。用过这么多，突发奇想打算记录一下我所用过的这些笔，供大家参考。评测打分具有主观性，仅代表我个人使用体验。所有笔均为0.5黑色中性笔，测试统一使用“A quick brown fox jumps over the lazy dog”这一测试专用语句，请忽略我丑陋的英语字体。
 
@@ -50,3 +44,9 @@ umn307
 umn S
 umr85n
 -->
+
+---
+
+> 作者: [Francis Fu](https://francisfu.com/)  
+> URL: https://francisfu.com/%E4%B8%89%E8%8F%B1%E9%BB%91%E7%AC%94%E8%AF%84%E6%B5%8B/  
+
