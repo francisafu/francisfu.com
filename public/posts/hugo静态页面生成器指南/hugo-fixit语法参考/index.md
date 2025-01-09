@@ -1558,6 +1558,6 @@ console.log(&#39;Hello FixIt!&#39;);
 
 ---
 
-> 作者: Francis Fu  
+> 作者: [Francis Fu](https://francisfu.com/)  
 > URL: https://francisfu.com/posts/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo-fixit%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/  
 

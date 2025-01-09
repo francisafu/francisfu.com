@@ -155,6 +155,6 @@ pinduoduo-6-49-0.zip\assets\component\com.xunmeng.pinduoduo.AliveBaseAbility.7z\
 
 ---
 
-> 作者: Francis Fu  
+> 作者: [Francis Fu](https://francisfu.com/)  
 > URL: https://francisfu.com/posts/%E5%AE%89%E5%8D%93%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/  
 

@@ -134,6 +134,6 @@ AMD显卡用户[在这里](https://www.amd.com/zh-hans/support)下载AMD Adrenal
 
 ---
 
-> 作者: Francis Fu  
+> 作者: [Francis Fu](https://francisfu.com/)  
 > URL: https://francisfu.com/posts/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/windows10%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97/  
 

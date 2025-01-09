@@ -102,6 +102,6 @@ getprop(&#34;ro.display.series&#34;) == &#34;Sagit&#34; || abort(&#34;E3004: Thi
 
 ---
 
-> 作者: Francis Fu  
+> 作者: [Francis Fu](https://francisfu.com/)  
 > URL: https://francisfu.com/posts/%E5%AE%89%E5%8D%93%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/%E9%AD%94%E8%B6%A3%E5%AE%89%E5%8D%93%E7%B3%BB%E7%BB%9F%E5%88%B7%E6%9C%BA%E6%95%99%E7%A8%8B/  
 

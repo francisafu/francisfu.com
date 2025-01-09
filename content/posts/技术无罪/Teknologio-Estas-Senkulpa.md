@@ -2,6 +2,7 @@
 title: Teknologio Estas Senkulpa
 author: Francis Fu
 categories: [技术无罪]
+password: 1123  
 date: 2022-09-08
 lastmod: 2023-03-10
 draft: false

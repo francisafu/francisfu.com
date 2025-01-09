@@ -21,6 +21,6 @@
 
 ---
 
-> 作者: Francis Fu  
+> 作者: [Francis Fu](https://francisfu.com/)  
 > URL: https://francisfu.com/posts/ai%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%88%91%E8%A7%81/ai%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%88%91%E8%A7%81/  
 

@@ -47,6 +47,6 @@ AI板块的第三个功能是“提示工程指南”。脱胎于dair-ai爆火�
 
 ---
 
-> 作者: Francis Fu  
+> 作者: [Francis Fu](https://francisfu.com/)  
 > URL: https://francisfu.com/posts/ai%E6%9D%BF%E5%9D%97%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/ai%E6%9D%BF%E5%9D%97%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/  
 

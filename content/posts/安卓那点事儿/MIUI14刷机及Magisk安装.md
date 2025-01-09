@@ -1,7 +1,8 @@
 ---
-title: MIUI 14刷机及Magisk安装
+title: MIUI 14刷机过程记录
 author: Francis Fu
 categories: [安卓那点事儿]
+password: 1123
 date: 2023-04-24
 lastmod: 2023-04-24
 draft: false

@@ -3,15 +3,17 @@
   <channel>
     <title>PC那点事儿 - 分类 - CRuffians</title>
     <link>https://francisfu.com/categories/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/</link>
-    <description>CRuffians</description>
+    <description>The Less You Know, The Further You Go.</description>
     <generator>Hugo 0.140.2 &amp; FixIt v0.3.17-a58d15e1</generator>
     <language>zh-CN</language>
+    <managingEditor>mail@francisfu.com (Francis Fu)</managingEditor>
+    <webMaster>mail@francisfu.com (Francis Fu)</webMaster>
     <lastBuildDate>Tue, 07 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://francisfu.com/categories/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>台式机攒机指南</title>
       <link>https://francisfu.com/posts/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/%E5%8F%B0%E5%BC%8F%E6%9C%BA%E6%94%92%E6%9C%BA%E6%8C%87%E5%8D%97/</link>
-      <pubDate>Sun, 04 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 04 Dec 2022 00:00:00 +0000</pubDate><author>mail@francisfu.com (Francis Fu)</author>
       <guid>https://francisfu.com/posts/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/%E5%8F%B0%E5%BC%8F%E6%9C%BA%E6%94%92%E6%9C%BA%E6%8C%87%E5%8D%97/</guid>
       <category domain="https://francisfu.com/categories/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/">PC那点事儿</category>
       <description>&lt;p&gt;经常有很多朋友问我台式机应该如何配置，希望我能提供一个配置清单或对已有清单提提建议。恰逢我打算给自己家配置一台台式机，特此将我这台机器硬件的选购流程做一记录，并逐一进行讲解。&lt;/p&gt;</description>
@@ -19,7 +21,7 @@
     <item>
       <title>Windows 11 装机指南</title>
       <link>https://francisfu.com/posts/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/windows10%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97/</link>
-      <pubDate>Sat, 24 Jun 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 24 Jun 2017 00:00:00 +0000</pubDate><author>mail@francisfu.com (Francis Fu)</author>
       <guid>https://francisfu.com/posts/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/windows10%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97/</guid>
       <category domain="https://francisfu.com/categories/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/">PC那点事儿</category>
       <description>&lt;p&gt;Windows 11到现在也已经来到了23H2版。恰好这几天给一位朋友维修电脑重做了系统，在这里我也更新一下七年前这篇教程，给大家介绍一下Windows 11装机的全过程。&lt;/p&gt;</description>

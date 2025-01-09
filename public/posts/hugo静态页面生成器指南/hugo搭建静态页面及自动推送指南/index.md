@@ -135,6 +135,6 @@ Content Type选择“application/json”，SSL verification根据情况设置，
 
 ---
 
-> 作者: Francis Fu  
+> 作者: [Francis Fu](https://francisfu.com/)  
 > URL: https://francisfu.com/posts/hugo%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%94%9F%E6%88%90%E5%99%A8%E6%8C%87%E5%8D%97/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%8F%8A%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81%E6%8C%87%E5%8D%97/  
 
