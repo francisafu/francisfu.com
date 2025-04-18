@@ -8,8 +8,16 @@
     <language>zh-CN</language>
     <managingEditor>mail@francisfu.com (Francis Fu)</managingEditor>
     <webMaster>mail@francisfu.com (Francis Fu)</webMaster>
-    <lastBuildDate>Mon, 24 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://francisfu.com/categories/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>原著书籍阅读清单</title>
+      <link>https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E5%8E%9F%E8%91%97%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95/</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate><author>mail@francisfu.com (Francis Fu)</author>
+      <guid>https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E5%8E%9F%E8%91%97%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95/</guid>
+      <category domain="https://francisfu.com/categories/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/">评测合辑</category>
+      <description>&lt;p&gt;笔者在闲暇时间有阅读书籍的习惯，特此对所读原著书籍作一记录。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>懒人餐饮清单</title>
       <link>https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E6%87%92%E4%BA%BA%E9%A4%90%E9%A5%AE%E6%B8%85%E5%8D%95/</link>
@@ -35,12 +43,12 @@
       <description>&lt;p&gt;有些朋友可能知道，我是一个三菱笔粉丝，日常基本主力使用各类三菱中性笔。用过这么多，突发奇想打算记录一下我所用过的这些笔，供大家参考。评测打分具有主观性，仅代表我个人使用体验。所有笔均为0.5黑色中性笔，测试统一使用“A quick brown fox jumps over the lazy dog”这一测试专用语句，请忽略我丑陋的英语字体。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>酒桌常用纸牌玩法</title>
-      <link>https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E9%85%92%E6%A1%8C%E5%B8%B8%E7%94%A8%E7%BA%B8%E7%89%8C%E7%8E%A9%E6%B3%95/</link>
+      <title>常见纸牌玩法</title>
+      <link>https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E5%B8%B8%E8%A7%81%E7%BA%B8%E7%89%8C%E7%8E%A9%E6%B3%95/</link>
       <pubDate>Tue, 19 Oct 2021 00:00:00 +0000</pubDate><author>mail@francisfu.com (Francis Fu)</author>
-      <guid>https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E9%85%92%E6%A1%8C%E5%B8%B8%E7%94%A8%E7%BA%B8%E7%89%8C%E7%8E%A9%E6%B3%95/</guid>
+      <guid>https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E5%B8%B8%E8%A7%81%E7%BA%B8%E7%89%8C%E7%8E%A9%E6%B3%95/</guid>
       <category domain="https://francisfu.com/categories/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/">评测合辑</category>
-      <description>&lt;p&gt;本人早年参与过多次酒局，与三五好友把酒言欢，纵享欢乐。特此对席间所玩娱乐项目作一记录，以便不时之需。&lt;/p&gt;</description>
+      <description>&lt;p&gt;本人早年常与好友玩牌，对所玩娱乐项目作一记录，以便不时之需。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

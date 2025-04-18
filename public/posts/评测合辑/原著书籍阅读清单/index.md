@@ -1,0 +1,86 @@
+# 原著书籍阅读清单
+
+
+笔者在闲暇时间有阅读书籍的习惯，特此对所读原著书籍作一记录。
+
+&lt;!--more--&gt;
+
+## 0.前言
+
+笔者少时曾购买过不少原著，但鲜有读完的。究其原因，现在回看，大概是由于所购书籍与外语能力水平不相匹配所致。在这种情况下，原著阅读会非常吃力，难度很大，产生极大的挫折感和失败感，难以坚持阅读。经过不断学习，笔者逐渐了解了一些确定外语读物与自身语言能力是否适配的方法和途径，例如[蓝思指数](https://hub.lexile.com/)和[AR阅读](https://www.arbookfind.com/)等。根据当前个人外语能力水平，结合相关书籍的难度参数，可以确定一本书是否适合自己阅读。当然，需要注意的一点是，蓝思和AR都是面向的美国未成年人，即以英语为母语的幼儿和青少年。所以其书目里包含的成人作品可能不全面，儿童读物和青少年读物占比较高，更加适用于希望给孩子找一本原著阅读学习的家长使用。我个人根据阅读经验总结出的规律是，将一本原著随机翻开三页阅读，如果生词总数大于30个（即平均每页有超过10个生词），说明这本书的难度水平超过自身现有能力，不适合现阶段阅读。反之可以阅读。
+
+在记录原著书籍之前，先贴出笔者的词汇量数据以供本文读者参考。在进行测试时，笔者先后采用了多个网站的词汇量测试工具，逐一比较其报告结论。经分析，最后确定了四个较为准确的词汇量测试网站。这些网站会采用多维度测试方法对被测人的“词汇群量”进行全面测试。
+
+什么是”词汇群“呢？以目前笔者认为最准确的测试网站 [MyVocab](https://www.myvocab.info/en) 上的描述为例：
+
+&gt; The test estimates vocabulary in word families. Each word family includes a base word, all its regularly inflected forms, and all words which can be made from the base word using common affixes. For example, words *limit, limitation, limitations, limited, limiting, limitless, limitlessly, limits, unlimited* belong to the same word family.
+
+由此可知，一个“基础词汇”的所有“衍生变体”都会被视作同一个“词汇群”。这样在测试时只需要着眼于独立词和基础词即可，测得的数据也是对于这两种基本词汇的掌握量，即“词汇群量”。
+
+在此贴出笔者不同测试下的词汇量。笔者的英语水平着实较为一般，让各位读者见笑了。
+
+1. [MyVocab](https://www.myvocab.info/en)：6900
+
+![MyVocab](/images/评测合辑/原著书籍阅读清单/myvocab.png)
+
+2. [VocabularyTester](https://www.vocabularytester.com/vocabulary-test)：5862
+
+![VocabularyTester](/images/评测合辑/原著书籍阅读清单/vocabularytester.png)
+
+3. [Preply](https://preply.com/en/learn/english/test-your-vocab)：5798
+
+![Preply](/images/评测合辑/原著书籍阅读清单/preply.png)
+
+4. [ARealMe](https://www.arealme.com/vocabulary-size-test/cn/)：6922
+
+![ARealMe](/images/评测合辑/原著书籍阅读清单/arealme.png)
+
+由上述数据可知，笔者的词汇量（词汇群量）大致在6000~6500范围内。
+
+接下来，笔者会从原名、作者、字数、生词、难度、评分和简介7个维度介绍原著作品。其中字数是采用 [ReadingLength](https://www.readinglength.com/) 、 [WordCounters](http://wordcounters.com/word-count/search/) 和 [HowLongToRead](https://howlongtoread.com/) 等字数估算网站估算得到的大致全文单词总数。生词是笔者在阅读过程中遇到的生词总数。难度是笔者自认为阅读下来的难易程度，而评分是笔者个人的推荐指数。注意，本文所指的“原著”，皆指代“首次发表时即以某种外语完成的文学作品”。在此定义下，《老人与海》英文版属于“原著”（由英语写成并发表），《战争与和平》英文版不属于“原著”（由俄语写成，翻译为英语后发表）。类似的，《京华烟云》英文版属于“原著”（由英语写成并发表），其中文版不属于“原著”（由英语写成，翻译为中文后发表）。
+
+## 1.《谁动了我的奶酪》
+
+* 原名：*Who Moved My Cheese*
+* 作者：斯宾塞·约翰逊
+* 字数：~6,077
+* 生词：39
+* 难度：1/10
+* 评分：5/10
+* 简介：一则简短的寓言故事，教导人们如何正确应对并适应自身所处的环境发生变化的情况。号称“鸡汤文始祖”。
+
+## 2.《谁动了我的奶酪2》
+
+* 原名：*Out of the Maze*
+* 作者：斯宾塞·约翰逊
+* 字数：~15,940
+* 生词：49
+* 难度：1/10
+* 评分：5/10
+* 简介：第一部寓言故事的续写，主旨内容差不太多，还是面对变化的周围环境，仍旧是鸡汤风格。
+
+## 3.《怦然心动》
+
+* 原名：*Flipped*
+* 作者：文德琳·范·德拉安南
+* 字数：~66,261
+* 生词：596
+* 难度：3/10
+* 评分：7/10
+* 简介：青少年之间的懵懂爱情故事。如果读者是15到20岁的话会比较合适，可我已经30了。
+
+## 4.《追风筝的人》
+
+* 原名：*The Kite Runner*
+* 作者：卡勒德·胡赛尼
+* 字数：~110,793
+* 生词：1005
+* 难度：5/10
+* 评分：8/10
+* 简介：描述了阿富汗人民在战争下的苦难，以及人们之间感情、血脉的延续。还是很值得一读的，但读完以后总有一种“阿富汗人民的认知配得上他们的苦难”这种感觉。阿富汗人民据说并不喜欢这本书，大概类似于莫言的《蛙》之于我们吧。
+
+---
+
+> 作者: [Francis Fu](https://francisfu.com/)  
+> URL: https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E5%8E%9F%E8%91%97%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95/  
+

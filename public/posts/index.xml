@@ -8,8 +8,16 @@
     <language>zh-CN</language>
     <managingEditor>mail@francisfu.com (Francis Fu)</managingEditor>
     <webMaster>mail@francisfu.com (Francis Fu)</webMaster>
-    <lastBuildDate>Tue, 07 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://francisfu.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>原著书籍阅读清单</title>
+      <link>https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E5%8E%9F%E8%91%97%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95/</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate><author>mail@francisfu.com (Francis Fu)</author>
+      <guid>https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E5%8E%9F%E8%91%97%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95/</guid>
+      <category domain="https://francisfu.com/categories/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/">评测合辑</category>
+      <description>&lt;p&gt;笔者在闲暇时间有阅读书籍的习惯，特此对所读原著书籍作一记录。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>黑龙江7日游总攻略</title>
       <link>https://francisfu.com/posts/%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/%E9%BB%91%E9%BE%99%E6%B1%9F7%E6%97%A5%E6%B8%B8%E6%80%BB%E6%94%BB%E7%95%A5/</link>
@@ -41,13 +49,6 @@
       <guid>https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E4%B8%89%E8%8F%B1%E9%BB%91%E7%AC%94%E8%AF%84%E6%B5%8B/</guid>
       <category domain="https://francisfu.com/categories/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/">评测合辑</category>
       <description>&lt;p&gt;有些朋友可能知道，我是一个三菱笔粉丝，日常基本主力使用各类三菱中性笔。用过这么多，突发奇想打算记录一下我所用过的这些笔，供大家参考。评测打分具有主观性，仅代表我个人使用体验。所有笔均为0.5黑色中性笔，测试统一使用“A quick brown fox jumps over the lazy dog”这一测试专用语句，请忽略我丑陋的英语字体。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>AI板块使用说明</title>
-      <link>https://francisfu.com/posts/ai%E6%9D%BF%E5%9D%97%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/ai%E6%9D%BF%E5%9D%97%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</link>
-      <pubDate>Fri, 05 May 2023 00:00:00 +0000</pubDate><author>mail@francisfu.com (Francis Fu)</author>
-      <guid>https://francisfu.com/posts/ai%E6%9D%BF%E5%9D%97%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/ai%E6%9D%BF%E5%9D%97%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</guid>
-      <description>&lt;p&gt;本文是关于网站AI板块的使用说明。&lt;/p&gt;</description>
     </item>
     <item>
       <title>AI技术之我见</title>
@@ -112,12 +113,12 @@
       <description>&lt;p&gt;此文章系Hugo以及FixIt主题所支持的Markdown语法规则参考及演示&lt;/p&gt;</description>
     </item>
     <item>
-      <title>酒桌常用纸牌玩法</title>
-      <link>https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E9%85%92%E6%A1%8C%E5%B8%B8%E7%94%A8%E7%BA%B8%E7%89%8C%E7%8E%A9%E6%B3%95/</link>
+      <title>常见纸牌玩法</title>
+      <link>https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E5%B8%B8%E8%A7%81%E7%BA%B8%E7%89%8C%E7%8E%A9%E6%B3%95/</link>
       <pubDate>Tue, 19 Oct 2021 00:00:00 +0000</pubDate><author>mail@francisfu.com (Francis Fu)</author>
-      <guid>https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E9%85%92%E6%A1%8C%E5%B8%B8%E7%94%A8%E7%BA%B8%E7%89%8C%E7%8E%A9%E6%B3%95/</guid>
+      <guid>https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E5%B8%B8%E8%A7%81%E7%BA%B8%E7%89%8C%E7%8E%A9%E6%B3%95/</guid>
       <category domain="https://francisfu.com/categories/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/">评测合辑</category>
-      <description>&lt;p&gt;本人早年参与过多次酒局，与三五好友把酒言欢，纵享欢乐。特此对席间所玩娱乐项目作一记录，以便不时之需。&lt;/p&gt;</description>
+      <description>&lt;p&gt;本人早年常与好友玩牌，对所玩娱乐项目作一记录，以便不时之需。&lt;/p&gt;</description>
     </item>
     <item>
       <title>魔趣安卓系统刷机教程</title>
