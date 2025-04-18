@@ -4,19 +4,19 @@
     <title>所有文章 - CRuffians</title>
     <link>https://francisfu.com/posts/</link>
     <description>The Less You Know, The Further You Go.</description>
-    <generator>Hugo 0.140.2 &amp; FixIt v0.3.17-a58d15e1</generator>
+    <generator>Hugo 0.141.0 &amp; FixIt v0.3.17-a58d15e1</generator>
     <language>zh-CN</language>
     <managingEditor>mail@francisfu.com (Francis Fu)</managingEditor>
     <webMaster>mail@francisfu.com (Francis Fu)</webMaster>
-    <lastBuildDate>Fri, 18 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://francisfu.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>原著书籍阅读清单</title>
-      <link>https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E5%8E%9F%E8%91%97%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95/</link>
-      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate><author>mail@francisfu.com (Francis Fu)</author>
-      <guid>https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E5%8E%9F%E8%91%97%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95/</guid>
-      <category domain="https://francisfu.com/categories/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/">评测合辑</category>
-      <description>&lt;p&gt;笔者在闲暇时间有阅读书籍的习惯，特此对所读原著书籍作一记录。&lt;/p&gt;</description>
+      <title>组装机性能调教与测试</title>
+      <link>https://francisfu.com/posts/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/%E7%BB%84%E8%A3%85%E6%9C%BA%E6%80%A7%E8%83%BD%E8%B0%83%E6%95%99%E4%B8%8E%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate><author>mail@francisfu.com (Francis Fu)</author>
+      <guid>https://francisfu.com/posts/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/%E7%BB%84%E8%A3%85%E6%9C%BA%E6%80%A7%E8%83%BD%E8%B0%83%E6%95%99%E4%B8%8E%E6%B5%8B%E8%AF%95/</guid>
+      <category domain="https://francisfu.com/categories/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/">PC那点事儿</category>
+      <description>&lt;p&gt;在我们组装好一台台式机并安装好系统以后，这台计算机只能说是“能用”而不是“好用”。很多硬件只工作在最低性能模式下，远非极限性能，甚至达不到默认性能。相当于说，花了2000块钱，只使用了1000元的价值。这篇文章以我前几天组装的台式机为例，讲述一下我自己的性能调教和测试过程。&lt;/p&gt;</description>
     </item>
     <item>
       <title>黑龙江7日游总攻略</title>
@@ -78,7 +78,7 @@
       <pubDate>Sun, 04 Dec 2022 00:00:00 +0000</pubDate><author>mail@francisfu.com (Francis Fu)</author>
       <guid>https://francisfu.com/posts/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/%E5%8F%B0%E5%BC%8F%E6%9C%BA%E6%94%92%E6%9C%BA%E6%8C%87%E5%8D%97/</guid>
       <category domain="https://francisfu.com/categories/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/">PC那点事儿</category>
-      <description>&lt;p&gt;经常有很多朋友问我台式机应该如何配置，希望我能提供一个配置清单或对已有清单提提建议。恰逢我打算给自己家配置一台台式机，特此将我这台机器硬件的选购流程做一记录，并逐一进行讲解。&lt;/p&gt;</description>
+      <description>&lt;p&gt;经常有很多朋友问我台式机应该如何配置，希望我能提供一个配置清单或对已有清单提提建议。恰逢我最近给自己配置了一台台式机，特此将我这台机器硬件的选购流程做一记录，并逐一进行讲解。&lt;/p&gt;</description>
     </item>
     <item>
       <title>装修笔记（二）定制篇</title>
@@ -129,12 +129,12 @@
       <description>&lt;p&gt;时间来到了2021年，贫困的我还在使用小米公司于2017年发布的小米6手机。电池续航严重跟不上趟，MIUI11系统在骁龙835下卡顿也非常明显。但是5.15寸的屏幕在大屏林立的今天实在是我这种手小的人的福音，多少还是不愿意换机。大概我就是雷总口中的米6钉子户吧。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Windows 11 装机指南</title>
-      <link>https://francisfu.com/posts/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/windows10%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97/</link>
+      <title>Windows系统装机指南</title>
+      <link>https://francisfu.com/posts/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/windows%E7%B3%BB%E7%BB%9F%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97/</link>
       <pubDate>Sat, 24 Jun 2017 00:00:00 +0000</pubDate><author>mail@francisfu.com (Francis Fu)</author>
-      <guid>https://francisfu.com/posts/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/windows10%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97/</guid>
+      <guid>https://francisfu.com/posts/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/windows%E7%B3%BB%E7%BB%9F%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97/</guid>
       <category domain="https://francisfu.com/categories/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/">PC那点事儿</category>
-      <description>&lt;p&gt;Windows 11到现在也已经来到了23H2版。恰好这几天给一位朋友维修电脑重做了系统，在这里我也更新一下七年前这篇教程，给大家介绍一下Windows 11装机的全过程。&lt;/p&gt;</description>
+      <description>&lt;p&gt;Windows 11到现在也已经来到了24H2版。恰好这几天给自己新配的电脑安装了系统，在这里我也更新一下八年前的这篇教程，给大家介绍一下Windows 11装机的全过程。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
