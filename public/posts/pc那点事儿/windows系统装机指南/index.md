@@ -3,12 +3,12 @@
 
 Windows 11到现在也已经来到了24H2版。恰好这几天给自己新配的电脑安装了系统，在这里我也更新一下八年前的这篇教程，给大家介绍一下Windows 11装机的全过程。  
 
-&lt;!--more--&gt;
+<!--more-->
 
 ## 1.准备工作
 
-&gt;提醒下准备重装系统的朋友们：  
-&gt;在安装系统之前，一定要备份数据，以防止数据遗失。
+>提醒下准备重装系统的朋友们：  
+>在安装系统之前，一定要备份数据，以防止数据遗失。
 
 如果你的电脑正在运行Windows 11，那么可以忽略这一段直接看下一段。如果正在运行Windows 10，想要升级Windows 11，那你需要先在[这个链接](https://aka.ms/GetPCHealthCheckApp)下载”电脑健康状况检查应用“来评估你的硬件是否满足安装Windows 11的最低要求。如果不满足的话就只能继续使用Windows 10，无法升级。只有满足最低要求才可以升级到Windows 11。
 
@@ -24,7 +24,7 @@ Windows 11到现在也已经来到了24H2版。恰好这几天给自己新配的
 打开Rufus后会自动检测USB设备。如果你插有多个U盘，一定注意不要弄错了盘符避免误删重要数据。引导类型保持默认的”镜像文件“，点击右侧的”选择“，找到并选择之前下载的Windows 11 ISO镜像。在扫描镜像后，Rufus会自动适配默认选项，均保持默认即可。
 
 ![Rufus](/images/PC那点事儿/Windows系统装机指南/Rufus.png)
-&lt;center&gt;Rufus&lt;/center&gt;
+<center>Rufus</center>
 
 最后单击”开始“，程序就会刷写U盘。待上述操作结束后，关闭Rufus，你就拥有了一个Windows 11启动盘。至此，已经完成了所有的准备工作，可以开始装机了。 
 
@@ -32,13 +32,13 @@ Windows 11到现在也已经来到了24H2版。恰好这几天给自己新配的
 
 ### 3.1 引导设置
 
-一般来说我们大部分人的电脑默认都是 ”硬盘 —&gt; USB“ 这样的引导顺序。所以在使用U盘重装系统时必须先修改BIOS，设置为U盘在硬盘之前的引导顺序。
+一般来说我们大部分人的电脑默认都是 ”硬盘 —> USB“ 这样的引导顺序。所以在使用U盘重装系统时必须先修改BIOS，设置为U盘在硬盘之前的引导顺序。
 
-首先点击桌面下方的”开始“图标，点击”设置“，选择”Windows 更新“。之后选择”高级选项“ —&gt; ”恢复“，点击”高级启动“对应的右侧”立即重新启动“按键，重启电脑进入高级设置。
+首先点击桌面下方的”开始“图标，点击”设置“，选择”Windows 更新“。之后选择”高级选项“ —> ”恢复“，点击”高级启动“对应的右侧”立即重新启动“按键，重启电脑进入高级设置。
 
 选择下方的”疑难解答“，进入后点击”高级选项“。之后选择最后的”UEFI固件设置“。进入后，点击”重启“，等待电脑重启后就会自动进入BIOS了。
 
-如果系统已经崩溃无法正常进入了，或者是还没有安装系统，那么就在开机后一直连续按键盘上的 &lt;kbd&gt;Del&lt;/kbd&gt; 键，也可以进入BIOS。
+如果系统已经崩溃无法正常进入了，或者是还没有安装系统，那么就在开机后一直连续按键盘上的 <kbd>Del</kbd> 键，也可以进入BIOS。
 
 进入BIOS后就可以修改引导顺序了。注意，在进入BIOS之前首先要插入刚刚制作好的启动U盘。进入BIOS后只需将U盘引导设置为第一顺位即可，无需做其他更改，保存并退出重启。  
 
@@ -48,15 +48,15 @@ Windows 11到现在也已经来到了24H2版。恰好这几天给自己新配的
 
 如果看到了系统安装的深蓝色界面，说明到这一步成功了。 
 
-&gt; 这里可能会遇到一个问题，即无法进入安装引导，也不能正常进入系统，提示”Secure Boot Violation“。  
-&gt; 只需要重启电脑，不断按 &lt;kbd&gt;Del&lt;/kbd&gt; 键再次进入BIOS后，在”Security“页面关闭”Secure Boot“即可。  
+> 这里可能会遇到一个问题，即无法进入安装引导，也不能正常进入系统，提示”Secure Boot Violation“。  
+> 只需要重启电脑，不断按 <kbd>Del</kbd> 键再次进入BIOS后，在”Security“页面关闭”Secure Boot“即可。  
 
 第一个页面保持默认的”中文-微软拼音“不变，第二个页面点击”现在安装“，跳到第三个页面会提示你输入激活码。此时点击”我没有产品密钥“即可，我们会在安装好系统之后激活。  
 在下一个页面中选择”Windows 11专业版“，同意许可条款，接下来选择”自定义：仅安装 Windows（高级）“。接下来的界面需要选择要将系统安装到的硬盘。
 
-&gt; 这里可能会遇到另一个问题，即磁盘选择器里面是空的，看不到任何可以选择的磁盘。  
-&gt; 这主要是因为英特尔CPU对应的主板上面启用了VMD技术和IRST技术，而Windows 11原版安装镜像中缺少对应的驱动程序。  
-&gt; 仍然需要重启电脑进入BIOS，在 ”Advanced“ 页面关闭 ”VMD Controller“ 和 ”Intel(R) Rapid Storage Technology“ 即可。
+> 这里可能会遇到另一个问题，即磁盘选择器里面是空的，看不到任何可以选择的磁盘。  
+> 这主要是因为英特尔CPU对应的主板上面启用了VMD技术和IRST技术，而Windows 11原版安装镜像中缺少对应的驱动程序。  
+> 仍然需要重启电脑进入BIOS，在 ”Advanced“ 页面关闭 ”VMD Controller“ 和 ”Intel(R) Rapid Storage Technology“ 即可。
 
 在安装硬盘界面选择你要安装系统的C盘。这里可以使用”新建“和”格式化“功能建立分区。注意，在建立分区时输入的数值单位是MB，如按照GB计算，需要乘1024转换。比如需要建立500GB分区则为500x1024=512000MB。建议C盘空间至少为200GB。分区结束后，点击”下一步“就会自动开始安装系统。
 
@@ -69,9 +69,9 @@ Windows 11到现在也已经来到了24H2版。恰好这几天给自己新配的
 **注意！！下述内容仅供学习交流、经验分享之用，切勿用于实践！！**  
 **本文作者不对任何在阅读本文之后进行的违反《中华人民共和国著作权法》、《计算机软件保护条例》等相关法律的行为承担直接或者连带责任！！**
 
-&gt; 其他获得序列号的途径还有X宝，直接搜索”Win11序列号“，10-20元就可以买到。不用担心不能用，都是真的。  
-&gt; 它们只不过是厂家专用版的而已，不是个人零售版的，但是实际二者没有区别。解释起来比较复杂，放心用就好。  
-&gt; 另外，不要购买可以多次激活使用的，用一次买一次就好，可以多次使用的那种你会发现，等到你下次要装机的时候都找不到了，到时候还要再重新买。
+> 其他获得序列号的途径还有X宝，直接搜索”Win11序列号“，10-20元就可以买到。不用担心不能用，都是真的。  
+> 它们只不过是厂家专用版的而已，不是个人零售版的，但是实际二者没有区别。解释起来比较复杂，放心用就好。  
+> 另外，不要购买可以多次激活使用的，用一次买一次就好，可以多次使用的那种你会发现，等到你下次要装机的时候都找不到了，到时候还要再重新买。
 
 ## 4.收尾工作
 
@@ -81,11 +81,11 @@ Windows 11到现在也已经来到了24H2版。恰好这几天给自己新配的
 
 打开资源管理器，右键单击”此电脑“，点击”管理“-”设备管理器“。默认如果硬件驱动都安装正常，则条目不会展开。如有自动展开的条目，仔细查看左侧小图标，缺少驱动的硬件对应的图标右下角会有一个黄色的警告图标（三角形里面有个感叹号）。针对性的安装该硬件驱动程序即可。
 
-&gt; 对于笔记本：很多OEM厂商提供官方的驱动程序安装源，你只需要下载所有的对应型号和对应系统的驱动程序包然后依次安装。有的厂商提供驱动下载器，你也只需按要求操作即可。  
-&gt; 对于台式机：在主板官网查找对应的主板型号，下载Windows 11版本硬件驱动安装即可。
+> 对于笔记本：很多OEM厂商提供官方的驱动程序安装源，你只需要下载所有的对应型号和对应系统的驱动程序包然后依次安装。有的厂商提供驱动下载器，你也只需按要求操作即可。  
+> 对于台式机：在主板官网查找对应的主板型号，下载Windows 11版本硬件驱动安装即可。
 
 ![主板驱动](/images/PC那点事儿/Windows系统装机指南/主板驱动.png)
-&lt;center&gt;微星B650M Mortar主板官网驱动下载&lt;/center&gt;
+<center>微星B650M Mortar主板官网驱动下载</center>
   
 对于独立显卡驱动，一定记得：
 
@@ -134,7 +134,7 @@ AMD显卡用户[在这里](https://www.amd.com/zh-hans/support)下载AMD Adrenal
    关闭方法是，在桌面右下角找到”Windows安全中心“，图标是一个蓝色的小盾牌，打开它，单击”设备安全性“，然后单击“内核隔离详细信息”，关闭“内存完整性”即可。
 
    ![内存完整性](/images/PC那点事儿/Windows系统装机指南/内存完整性.png)
-   &lt;center&gt;关闭内存完整性&lt;/center&gt;
+   <center>关闭内存完整性</center>
 
 4. 关闭基于虚拟化的安全性
    
@@ -143,13 +143,13 @@ AMD显卡用户[在这里](https://www.amd.com/zh-hans/support)下载AMD Adrenal
    关闭它的方法较为复杂。首先需要在[这个链接](https://www.microsoft.com/en-us/download/details.aspx?id=53337)单击蓝色的“Download”按键下载“Device Guard and Credential Guard hardware readiness tool”，下载完成应该是一个压缩包，名为“dgreadiness_v3.6.zip”。解压它，然后打开开始菜单，直接输入”powershell“，在搜索到的”Windows PowerShell“上 *右键——以管理员身份运行* ，输入命令`set-ExecutionPolicy RemoteSigned`并按回车。命令行会提示你输入字母“Y”以确认，此时输入“Y”并按回车确认。接下来，在解压好的文件夹中找到“DG_Readiness_Tool_v3.6.ps1”文件，*右键——属性* ，复制“位置”那一行的内容。 
 
    ![虚拟化](/images/PC那点事儿/Windows系统装机指南/虚拟化.png)
-   &lt;center&gt;关闭基于虚拟化的安全性&lt;/center&gt;
+   <center>关闭基于虚拟化的安全性</center>
 
    之后回到刚才的PowerShell窗口，继续输入`cd `，在后面粘贴刚才复制的路径，之后按回车进入该路径。
   
    例如，复制的路径是“C:\Users\abc\Downloads\dgreadiness_v3.6”，那么这里应该输入的命令是`cd C:\Users\abc\Downloads\dgreadiness_v3.6`。
 
-   在进入脚本所在路径后，PowerShell窗口中输入命令`.\DG_Readiness_Tool_v3.6.ps1 -Disable`并按下回车，程序就会开始运行。等待运行完成后重启电脑，在重启过程中，根据提示需要先后按下 &lt;kbd&gt;F3&lt;/kbd&gt; 按键两次，分别关闭Credential Guard和Device Guard。至此，基于虚拟化的安全性功能就被关闭了。
+   在进入脚本所在路径后，PowerShell窗口中输入命令`.\DG_Readiness_Tool_v3.6.ps1 -Disable`并按下回车，程序就会开始运行。等待运行完成后重启电脑，在重启过程中，根据提示需要先后按下 <kbd>F3</kbd> 按键两次，分别关闭Credential Guard和Device Guard。至此，基于虚拟化的安全性功能就被关闭了。
 
 5. 关闭传递优化
    
@@ -158,7 +158,7 @@ AMD显卡用户[在这里](https://www.amd.com/zh-hans/support)下载AMD Adrenal
    关闭它的方法是：点击桌面下方的”开始“图标，点击”设置“，选择”Windows更新“-”高级选项“。打开“其他选项”中的“传递优化”，关闭“允许从其他设备下载”即可
 
    ![传递优化](/images/PC那点事儿/Windows系统装机指南/传递优化.png)
-   &lt;center&gt;关闭传递优化&lt;/center&gt;
+   <center>关闭传递优化</center>
 
 6. 开启存储感知
    
@@ -169,7 +169,7 @@ AMD显卡用户[在这里](https://www.amd.com/zh-hans/support)下载AMD Adrenal
    注意，这两个选项将直接影响回收站和下载文件夹，系统会根据设置的时间自动删除很早之前的文件，请谨慎设置！
 
    ![存储感知](/images/PC那点事儿/Windows系统装机指南/存储感知.png)
-   &lt;center&gt;开启存储感知&lt;/center&gt;
+   <center>开启存储感知</center>
 
 7. 开启高性能模式
    
@@ -178,7 +178,7 @@ AMD显卡用户[在这里](https://www.amd.com/zh-hans/support)下载AMD Adrenal
    点击桌面下方的”开始“图标，点击”设置“，选择“系统”-“电源”。在“电源模式”右侧下拉框处选择“最佳性能”，展开下方“节电模式”，关闭“始终使用节电模式”。
 
    ![高性能模式](/images/PC那点事儿/Windows系统装机指南/高性能模式.png)
-   &lt;center&gt;开启高性能模式&lt;/center&gt;
+   <center>开启高性能模式</center>
 
 8. 恢复经典右键菜单
    
@@ -188,8 +188,8 @@ AMD显卡用户[在这里](https://www.amd.com/zh-hans/support)下载AMD Adrenal
    如果想要恢复经典的右键菜单，可以通过这种方式：打开开始菜单，直接输入”cmd“，在搜索到的”命令提示符“上 *右键——以管理员身份运行* ，之后分别输入下面两条命令并回车确认。
 
    ```command
-   reg add &#34;HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32&#34; /f /ve
-   taskkill /f /im explorer.exe &amp; start explorer.exe
+   reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
+   taskkill /f /im explorer.exe & start explorer.exe
    ```
    
    屏幕窗口会闪烁一下，之后右键菜单就恢复成经典样式了。
@@ -204,18 +204,18 @@ AMD显卡用户[在这里](https://www.amd.com/zh-hans/support)下载AMD Adrenal
 这里我给大家分享一个神器，叫”Office Tool Plus“，是由国人开发的强大Office辅助安装工具。    
 在[官网](https://otp.landian.vip/zh-cn/)点击蓝色的”立即下载“按键会跳转到下载页面。任意选一所大学的镜像站，下载64位程序。
 下载好是一个压缩包，解压到文件夹中，打开会看到”Office Tool Plus.exe“文件。双击启动它。  
-打开它之后，什么都不用管，直接在键盘上按下&lt;kbd&gt;Ctrl&lt;/kbd&gt;&#43;&lt;kbd&gt;Shift&lt;/kbd&gt;&#43;&lt;kbd&gt;P&lt;/kbd&gt;快捷键，界面上会弹出应用程序命令对话框。  
+打开它之后，什么都不用管，直接在键盘上按下<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>快捷键，界面上会弹出应用程序命令对话框。  
 根据是否需要安装Visio，复制下面的两条命令之一粘贴进去，点击确定即可开始自动安装Office套件。
 
 * 安装 Microsoft 365 企业应用版（仅Word, PowerPoint, Excel）
   ```
   deploy /add O365ProPlusRetail_zh-cn /O365ProPlusRetail.exclapps Access,Bing,Groove,Lync,OneDrive,OneNote,Outlook,Publisher,Teams /channel Current /dlfirst
   ```
-* 安装 Microsoft 365 企业应用版（仅Word, PowerPoint, Excel）&#43; Visio 2016
+* 安装 Microsoft 365 企业应用版（仅Word, PowerPoint, Excel）+ Visio 2016
   ```
-  deploy /add &#34;O365ProPlusRetail_zh-cn|VisioProRetail_zh-cn&#34; /O365ProPlusRetail.exclapps Access,Bing,Groove,Lync,OneDrive,OneNote,Outlook,Publisher,Teams /VisioProRetail.exclapps Groove,OneDrive /channel Current /dlfirst
+  deploy /add "O365ProPlusRetail_zh-cn|VisioProRetail_zh-cn" /O365ProPlusRetail.exclapps Access,Bing,Groove,Lync,OneDrive,OneNote,Outlook,Publisher,Teams /VisioProRetail.exclapps Groove,OneDrive /channel Current /dlfirst
   ```
-安装好后，再次按下&lt;kbd&gt;Ctrl&lt;/kbd&gt;&#43;&lt;kbd&gt;Shift&lt;/kbd&gt;&#43;&lt;kbd&gt;P&lt;/kbd&gt;快捷键调出应用程序命令对话框，输入下面的两条命令任意一条粘贴进去，点击确定即可开始自动激活。
+安装好后，再次按下<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>快捷键调出应用程序命令对话框，输入下面的两条命令任意一条粘贴进去，点击确定即可开始自动激活。
 * KMS主机一
   ```
   ospp /inslicid MondoVolume /sethst:kms.loli.beer /setprt:1688 /act

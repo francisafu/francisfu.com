@@ -3,14 +3,14 @@
 
 此文章系Hugo以及FixIt主题所支持的Markdown语法规则参考及演示
 
-&lt;!--more--&gt;
+<!--more-->
 
 ## 0 摘要
 
 使用如下代码进行手动摘要分割：
 
 ```markdown
-&lt;!--more--&gt;
+<!--more-->
 ```
 
 ## 1 标题
@@ -28,14 +28,14 @@
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;h2&gt;h2 标题&lt;/h2&gt;
-&lt;h3&gt;h3 标题&lt;/h3&gt;
-&lt;h4&gt;h4 标题&lt;/h4&gt;
-&lt;h5&gt;h5 标题&lt;/h5&gt;
-&lt;h6&gt;h6 标题&lt;/h6&gt;
+<h2>h2 标题</h2>
+<h3>h3 标题</h3>
+<h4>h4 标题</h4>
+<h5>h5 标题</h5>
+<h6>h6 标题</h6>
 ```
 
-{{&lt; admonition note &#34;标题 ID&#34; &gt;}}
+{{< admonition note "标题 ID" >}}
 要添加自定义标题 ID, 请在与标题相同的行中将自定义 ID 放在花括号中:
 
 ```markdown
@@ -45,30 +45,30 @@
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;h3 id=&#34;custom-id&#34;&gt;一个很棒的标题&lt;/h3&gt;
+<h3 id="custom-id">一个很棒的标题</h3>
 ```
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
 ## 2 注释
 
 注释是和 HTML 兼容的：
 
 ```html
-&lt;!--
+<!--
 这是一段注释
---&gt;
+-->
 ```
 
 **不能**看到以下的注释:
 
-&lt;!--
+<!--
 这是一段注释
---&gt;
+-->
 
 ## 3 水平线
 
-HTML 中的 `&lt;hr&gt;` 标签是用来在段落元素之间创建一个 &#34;专题间隔&#34; 的.
-使用 Markdown, 你可以用以下方式创建一个 `&lt;hr&gt;` 标签:
+HTML 中的 `<hr>` 标签是用来在段落元素之间创建一个 "专题间隔" 的.
+使用 Markdown, 你可以用以下方式创建一个 `<hr>` 标签:
 
 * `___`: 三个连续的下划线
 * `---`: 三个连续的破折号
@@ -82,7 +82,7 @@ ___
 
 ## 4 段落
 
-按照纯文本的方式书写段落, 纯文本在呈现的 HTML 中将用 `&lt;p&gt;`/`&lt;/p&gt;` 标签包裹.
+按照纯文本的方式书写段落, 纯文本在呈现的 HTML 中将用 `<p>`/`</p>` 标签包裹.
 
 如下段落:
 
@@ -95,7 +95,7 @@ soluta officiis concludaturque ei qui, vide sensibus vim ad.
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;p&gt;Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.&lt;/p&gt;
+<p>Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.</p>
 ```
 
 可以使用一个空白行进行**换行**.
@@ -107,9 +107,9 @@ soluta officiis concludaturque ei qui, vide sensibus vim ad.
 ```html
 Markdown 格式的段落.
 
-&lt;div class=&#34;class&#34;&gt;
-    这是 &lt;b&gt;HTML&lt;/b&gt;
-&lt;/div&gt;
+<div class="class">
+    这是 <b>HTML</b>
+</div>
 
 Markdown 格式的段落.
 ```
@@ -130,7 +130,7 @@ __渲染为粗体__
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;strong&gt;渲染为粗体&lt;/strong&gt;
+<strong>渲染为粗体</strong>
 ```
 
 ### 斜体
@@ -147,7 +147,7 @@ _渲染为斜体_
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;em&gt;渲染为斜体&lt;/em&gt;
+<em>渲染为斜体</em>
 ```
 
 ### 删除线
@@ -165,7 +165,7 @@ _渲染为斜体_
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;del&gt;这段文本带有删除线.&lt;/del&gt;
+<del>这段文本带有删除线.</del>
 ```
 
 ### 组合
@@ -192,50 +192,50 @@ _渲染为斜体_
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;em&gt;&lt;strong&gt;加粗和斜体&lt;/strong&gt;&lt;/em&gt;
-&lt;del&gt;&lt;strong&gt;删除线和加粗&lt;/strong&gt;&lt;/del&gt;
-&lt;del&gt;&lt;em&gt;删除线和斜体&lt;/em&gt;&lt;/del&gt;
-&lt;del&gt;&lt;em&gt;&lt;strong&gt;加粗, 斜体和删除线&lt;/strong&gt;&lt;/em&gt;&lt;/del&gt;
+<em><strong>加粗和斜体</strong></em>
+<del><strong>删除线和加粗</strong></del>
+<del><em>删除线和斜体</em></del>
+<del><em><strong>加粗, 斜体和删除线</strong></em></del>
 ```
 
 ## 7 引用
 
 用于在文档中引用其他来源的内容块.
 
-在要引用的任何文本之前添加 `&gt;`:
+在要引用的任何文本之前添加 `>`:
 
 ```markdown
-&gt; **Fusion Drive** combines a hard drive with a flash storage (solid-state drive) and presents it as a single logical volume with the space of both drives combined.
+> **Fusion Drive** combines a hard drive with a flash storage (solid-state drive) and presents it as a single logical volume with the space of both drives combined.
 ```
 
 呈现的输出效果如下:
 
-&gt; **Fusion Drive** combines a hard drive with a flash storage (solid-state drive) and presents it as a single logical volume with the space of both drives combined.
+> **Fusion Drive** combines a hard drive with a flash storage (solid-state drive) and presents it as a single logical volume with the space of both drives combined.
 
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;blockquote&gt;
-  &lt;p&gt;
-    &lt;strong&gt;Fusion Drive&lt;/strong&gt; combines a hard drive with a flash storage (solid-state drive) and presents it as a single logical volume with the space of both drives combined.
-  &lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>
+    <strong>Fusion Drive</strong> combines a hard drive with a flash storage (solid-state drive) and presents it as a single logical volume with the space of both drives combined.
+  </p>
+</blockquote>
 ```
 
 引用也可以嵌套:
 
 ```markdown
-&gt; Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
+> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
 Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
-&gt;&gt; Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor
+>> Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor
 odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
 ```
 
 呈现的输出效果如下:
 
-&gt; Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
+> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
 Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
-&gt;&gt; Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor
+>> Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor
 odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
 
 ## 8 列表
@@ -249,7 +249,7 @@ odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac 
 ```markdown
 * 一项内容
 - 一项内容
-&#43; 一项内容
++ 一项内容
 ```
 
 例如:
@@ -287,23 +287,23 @@ odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac 
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;ul&gt;
-  &lt;li&gt;Lorem ipsum dolor sit amet&lt;/li&gt;
-  &lt;li&gt;Consectetur adipiscing elit&lt;/li&gt;
-  &lt;li&gt;Integer molestie lorem at massa&lt;/li&gt;
-  &lt;li&gt;Facilisis in pretium nisl aliquet&lt;/li&gt;
-  &lt;li&gt;Nulla volutpat aliquam velit
-    &lt;ul&gt;
-      &lt;li&gt;Phasellus iaculis neque&lt;/li&gt;
-      &lt;li&gt;Purus sodales ultricies&lt;/li&gt;
-      &lt;li&gt;Vestibulum laoreet porttitor sem&lt;/li&gt;
-      &lt;li&gt;Ac tristique libero volutpat at&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Faucibus porta lacus fringilla vel&lt;/li&gt;
-  &lt;li&gt;Aenean sit amet erat nunc&lt;/li&gt;
-  &lt;li&gt;Eget porttitor lorem&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+  <li>Facilisis in pretium nisl aliquet</li>
+  <li>Nulla volutpat aliquam velit
+    <ul>
+      <li>Phasellus iaculis neque</li>
+      <li>Purus sodales ultricies</li>
+      <li>Vestibulum laoreet porttitor sem</li>
+      <li>Ac tristique libero volutpat at</li>
+    </ul>
+  </li>
+  <li>Faucibus porta lacus fringilla vel</li>
+  <li>Aenean sit amet erat nunc</li>
+  <li>Eget porttitor lorem</li>
+</ul>
 ```
 
 ### 有序列表
@@ -335,19 +335,19 @@ odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac 
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;ol&gt;
-  &lt;li&gt;Lorem ipsum dolor sit amet&lt;/li&gt;
-  &lt;li&gt;Consectetur adipiscing elit&lt;/li&gt;
-  &lt;li&gt;Integer molestie lorem at massa&lt;/li&gt;
-  &lt;li&gt;Facilisis in pretium nisl aliquet&lt;/li&gt;
-  &lt;li&gt;Nulla volutpat aliquam velit&lt;/li&gt;
-  &lt;li&gt;Faucibus porta lacus fringilla vel&lt;/li&gt;
-  &lt;li&gt;Aenean sit amet erat nunc&lt;/li&gt;
-  &lt;li&gt;Eget porttitor lorem&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+  <li>Facilisis in pretium nisl aliquet</li>
+  <li>Nulla volutpat aliquam velit</li>
+  <li>Faucibus porta lacus fringilla vel</li>
+  <li>Aenean sit amet erat nunc</li>
+  <li>Eget porttitor lorem</li>
+</ol>
 ```
 
-{{&lt; admonition tip &gt;}}
+{{< admonition tip >}}
 如果你对每一项使用 `1.`, Markdown 将自动为每一项编号. 例如:
 
 ```markdown
@@ -371,7 +371,7 @@ odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac 
 1. Faucibus porta lacus fringilla vel
 1. Aenean sit amet erat nunc
 1. Eget porttitor lorem
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
 ### 任务列表
 
@@ -394,22 +394,22 @@ odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac 
 
 ### 行内代码
 
-用 &lt;code&gt;`&lt;/code&gt; 包装行内代码段.
+用 <code>`</code> 包装行内代码段.
 
 ```markdown
-在这个例子中, `&lt;section&gt;&lt;/section&gt;` 会被包裹成 **代码**.
+在这个例子中, `<section></section>` 会被包裹成 **代码**.
 ```
 
 呈现的输出效果如下:
 
-在这个例子中, `&lt;section&gt;&lt;/section&gt;` 会被包裹成 **代码**.
+在这个例子中, `<section></section>` 会被包裹成 **代码**.
 
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;p&gt;
-  在这个例子中, &lt;code&gt;&amp;lt;section&amp;gt;&amp;lt;/section&amp;gt;&lt;/code&gt; 会被包裹成 &lt;strong&gt;代码&lt;/strong&gt;.
-&lt;/p&gt;
+<p>
+  在这个例子中, <code>&lt;section&gt;&lt;/section&gt;</code> 会被包裹成 <strong>代码</strong>.
+</p>
 ```
 
 ### 缩进代码
@@ -433,65 +433,65 @@ odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac 
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;pre&gt;
-  &lt;code&gt;
+<pre>
+  <code>
     // Some comments
     line 1 of code
     line 2 of code
     line 3 of code
-  &lt;/code&gt;
-&lt;/pre&gt;
+  </code>
+</pre>
 ```
 
 ### 围栏代码块
 
-使用 &#34;围栏&#34; &lt;code&gt;```&lt;/code&gt; 来生成一段带有语言属性的代码块.
+使用 "围栏" <code>```</code> 来生成一段带有语言属性的代码块.
 
-{{&lt; highlight markdown &gt;}}
+{{< highlight markdown >}}
 ```markdown
 Sample text here...
 ```
-{{&lt; / highlight &gt;}}
+{{< / highlight >}}
 
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;pre language-html&gt;
-  &lt;code&gt;Sample text here...&lt;/code&gt;
-&lt;/pre&gt;
+<pre language-html>
+  <code>Sample text here...</code>
+</pre>
 ```
 
 ### 语法高亮
 
 [GFM]^(GitHub Flavored Markdown) 也支持语法高亮.
 
-要激活它，只需在第一个代码 &#34;围栏&#34; 之后直接添加你要使用的语言的文件扩展名,
-&lt;code&gt;```js&lt;/code&gt;, 语法高亮显示将自动应用于渲染的 HTML 中.
+要激活它，只需在第一个代码 "围栏" 之后直接添加你要使用的语言的文件扩展名,
+<code>```js</code>, 语法高亮显示将自动应用于渲染的 HTML 中.
 
 例如, 在以下 JavaScript 代码中应用语法高亮:
 
-{{&lt; highlight markdown &gt;}}
+{{< highlight markdown >}}
 ```js
 grunt.initConfig({
   assemble: {
     options: {
-      assets: &#39;docs/assets&#39;,
-      data: &#39;src/data/*.{json,yml}&#39;,
-      helpers: &#39;src/custom-helpers.js&#39;,
-      partials: [&#39;src/partials/**/*.{hbs,md}&#39;]
+      assets: 'docs/assets',
+      data: 'src/data/*.{json,yml}',
+      helpers: 'src/custom-helpers.js',
+      partials: ['src/partials/**/*.{hbs,md}']
     },
     pages: {
       options: {
-        layout: &#39;default.hbs&#39;
+        layout: 'default.hbs'
       },
       files: {
-        &#39;./&#39;: [&#39;src/templates/pages/index.hbs&#39;]
+        './': ['src/templates/pages/index.hbs']
       }
     }
   }
 };
 ```
-{{&lt; / highlight &gt;}}
+{{< / highlight >}}
 
 呈现的输出效果如下:
 
@@ -499,27 +499,27 @@ grunt.initConfig({
 grunt.initConfig({
   assemble: {
     options: {
-      assets: &#39;docs/assets&#39;,
-      data: &#39;src/data/*.{json,yml}&#39;,
-      helpers: &#39;src/custom-helpers.js&#39;,
-      partials: [&#39;src/partials/**/*.{hbs,md}&#39;]
+      assets: 'docs/assets',
+      data: 'src/data/*.{json,yml}',
+      helpers: 'src/custom-helpers.js',
+      partials: ['src/partials/**/*.{hbs,md}']
     },
     pages: {
       options: {
-        layout: &#39;default.hbs&#39;
+        layout: 'default.hbs'
       },
       files: {
-        &#39;./&#39;: [&#39;src/templates/pages/index.hbs&#39;]
+        './': ['src/templates/pages/index.hbs']
       }
     }
   }
 };
 ```
 
-{{&lt; admonition &gt;}}
+{{< admonition >}}
 **Hugo** 文档中的 [语法高亮页面](https://gohugo.io/content-management/syntax-highlighting/) 介绍了有关语法高亮的更多信息,
 包括语法高亮的 shortcode.
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
 ## 10 表格
 
@@ -544,31 +544,31 @@ grunt.initConfig({
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Option&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;data&lt;/td&gt;
-      &lt;td&gt;path to data files to supply the data that will be passed into templates.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;engine&lt;/td&gt;
-      &lt;td&gt;engine to be used for processing templates. Handlebars is the default.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ext&lt;/td&gt;
-      &lt;td&gt;extension to be used for dest files.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>data</td>
+      <td>path to data files to supply the data that will be passed into templates.</td>
+    </tr>
+    <tr>
+      <td>engine</td>
+      <td>engine to be used for processing templates. Handlebars is the default.</td>
+    </tr>
+    <tr>
+      <td>ext</td>
+      <td>extension to be used for dest files.</td>
+    </tr>
+  </tbody>
+</table>
 ```
 
-{{&lt; admonition note &#34;文本右对齐或居中对齐&#34; &gt;}}
+{{< admonition note "文本右对齐或居中对齐" >}}
 在任何标题下方的破折号右侧添加冒号将使该列的文本右对齐.
 
 在任何标题下方的破折号两边添加冒号将使该列的对齐文本居中.
@@ -588,48 +588,48 @@ grunt.initConfig({
 | data   | path to data files to supply the data that will be passed into templates. |
 | engine | engine to be used for processing templates. Handlebars is the default. |
 | ext    | extension to be used for dest files. |
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
 ## 11 链接 {#links}
 
 ### 基本链接
 
 ```markdown
-&lt;https://assemble.io&gt;
-&lt;contact@revolunet.com&gt;
+<https://assemble.io>
+<contact@revolunet.com>
 [Assemble](https://assemble.io)
 ```
 
 呈现的输出效果如下 (将鼠标悬停在链接上，没有提示):
 
-&lt;https://assemble.io&gt;
+<https://assemble.io>
 
-&lt;contact@revolunet.com&gt;
+<contact@revolunet.com>
 
 [Assemble](https://assemble.io)
 
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;a href=&#34;https://assemble.io&#34;&gt;https://assemble.io&lt;/a&gt;
-&lt;a href=&#34;mailto:contact@revolunet.com&#34;&gt;contact@revolunet.com&lt;/a&gt;
-&lt;a href=&#34;https://assemble.io&#34;&gt;Assemble&lt;/a&gt;
+<a href="https://assemble.io">https://assemble.io</a>
+<a href="mailto:contact@revolunet.com">contact@revolunet.com</a>
+<a href="https://assemble.io">Assemble</a>
 ```
 
 ### 添加一个标题
 
 ```markdown
-[Upstage](https://github.com/upstage/ &#34;Visit Upstage!&#34;)
+[Upstage](https://github.com/upstage/ "Visit Upstage!")
 ```
 
 呈现的输出效果如下 (将鼠标悬停在链接上，会有一行提示):
 
-[Upstage](https://github.com/upstage/ &#34;Visit Upstage!&#34;)
+[Upstage](https://github.com/upstage/ "Visit Upstage!")
 
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;a href=&#34;https://github.com/upstage/&#34; title=&#34;Visit Upstage!&#34;&gt;Upstage&lt;/a&gt;
+<a href="https://github.com/upstage/" title="Visit Upstage!">Upstage</a>
 ```
 
 ### 定位标记
@@ -646,19 +646,19 @@ grunt.initConfig({
 将跳转到这些部分:
 
 ```markdown
-## Chapter 1 &lt;a id=&#34;chapter-1&#34;&gt;&lt;/a&gt;
+## Chapter 1 <a id="chapter-1"></a>
 Content for chapter one.
 
-## Chapter 2 &lt;a id=&#34;chapter-2&#34;&gt;&lt;/a&gt;
+## Chapter 2 <a id="chapter-2"></a>
 Content for chapter one.
 
-## Chapter 3 &lt;a id=&#34;chapter-3&#34;&gt;&lt;/a&gt;
+## Chapter 3 <a id="chapter-3"></a>
 Content for chapter one.
 ```
 
-{{&lt; admonition &gt;}}
+{{< admonition >}}
 定位标记的位置几乎是任意的. 因为它们并不引人注目, 所以它们通常被放在同一行了.
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
 ## 12 脚注
 
@@ -701,10 +701,10 @@ Content for chapter one.
 或者:
 
 ```markdown
-![Alt text](https://octodex.github.com/images/stormtroopocat.jpg &#34;The Stormtroopocat&#34;)
+![Alt text](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 ```
 
-![Alt text](https://octodex.github.com/images/stormtroopocat.jpg &#34;The Stormtroopocat&#34;)
+![Alt text](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 
 像链接一样, 图片也具有脚注样式的语法:
 
@@ -717,14 +717,14 @@ Content for chapter one.
 稍后在文档中提供参考内容, 用来定义 URL 的位置:
 
 ```markdown
-[id]: https://octodex.github.com/images/dojocat.jpg  &#34;The Dojocat&#34;
+[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
 ```
 
-[id]: https://octodex.github.com/images/dojocat.jpg  &#34;The Dojocat&#34;
+[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
 
-{{&lt; admonition tip &gt;}}
+{{< admonition tip >}}
 **FixIt** 主题提供了一个包含更多功能的 [图片的 shortcode](../theme-documentation-extended-shortcodes#image).
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
 ## 14 数学公式
 
@@ -734,23 +734,23 @@ Content for chapter one.
 并在文章的前置参数中设置属性 `math: true`来启用数学公式的自动渲染.
 **$\KaTeX$** 根据 **特定的分隔符** 来自动渲染公式.
 
-{{&lt; admonition tip &gt;}}
+{{< admonition tip >}}
 有一份 [$\KaTeX$ 中支持的 $\TeX$ 函数](https://katex.org/docs/supported.html) 清单.
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
-{{&lt; admonition &gt;}}
-由于 Hugo 在渲染 Markdown 文档时会根据 `_`/`*`/`&gt;&gt;` 之类的语法生成 HTML 文档,
+{{< admonition >}}
+由于 Hugo 在渲染 Markdown 文档时会根据 `_`/`*`/`>>` 之类的语法生成 HTML 文档,
 并且有些转义字符形式的文本内容 (如 `\(`/`\)`/`\[`/`\]`/`\\`) 会自动进行转义处理,
 因此需要对这些地方进行额外的转义字符表达来实现自动渲染:
 
-* `_` -&gt; `\_`
-* `*` -&gt; `\*`
-* `&gt;&gt;` -&gt; `\&gt;&gt;`
-* `\(` -&gt; `\\(`
-* `\)` -&gt; `\\)`
-* `\[` -&gt; `\\[`
-* `\]` -&gt; `\\]`
-* `\\` -&gt; `\\\\`
+* `_` -> `\_`
+* `*` -> `\*`
+* `>>` -> `\>>`
+* `\(` -> `\\(`
+* `\)` -> `\\)`
+* `\[` -> `\\[`
+* `\]` -> `\\]`
+* `\\` -> `\\\\`
 
 **FixIt** 主题支持 [`raw` shortcode](../theme-documentation-extended-shortcodes#12-raw) 以避免这些转义字符,
 它可以帮助您编写原始数学公式内容.
@@ -758,25 +758,25 @@ Content for chapter one.
 一个 `raw` 示例:
 
 ```markdown
-行内公式: {{&lt;/* raw */&gt;}}\(\mathbf{E}=\sum_{i} \mathbf{E}_{i}=\mathbf{E}_{1}&#43;\mathbf{E}_{2}&#43;\mathbf{E}_{3}&#43;\cdots\){{&lt;/* /raw */&gt;}}
+行内公式: {{</* raw */>}}\(\mathbf{E}=\sum_{i} \mathbf{E}_{i}=\mathbf{E}_{1}+\mathbf{E}_{2}+\mathbf{E}_{3}+\cdots\){{</* /raw */>}}
 
 公式块:
 
-{{&lt;/* raw */&gt;}}
-\[ a=b&#43;c \\ d&#43;e=f \]
-{{&lt;/* /raw */&gt;}}
+{{</* raw */>}}
+\[ a=b+c \\ d+e=f \]
+{{</* /raw */>}}
 ```
 
 呈现的输出效果如下:
 
-行内公式: {{&lt; raw &gt;}}\(\mathbf{E}=\sum_{i} \mathbf{E}_{i}=\mathbf{E}_{1}&#43;\mathbf{E}_{2}&#43;\mathbf{E}_{3}&#43;\cdots\){{&lt; /raw &gt;}}
+行内公式: {{< raw >}}\(\mathbf{E}=\sum_{i} \mathbf{E}_{i}=\mathbf{E}_{1}+\mathbf{E}_{2}+\mathbf{E}_{3}+\cdots\){{< /raw >}}
 
 公式块:
 
-{{&lt; raw&gt;}}
-\[ a=b&#43;c \\ d&#43;e=f \]
-{{&lt; /raw &gt;}}
-{{&lt; /admonition &gt;}}
+{{< raw>}}
+\[ a=b+c \\ d+e=f \]
+{{< /raw >}}
+{{< /admonition >}}
 
 ### 行内公式
 
@@ -788,12 +788,12 @@ Content for chapter one.
 例如:
 
 ```tex
-$c = \pm\sqrt{a^2 &#43; b^2}$ 和 \\(f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi\\)
+$c = \pm\sqrt{a^2 + b^2}$ 和 \\(f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi\\)
 ```
 
 呈现的输出效果如下:
 
-$c = \pm\sqrt{a^2 &#43; b^2}$ 和 \\(f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi\\)
+$c = \pm\sqrt{a^2 + b^2}$ 和 \\(f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi\\)
 
 ### 公式块
 
@@ -810,35 +810,35 @@ $c = \pm\sqrt{a^2 &#43; b^2}$ 和 \\(f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e
 例如:
 
 ```tex
-$$ c = \pm\sqrt{a^2 &#43; b^2} $$
+$$ c = \pm\sqrt{a^2 + b^2} $$
 
 \\[ f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi \\]
 
 \begin{equation*}
-  \rho \frac{\mathrm{D} \mathbf{v}}{\mathrm{D} t}=\nabla \cdot \mathbb{P}&#43;\rho \mathbf{f}
+  \rho \frac{\mathrm{D} \mathbf{v}}{\mathrm{D} t}=\nabla \cdot \mathbb{P}+\rho \mathbf{f}
 \end{equation*}
 
 \begin{equation}
-  \mathbf{E}=\sum_{i} \mathbf{E}\_{i}=\mathbf{E}\_{1}&#43;\mathbf{E}\_{2}&#43;\mathbf{E}_{3}&#43;\cdots
+  \mathbf{E}=\sum_{i} \mathbf{E}\_{i}=\mathbf{E}\_{1}+\mathbf{E}\_{2}+\mathbf{E}_{3}+\cdots
 \end{equation}
 
 \begin{align}
-  a&amp;=b&#43;c \\\\
-  d&#43;e&amp;=f
+  a&=b+c \\\\
+  d+e&=f
 \end{align}
 
 \begin{alignat}{2}
-   10&amp;x&#43;&amp;3&amp;y = 2 \\\\
-   3&amp;x&#43;&amp;13&amp;y = 4
+   10&x+&3&y = 2 \\\\
+   3&x+&13&y = 4
 \end{alignat}
 
 \begin{gather}
    a=b \\\\
-   e=b&#43;c
+   e=b+c
 \end{gather}
 
 \begin{CD}
-   A @&gt;a\&gt;&gt; B \\\\
+   A @>a\>> B \\\\
 @VbVV @AAcA \\\\
    C @= D
 \end{CD}
@@ -846,42 +846,42 @@ $$ c = \pm\sqrt{a^2 &#43; b^2} $$
 
 呈现的输出效果如下:
 
-$$ c = \pm\sqrt{a^2 &#43; b^2} $$
+$$ c = \pm\sqrt{a^2 + b^2} $$
 
 \\[ f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi \\]
 
 \begin{equation*}
-  \rho \frac{\mathrm{D} \mathbf{v}}{\mathrm{D} t}=\nabla \cdot \mathbb{P}&#43;\rho \mathbf{f}
+  \rho \frac{\mathrm{D} \mathbf{v}}{\mathrm{D} t}=\nabla \cdot \mathbb{P}+\rho \mathbf{f}
 \end{equation*}
 
 \begin{equation}
-  \mathbf{E}=\sum_{i} \mathbf{E}\_{i}=\mathbf{E}\_{1}&#43;\mathbf{E}\_{2}&#43;\mathbf{E}_{3}&#43;\cdots
+  \mathbf{E}=\sum_{i} \mathbf{E}\_{i}=\mathbf{E}\_{1}+\mathbf{E}\_{2}+\mathbf{E}_{3}+\cdots
 \end{equation}
 
 \begin{align}
-  a&amp;=b&#43;c \\\\
-  d&#43;e&amp;=f
+  a&=b+c \\\\
+  d+e&=f
 \end{align}
 
 \begin{alignat}{2}
-   10&amp;x&#43;&amp;3&amp;y = 2 \\\\
-   3&amp;x&#43;&amp;13&amp;y = 4
+   10&x+&3&y = 2 \\\\
+   3&x+&13&y = 4
 \end{alignat}
 
 \begin{gather}
    a=b \\\\
-   e=b&#43;c
+   e=b+c
 \end{gather}
 
 \begin{CD}
-   A @&gt;a\&gt;&gt; B \\\\
+   A @>a\>> B \\\\
 @VbVV @AAcA \\\\
    C @= D
 \end{CD}
 
-{{&lt; admonition tip &gt;}}
+{{< admonition tip >}}
 你可以在 [网站配置](../theme-documentation-basics#site-configuration) 中自定义行内公式和公式块的分割符.
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
 ### mhchem
 
@@ -890,16 +890,16 @@ $$ c = \pm\sqrt{a^2 &#43; b^2} $$
 通过这个扩展, 你可以在文章中轻松编写漂亮的化学方程式.
 
 ```markdown
-$$ \ce{CO2 &#43; C -&gt; 2 CO} $$
+$$ \ce{CO2 + C -> 2 CO} $$
 
-$$ \ce{Hg^2&#43; -&gt;[I-] HgI2 -&gt;[I-] [Hg^{II}I4]^2-} $$
+$$ \ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-} $$
 ```
 
 呈现的输出效果如下:
 
-$$ \ce{CO2 &#43; C -&gt; 2 CO} $$
+$$ \ce{CO2 + C -> 2 CO} $$
 
-$$ \ce{Hg^2&#43; -&gt;[I-] HgI2 -&gt;[I-] [Hg^{II}I4]^2-} $$
+$$ \ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-} $$
 
 ## 15 字符修饰
 
@@ -910,15 +910,15 @@ $$ \ce{Hg^2&#43; -&gt;[I-] HgI2 -&gt;[I-] [Hg^{II}I4]^2-} $$
 
 [99]{?/}[100]
 
-&lt;abbr title=&#34;Graphics Interchange Format&#34;&gt;GIF&lt;/abbr&gt;是一种位图图片格式。
+<abbr title="Graphics Interchange Format">GIF</abbr>是一种位图图片格式。
 
-H&lt;sub&gt;2&lt;/sub&gt;O
+H<sub>2</sub>O
 
-X&lt;sup&gt;n&lt;/sup&gt; &#43; Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;
+X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 
-按下&lt;kbd&gt;&lt;kbd&gt;CTRL&lt;/kbd&gt;&#43;&lt;kbd&gt;ALT&lt;/kbd&gt;&#43;&lt;kbd&gt;Delete&lt;/kbd&gt;&lt;/kbd&gt;以访问任务管理器。
+按下<kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd>以访问任务管理器。
 
-大多数&lt;mark&gt;口腔癌&lt;/mark&gt;都是由于不良的生活习惯导致的。
+大多数<mark>口腔癌</mark>都是由于不良的生活习惯导致的。
 ```
 
 呈现的输出效果如下:
@@ -927,15 +927,15 @@ X&lt;sup&gt;n&lt;/sup&gt; &#43; Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/su
 
 [90]/[100]
 
-&lt;abbr title=&#34;Graphics Interchange Format&#34;&gt;GIF&lt;/abbr&gt;是一种位图图片格式。
+<abbr title="Graphics Interchange Format">GIF</abbr>是一种位图图片格式。
 
-H&lt;sub&gt;2&lt;/sub&gt;O
+H<sub>2</sub>O
 
-X&lt;sup&gt;n&lt;/sup&gt; &#43; Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;
+X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 
-按下&lt;kbd&gt;&lt;kbd&gt;CTRL&lt;/kbd&gt;&#43;&lt;kbd&gt;ALT&lt;/kbd&gt;&#43;&lt;kbd&gt;Delete&lt;/kbd&gt;&lt;/kbd&gt;以访问任务管理器。
+按下<kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd>以访问任务管理器。
 
-大多数&lt;mark&gt;口腔癌&lt;/mark&gt;都是由于不良的生活习惯导致的。
+大多数<mark>口腔癌</mark>都是由于不良的生活习惯导致的。
 
 ## 16 转义字符 {#escape-character}
 
@@ -944,7 +944,7 @@ X&lt;sup&gt;n&lt;/sup&gt; &#43; Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/su
 转义字符语法可以帮助你渲染出想要的内容:
 
 ```markdown
-{{??}X} -&gt; X
+{{??}X} -> X
 ```
 
 例如, 两个 `:` 会启用 emoji 语法. 但有时候这不是你想要的结果. 可以像这样使用转义字符语法:
@@ -974,22 +974,22 @@ X&lt;sup&gt;n&lt;/sup&gt; &#43; Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/su
 一个 `figure` 示例:
 
 ```markdown
-{{&lt;/* figure src=&#34;https://octodex.github.com/images/minion.png&#34; title=&#34;Lighthouse (figure)&#34; */&gt;}}
+{{</* figure src="https://octodex.github.com/images/minion.png" title="Lighthouse (figure)" */>}}
 ```
 
 呈现的输出效果如下:
 
-{{&lt; figure src=&#34;https://octodex.github.com/images/minion.png&#34; title=&#34;Lighthouse (figure)&#34; &gt;}}
+{{< figure src="https://octodex.github.com/images/minion.png" title="Lighthouse (figure)" >}}
 
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;figure&gt;
-    &lt;img src=&#34;https://octodex.github.com/images/minion.png&#34;/&gt;
-    &lt;figcaption&gt;
-        &lt;h4&gt;Lighthouse (figure)&lt;/h4&gt;
-    &lt;/figcaption&gt;
-&lt;/figure&gt;
+<figure>
+    <img src="https://octodex.github.com/images/minion.png"/>
+    <figcaption>
+        <h4>Lighthouse (figure)</h4>
+    </figcaption>
+</figure>
 ```
 
 ### 2 gist
@@ -997,17 +997,17 @@ X&lt;sup&gt;n&lt;/sup&gt; &#43; Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/su
 一个 `gist` 示例:
 
 ```markdown
-{{&lt;/* gist spf13 7896402 */&gt;}}
+{{</* gist spf13 7896402 */>}}
 ```
 
 呈现的输出效果如下:
 
-{{&lt; gist spf13 7896402 &gt;}}
+{{< gist spf13 7896402 >}}
 
 输出的 HTML 看起来像这样:
 
 ```html
-&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/spf13/7896402.js&#34;&gt;&lt;/script&gt;
+<script type="application/javascript" src="https://gist.github.com/spf13/7896402.js"></script>
 ```
 
 ### 3 highlight
@@ -1015,30 +1015,30 @@ X&lt;sup&gt;n&lt;/sup&gt; &#43; Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/su
 一个 `highlight` 示例:
 
 ```markdown
-{{&lt;/* highlight html */&gt;}}
-&lt;section id=&#34;main&#34;&gt;
-    &lt;div&gt;
-        &lt;h1 id=&#34;title&#34;&gt;{{ .Title }}&lt;/h1&gt;
+{{</* highlight html */>}}
+<section id="main">
+    <div>
+        <h1 id="title">{{ .Title }}</h1>
         {{ range .Pages }}
-            {{ .Render &#34;summary&#34;}}
+            {{ .Render "summary"}}
         {{ end }}
-    &lt;/div&gt;
-&lt;/section&gt;
-{{&lt;/* /highlight */&gt;}}
+    </div>
+</section>
+{{</* /highlight */>}}
 ```
 
 呈现的输出效果如下:
 
-{{&lt; highlight html &gt;}}
-&lt;section id=&#34;main&#34;&gt;
-    &lt;div&gt;
-        &lt;h1 id=&#34;title&#34;&gt;{{ .Title }}&lt;/h1&gt;
+{{< highlight html >}}
+<section id="main">
+    <div>
+        <h1 id="title">{{ .Title }}</h1>
         {{ range .Pages }}
-            {{ .Render &#34;summary&#34;}}
+            {{ .Render "summary"}}
         {{ end }}
-    &lt;/div&gt;
-&lt;/section&gt;
-{{&lt; /highlight &gt;}}
+    </div>
+</section>
+{{< /highlight >}}
 
 ## 18 扩展shortcode
 
@@ -1046,23 +1046,23 @@ X&lt;sup&gt;n&lt;/sup&gt; &#43; Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/su
 
 `style` shortcode 用来在你的文章中插入自定义样式，它有两个位置参数.
 
-第一个参数是自定义样式的内容. 它支持 [SASS](https://sass-lang.com/documentation/style-rules/declarations#nesting) 中的嵌套语法，并且 `&amp;` 指代这个父元素.
+第一个参数是自定义样式的内容. 它支持 [SASS](https://sass-lang.com/documentation/style-rules/declarations#nesting) 中的嵌套语法，并且 `&` 指代这个父元素.
 
 第二个参数是包裹你要更改样式的内容的 HTML 标签, 默认值是 `div`.
 
 一个 `style` 示例:
 
 ```markdown
-{{&lt;/* style &#34;text-align:right; strong{color:#00b1ff;}&#34; */&gt;}}
+{{</* style "text-align:right; strong{color:#00b1ff;}" */>}}
 This is a **right-aligned** paragraph.
-{{&lt;/* /style */&gt;}}
+{{</* /style */>}}
 ```
 
 呈现的输出效果如下:
 
-{{&lt; style &#34;text-align:right; strong{color:#00b1ff;}&#34; &gt;}}
+{{< style "text-align:right; strong{color:#00b1ff;}" >}}
 This is a **right-aligned** paragraph.
-{{&lt; /style &gt;}}
+{{< /style >}}
 
 ### 2 link
 
@@ -1095,36 +1095,36 @@ This is a **right-aligned** paragraph.
 一个 `link` 示例:
 
 ```markdown
-{{&lt;/* link &#34;https://assemble.io&#34; */&gt;}}
+{{</* link "https://assemble.io" */>}}
 或者
-{{&lt;/* link href=&#34;https://assemble.io&#34; */&gt;}}
+{{</* link href="https://assemble.io" */>}}
 
-{{&lt;/* link &#34;mailto:contact@revolunet.com&#34; */&gt;}}
+{{</* link "mailto:contact@revolunet.com" */>}}
 或者
-{{&lt;/* link href=&#34;mailto:contact@revolunet.com&#34; */&gt;}}
+{{</* link href="mailto:contact@revolunet.com" */>}}
 
-{{&lt;/* link &#34;https://assemble.io&#34; Assemble */&gt;}}
+{{</* link "https://assemble.io" Assemble */>}}
 或者
-{{&lt;/* link href=&#34;https://assemble.io&#34; content=Assemble */&gt;}}
+{{</* link href="https://assemble.io" content=Assemble */>}}
 ```
 
 呈现的输出效果如下:
 
-* {{&lt; link &#34;https://assemble.io&#34; &gt;}}
-* {{&lt; link &#34;mailto:contact@revolunet.com&#34; &gt;}}
-* {{&lt; link &#34;https://assemble.io&#34; Assemble &gt;}}
+* {{< link "https://assemble.io" >}}
+* {{< link "mailto:contact@revolunet.com" >}}
+* {{< link "https://assemble.io" Assemble >}}
 
 一个带有标题的 `link` 示例:
 
 ```markdown
-{{&lt;/* link &#34;https://github.com/upstage/&#34; Upstage &#34;Visit Upstage!&#34; */&gt;}}
+{{</* link "https://github.com/upstage/" Upstage "Visit Upstage!" */>}}
 或者
-{{&lt;/* link href=&#34;https://github.com/upstage/&#34; content=Upstage title=&#34;Visit Upstage!&#34; */&gt;}}
+{{</* link href="https://github.com/upstage/" content=Upstage title="Visit Upstage!" */>}}
 ```
 
 呈现的输出效果如下 (将鼠标悬停在链接上，会有一行提示):
 
-{{&lt; link &#34;https://github.com/upstage/&#34; Upstage &#34;Visit Upstage!&#34; &gt;}}
+{{< link "https://github.com/upstage/" Upstage "Visit Upstage!" >}}
 
 ### 3 image
 
@@ -1183,7 +1183,7 @@ This is a **right-aligned** paragraph.
 一个 `image` 示例:
 
 ```markdown
-{{&lt;/* image src=&#34;/images/lighthouse.jpg&#34; caption=&#34;Lighthouse (`image`)&#34; src_s=&#34;/images/lighthouse-small.jpg&#34; src_l=&#34;/images/lighthouse-large.jpg&#34; */&gt;}}
+{{</* image src="/images/lighthouse.jpg" caption="Lighthouse (`image`)" src_s="/images/lighthouse-small.jpg" src_l="/images/lighthouse-large.jpg" */>}}
 ```
 
 ### 4 admonition
@@ -1192,53 +1192,53 @@ This is a **right-aligned** paragraph.
 
 *支持 Markdown 或者 HTML 格式.*
 
-{{&lt; admonition &gt;}}
+{{< admonition >}}
 一个 **注意** 横幅
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
-{{&lt; admonition abstract &gt;}}
+{{< admonition abstract >}}
 一个 **摘要** 横幅
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
-{{&lt; admonition info &gt;}}
+{{< admonition info >}}
 一个 **信息** 横幅
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
-{{&lt; admonition tip &gt;}}
+{{< admonition tip >}}
 一个 **技巧** 横幅
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
-{{&lt; admonition success &gt;}}
+{{< admonition success >}}
 一个 **成功** 横幅
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
-{{&lt; admonition question &gt;}}
+{{< admonition question >}}
 一个 **问题** 横幅
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
-{{&lt; admonition warning &gt;}}
+{{< admonition warning >}}
 一个 **警告** 横幅
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
-{{&lt; admonition failure &gt;}}
+{{< admonition failure >}}
 一个 **失败** 横幅
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
-{{&lt; admonition danger &gt;}}
+{{< admonition danger >}}
 一个 **危险** 横幅
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
-{{&lt; admonition bug &gt;}}
+{{< admonition bug >}}
 一个 **Bug** 横幅
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
-{{&lt; admonition example &gt;}}
+{{< admonition example >}}
 一个 **示例** 横幅
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
-{{&lt; admonition quote &gt;}}
+{{< admonition quote >}}
 一个 **引用** 横幅
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
 `admonition` shortcode 有以下命名参数:
 
@@ -1250,27 +1250,27 @@ This is a **right-aligned** paragraph.
 
     `admonition` 横幅的标题, 默认值是 **type** 参数的值.
 
-* **open** *[可选]* (**第三个**位置参数) {{&lt; version 0.2.0 changed &gt;}}
+* **open** *[可选]* (**第三个**位置参数) {{< version 0.2.0 changed >}}
 
     横幅内容是否默认展开, 默认值是 `true`.
 
 一个 `admonition` 示例:
 
 ```markdown
-{{&lt;/* admonition type=tip title=&#34;This is a tip&#34; open=false */&gt;}}
+{{</* admonition type=tip title="This is a tip" open=false */>}}
 一个 **技巧** 横幅
-{{&lt;/* /admonition */&gt;}}
+{{</* /admonition */>}}
 或者
-{{&lt;/* admonition tip &#34;This is a tip&#34; false */&gt;}}
+{{</* admonition tip "This is a tip" false */>}}
 一个 **技巧** 横幅
-{{&lt;/* /admonition */&gt;}}
+{{</* /admonition */>}}
 ```
 
 呈现的输出效果如下:
 
-{{&lt; admonition tip &#34;This is a tip&#34; false &gt;}}
+{{< admonition tip "This is a tip" false >}}
 一个 **技巧** 横幅
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
 ### 5 mermaid
 
@@ -1279,24 +1279,24 @@ This is a **right-aligned** paragraph.
 一个 **流程图** `mermaid` 示例:
 
 ```markdown
-{{&lt;/* mermaid */&gt;}}
+{{</* mermaid */>}}
 graph LR;
-    A[Hard edge] --&gt;|Link text| B(Round edge)
-    B --&gt; C{Decision}
-    C --&gt;|One| D[Result one]
-    C --&gt;|Two| E[Result two]
-{{&lt;/* /mermaid */&gt;}}
+    A[Hard edge] -->|Link text| B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+{{</* /mermaid */>}}
 ```
 
 呈现的输出效果如下:
 
-{{&lt; mermaid &gt;}}
+{{< mermaid >}}
 graph LR;
-    A[Hard edge] --&gt;|Link text| B(Round edge)
-    B --&gt; C{Decision}
-    C --&gt;|One| D[Result one]
-    C --&gt;|Two| E[Result two]
-{{&lt; /mermaid &gt;}}
+    A[Hard edge] -->|Link text| B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+{{< /mermaid >}}
 
 ### 6 echarts
 
@@ -1309,159 +1309,159 @@ echarts` shortcode 使用 [ECharts](https://echarts.apache.org/) 库提供数据
 
 * **width** *[可选]* (**第一个**位置参数)
 
-    {{&lt; version 0.2.0 &gt;}} 数据可视化的宽度, 默认值是 `100%`.
+    {{< version 0.2.0 >}} 数据可视化的宽度, 默认值是 `100%`.
 
 * **height** *[可选]* (**第二个**位置参数)
 
-    {{&lt; version 0.2.0 &gt;}} 数据可视化的高度, 默认值是 `30rem`.
+    {{< version 0.2.0 >}} 数据可视化的高度, 默认值是 `30rem`.
 
 一个 `JSON` 格式的 `echarts` 示例:
 
 ```json
-{{&lt;/* echarts */&gt;}}
+{{</* echarts */>}}
 {
-  &#34;title&#34;: {
-    &#34;text&#34;: &#34;折线统计图&#34;,
-    &#34;top&#34;: &#34;2%&#34;,
-    &#34;left&#34;: &#34;center&#34;
+  "title": {
+    "text": "折线统计图",
+    "top": "2%",
+    "left": "center"
   },
-  &#34;tooltip&#34;: {
-    &#34;trigger&#34;: &#34;axis&#34;
+  "tooltip": {
+    "trigger": "axis"
   },
-  &#34;legend&#34;: {
-    &#34;data&#34;: [&#34;邮件营销&#34;, &#34;联盟广告&#34;, &#34;视频广告&#34;, &#34;直接访问&#34;, &#34;搜索引擎&#34;],
-    &#34;top&#34;: &#34;10%&#34;
+  "legend": {
+    "data": ["邮件营销", "联盟广告", "视频广告", "直接访问", "搜索引擎"],
+    "top": "10%"
   },
-  &#34;grid&#34;: {
-    &#34;left&#34;: &#34;5%&#34;,
-    &#34;right&#34;: &#34;5%&#34;,
-    &#34;bottom&#34;: &#34;5%&#34;,
-    &#34;top&#34;: &#34;20%&#34;,
-    &#34;containLabel&#34;: true
+  "grid": {
+    "left": "5%",
+    "right": "5%",
+    "bottom": "5%",
+    "top": "20%",
+    "containLabel": true
   },
-  &#34;toolbox&#34;: {
-    &#34;feature&#34;: {
-      &#34;saveAsImage&#34;: {
-        &#34;title&#34;: &#34;保存为图片&#34;
+  "toolbox": {
+    "feature": {
+      "saveAsImage": {
+        "title": "保存为图片"
       }
     }
   },
-  &#34;xAxis&#34;: {
-    &#34;type&#34;: &#34;category&#34;,
-    &#34;boundaryGap&#34;: false,
-    &#34;data&#34;: [&#34;周一&#34;, &#34;周二&#34;, &#34;周三&#34;, &#34;周四&#34;, &#34;周五&#34;, &#34;周六&#34;, &#34;周日&#34;]
+  "xAxis": {
+    "type": "category",
+    "boundaryGap": false,
+    "data": ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
   },
-  &#34;yAxis&#34;: {
-    &#34;type&#34;: &#34;value&#34;
+  "yAxis": {
+    "type": "value"
   },
-  &#34;series&#34;: [
+  "series": [
     {
-      &#34;name&#34;: &#34;邮件营销&#34;,
-      &#34;type&#34;: &#34;line&#34;,
-      &#34;stack&#34;: &#34;总量&#34;,
-      &#34;data&#34;: [120, 132, 101, 134, 90, 230, 210]
+      "name": "邮件营销",
+      "type": "line",
+      "stack": "总量",
+      "data": [120, 132, 101, 134, 90, 230, 210]
     },
     {
-      &#34;name&#34;: &#34;联盟广告&#34;,
-      &#34;type&#34;: &#34;line&#34;,
-      &#34;stack&#34;: &#34;总量&#34;,
-      &#34;data&#34;: [220, 182, 191, 234, 290, 330, 310]
+      "name": "联盟广告",
+      "type": "line",
+      "stack": "总量",
+      "data": [220, 182, 191, 234, 290, 330, 310]
     },
     {
-      &#34;name&#34;: &#34;视频广告&#34;,
-      &#34;type&#34;: &#34;line&#34;,
-      &#34;stack&#34;: &#34;总量&#34;,
-      &#34;data&#34;: [150, 232, 201, 154, 190, 330, 410]
+      "name": "视频广告",
+      "type": "line",
+      "stack": "总量",
+      "data": [150, 232, 201, 154, 190, 330, 410]
     },
     {
-      &#34;name&#34;: &#34;直接访问&#34;,
-      &#34;type&#34;: &#34;line&#34;,
-      &#34;stack&#34;: &#34;总量&#34;,
-      &#34;data&#34;: [320, 332, 301, 334, 390, 330, 320]
+      "name": "直接访问",
+      "type": "line",
+      "stack": "总量",
+      "data": [320, 332, 301, 334, 390, 330, 320]
     },
     {
-      &#34;name&#34;: &#34;搜索引擎&#34;,
-      &#34;type&#34;: &#34;line&#34;,
-      &#34;stack&#34;: &#34;总量&#34;,
-      &#34;data&#34;: [820, 932, 901, 934, 1290, 1330, 1320]
+      "name": "搜索引擎",
+      "type": "line",
+      "stack": "总量",
+      "data": [820, 932, 901, 934, 1290, 1330, 1320]
     }
   ]
 }
-{{&lt;/* /echarts */&gt;}}
+{{</* /echarts */>}}
 ```
 
 呈现的输出效果如下:
 
-{{&lt; echarts &gt;}}
+{{< echarts >}}
 {
-  &#34;title&#34;: {
-    &#34;text&#34;: &#34;折线统计图&#34;,
-    &#34;top&#34;: &#34;2%&#34;,
-    &#34;left&#34;: &#34;center&#34;
+  "title": {
+    "text": "折线统计图",
+    "top": "2%",
+    "left": "center"
   },
-  &#34;tooltip&#34;: {
-    &#34;trigger&#34;: &#34;axis&#34;
+  "tooltip": {
+    "trigger": "axis"
   },
-  &#34;legend&#34;: {
-    &#34;data&#34;: [&#34;邮件营销&#34;, &#34;联盟广告&#34;, &#34;视频广告&#34;, &#34;直接访问&#34;, &#34;搜索引擎&#34;],
-    &#34;top&#34;: &#34;10%&#34;
+  "legend": {
+    "data": ["邮件营销", "联盟广告", "视频广告", "直接访问", "搜索引擎"],
+    "top": "10%"
   },
-  &#34;grid&#34;: {
-    &#34;left&#34;: &#34;5%&#34;,
-    &#34;right&#34;: &#34;5%&#34;,
-    &#34;bottom&#34;: &#34;5%&#34;,
-    &#34;top&#34;: &#34;20%&#34;,
-    &#34;containLabel&#34;: true
+  "grid": {
+    "left": "5%",
+    "right": "5%",
+    "bottom": "5%",
+    "top": "20%",
+    "containLabel": true
   },
-  &#34;toolbox&#34;: {
-    &#34;feature&#34;: {
-      &#34;saveAsImage&#34;: {
-        &#34;title&#34;: &#34;保存为图片&#34;
+  "toolbox": {
+    "feature": {
+      "saveAsImage": {
+        "title": "保存为图片"
       }
     }
   },
-  &#34;xAxis&#34;: {
-    &#34;type&#34;: &#34;category&#34;,
-    &#34;boundaryGap&#34;: false,
-    &#34;data&#34;: [&#34;周一&#34;, &#34;周二&#34;, &#34;周三&#34;, &#34;周四&#34;, &#34;周五&#34;, &#34;周六&#34;, &#34;周日&#34;]
+  "xAxis": {
+    "type": "category",
+    "boundaryGap": false,
+    "data": ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
   },
-  &#34;yAxis&#34;: {
-    &#34;type&#34;: &#34;value&#34;
+  "yAxis": {
+    "type": "value"
   },
-  &#34;series&#34;: [
+  "series": [
     {
-      &#34;name&#34;: &#34;邮件营销&#34;,
-      &#34;type&#34;: &#34;line&#34;,
-      &#34;stack&#34;: &#34;总量&#34;,
-      &#34;data&#34;: [120, 132, 101, 134, 90, 230, 210]
+      "name": "邮件营销",
+      "type": "line",
+      "stack": "总量",
+      "data": [120, 132, 101, 134, 90, 230, 210]
     },
     {
-      &#34;name&#34;: &#34;联盟广告&#34;,
-      &#34;type&#34;: &#34;line&#34;,
-      &#34;stack&#34;: &#34;总量&#34;,
-      &#34;data&#34;: [220, 182, 191, 234, 290, 330, 310]
+      "name": "联盟广告",
+      "type": "line",
+      "stack": "总量",
+      "data": [220, 182, 191, 234, 290, 330, 310]
     },
     {
-      &#34;name&#34;: &#34;视频广告&#34;,
-      &#34;type&#34;: &#34;line&#34;,
-      &#34;stack&#34;: &#34;总量&#34;,
-      &#34;data&#34;: [150, 232, 201, 154, 190, 330, 410]
+      "name": "视频广告",
+      "type": "line",
+      "stack": "总量",
+      "data": [150, 232, 201, 154, 190, 330, 410]
     },
     {
-      &#34;name&#34;: &#34;直接访问&#34;,
-      &#34;type&#34;: &#34;line&#34;,
-      &#34;stack&#34;: &#34;总量&#34;,
-      &#34;data&#34;: [320, 332, 301, 334, 390, 330, 320]
+      "name": "直接访问",
+      "type": "line",
+      "stack": "总量",
+      "data": [320, 332, 301, 334, 390, 330, 320]
     },
     {
-      &#34;name&#34;: &#34;搜索引擎&#34;,
-      &#34;type&#34;: &#34;line&#34;,
-      &#34;stack&#34;: &#34;总量&#34;,
-      &#34;data&#34;: [820, 932, 901, 934, 1290, 1330, 1320]
+      "name": "搜索引擎",
+      "type": "line",
+      "stack": "总量",
+      "data": [820, 932, 901, 934, 1290, 1330, 1320]
     }
   ]
 }
-{{&lt; /echarts &gt;}}
+{{< /echarts >}}
 
 ### 7 bilibili
 
@@ -1476,14 +1476,14 @@ https://www.bilibili.com/video/BV1Sx411T7QQ
 一个 `bilibili` 示例:
 
 ```markdown
-{{&lt;/* bilibili BV1Sx411T7QQ */&gt;}}
+{{</* bilibili BV1Sx411T7QQ */>}}
 或者
-{{&lt;/* bilibili id=BV1Sx411T7QQ */&gt;}}
+{{</* bilibili id=BV1Sx411T7QQ */>}}
 ```
 
 呈现的输出效果如下:
 
-{{&lt; bilibili id=BV1Sx411T7QQ &gt;}}
+{{< bilibili id=BV1Sx411T7QQ >}}
 
 如果视频包含多个部分, 则除了视频的 BV `id` 之外, 还需要 `p`, 默认值为 `1`, 例如:
 
@@ -1494,37 +1494,37 @@ https://www.bilibili.com/video/BV1TJ411C7An?p=3
 一个带有 `p` 参数的 `bilibili` 示例:
 
 ```markdown
-{{&lt;/* bilibili BV1TJ411C7An 3 */&gt;}}
+{{</* bilibili BV1TJ411C7An 3 */>}}
 或者
-{{&lt;/* bilibili id=BV1TJ411C7An p=3 */&gt;}}
+{{</* bilibili id=BV1TJ411C7An p=3 */>}}
 ```
 
 呈现的输出效果如下:
 
-{{&lt; bilibili id=BV1TJ411C7An p=3 &gt;}}
+{{< bilibili id=BV1TJ411C7An p=3 >}}
 
 ### 8 script
 
 `script` shortcode 用来在你的文章中插入 **Javascript** 脚本.
 
-{{&lt; admonition &gt;}}
+{{< admonition >}}
 脚本内容可以保证在所有的第三方库加载之后按顺序执行.
 所以你可以自由地使用第三方库.
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
 一个 `script` 示例:
 
 ```markdown
-{{&lt;/* script */&gt;}}
-console.log(&#39;Hello FixIt!&#39;);
-{{&lt;/* /script */&gt;}}
+{{</* script */>}}
+console.log('Hello FixIt!');
+{{</* /script */>}}
 ```
 
 你可以在开发者工具的控制台中看到输出.
 
-{{&lt; script &gt;}}
-console.log(&#39;Hello FixIt!&#39;);
-{{&lt; /script &gt;}}
+{{< script >}}
+console.log('Hello FixIt!');
+{{< /script >}}
 
 ### 9 raw
 
@@ -1533,28 +1533,28 @@ console.log(&#39;Hello FixIt!&#39;);
 一个 `raw` 示例:
 
 ```markdown
-行内公式: {{&lt;/* raw */&gt;}}\(\mathbf{E}=\sum_{i} \mathbf{E}_{i}=\mathbf{E}_{1}&#43;\mathbf{E}_{2}&#43;\mathbf{E}_{3}&#43;\cdots\){{&lt;/* /raw */&gt;}}
+行内公式: {{</* raw */>}}\(\mathbf{E}=\sum_{i} \mathbf{E}_{i}=\mathbf{E}_{1}+\mathbf{E}_{2}+\mathbf{E}_{3}+\cdots\){{</* /raw */>}}
 
 公式块:
 
-{{&lt;/* raw */&gt;}}
-\[ a=b&#43;c \\ d&#43;e=f \]
-{{&lt;/* /raw */&gt;}}
+{{</* raw */>}}
+\[ a=b+c \\ d+e=f \]
+{{</* /raw */>}}
 
-原始的带有 Markdown 语法的内容: {{&lt;/* raw */&gt;}}**Hello**{{&lt;/* /raw */&gt;}}
+原始的带有 Markdown 语法的内容: {{</* raw */>}}**Hello**{{</* /raw */>}}
 ```
 
 呈现的输出效果如下:
 
-行内公式: {{&lt; raw &gt;}}\(\mathbf{E}=\sum_{i} \mathbf{E}_{i}=\mathbf{E}_{1}&#43;\mathbf{E}_{2}&#43;\mathbf{E}_{3}&#43;\cdots\){{&lt; /raw &gt;}}
+行内公式: {{< raw >}}\(\mathbf{E}=\sum_{i} \mathbf{E}_{i}=\mathbf{E}_{1}+\mathbf{E}_{2}+\mathbf{E}_{3}+\cdots\){{< /raw >}}
 
 公式块:
 
-{{&lt; raw&gt;}}
-\[ a=b&#43;c \\ d&#43;e=f \]
-{{&lt; /raw &gt;}}
+{{< raw>}}
+\[ a=b+c \\ d+e=f \]
+{{< /raw >}}
 
-原始的带有 Markdown 语法的内容: {{&lt; raw &gt;}}**Hello**{{&lt; /raw &gt;}}
+原始的带有 Markdown 语法的内容: {{< raw >}}**Hello**{{< /raw >}}
 
 ---
 

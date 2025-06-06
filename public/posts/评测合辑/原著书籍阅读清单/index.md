@@ -3,7 +3,7 @@
 
 笔者在闲暇时间有阅读书籍的习惯，特此对所读原著书籍作一记录。
 
-&lt;!--more--&gt;
+<!--more-->
 
 ## 0.前言
 
@@ -13,7 +13,7 @@
 
 什么是”词汇群“呢？以目前笔者认为最准确的测试网站 [MyVocab](https://www.myvocab.info/en) 上的描述为例：
 
-&gt; The test estimates vocabulary in word families. Each word family includes a base word, all its regularly inflected forms, and all words which can be made from the base word using common affixes. For example, words *limit, limitation, limitations, limited, limiting, limitless, limitlessly, limits, unlimited* belong to the same word family.
+> The test estimates vocabulary in word families. Each word family includes a base word, all its regularly inflected forms, and all words which can be made from the base word using common affixes. For example, words *limit, limitation, limitations, limited, limiting, limitless, limitlessly, limits, unlimited* belong to the same word family.
 
 由此可知，一个“基础词汇”的所有“衍生变体”都会被视作同一个“词汇群”。这样在测试时只需要着眼于独立词和基础词即可，测得的数据也是对于这两种基本词汇的掌握量，即“词汇群量”。
 

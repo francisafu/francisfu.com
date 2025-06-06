@@ -3,7 +3,7 @@
 
 我之前一直是在本机上搭建各种运行环境，包括VS、SQL SERVER、PHPStudy、NodeJS、Python等。听闻Docker for Windows现在已经很好用了，遂决定尝试一下，并将环境搭建和IDE配置流程在此做一记录。
 
-&lt;!--more--&gt;
+<!--more-->
 
 我涉及到迁移到Docker的环境主要是三个：SQL SERVER、LNMP和NodeJS。C#开发环境我最常用，而且跟VS深度绑定，必须在本机安装。Python本身比较精简，本地安装也很方便，就不迁移到Docker上去了。本机系统环境为：Windows11专业版 21H2 x64开启HyperV功能，i7-1185G7开启硬件虚拟化，16GB内存。
 
@@ -19,10 +19,10 @@ wsl --update
 安装并更新好WSL2后，打开安装包并安装Docker Desktop for Windows。安装好后，打开 *%UserProfile%/.docker/daemon.json* 文件，在最后追加下面一段：
 
 ```
-&#34;registry-mirrors&#34;: [
-    &#34;http://hub-mirror.c.163.com&#34;,
-    &#34;https://docker.mirrors.ustc.edu.cn&#34;,
-    &#34;https://registry.docker-cn.com&#34;
+"registry-mirrors": [
+    "http://hub-mirror.c.163.com",
+    "https://docker.mirrors.ustc.edu.cn",
+    "https://registry.docker-cn.com"
   ]
 ```
 
@@ -46,7 +46,7 @@ swap=2GB
 ```
 docker pull mcr.microsoft.com/mssql/server:2022-latest
 
-docker run  -e &#34;ACCEPT_EULA=Y&#34; -e &#34;SA_PASSWORD=@Qwe1234&#34; -p 1433:1433  --memory 2000M --name sqlserver -d mcr.microsoft.com/mssql/server:2022-latest
+docker run  -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=@Qwe1234" -p 1433:1433  --memory 2000M --name sqlserver -d mcr.microsoft.com/mssql/server:2022-latest
 ```
 
 返回Docker Desktop中可以看到已经拉取好的镜像和运行中的容器，镜像总大小为1.6G。
@@ -60,7 +60,7 @@ docker run  -e &#34;ACCEPT_EULA=Y&#34; -e &#34;SA_PASSWORD=@Qwe1234&#34; -p 1433
 * GitHub：https://github.com/francisafu/DockerLNMP
 * DockerHub：https://hub.docker.com/r/francisafu/lnmp
 
-镜像的具体参数和使用方法在ReadMe里都有进行详细阐述，在此就不过多赘述了。下文主要就PHP&#43;XDebug环境配合IDEA&#43;PHP插件进行开发做详细描述。网上很多文章提供的都是过时的信息，我自己在配置IDE的时候走了很多弯路，对配置过程做一个记录，也可以防止更多的人踩坑。
+镜像的具体参数和使用方法在ReadMe里都有进行详细阐述，在此就不过多赘述了。下文主要就PHP+XDebug环境配合IDEA+PHP插件进行开发做详细描述。网上很多文章提供的都是过时的信息，我自己在配置IDE的时候走了很多弯路，对配置过程做一个记录，也可以防止更多的人踩坑。
 
 ## 4. 配置IDEA
 

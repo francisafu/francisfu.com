@@ -3,24 +3,24 @@
 
 21年年末，随着房屋的交付，我也算是拥有了人生的第一套房。感谢父母的养育之恩，让我能够在这个“掏空六个钱包”的年代也有房可住。感谢兄弟的手足之情，在交首付面临捉襟见肘的窘境时，若不是几位兄弟的慷慨解囊，也无法渡过难关。感谢我对象的鼎力支持，在后期的装修工作中，方案设计、主材挑选、家电采购方面都起到了至关重要的作用。感谢在北京职场结识的几位老总，家具行业建树颇丰，在我添置家具时不遗余力的给予帮助。现在装修整体业已接近尾声，在这里简单记录一下自己装修的过程，对有装修需求的朋友也可以做一个参考。
 
-&lt;!--more--&gt;
+<!--more-->
 
 本文作为系列的第一篇文章，主要是记录硬装的流程。硬装方面我当时是选择的全包（大包），所以从我个人角度来看，并没有过多的参与其中，方案确定，主材挑选完毕后，监工基本是由我父母完成，施工则是全权信任的工程队。所以文章基本上是一篇流水账，记录下顺序过程，以及一些我认为需要特别明确的细节。
 
 ![主卧](/images/房屋装修笔记/装修笔记（一）硬装篇/主卧.jpg)
-&lt;center&gt;主卧&lt;/center&gt;
+<center>主卧</center>
 
 ![书房](/images/房屋装修笔记/装修笔记（一）硬装篇/书房.jpg)
-&lt;center&gt;书房&lt;/center&gt;
+<center>书房</center>
 
 ![地热管线](/images/房屋装修笔记/装修笔记（一）硬装篇/地热管线.jpg)
-&lt;center&gt;地热管线&lt;/center&gt;
+<center>地热管线</center>
 
 ![地热铺管](/images/房屋装修笔记/装修笔记（一）硬装篇/地热铺管.jpg)
-&lt;center&gt;地热铺管&lt;/center&gt;
+<center>地热铺管</center>
 
 ![卫生间](/images/房屋装修笔记/装修笔记（一）硬装篇/卫生间上下水.jpg)
-&lt;center&gt;卫生间&lt;/center&gt;
+<center>卫生间</center>
 
 ## 0. 开销明细
 
@@ -44,27 +44,27 @@
 
 装修之初肯定是要确定设计稿。设计师们为了体现自己存在的价值和意义，总归是要对格局进行或多或少的改动的。我倒不是说这些改动没有意义，至少从我的案例来看，改来改去呢，最后还是基本跟原本的户型图大体一致，只是厨房侧壁的位置向外推移了大概30公分。当然我这个情况也跟我实际户型较为中规中矩有关，如果户型本身属于比较“特立独行”的，那可供设计师发挥的空间就比较大了。在我个人看来，设计师的主要作用可能还真不是去“设计”，更多的时候是在我们面临选择困难症时给出一点参考，抑或是起到沟通业主、工程队之间的一个桥梁的作用。我对我这次的设计师还是非常满意的，作为同龄人，沟通交流很方便，态度也非常好，业务能力也比较强。
 
-&gt; 白嫖一时爽，一直白嫖一直爽。
+> 白嫖一时爽，一直白嫖一直爽。
 
 这里面还有一个小Trick：你可以多实地走访一些装修公司，一定要非常诚恳的去谈，给对方一种你就会在他家开工的既视感，然后让设计师拿出设计稿。至于最后选不选他家，只要你没交钱谁也不能强迫你。多拿一些设计稿，看得多了自然心里有最合适的想法，到时候综合各方面因素再去确定一家心仪的装修公司，之前的设计稿也可以作为参考。
 
 ![原户型图](/images/房屋装修笔记/装修笔记（一）硬装篇/户型图.jpg)
-&lt;center&gt;原户型图&lt;/center&gt;
+<center>原户型图</center>
 
 ![方案一](/images/房屋装修笔记/装修笔记（一）硬装篇/方案一.jpg)
-&lt;center&gt;方案一&lt;/center&gt;
+<center>方案一</center>
 
 ![方案二](/images/房屋装修笔记/装修笔记（一）硬装篇/方案二.jpg)
-&lt;center&gt;方案二&lt;/center&gt;
+<center>方案二</center>
 
 ![方案三](/images/房屋装修笔记/装修笔记（一）硬装篇/方案三.jpg)
-&lt;center&gt;方案三&lt;/center&gt;
+<center>方案三</center>
 
 ![方案四](/images/房屋装修笔记/装修笔记（一）硬装篇/方案四.jpg)
-&lt;center&gt;方案四&lt;/center&gt;
+<center>方案四</center>
 
 ![最终方案](/images/房屋装修笔记/装修笔记（一）硬装篇/定稿方案.jpg)
-&lt;center&gt;最终方案&lt;/center&gt;
+<center>最终方案</center>
 
 ## 2. 主材选购
 
@@ -106,134 +106,134 @@
 在这之前会有一系列的工作比如起保温层、铲除大白等，这些工作交给装修公司去操心就好了。水电交底需要业主、监理（施工队的头儿）、设计师同时到场，对水电的管线进行设计交接。我主要是考虑强弱电方面的问题，因为我从设计之初就是有做全屋智能的打算，所以无论是强电供应还是弱电布线都考虑得比较多一些。水和燃气的话，更多的是交给家里人去考虑了，本身我自己也不太懂。
 
 ![水电交底1](/images/房屋装修笔记/装修笔记（一）硬装篇/水电交底1.jpg)
-&lt;center&gt;水电交底1&lt;/center&gt;
+<center>水电交底1</center>
 
 ![水电交底2](/images/房屋装修笔记/装修笔记（一）硬装篇/水电交底2.jpg)
-&lt;center&gt;水电交底2&lt;/center&gt;
+<center>水电交底2</center>
 
 ![水电交底3](/images/房屋装修笔记/装修笔记（一）硬装篇/水电交底3.jpg)
-&lt;center&gt;水电交底3&lt;/center&gt;
+<center>水电交底3</center>
 
 ![水电交底4](/images/房屋装修笔记/装修笔记（一）硬装篇/水电交底4.jpg)
-&lt;center&gt;水电交底4&lt;/center&gt;
+<center>水电交底4</center>
 
 ## 5. 水电完工
 
 交底后会进行开槽放线，然后就是水电工进行水电管线的铺设工作了。
 
 ![开槽放线1](/images/房屋装修笔记/装修笔记（一）硬装篇/开槽放线1.jpg)
-&lt;center&gt;开槽放线1&lt;/center&gt;
+<center>开槽放线1</center>
 
 ![开槽放线2](/images/房屋装修笔记/装修笔记（一）硬装篇/开槽放线2.jpg)
-&lt;center&gt;开槽放线2&lt;/center&gt;
+<center>开槽放线2</center>
 
 ![开槽放线3](/images/房屋装修笔记/装修笔记（一）硬装篇/开槽放线3.jpg)
-&lt;center&gt;开槽放线3&lt;/center&gt;
+<center>开槽放线3</center>
 
 ![开槽放线4](/images/房屋装修笔记/装修笔记（一）硬装篇/开槽放线4.jpg)
-&lt;center&gt;开槽放线4&lt;/center&gt;
+<center>开槽放线4</center>
 
 ![水电完工1](/images/房屋装修笔记/装修笔记（一）硬装篇/水电完工1.jpg)
-&lt;center&gt;水电完工1&lt;/center&gt;
+<center>水电完工1</center>
 
 ![水电完工2](/images/房屋装修笔记/装修笔记（一）硬装篇/水电完工2.jpg)
-&lt;center&gt;水电完工2&lt;/center&gt;
+<center>水电完工2</center>
 
 ![水电完工3](/images/房屋装修笔记/装修笔记（一）硬装篇/水电完工3.jpg)
-&lt;center&gt;水电完工3&lt;/center&gt;
+<center>水电完工3</center>
 
 ![水电完工4](/images/房屋装修笔记/装修笔记（一）硬装篇/水电完工4.jpg)
-&lt;center&gt;水电完工4&lt;/center&gt;
+<center>水电完工4</center>
 
 ## 6. 瓦工进场
 
 瓦工师傅这一块，基本也没什么好说，选好了主材剩下的就交给瓦工师傅好了。不过需要提的一点是，瓦工结束后要美缝，美缝是没包含在装修合同里的，需要单独请人搞。
 
 ![瓦工1](/images/房屋装修笔记/装修笔记（一）硬装篇/瓦工1.jpg)
-&lt;center&gt;瓦工1&lt;/center&gt;
+<center>瓦工1</center>
 
 ![瓦工2](/images/房屋装修笔记/装修笔记（一）硬装篇/瓦工2.jpg)
-&lt;center&gt;瓦工2&lt;/center&gt;
+<center>瓦工2</center>
 
 ![瓦工3](/images/房屋装修笔记/装修笔记（一）硬装篇/瓦工3.jpg)
-&lt;center&gt;瓦工3&lt;/center&gt;
+<center>瓦工3</center>
 
 ![瓦工4](/images/房屋装修笔记/装修笔记（一）硬装篇/瓦工4.jpg)
-&lt;center&gt;瓦工4&lt;/center&gt;
+<center>瓦工4</center>
 
 ![美缝1](/images/房屋装修笔记/装修笔记（一）硬装篇/美缝1.jpg)
-&lt;center&gt;美缝1&lt;/center&gt;
+<center>美缝1</center>
 
 ![美缝2](/images/房屋装修笔记/装修笔记（一）硬装篇/美缝2.jpg)
-&lt;center&gt;美缝2&lt;/center&gt;
+<center>美缝2</center>
 
 ## 7. 木工进场
 
 瓦工结束后，瓦工师傅会保护现场，用一种类似膜布一样东西将它盖起来，所以不必担心污染的问题。木工这里我遇到了个麻烦——原房屋交付时，顶棚高度不齐，差距非常大，导致做完吊顶以后有一部分完全盖不住。解决的方案是用一大块石膏腻子将棚顶整体找平，填补上差的那一块，这里就只能做增项了。
 
 ![找平前1](/images/房屋装修笔记/装修笔记（一）硬装篇/找平前1.jpg)
-&lt;center&gt;找平前1&lt;/center&gt;
+<center>找平前1</center>
 
 ![找平前2](/images/房屋装修笔记/装修笔记（一）硬装篇/找平前2.jpg)
-&lt;center&gt;找平前2&lt;/center&gt;
+<center>找平前2</center>
 
 ![找平前3](/images/房屋装修笔记/装修笔记（一）硬装篇/找平前3.jpg)
-&lt;center&gt;找平前3&lt;/center&gt;
+<center>找平前3</center>
 
 找平前这几张图可以明显地看出来，一部分墙体的高度是不够的。
 
 ![木工1](/images/房屋装修笔记/装修笔记（一）硬装篇/木工1.jpg)
-&lt;center&gt;找平&lt;/center&gt;
+<center>找平</center>
 
 ![木工2](/images/房屋装修笔记/装修笔记（一）硬装篇/木工2.jpg)
-&lt;center&gt;木工完成1&lt;/center&gt;
+<center>木工完成1</center>
 
 ![木工3](/images/房屋装修笔记/装修笔记（一）硬装篇/木工3.jpg)
-&lt;center&gt;木工完成2&lt;/center&gt;
+<center>木工完成2</center>
 
 ## 8. 油工进场
 
 油工的工作还是比较复杂的，不过我也确实了解的不多——毕竟大多数时间都是师傅在弄，我属于是甩手掌柜了。第一步是全屋刷一层界面剂，之后是阴阳角找直、石膏板找平防裂，然后是刷两遍腻子，最后是刷乳胶漆。我这里没有选择颜色漆，还是用的白漆。彩色漆可能固然好看，但是考虑到新鲜感是会过时的，只有经典白墙才永不过时，就没有选其他颜色的。上述油工每一步完成都需要晾干数日才能进行下一步操作，所以总体耗时还是比较久的。
 
 ![油工1](/images/房屋装修笔记/装修笔记（一）硬装篇/油工1.jpg)
-&lt;center&gt;油工1&lt;/center&gt;
+<center>油工1</center>
 
 ![油工2](/images/房屋装修笔记/装修笔记（一）硬装篇/油工2.jpg)
-&lt;center&gt;油工2&lt;/center&gt;
+<center>油工2</center>
 
 ![油工3](/images/房屋装修笔记/装修笔记（一）硬装篇/油工3.jpg)
-&lt;center&gt;油工3&lt;/center&gt;
+<center>油工3</center>
 
 ![油工4](/images/房屋装修笔记/装修笔记（一）硬装篇/油工4.jpg)
-&lt;center&gt;油工4&lt;/center&gt;
+<center>油工4</center>
 
 ## 9. 主材进场
 
 这一部分主要是前期选好的各项主材陆续开始安装了。中间需要跟各种厂家进行沟通联络，主要是参数方面的一些问题，倒是没有什么需要特别注意的。没啥可说的啦，上图！
 
 ![地板1](/images/房屋装修笔记/装修笔记（一）硬装篇/地板1.jpg)
-&lt;center&gt;地板1&lt;/center&gt;
+<center>地板1</center>
 
 ![地板2](/images/房屋装修笔记/装修笔记（一）硬装篇/地板2.jpg)
-&lt;center&gt;地板2&lt;/center&gt;
+<center>地板2</center>
 
 ![吊顶](/images/房屋装修笔记/装修笔记（一）硬装篇/吊顶.jpg)
-&lt;center&gt;吊顶&lt;/center&gt;
+<center>吊顶</center>
 
 ![花洒](/images/房屋装修笔记/装修笔记（一）硬装篇/花洒.jpg)
-&lt;center&gt;花洒&lt;/center&gt;
+<center>花洒</center>
 
 ![马桶](/images/房屋装修笔记/装修笔记（一）硬装篇/马桶.jpg)
-&lt;center&gt;马桶&lt;/center&gt;
+<center>马桶</center>
 
 ![洗手台](/images/房屋装修笔记/装修笔记（一）硬装篇/洗手台.jpg)
-&lt;center&gt;洗手台&lt;/center&gt;
+<center>洗手台</center>
 
 ![移门](/images/房屋装修笔记/装修笔记（一）硬装篇/移门.jpg)
-&lt;center&gt;移门&lt;/center&gt;
+<center>移门</center>
 
 ![推门](/images/房屋装修笔记/装修笔记（一）硬装篇/推门.jpg)
-&lt;center&gt;推门&lt;/center&gt;
+<center>推门</center>
 
 ## 10. 收尾工作
 
@@ -244,19 +244,19 @@
 灯具这里没什么可以多说的了，每个人审美、要求等方方面面都是不一样的，选最适合自己的就是最好的。直接上图结束这篇文章吧。
 
 ![客厅主灯](/images/房屋装修笔记/装修笔记（一）硬装篇/客厅主灯.jpg)
-&lt;center&gt;客厅主灯&lt;/center&gt;
+<center>客厅主灯</center>
 
 ![卧室主灯](/images/房屋装修笔记/装修笔记（一）硬装篇/卧室主灯.jpg)
-&lt;center&gt;卧室主灯&lt;/center&gt;
+<center>卧室主灯</center>
 
 ![卫生间照明](/images/房屋装修笔记/装修笔记（一）硬装篇/卫生间照明.jpg)
-&lt;center&gt;卫生间照明&lt;/center&gt;
+<center>卫生间照明</center>
 
 ![门厅筒灯](/images/房屋装修笔记/装修笔记（一）硬装篇/门厅筒灯.jpg)
-&lt;center&gt;门厅筒灯&lt;/center&gt;
+<center>门厅筒灯</center>
 
 ![过道筒灯](/images/房屋装修笔记/装修笔记（一）硬装篇/过道筒灯.jpg)
-&lt;center&gt;过道筒灯&lt;/center&gt;
+<center>过道筒灯</center>
 
 ---
 

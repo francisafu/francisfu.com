@@ -3,7 +3,7 @@
 
 最近把个人主页从Statiq全面转移到Hugo上了。五年的时间内，从Hexo到Statiq再到Hugo，我尝试了不同的几种静态页面生成器。最终选择了Hugo也是因为感觉，它还是最方便好用的一种。在此记录一下Hugo的使用方式、我所选用的FixIt主题的搭建和配置，以及配合GitHub Webhook实现代码自动更新推送的流程。
 
-&lt;!--more--&gt;
+<!--more-->
 
 ## 1. 项目搭建
 
@@ -11,7 +11,7 @@
 
 首先在[发布](https://github.com/gohugoio/hugo/releases)页面下载二进制预编译文件，然后将解压后的*hugo.exe*放在你喜欢的目录里。我放在了*C:\Program Files\hugo*目录下。
 
-打开「开始-&gt;设置-&gt;系统-&gt;高级系统设置-&gt;环境变量」，在「用户变量-&gt;Path」下加入存放Hugo可执行文件的目录。终端测试命令`hugo version`，如能够正确显示版本号，则可以进入下一步。
+打开「开始->设置->系统->高级系统设置->环境变量」，在「用户变量->Path」下加入存放Hugo可执行文件的目录。终端测试命令`hugo version`，如能够正确显示版本号，则可以进入下一步。
 
 在代码编辑器中导航至想存放项目文件的目录中，使用命令
 ```bash
@@ -43,12 +43,12 @@ hugo --cleanDestinationDir # 清除输出目录中的多余页面
 以GitHub为例，安装完[Git](https://git-scm.com/)后首先是本地Git用户信息配置并生成SSH密钥：
 
 ```bash
-git config user.name &#34;yourname&#34;
-git config user.email &#34;your_email@youremail.com&#34;
-ssh-keygen -t rsa -C &#34;your_email@youremail.com&#34;
+git config user.name "yourname"
+git config user.email "your_email@youremail.com"
+ssh-keygen -t rsa -C "your_email@youremail.com"
 ```
 
-然后将.ssh/id_rsa.pub中的内容复制粘贴到GitHub 「Settings-&gt;SSH and GPG keys-&gt;New SSH key」处。
+然后将.ssh/id_rsa.pub中的内容复制粘贴到GitHub 「Settings->SSH and GPG keys->New SSH key」处。
 
 验证连接：`ssh -T git@github.com`
 
@@ -66,7 +66,7 @@ git remote add origin https:xxx.git #HTTPS方式
 git pull origin main
 
 # 若远程仓库为空：
-git commit -m &#34;comment&#34;
+git commit -m "comment"
 git push origin main
 ``` 
 
@@ -80,47 +80,47 @@ git push origin main
 
 ```bash
 sudo apt install git
-git config --global user.name &#34;yourname&#34;
-git config --global user.email &#34;your_email@youremail.com&#34;
-sudo ssh-keygen -t rsa -C &#34;xxxxx@xxxxx.com&#34;
+git config --global user.name "yourname"
+git config --global user.email "your_email@youremail.com"
+sudo ssh-keygen -t rsa -C "xxxxx@xxxxx.com"
 sudo cat /root/.ssh/id_rsa.pub
 # 复制密钥并粘贴到GitHub
 sudo -u root ssh -T git@github.com
 ```
-之后登录宝塔面板，在「软件商店-&gt;宝塔插件」处搜索并安装**宝塔WebHook**。添加到主面板后，在主面板点击它，新建一个WebHook。这里需要注意，和常见的接收到信息后拉取同步整个仓库不同的是，Hugo渲染输出页面只存在于仓库的*public*路径下，所以我们需要设置为只同步该路径下的内容，其余文件不需要同步。具体配置代码如下：
+之后登录宝塔面板，在「软件商店->宝塔插件」处搜索并安装**宝塔WebHook**。添加到主面板后，在主面板点击它，新建一个WebHook。这里需要注意，和常见的接收到信息后拉取同步整个仓库不同的是，Hugo渲染输出页面只存在于仓库的*public*路径下，所以我们需要设置为只同步该路径下的内容，其余文件不需要同步。具体配置代码如下：
 
 ```bash
 #! /bin/bash
-echo &#34;&#34;
+echo ""
 # 输出当前时间
-date --date=&#39;0 days ago&#39; &#34;&#43;%Y-%m-%d %H:%M:%S&#34;
-echo &#34;-------开始-------&#34;
+date --date='0 days ago' "+%Y-%m-%d %H:%M:%S"
+echo "-------开始-------"
 # 服务器项目存放路径
-gitPath=&#34;/www/wwwroot/your_file_path&#34;
+gitPath="/www/wwwroot/your_file_path"
 # 此处不要用HTTPS地址，使用SSH地址
-gitHttp=&#34;git@github.com:your_repository_path&#34;
-echo &#34;Web站点路径：$gitPath&#34;
+gitHttp="git@github.com:your_repository_path"
+echo "Web站点路径：$gitPath"
 sudo rm -rf $gitPath
 mkdir $gitPath
 cd $gitPath
 #判断是否存在git目录
-if [ ! -d &#34;.git&#34; ]; then
-  echo &#34;在该目录下克隆git&#34;
+if [ ! -d ".git" ]; then
+  echo "在该目录下克隆git"
   sudo git clone $gitHttp gittemp
   sudo mv gittemp/.git .
   sudo rm -rf gittemp
 fi
-echo &#34;拉取最新的项目文件&#34;
+echo "拉取最新的项目文件"
 # 设置部分拉取
 sudo git config core.sparsecheckout true
-sudo echo public/ &gt;&gt; .git/info/sparse-checkout
+sudo echo public/ >> .git/info/sparse-checkout
 # 拉取最新的项目文件
 git reset --hard origin/main
 sudo git pull 
 # 移动文件
 sudo mv $gitPath/public/* $gitPath/
 sudo rm -rf $gitPath/public
-echo &#34;-----拉取成功-----&#34;
+echo "-----拉取成功-----"
 exit
 ```
 
