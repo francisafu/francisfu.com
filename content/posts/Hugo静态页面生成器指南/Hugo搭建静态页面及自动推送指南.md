@@ -33,7 +33,7 @@ FixIt主题的配置可以参考[官方文档](https://fixit.lruihao.cn/zh-cn/ca
 
 建立好项目以后，就可以在项目目录下的*content*目录中进行写作了。如果掌握不好写作的格式要求，可以将*themes/anatole/exampleSite/content*目录下的内容拷贝到项目*content*目录中，这些示例文档都是可以参考的案例。Markdown语法部分也可以参考我在这个系列中的第二篇文章——[Hugo/FixIt语法参考](/posts/hugo静态页面生成器指南/hugo-fixit语法参考/)。
 
-文章编写完成后，终端中使用命令`hugo server`可以在*localhost:1313*进行预览，此模式下支持热编辑。如渲染效果满意，使用命令`hugo`可以进行渲染生成。常用命令如下：
+文章编写完成后，终端中使用命令`hugo serve`可以在*localhost:1313*进行预览，此模式下支持热编辑。如渲染效果满意，使用命令`hugo`可以进行渲染生成。常用命令如下：
 
 ```bash
 hugo serve # 预览网页
