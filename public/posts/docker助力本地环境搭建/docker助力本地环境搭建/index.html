@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
   <head>
-    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
@@ -31,7 +30,7 @@
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://francisfu.com/posts/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Docker助力本地环境搭建 - CRuffians" /><link rel="prev" type="text/html" href="https://francisfu.com/posts/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/%E5%8F%B0%E5%BC%8F%E6%9C%BA%E6%94%92%E6%9C%BA%E6%8C%87%E5%8D%97/" title="台式机攒机指南" /><link rel="next" type="text/html" href="https://francisfu.com/posts/%E5%AE%89%E5%8D%93%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/" title="安卓Parcel漏洞攻击案例分析" /><link rel="alternate" type="text/markdown" href="https://francisfu.com/posts/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.md" title="Docker助力本地环境搭建 - CRuffians"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://francisfu.com/posts/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Docker助力本地环境搭建 - CRuffians" /><link rel="prev" type="text/html" href="https://francisfu.com/posts/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/%E5%8F%B0%E5%BC%8F%E6%9C%BA%E6%94%92%E6%9C%BA%E6%8C%87%E5%8D%97/" title="台式机攒机指南" /><link rel="next" type="text/html" href="https://francisfu.com/posts/%E5%AE%89%E5%8D%93%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/" title="安卓Parcel漏洞攻击案例分析" /><link rel="alternate" type="text/markdown" href="https://francisfu.com/posts/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.md" title="Docker助力本地环境搭建 - CRuffians"><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -51,16 +50,14 @@
       },"description": ""
   }
   </script><script src="/js/head/color-scheme.min.js"></script></head>
-  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper">
     <div class="header-title">
       <a href="/" title="CRuffians"><span class="header-title-text">CRuffians</span></a><span class="header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li class="menu-item">
               <a class="menu-link" href="/posts/">文章</a></li><li class="menu-item">
-              <a class="menu-link" href="/categories/">分类</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
-          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
-        </li></ul>
+              <a class="menu-link" href="/categories/">分类</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" role="button" aria-label="切换主题" title="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></li></ul>
     </nav>
   </div>
 </header><header class="mobile animate__faster" id="header-mobile">
@@ -68,22 +65,22 @@
     <div class="header-wrapper">
       <div class="header-title">
         <a href="/" title="CRuffians"><span class="header-title-text">CRuffians</span></a><span class="header-subtitle"></span></div>
-      <div class="menu-toggle" id="menu-toggle-mobile">
+      <div class="theme-switch" role="button" aria-label="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
         <span></span><span></span><span></span>
       </div>
     </div>
     <nav>
-      <ul class="menu" id="menu-mobile"><li class="menu-item"><a class="menu-link" href="/posts/">文章</a></li><li class="menu-item"><a class="menu-link" href="/categories/">分类</a></li><li class="menu-item menu-system">
-          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><a class="menu-link" href="/posts/">文章</a></li><li class="menu-item"><a class="menu-link" href="/categories/">分类</a></li><li class="menu-item menu-system"></li>
       </ul>
     </nav>
   </div>
-</header><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+</header><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
 
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Docker助力本地环境搭建</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://francisfu.com/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img class="avatar" src='/images/icon.png' alt="Francis Fu" height="16" width="16">&nbsp;Francis Fu</a></span></div><div class="post-meta-line"><span title="发布于 2023-01-28 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-01-28">2023-01-28</time></span>&nbsp;<span title="更新于 2023-03-10 00:00:00"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2023-03-10">2023-03-10</time></span>&nbsp;<span title="2330 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 2400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 5 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span class="post-author"><a href="https://francisfu.com/" title="作者" target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img class="avatar" src='/images/icon.png' alt="Francis Fu" height="16" width="16">&nbsp;Francis Fu</a></span></div><div class="post-meta-line"><span title="发布于 2023-01-28 00:00:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i><time datetime="2023-01-28">2023-01-28</time></span>&nbsp;<span title="更新于 2023-03-10 00:00:00"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i><time datetime="2023-03-10">2023-03-10</time></span>&nbsp;<span title="2330 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>约 2400 字</span>&nbsp;<span><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>预计阅读 5 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -103,19 +100,19 @@
   <a href="#1-%e5%ae%89%e8%a3%85docker" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><p>首先在官网下载<a href="https://www.docker.com/products/docker-desktop/"target="_blank" rel="external nofollow noopener noreferrer">Docker Desktop for Windows<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>。Windows版的Docker支持两种后端技术方案：WSL2和HyperV。我个人建议使用WSL2作为后端。关于两种不同后端的系统要求和区别可以<a href="https://docs.docker.com/desktop/install/windows-install/"target="_blank" rel="external nofollow noopener noreferrer">参考这里<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>。下载的同时打开终端，依次输入下述两个指令：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+</h2><p>首先在官网下载<a href="https://www.docker.com/products/docker-desktop/" target="_blank" rel="external nofollow noopener noreferrer">Docker Desktop for Windows<i class="fa-solid fa-external-link-alt fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>。Windows版的Docker支持两种后端技术方案：WSL2和HyperV。我个人建议使用WSL2作为后端。关于两种不同后端的系统要求和区别可以<a href="https://docs.docker.com/desktop/install/windows-install/" target="_blank" rel="external nofollow noopener noreferrer">参考这里<i class="fa-solid fa-external-link-alt fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>。下载的同时打开终端，依次输入下述两个指令：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="切换行号" role="button" title="切换行号"><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行"><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板"><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wsl --install
-</span></span><span class="line"><span class="cl">wsl --update</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">wsl --update</span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>安装并更新好WSL2后，打开安装包并安装Docker Desktop for Windows。安装好后，打开 <em>%UserProfile%/.docker/daemon.json</em> 文件，在最后追加下面一段：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="切换行号" role="button" title="切换行号"><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行"><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板"><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
@@ -127,11 +124,11 @@
 </span></span><span class="line"><span class="cl">    &#34;http://hub-mirror.c.163.com&#34;,
 </span></span><span class="line"><span class="cl">    &#34;https://docker.mirrors.ustc.edu.cn&#34;,
 </span></span><span class="line"><span class="cl">    &#34;https://registry.docker-cn.com&#34;
-</span></span><span class="line"><span class="cl">  ]</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">  ]</span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>更换为国内镜像源。找到 <em>%UserProfile%/.wslconfig</em> 文件，如没有此文件则需要建立一个，修改内容为：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="切换行号" role="button" title="切换行号"><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行"><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板"><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
@@ -141,7 +138,7 @@
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[wsl2]
 </span></span><span class="line"><span class="cl">processors=2
 </span></span><span class="line"><span class="cl">memory=4GB
-</span></span><span class="line"><span class="cl">swap=2GB</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">swap=2GB</span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>其中，processors是给虚拟机分配的核心数，默认和宿主机一样，这里我设置为两个（50%）。memory是虚拟机最大可以占用的内存，默认为50%总内存。我设置为4G（25%）。swap是虚拟机允许使用的最大交换空间，默认为25%总内存，我设置为2G（12.5%）。如果宿主机硬件资源丰富，也可以不设置这里。</p>
 <p>之后就是双击启动Docker Desktop即可。</p>
@@ -149,9 +146,9 @@
   <a href="#2-%e5%ae%89%e8%a3%85sql-server" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><p>在Docker Hub中可以找到SQL SERVER的<a href="https://hub.docker.com/_/microsoft-mssql-server"target="_blank" rel="external nofollow noopener noreferrer">官方镜像<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>。启动Docker后，在终端中依次使用如下命令拉取镜像并创建容器：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+</h2><p>在Docker Hub中可以找到SQL SERVER的<a href="https://hub.docker.com/_/microsoft-mssql-server" target="_blank" rel="external nofollow noopener noreferrer">官方镜像<i class="fa-solid fa-external-link-alt fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>。启动Docker后，在终端中依次使用如下命令拉取镜像并创建容器：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="切换行号" role="button" title="切换行号"><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行"><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板"><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
@@ -159,7 +156,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker pull mcr.microsoft.com/mssql/server:2022-latest
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">docker run  -e &#34;ACCEPT_EULA=Y&#34; -e &#34;SA_PASSWORD=@Qwe1234&#34; -p 1433:1433  --memory 2000M --name sqlserver -d mcr.microsoft.com/mssql/server:2022-latest</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">docker run  -e &#34;ACCEPT_EULA=Y&#34; -e &#34;SA_PASSWORD=@Qwe1234&#34; -p 1433:1433  --memory 2000M --name sqlserver -d mcr.microsoft.com/mssql/server:2022-latest</span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>返回Docker Desktop中可以看到已经拉取好的镜像和运行中的容器，镜像总大小为1.6G。</p>
 <p>使用SSMS连接时，服务器名为localhost，用户名sa，密码为上边设置的@Qwe1234。</p>
@@ -197,46 +194,54 @@
 <p><img loading="lazy" src='/images/Docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/verify.png' alt="verify" height="968" width="1296"></p>
 <p>之后关闭设置窗口。在IDE主界面右上角 <strong>当前文件</strong> 处点击，选择 <strong>编辑配置</strong> ，加号新增配置，下拉列表中选择 <strong>PHP网页</strong> 。服务器选择前面设置好的，起始URL填写网站根路径，浏览器根据需要用来调试的浏览器进行选择。</p>
 <p><img loading="lazy" src='/images/Docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/debug.png' alt="debug" height="1494" width="2090"></p>
-<p>最后一步，在需要用来调试的浏览器上安装<a href="https://www.jetbrains.com/help/phpstorm/browser-debugging-extensions.html"target="_blank" rel="external nofollow noopener noreferrer">XDebug Helper<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>插件，配置其idekey为“PHPSTORM”。</p>
+<p>最后一步，在需要用来调试的浏览器上安装<a href="https://www.jetbrains.com/help/phpstorm/browser-debugging-extensions.html" target="_blank" rel="external nofollow noopener noreferrer">XDebug Helper<i class="fa-solid fa-external-link-alt fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>插件，配置其idekey为“PHPSTORM”。</p>
 <p>全部配置好之后，就愉快的开始调试了。我们先进行一个测试。下图中的源码，启动侦听后点击右上角绿色箭头，可以看到网页直接显示了，断点没有生效。</p>
 <p><img loading="lazy" src='/images/Docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/code.png' alt="code" height="950" width="2106"></p>
 <p>在浏览器插件中启动Debug选项，重新运行网页文件，可以看到断点中断成功，调试信息正确显示。</p>
 <p><img loading="lazy" src='/images/Docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/breakpoint.png' alt="breakpoint" height="1518" width="1896"></p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
-      <div class="post-info-mod">
-        <span title="更新于 2023-03-10 00:00:00">更新于 2023-03-10&nbsp;</span>
+      <div class="post-info-mod"><span title="更新于 2023-03-10 00:00:00">更新于 2023-03-10&nbsp;</span>
       </div><div class="post-info-license">
             <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
           </div></div><div class="post-info-line">
         <div class="post-info-md"><span><a href="/posts/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 X" data-sharer="twitter" data-url="https://francisfu.com/posts/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" data-title="Docker助力本地环境搭建"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://francisfu.com/posts/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://francisfu.com/posts/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" data-title="Docker助力本地环境搭建"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="分享到 X" data-sharer="twitter" data-url="https://francisfu.com/posts/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" data-title="Docker助力本地环境搭建"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://francisfu.com/posts/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"><i class="fa-brands fa-facebook-square" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://francisfu.com/posts/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/docker%E5%8A%A9%E5%8A%9B%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" data-title="Docker助力本地环境搭建"><i class="fa-brands fa-weibo" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
 
   <div class="post-info-more">
     <section class="post-tags"></section>
-    <section>
-      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    <section><span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
-  </div><div class="post-nav"><a href="/posts/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/%E5%8F%B0%E5%BC%8F%E6%9C%BA%E6%94%92%E6%9C%BA%E6%8C%87%E5%8D%97/" class="post-nav-item" rel="prev" title="台式机攒机指南"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>台式机攒机指南</a><a href="/posts/%E5%AE%89%E5%8D%93%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/" class="post-nav-item" rel="next" title="安卓Parcel漏洞攻击案例分析">安卓Parcel漏洞攻击案例分析<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  </div><div class="post-nav"><a href="/posts/pc%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/%E5%8F%B0%E5%BC%8F%E6%9C%BA%E6%94%92%E6%9C%BA%E6%8C%87%E5%8D%97/" class="post-nav-item" rel="prev" title="台式机攒机指南"><i class="fa-solid fa-angle-left" aria-hidden="true"></i>台式机攒机指南</a><a href="/posts/%E5%AE%89%E5%8D%93%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/%E5%AE%89%E5%8D%93parcel%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/" class="post-nav-item" rel="next" title="安卓Parcel漏洞攻击案例分析">安卓Parcel漏洞攻击案例分析<i class="fa-solid fa-angle-right" aria-hidden="true"></i></a></div>
 </div>
 </article>
 
-  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
-      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.152.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.20"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
-        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
-            <span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">
-              <a href="https://francisfu.com/"target="_blank" rel="external nofollow noopener noreferrer">Francis Fu</a></span></div></div>
-  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
-        </div></div><div id="mask"></div><noscript>
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li><a href="#1-安装docker">1. 安装Docker</a></li>
+    <li><a href="#2-安装sql-server">2. 安装SQL SERVER</a></li>
+    <li><a href="#3-安装lnmp和nodejs">3. 安装LNMP和NodeJS</a></li>
+    <li><a href="#4-配置idea">4. 配置IDEA</a></li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.155.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.2"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2026</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://francisfu.com/" target="_blank" rel="external nofollow noopener noreferrer">Francis Fu</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="目录"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.20"};</script><script src="/js/theme.min.js" defer></script><script src="/js/custom.min.js" defer></script></body>
+</div><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/js/config/38ab86fbbeebf0278faa380454f45270.js" defer></script><script src="/js/theme.min.js" defer></script><script src="/js/custom.min.js" defer></script></body>
 </html>

@@ -1,0 +1,1 @@
+window.config={"comment":{"enable":false},"version":"v0.4.2"};

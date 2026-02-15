@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>OpenCode安装及配置 - CRuffians</title><meta name="author" content="Francis Fu">
+<meta name="description" content="最近的几年来，我的 AI 辅助编程工具先后从 Copilot -&gt; Cursor -&gt; KiloCode ，再转到近期使用了 OpenCode。体验到了 OpenCode 加上 Oh-My-OpenCode 的强大之处，可以说用上就再也回不去了。在此对 Windows 系统上的环境配置作一记录。
+">
+  <meta itemprop="name" content="OpenCode安装及配置">
+  <meta itemprop="description" content="最近的几年来，我的 AI 辅助编程工具先后从 Copilot -&gt; Cursor -&gt; KiloCode ，再转到近期使用了 OpenCode。体验到了 OpenCode 加上 Oh-My-OpenCode 的强大之处，可以说用上就再也回不去了。在此对 Windows 系统上的环境配置作一记录。">
+  <meta itemprop="datePublished" content="2026-02-14T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-02-14T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1347">
+  <meta itemprop="image" content="https://francisfu.com/icon.png"><meta property="og:url" content="https://francisfu.com/posts/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/">
+  <meta property="og:site_name" content="CRuffians">
+  <meta property="og:title" content="OpenCode安装及配置">
+  <meta property="og:description" content="最近的几年来，我的 AI 辅助编程工具先后从 Copilot -&gt; Cursor -&gt; KiloCode ，再转到近期使用了 OpenCode。体验到了 OpenCode 加上 Oh-My-OpenCode 的强大之处，可以说用上就再也回不去了。在此对 Windows 系统上的环境配置作一记录。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-14T00:00:00+00:00">
+    <meta property="og:image" content="https://francisfu.com/icon.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://francisfu.com/icon.png">
+  <meta name="twitter:title" content="OpenCode安装及配置">
+  <meta name="twitter:description" content="最近的几年来，我的 AI 辅助编程工具先后从 Copilot -&gt; Cursor -&gt; KiloCode ，再转到近期使用了 OpenCode。体验到了 OpenCode 加上 Oh-My-OpenCode 的强大之处，可以说用上就再也回不去了。在此对 Windows 系统上的环境配置作一记录。">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://francisfu.com/posts/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/" title="OpenCode安装及配置 - CRuffians" /><link rel="prev" type="text/html" href="https://francisfu.com/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E5%8E%9F%E8%91%97%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95/" title="原著书籍阅读清单" /><link rel="alternate" type="text/markdown" href="https://francisfu.com/posts/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/index.md" title="OpenCode安装及配置 - CRuffians"><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "OpenCode安装及配置",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/francisfu.com\/posts\/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE\/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE\/"
+    },"genre": "posts","wordcount":  1347 ,
+    "url": "https:\/\/francisfu.com\/posts\/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE\/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE\/","datePublished": "2026-02-14T00:00:00+00:00","dateModified": "2026-02-14T00:00:00+00:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Francis Fu"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="CRuffians"><span class="header-title-text">CRuffians</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/posts/">文章</a></li><li class="menu-item">
+              <a class="menu-link" href="/categories/">分类</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" role="button" aria-label="切换主题" title="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="CRuffians"><span class="header-title-text">CRuffians</span></a><span class="header-subtitle"></span></div>
+      <div class="theme-switch" role="button" aria-label="切换主题"><i class="fa-solid fa-adjust" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><a class="menu-link" href="/posts/">文章</a></li><li class="menu-item"><a class="menu-link" href="/categories/">分类</a></li><li class="menu-item menu-system"></li>
+      </ul>
+    </nav>
+  </div>
+</header><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>OpenCode安装及配置</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://francisfu.com/" title="作者" target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img class="avatar" src='/images/icon.png' alt="Francis Fu" height="16" width="16">&nbsp;Francis Fu</a></span></div><div class="post-meta-line"><span title="发布于 2026-02-14 00:00:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i><time datetime="2026-02-14">2026-02-14</time></span>&nbsp;<span title="1347 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>约 1400 字</span>&nbsp;<span><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#0-系统环境">0. 系统环境</a></li>
+    <li><a href="#1-安装chocolatey">1. 安装Chocolatey</a></li>
+    <li><a href="#2-安装-wezterm">2. 安装 WezTerm</a></li>
+    <li><a href="#3-安装-opencode">3. 安装 OpenCode</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>最近的几年来，我的 AI 辅助编程工具先后从 Copilot -&gt; Cursor -&gt; KiloCode ，再转到近期使用了 OpenCode。体验到了 OpenCode 加上 Oh-My-OpenCode 的强大之处，可以说用上就再也回不去了。在此对 Windows 系统上的环境配置作一记录。</p>
+<h2 class="heading-element" id="0-系统环境"><span>0. 系统环境</span>
+  <a href="#0-%e7%b3%bb%e7%bb%9f%e7%8e%af%e5%a2%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>Windows 11 25H2</li>
+<li>Visual Studio Code 1.109.3</li>
+<li>Node.js 26.01.14</li>
+</ul>
+<h2 class="heading-element" id="1-安装chocolatey"><span>1. 安装Chocolatey</span>
+  <a href="#1-%e5%ae%89%e8%a3%85chocolatey" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>以管理员权限打开 <strong>Windows PowerShell</strong>，执行以下命令：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-powershell"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="切换行号" role="button" title="切换行号"><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行"><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板"><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Set-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="n">-Scope</span> <span class="k">Process</span> <span class="n">-Force</span><span class="p">;</span> <span class="p">[</span><span class="no">System.Net.ServicePointManager</span><span class="p">]::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Net.ServicePointManager</span><span class="p">]::</span><span class="n">SecurityProtocol</span> <span class="o">-bor</span> <span class="mf">3072</span><span class="p">;</span> <span class="nb">iex </span><span class="p">((</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="py">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="py">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://community.chocolatey.org/install.ps1&#39;</span><span class="p">))</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>之后会自动安装 Chocolatey。</p>
+<p>安装完成后，关闭并重新打开终端，然后执行：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-powershell"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="切换行号" role="button" title="切换行号"><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行"><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板"><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">choco</span> <span class="p">-</span><span class="n">-version</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>看到版本号就说明安装成功了。</p>
+<h2 class="heading-element" id="2-安装-wezterm"><span>2. 安装 WezTerm</span>
+  <a href="#2-%e5%ae%89%e8%a3%85-wezterm" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>OpenCode 作为一个终端编辑器，支持如下现代化终端：</p>
+<ul>
+<li>WezTerm，跨平台</li>
+<li>Alacritty，跨平台</li>
+<li>Ghostty，Linux 和 macOS</li>
+<li>Kitty，Linux 和 macOS</li>
+</ul>
+<p>对于 Windows 平台的两款，我个人比较倾向于WezTerm。</p>
+<p>在终端运行命令 <code>choco install wezterm -y</code> 进行安装。</p>
+<p>安装后，继续在终端依次运行如下命令以打开 WezTerm 配置文件：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-powershell"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="切换行号" role="button" title="切换行号"><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行"><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板"><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">New-Item</span> <span class="n">-Path</span> <span class="s2">&#34;</span><span class="nv">$env:USERPROFILE</span><span class="s2">\.wezterm.lua&#34;</span> <span class="n">-ItemType</span> <span class="n">File</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl"><span class="n">code</span> <span class="s2">&#34;</span><span class="nv">$env:USERPROFILE</span><span class="s2">\.wezterm.lua&#34;</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>之后可以根据 WezTerm 官方文档进行配置修改。以下是一个可用的参考。</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-lua"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="切换行号" role="button" title="切换行号"><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行"><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板"><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="2" style="--fi-max-shown-lines:10;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">wezterm</span> <span class="o">=</span> <span class="n">require</span> <span class="s1">&#39;wezterm&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 使用更新的配置方式</span>
+</span></span><span class="line"><span class="cl"><span class="kr">if</span> <span class="n">wezterm.config_builder</span> <span class="kr">then</span>
+</span></span><span class="line"><span class="cl">  <span class="n">config</span> <span class="o">=</span> <span class="n">wezterm.config_builder</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- ============ 基础设置 ============</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 默认 Shell</span>
+</span></span><span class="line"><span class="cl"><span class="n">config.default_prog</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;powershell.exe&#39;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- config.default_prog = { &#39;pwsh.exe&#39; }  -- PowerShell 7</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- config.default_prog = { &#39;wsl.exe&#39;, &#39;~&#39; }  -- WSL</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 启动时窗口大小</span>
+</span></span><span class="line"><span class="cl"><span class="n">config.initial_cols</span> <span class="o">=</span> <span class="mi">120</span>
+</span></span><span class="line"><span class="cl"><span class="n">config.initial_rows</span> <span class="o">=</span> <span class="mi">30</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- ============ 字体设置 ============</span>
+</span></span><span class="line"><span class="cl"><span class="n">config.font</span> <span class="o">=</span> <span class="n">wezterm.font</span><span class="p">(</span><span class="s1">&#39;JetBrains Maple Mono&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="n">weight</span> <span class="o">=</span> <span class="s1">&#39;Medium&#39;</span> <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 备选字体：&#39;Cascadia Code&#39;, &#39;Fira Code&#39;, &#39;Consolas&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">config.font_size</span> <span class="o">=</span> <span class="mi">14</span>
+</span></span><span class="line"><span class="cl"><span class="n">config.line_height</span> <span class="o">=</span> <span class="mf">1.1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 启用连字</span>
+</span></span><span class="line"><span class="cl"><span class="n">config.harfbuzz_features</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;calt=1&#39;</span><span class="p">,</span> <span class="s1">&#39;clig=1&#39;</span><span class="p">,</span> <span class="s1">&#39;liga=1&#39;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- ============ 外观设置 ============</span>
+</span></span><span class="line"><span class="cl"><span class="n">config.color_scheme</span> <span class="o">=</span> <span class="s1">&#39;Catppuccin Mocha&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 其他主题：&#39;Catppuccin Mocha&#39;, &#39;Tokyo Night&#39;, &#39;Dracula&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 背景透明度（1.0 = 不透明）</span>
+</span></span><span class="line"><span class="cl"><span class="n">config.window_background_opacity</span> <span class="o">=</span> <span class="mf">0.95</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 窗口边距</span>
+</span></span><span class="line"><span class="cl"><span class="n">config.window_padding</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">left</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">right</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">top</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">bottom</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 标签栏设置</span>
+</span></span><span class="line"><span class="cl"><span class="n">config.use_fancy_tab_bar</span> <span class="o">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl"><span class="n">config.hide_tab_bar_if_only_one_tab</span> <span class="o">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 无标题栏（可选，更简洁）</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- config.window_decorations = &#34;RESIZE&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- ============ 快捷键 ============</span>
+</span></span><span class="line"><span class="cl"><span class="n">config.keys</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">-- Ctrl+Shift+T 新建标签</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="n">mods</span> <span class="o">=</span> <span class="s1">&#39;CTRL|SHIFT&#39;</span><span class="p">,</span> <span class="n">action</span> <span class="o">=</span> <span class="n">wezterm.action</span><span class="p">.</span><span class="n">SpawnTab</span> <span class="s1">&#39;DefaultDomain&#39;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1">-- Ctrl+Shift+W 关闭标签</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">mods</span> <span class="o">=</span> <span class="s1">&#39;CTRL|SHIFT&#39;</span><span class="p">,</span> <span class="n">action</span> <span class="o">=</span> <span class="n">wezterm.action</span><span class="p">.</span><span class="n">CloseCurrentTab</span> <span class="p">{</span> <span class="n">confirm</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">}</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1">-- Alt+数字 切换标签</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">mods</span> <span class="o">=</span> <span class="s1">&#39;ALT&#39;</span><span class="p">,</span> <span class="n">action</span> <span class="o">=</span> <span class="n">wezterm.action</span><span class="p">.</span><span class="n">ActivateTab</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">mods</span> <span class="o">=</span> <span class="s1">&#39;ALT&#39;</span><span class="p">,</span> <span class="n">action</span> <span class="o">=</span> <span class="n">wezterm.action</span><span class="p">.</span><span class="n">ActivateTab</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">mods</span> <span class="o">=</span> <span class="s1">&#39;ALT&#39;</span><span class="p">,</span> <span class="n">action</span> <span class="o">=</span> <span class="n">wezterm.action</span><span class="p">.</span><span class="n">ActivateTab</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1">-- Ctrl+Shift+| 垂直分屏</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="n">mods</span> <span class="o">=</span> <span class="s1">&#39;CTRL|SHIFT&#39;</span><span class="p">,</span> <span class="n">action</span> <span class="o">=</span> <span class="n">wezterm.action</span><span class="p">.</span><span class="n">SplitHorizontal</span> <span class="p">{</span> <span class="n">domain</span> <span class="o">=</span> <span class="s1">&#39;CurrentPaneDomain&#39;</span> <span class="p">}</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1">-- Ctrl+Shift+_ 水平分屏</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="n">mods</span> <span class="o">=</span> <span class="s1">&#39;CTRL|SHIFT&#39;</span><span class="p">,</span> <span class="n">action</span> <span class="o">=</span> <span class="n">wezterm.action</span><span class="p">.</span><span class="n">SplitVertical</span> <span class="p">{</span> <span class="n">domain</span> <span class="o">=</span> <span class="s1">&#39;CurrentPaneDomain&#39;</span> <span class="p">}</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1">-- Ctrl+Shift+F 搜索</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">mods</span> <span class="o">=</span> <span class="s1">&#39;CTRL|SHIFT&#39;</span><span class="p">,</span> <span class="n">action</span> <span class="o">=</span> <span class="n">wezterm.action</span><span class="p">.</span><span class="n">Search</span> <span class="p">{</span> <span class="n">CaseSensitiveString</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="p">}</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1">-- Ctrl+Shift+C/V 复制粘贴</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">mods</span> <span class="o">=</span> <span class="s1">&#39;CTRL|SHIFT&#39;</span><span class="p">,</span> <span class="n">action</span> <span class="o">=</span> <span class="n">wezterm.action</span><span class="p">.</span><span class="n">CopyTo</span> <span class="s1">&#39;Clipboard&#39;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">mods</span> <span class="o">=</span> <span class="s1">&#39;CTRL|SHIFT&#39;</span><span class="p">,</span> <span class="n">action</span> <span class="o">=</span> <span class="n">wezterm.action</span><span class="p">.</span><span class="n">PasteFrom</span> <span class="s1">&#39;Clipboard&#39;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- ============ 其他设置 ============</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 关闭提示音</span>
+</span></span><span class="line"><span class="cl"><span class="n">config.audible_bell</span> <span class="o">=</span> <span class="s1">&#39;Disabled&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 光标样式</span>
+</span></span><span class="line"><span class="cl"><span class="n">config.default_cursor_style</span> <span class="o">=</span> <span class="s1">&#39;BlinkingBar&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 可选：&#39;SteadyBlock&#39;, &#39;BlinkingBlock&#39;, &#39;SteadyUnderline&#39;, &#39;BlinkingBar&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 滚动回溯行数</span>
+</span></span><span class="line"><span class="cl"><span class="n">config.scrollback_lines</span> <span class="o">=</span> <span class="mi">10000</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- 关闭更新检查（可选）</span>
+</span></span><span class="line"><span class="cl"><span class="n">config.check_for_updates</span> <span class="o">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">return</span> <span class="n">config</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="展开或折叠代码块" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
+</div>
+</div><h2 class="heading-element" id="3-安装-opencode"><span>3. 安装 OpenCode</span>
+  <a href="#3-%e5%ae%89%e8%a3%85-opencode" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>在 WezTerm 终端运行命令 <code>choco install opencode</code> 进行安装，安装后在终端输入 <code>opencode</code> 以启动。打开时默认是免费的“Big Pickle”模型，在对话框输入以下命令以安装 Oh-My-OpenCode 插件：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="切换行号" role="button" title="切换行号"><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行"><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板"><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">按照以下说明安装和配置 oh-my-opencode：
+</span></span><span class="line"><span class="cl">https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/refs/heads/master/docs/guide/installation.md</span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>之后智能体会自动读取安装说明并进行插件安装。安装过程中会提示是否要启用一些订阅例如 Claude Code、ChatGPT、Gemini、Copilot、ZAI等，如有的话可以接入，没有则全部选择 No。安装好后关闭终端即可。</p>
+<p>接下来打开 C:\Users\你的用户名\.config\opencode路径，里面应该有两个文件：opencode.json和oh-my-opencode.json。根据需求可以进行编辑设置。我个人使用 <a href="https://aihubmix.com/" target="_blank" rel="external nofollow noopener noreferrer">AiHubMix<i class="fa-solid fa-external-link-alt fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> 作为 Provider，以下设置仅供参考。</p>
+<p>opencode.json</p>
+<json-viewer value="&#34;{\r\n  \&#34;$schema\&#34;: \&#34;https://opencode.ai/config.json\&#34;,\r\n  \&#34;plugin\&#34;: [\r\n    \&#34;oh-my-opencode@latest\&#34;\r\n  ],\r\n  \r\n  \&#34;model\&#34;: \&#34;aihubmix-claude/claude-opus-4-6\&#34;,\r\n  \r\n  \&#34;provider\&#34;: {\r\n    \&#34;aihubmix-claude\&#34;: {\r\n      \&#34;id\&#34;: \&#34;aihubmix-claude\&#34;,\r\n      \&#34;npm\&#34;: \&#34;@ai-sdk/anthropic\&#34;,\r\n      \&#34;api\&#34;: \&#34;https://aihubmix.com/v1\&#34;,\r\n      \&#34;name\&#34;: \&#34;AIHUBMIX Claude\&#34;,\r\n      \&#34;options\&#34;: {\r\n        \&#34;apiKey\&#34;: \&#34;sk-你的密钥\&#34;,\r\n        \&#34;headers\&#34;: {\r\n          \&#34;APP-Code\&#34;: \&#34;WHVL9885\&#34;\r\n        }\r\n      },\r\n      \&#34;models\&#34;: {\r\n        \&#34;claude-opus-4-6\&#34;: {\r\n          \&#34;id\&#34;: \&#34;claude-opus-4-6\&#34;,\r\n          \&#34;name\&#34;: \&#34;Claude Opus 4.6\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;temperature\&#34;: true,\r\n          \&#34;knowledge\&#34;: \&#34;2025-05\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2026-02-05\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;, \&#34;image\&#34;, \&#34;pdf\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 5, \&#34;output\&#34;: 25, \&#34;cache_read\&#34;: 0.5, \&#34;cache_write\&#34;: 6.25 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 200000, \&#34;output\&#34;: 32000 }\r\n        },\r\n        \&#34;claude-sonnet-4-5\&#34;: {\r\n          \&#34;id\&#34;: \&#34;claude-sonnet-4-5\&#34;,\r\n          \&#34;name\&#34;: \&#34;Claude Sonnet 4.5\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;temperature\&#34;: true,\r\n          \&#34;knowledge\&#34;: \&#34;2025-01-31\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2025-09-29\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;, \&#34;image\&#34;, \&#34;pdf\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 3.3, \&#34;output\&#34;: 16.5, \&#34;cache_read\&#34;: 0.33, \&#34;cache_write\&#34;: 4.125 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 200000, \&#34;output\&#34;: 128000 }\r\n        },\r\n        \&#34;claude-haiku-4-5\&#34;: {\r\n          \&#34;id\&#34;: \&#34;claude-haiku-4-5\&#34;,\r\n          \&#34;name\&#34;: \&#34;Claude Haiku 4.5\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;temperature\&#34;: true,\r\n          \&#34;knowledge\&#34;: \&#34;2025-02-28\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2025-09-29\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;, \&#34;image\&#34;, \&#34;pdf\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 1.1, \&#34;output\&#34;: 5.5, \&#34;cache_read\&#34;: 0.11, \&#34;cache_write\&#34;: 1.25 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 200000, \&#34;output\&#34;: 128000 }\r\n        }\r\n      }\r\n    },\r\n    \r\n    \&#34;aihubmix-openai\&#34;: {\r\n      \&#34;id\&#34;: \&#34;aihubmix-openai\&#34;,\r\n      \&#34;npm\&#34;: \&#34;@ai-sdk/openai\&#34;,\r\n      \&#34;api\&#34;: \&#34;https://aihubmix.com/v1\&#34;,\r\n      \&#34;name\&#34;: \&#34;AIHUBMIX OpenAI\&#34;,\r\n      \&#34;options\&#34;: {\r\n        \&#34;apiKey\&#34;: \&#34;sk-你的密钥\&#34;,\r\n        \&#34;headers\&#34;: {\r\n          \&#34;APP-Code\&#34;: \&#34;WHVL9885\&#34;\r\n        }\r\n      },\r\n      \&#34;models\&#34;: {\r\n        \&#34;gpt-5.2-codex\&#34;: {\r\n          \&#34;id\&#34;: \&#34;gpt-5.2-codex\&#34;,\r\n          \&#34;name\&#34;: \&#34;GPT-5.2 Codex\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;structured_output\&#34;: true,\r\n          \&#34;temperature\&#34;: false,\r\n          \&#34;knowledge\&#34;: \&#34;2025-08-31\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2026-01-14\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;, \&#34;image\&#34;, \&#34;pdf\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 1.75, \&#34;output\&#34;: 14, \&#34;cache_read\&#34;: 0.17 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 400000, \&#34;output\&#34;: 128000 }\r\n        },\r\n        \&#34;gpt-5.2\&#34;: {\r\n          \&#34;id\&#34;: \&#34;gpt-5.2\&#34;,\r\n          \&#34;name\&#34;: \&#34;GPT-5.2\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;temperature\&#34;: false,\r\n          \&#34;knowledge\&#34;: \&#34;2025-08-31\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2025-12-11\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;, \&#34;image\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 1.75, \&#34;output\&#34;: 14, \&#34;cache_read\&#34;: 0.175 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 400000, \&#34;output\&#34;: 128000 }\r\n        }\r\n      }\r\n    },\r\n    \r\n    \&#34;aihubmix-gemini\&#34;: {\r\n      \&#34;id\&#34;: \&#34;aihubmix-gemini\&#34;,\r\n      \&#34;npm\&#34;: \&#34;@ai-sdk/google\&#34;,\r\n      \&#34;api\&#34;: \&#34;https://aihubmix.com/gemini/v1beta\&#34;,\r\n      \&#34;name\&#34;: \&#34;AIHUBMIX Gemini\&#34;,\r\n      \&#34;options\&#34;: {\r\n        \&#34;apiKey\&#34;: \&#34;sk-你的密钥\&#34;,\r\n        \&#34;headers\&#34;: {\r\n          \&#34;APP-Code\&#34;: \&#34;WHVL9885\&#34;\r\n        }\r\n      },\r\n      \&#34;models\&#34;: {\r\n        \&#34;gemini-3-pro-preview\&#34;: {\r\n          \&#34;id\&#34;: \&#34;gemini-3-pro-preview\&#34;,\r\n          \&#34;name\&#34;: \&#34;Gemini 3 Pro Preview\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;temperature\&#34;: true,\r\n          \&#34;knowledge\&#34;: \&#34;2025-01-31\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2025-11-19\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;, \&#34;image\&#34;, \&#34;audio\&#34;, \&#34;video\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 2, \&#34;output\&#34;: 12, \&#34;cache_read\&#34;: 0.2 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 1000000, \&#34;output\&#34;: 65000 }\r\n        }\r\n      }\r\n    },\r\n    \r\n    \&#34;aihubmix-compat\&#34;: {\r\n      \&#34;id\&#34;: \&#34;aihubmix-compat\&#34;,\r\n      \&#34;npm\&#34;: \&#34;@ai-sdk/openai-compatible\&#34;,\r\n      \&#34;api\&#34;: \&#34;https://aihubmix.com/v1\&#34;,\r\n      \&#34;name\&#34;: \&#34;AIHUBMIX Compatible\&#34;,\r\n      \&#34;options\&#34;: {\r\n        \&#34;apiKey\&#34;: \&#34;sk-你的密钥\&#34;,\r\n        \&#34;headers\&#34;: {\r\n          \&#34;APP-Code\&#34;: \&#34;WHVL9885\&#34;\r\n        }\r\n      },\r\n      \&#34;models\&#34;: {\r\n        \&#34;kimi-k2.5\&#34;: {\r\n          \&#34;id\&#34;: \&#34;kimi-k2.5\&#34;,\r\n          \&#34;name\&#34;: \&#34;Kimi K2.5\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;interleaved\&#34;: { \&#34;field\&#34;: \&#34;reasoning_content\&#34; },\r\n          \&#34;temperature\&#34;: true,\r\n          \&#34;knowledge\&#34;: \&#34;2025-01-31\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2026-01-27\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;, \&#34;image\&#34;, \&#34;video\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 0.6, \&#34;output\&#34;: 3, \&#34;cache_read\&#34;: 0.1 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 256000, \&#34;output\&#34;: 256000 }\r\n        },\r\n        \&#34;minimax-m2.5\&#34;: {\r\n          \&#34;id\&#34;: \&#34;coding-minimax-m2.5\&#34;,\r\n          \&#34;name\&#34;: \&#34;MiniMax M2.5\&#34;,\r\n          \&#34;attachment\&#34;: false,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;interleaved\&#34;: { \&#34;field\&#34;: \&#34;reasoning_content\&#34; },\r\n          \&#34;temperature\&#34;: true,\r\n          \&#34;knowledge\&#34;: \&#34;2024-06-30\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2026-02-13\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 0.2, \&#34;output\&#34;: 0.2 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 200000, \&#34;output\&#34;: 128000 }\r\n        },\r\n        \&#34;glm-5\&#34;: {\r\n          \&#34;id\&#34;: \&#34;coding-glm-5\&#34;,\r\n          \&#34;name\&#34;: \&#34;GLM 5\&#34;,\r\n          \&#34;attachment\&#34;: false,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;interleaved\&#34;: { \&#34;field\&#34;: \&#34;reasoning_content\&#34; },\r\n          \&#34;temperature\&#34;: true,\r\n          \&#34;knowledge\&#34;: \&#34;2024-12-31\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2026-02-12\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 0.06, \&#34;output\&#34;: 0.22, \&#34;cache_read\&#34;: 0.01 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 200000, \&#34;output\&#34;: 128000 }\r\n        }\r\n      }\r\n    }\r\n  }\r\n}&#34;" expand-depth="1" boxed copyable="{&#34;copiedText&#34;:&#34;已复制&#34;,&#34;copyText&#34;:&#34;复制&#34;}"></json-viewer><p>oh-my-opencode.json</p>
+<json-viewer value="&#34;{\r\n  \&#34;$schema\&#34;: \&#34;https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json\&#34;,\r\n  \r\n  \&#34;agents\&#34;: {\r\n    \&#34;sisyphus\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-claude/claude-opus-4-6\&#34;,\r\n      \&#34;thinking\&#34;: {\r\n        \&#34;type\&#34;: \&#34;enabled\&#34;,\r\n        \&#34;budgetTokens\&#34;: 100000\r\n      }\r\n    },\r\n    \&#34;hephaestus\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-openai/gpt-5.2-codex\&#34;,\r\n      \&#34;reasoningEffort\&#34;: \&#34;medium\&#34;\r\n    },\r\n    \&#34;oracle\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-openai/gpt-5.2\&#34;,\r\n      \&#34;reasoningEffort\&#34;: \&#34;medium\&#34;\r\n    },\r\n    \&#34;librarian\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-claude/claude-sonnet-4-5\&#34;\r\n    },\r\n    \&#34;explore\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-claude/claude-haiku-4-5\&#34;\r\n    },\r\n    \&#34;multimodal-looker\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-gemini/gemini-3-pro-preview\&#34;\r\n    },\r\n    \&#34;prometheus\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-compat/glm-5\&#34;\r\n    },\r\n    \&#34;metis\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-compat/kimi-k2.5\&#34;\r\n    },\r\n    \&#34;momus\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-compat/kimi-k2.5\&#34;\r\n    },\r\n    \&#34;atlas\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-compat/minimax-m2.5\&#34;\r\n    }\r\n  },\r\n  \r\n  \&#34;categories\&#34;: {\r\n    \&#34;visual-engineering\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-gemini/gemini-3-pro-preview\&#34;\r\n    },\r\n    \&#34;ultrabrain\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-openai/gpt-5.2-codex\&#34;,\r\n      \&#34;reasoningEffort\&#34;: \&#34;high\&#34;\r\n    },\r\n    \&#34;deep\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-openai/gpt-5.2-codex\&#34;,\r\n      \&#34;reasoningEffort\&#34;: \&#34;high\&#34;\r\n    },\r\n    \&#34;artistry\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-gemini/gemini-3-pro-preview\&#34;\r\n    },\r\n    \&#34;quick\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-compat/kimi-k2.5\&#34;\r\n    },\r\n    \&#34;unspecified-low\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-compat/kimi-k2.5\&#34;\r\n    },\r\n    \&#34;unspecified-high\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-compat/glm-5\&#34;\r\n    },\r\n    \&#34;writing\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-compat/kimi-k2.5\&#34;\r\n    }\r\n  },\r\n  \r\n  \&#34;sisyphus_agent\&#34;: {\r\n    \&#34;disabled\&#34;: false,\r\n    \&#34;default_builder_enabled\&#34;: false,\r\n    \&#34;planner_enabled\&#34;: true,\r\n    \&#34;replace_plan\&#34;: true\r\n  },\r\n  \r\n  \&#34;git_master\&#34;: {\r\n    \&#34;commit_footer\&#34;: false,\r\n    \&#34;include_co_authored_by\&#34;: false\r\n  }\r\n}&#34;" expand-depth="1" boxed copyable="{&#34;copiedText&#34;:&#34;已复制&#34;,&#34;copyText&#34;:&#34;复制&#34;}"></json-viewer><p>之后打开 WezTerm 终端并输入 opencode，就可以愉快的使用了！</p></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod"><span title="更新于 2026-02-14 00:00:00">更新于 2026-02-14&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/posts/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="分享到 X" data-sharer="twitter" data-url="https://francisfu.com/posts/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/" data-title="OpenCode安装及配置"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://francisfu.com/posts/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/"><i class="fa-brands fa-facebook-square" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://francisfu.com/posts/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/" data-title="OpenCode安装及配置"><i class="fa-brands fa-weibo" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section><span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/%E8%AF%84%E6%B5%8B%E5%90%88%E8%BE%91/%E5%8E%9F%E8%91%97%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95/" class="post-nav-item" rel="prev" title="原著书籍阅读清单"><i class="fa-solid fa-angle-left" aria-hidden="true"></i>原著书籍阅读清单</a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li><a href="#0-系统环境">0. 系统环境</a></li>
+    <li><a href="#1-安装chocolatey">1. 安装Chocolatey</a></li>
+    <li><a href="#2-安装-wezterm">2. 安装 WezTerm</a></li>
+    <li><a href="#3-安装-opencode">3. 安装 OpenCode</a></li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.155.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.2"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2026</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://francisfu.com/" target="_blank" rel="external nofollow noopener noreferrer">Francis Fu</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="目录"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><script src="/lib/json-viewer-element/json-viewer-element.umd.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/js/config/7cc2b5492b83268eaae7c47a83702c67.js" defer></script><script src="/js/theme.min.js" defer></script><script src="/js/custom.min.js" defer></script></body>
+</html>

@@ -726,180 +726,299 @@ Content for chapter one.
 **FixIt** 主题提供了一个包含更多功能的 [图片的 shortcode](../theme-documentation-extended-shortcodes#image).
 {{< /admonition >}}
 
-## 14 数学公式
+## 14 数学公式 {#formula}
 
-**FixIt** 基于 [$\KaTeX$](https://katex.org/) 提供数学公式的支持.
+**FixIt** 基于 [$\KaTeX$][katex] 或 [$\text{MathJax}$][mathjax] 提供数学公式的支持，默认引擎为 $\KaTeX$。
 
-在你的 [网站配置](../theme-documentation-basics#site-configuration) 中的 `[params.math]` 下面设置属性 `enable = true`,
-并在文章的前置参数中设置属性 `math: true`来启用数学公式的自动渲染.
-**$\KaTeX$** 根据 **特定的分隔符** 来自动渲染公式.
+你可以在 [主题配置][theme-config] 中修改数学公式自动渲染的相关配置：
 
-{{< admonition tip >}}
-有一份 [$\KaTeX$ 中支持的 $\TeX$ 函数](https://katex.org/docs/supported.html) 清单.
-{{< /admonition >}}
+```toml {title="hugo.toml"}
+[markup]
 
-{{< admonition >}}
-由于 Hugo 在渲染 Markdown 文档时会根据 `_`/`*`/`>>` 之类的语法生成 HTML 文档,
-并且有些转义字符形式的文本内容 (如 `\(`/`\)`/`\[`/`\]`/`\\`) 会自动进行转义处理,
-因此需要对这些地方进行额外的转义字符表达来实现自动渲染:
+[markup.goldmark]
 
-* `_` -> `\_`
-* `*` -> `\*`
-* `>>` -> `\>>`
-* `\(` -> `\\(`
-* `\)` -> `\\)`
-* `\[` -> `\\[`
-* `\]` -> `\\]`
-* `\\` -> `\\\\`
+[markup.goldmark.extensions]
 
-**FixIt** 主题支持 [`raw` shortcode](../theme-documentation-extended-shortcodes#12-raw) 以避免这些转义字符,
-它可以帮助您编写原始数学公式内容.
+[markup.goldmark.extensions.passthrough]
+enable = true
 
-一个 `raw` 示例:
+[markup.goldmark.extensions.passthrough.delimiters]
+block = [
+  [
+    '\[',
+    '\]'
+  ],
+  [
+    '$$',
+    '$$'
+  ]
+]
+inline = [
+  [
+    '\(',
+    '\)'
+  ],
+  [
+    '$',
+    '$'
+  ]
+]
 
-```markdown
-行内公式: {{</* raw */>}}\(\mathbf{E}=\sum_{i} \mathbf{E}_{i}=\mathbf{E}_{1}+\mathbf{E}_{2}+\mathbf{E}_{3}+\cdots\){{</* /raw */>}}
+[params]
 
-公式块:
+[params.page]
 
-{{</* raw */>}}
-\[ a=b+c \\ d+e=f \]
-{{</* /raw */>}}
+[params.page.math]
+enable = true
+# mathematical formulas rendering engines, optional values: ["katex", "mathjax"]
+type = "katex"
+
+# KaTeX server-side rendering (https://katex.org)
+# KaTeX partial config: https://gohugo.io/functions/transform/tomath/#options
+[params.page.math.katex]
+# KaTeX extension copy-tex
+copyTex = true
+throwOnError = false
+errorColor = "#ff4949"
+
+# custom macros map
+# syntax: <macro> = <definition>
+[params.page.math.katex.macros]
+# "\\f" = "#1f(#2)" # usage: $\f{a}{b}$
+
+# MathJax server-side rendering (https://www.mathjax.org)
+# MathJax config: https://docs.mathjax.org/en/latest/options/index.html
+[params.page.math.mathjax]
+cdn = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+[params.page.math.mathjax.packages]
+# "[+]" = ['configmacros']
+
+# custom macros map
+# syntax: <macro> = <definition>
+[params.page.math.mathjax.macros]
+# "bold" = ["{\\bf #1}", 1] # usage: $\bold{math}$
+
+[params.page.math.mathjax.loader]
+load = [ "ui/safe" ]
+
+[params.page.math.mathjax.loader.paths]
+# custom = "https://cdn.jsdelivr.net/gh/sonoisa/XyJax-v3@3.0.1/build/"
+
+# more loader config e.g source, dependencies, provides etc.
+
+[params.page.math.mathjax.options]
+enableMenu = true
+# HTML tags that won't be searched for math
+skipHtmlTags = [
+  "script",
+  "noscript",
+  "style",
+  "textarea",
+  "pre",
+  "code",
+  "math",
+  "select",
+  "option",
+  "mjx-container"
+]
+# class that marks tags not to search
+ignoreHtmlClass = "mathjax_ignore"
+
+# HTML tags that can appear within math
+[params.page.math.mathjax.options.includeHtmlTags]
+# "#comment" = ""
+# br = "\n"
+# wbr = ""
 ```
 
-呈现的输出效果如下:
+### KaTeX
 
-行内公式: {{< raw >}}\(\mathbf{E}=\sum_{i} \mathbf{E}_{i}=\mathbf{E}_{1}+\mathbf{E}_{2}+\mathbf{E}_{3}+\cdots\){{< /raw >}}
+$\KaTeX$ 通过 Hugo 的 [`transform.ToMath`][tomath] 函数在 **服务器端渲染**，所以客户端加载 **速度更快**。
 
-公式块:
+> [!tip]
+> 有一份 [$\KaTeX$ 中支持的 $\TeX$ 函数](https://katex.org/docs/supported.html) 清单。
 
-{{< raw>}}
-\[ a=b+c \\ d+e=f \]
-{{< /raw >}}
-{{< /admonition >}}
+#### 行内公式
 
-### 行内公式
+默认的行内公式分割符有：
 
-默认的行内公式分割符有:
+- `$ ... $`
+- `\( ... \)`
 
-* `$ ... $`
-* `\( ... \)` (转义的: `\\( ... \\)`)
-
-例如:
+例如：
 
 ```tex
-$c = \pm\sqrt{a^2 + b^2}$ 和 \\(f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi\\)
+$c = \pm\sqrt{a^2 + b^2}$ 和 \(f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi\)
 ```
 
-呈现的输出效果如下:
+呈现的输出效果如下：
 
-$c = \pm\sqrt{a^2 + b^2}$ 和 \\(f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi\\)
+$c = \pm\sqrt{a^2 + b^2}$ 和 \(f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi\)
 
-### 公式块
+#### 公式块
 
-默认的公式块分割符有:
+默认的公式块分割符有：
 
-* `$$ ... $$`
-* `\[ ... \]` (转义的: `\\[ ... \\]`)
-* `\begin{equation} ... \end{equation}` (不编号的: `\begin{equation*} ... \end{equation*}`)
-* `\begin{align} ... \end{align}` (不编号的: `\begin{align*} ... \end{align*}`)
-* `\begin{alignat} ... \end{alignat}` (不编号的: `\begin{alignat*} ... \end{alignat*}`)
-* `\begin{gather} ... \end{gather}` (不编号的: `\begin{gather*} ... \end{gather*}`)
-* `\begin{CD} ... \end{CD}`
+- `$$ ... $$`
+- `\[ ... \]`
 
-例如:
+例如：
 
 ```tex
 $$ c = \pm\sqrt{a^2 + b^2} $$
 
-\\[ f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi \\]
+\[f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi\]
 
+$$
 \begin{equation*}
   \rho \frac{\mathrm{D} \mathbf{v}}{\mathrm{D} t}=\nabla \cdot \mathbb{P}+\rho \mathbf{f}
 \end{equation*}
+$$
 
+$$
 \begin{equation}
   \mathbf{E}=\sum_{i} \mathbf{E}\_{i}=\mathbf{E}\_{1}+\mathbf{E}\_{2}+\mathbf{E}_{3}+\cdots
 \end{equation}
+$$
 
+$$
 \begin{align}
-  a&=b+c \\\\
+  a&=b+c \\
   d+e&=f
 \end{align}
+$$
 
+$$
 \begin{alignat}{2}
-   10&x+&3&y = 2 \\\\
+   10&x+&3&y = 2 \\
    3&x+&13&y = 4
 \end{alignat}
+$$
 
+$$
 \begin{gather}
-   a=b \\\\
+   a=b \\
    e=b+c
 \end{gather}
+$$
 
+$$
 \begin{CD}
-   A @>a\>> B \\\\
-@VbVV @AAcA \\\\
+   A @>a>> B \\
+@VbVV @AAcA \\
    C @= D
 \end{CD}
+$$
 ```
 
-呈现的输出效果如下:
+呈现的输出效果如下：
 
 $$ c = \pm\sqrt{a^2 + b^2} $$
 
-\\[ f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi \\]
+\[f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi\]
 
+$$
 \begin{equation*}
   \rho \frac{\mathrm{D} \mathbf{v}}{\mathrm{D} t}=\nabla \cdot \mathbb{P}+\rho \mathbf{f}
 \end{equation*}
+$$
 
+$$
 \begin{equation}
   \mathbf{E}=\sum_{i} \mathbf{E}\_{i}=\mathbf{E}\_{1}+\mathbf{E}\_{2}+\mathbf{E}_{3}+\cdots
 \end{equation}
+$$
 
+$$
 \begin{align}
-  a&=b+c \\\\
+  a&=b+c \\
   d+e&=f
 \end{align}
+$$
 
+$$
 \begin{alignat}{2}
-   10&x+&3&y = 2 \\\\
+   10&x+&3&y = 2 \\
    3&x+&13&y = 4
 \end{alignat}
+$$
 
+$$
 \begin{gather}
-   a=b \\\\
+   a=b \\
    e=b+c
 \end{gather}
+$$
 
+$$
 \begin{CD}
-   A @>a\>> B \\\\
-@VbVV @AAcA \\\\
+   A @>a>> B \\
+@VbVV @AAcA \\
    C @= D
 \end{CD}
+$$
 
-{{< admonition tip >}}
-你可以在 [网站配置](../theme-documentation-basics#site-configuration) 中自定义行内公式和公式块的分割符.
-{{< /admonition >}}
+#### 复制公式 {#copy-tex}
 
-### mhchem
+**[Copy-tex][copy-tex]** 是一个 **$\KaTeX$** 的插件。
 
-**[mhchem](https://github.com/Khan/KaTeX/tree/master/contrib/mhchem)** 是一个 **$\KaTeX$** 的插件.
+通过这个扩展，在选择并复制 $\KaTeX$ 渲染的公式时，会将其 $\LaTeX$ 源代码复制到剪贴板。
 
-通过这个扩展, 你可以在文章中轻松编写漂亮的化学方程式.
+在你的 [主题配置][theme-config] 中的 `[params.page.math.katex]` 下面设置属性 `copyTex = true` 来启用 Copy-tex。
+
+选择并复制上一节中渲染的公式，可以发现复制的内容为 $\LaTeX$ 源代码。
+
+#### 化学方程式 {#chemistry}
+
+**[mhchem][mhchem]** 是一个 **$\KaTeX$** 的插件，提供了 `\ce` 和 `\pu` 函数。
+
+通过这个扩展，你可以在文章中轻松编写漂亮的化学方程式。
 
 ```markdown
 $$ \ce{CO2 + C -> 2 CO} $$
 
 $$ \ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-} $$
+
+$$C_p[\ce{H2O(l)}] = \pu{75.3 J // mol K}$$
 ```
 
-呈现的输出效果如下:
+呈现的输出效果如下：
 
 $$ \ce{CO2 + C -> 2 CO} $$
 
 $$ \ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-} $$
+
+$$C_p[\ce{H2O(l)}] = \pu{75.3 J // mol K}$$
+
+#### 自定义宏 {#custom-macros}
+
+你可以在你的 [主题配置][theme-config] 中的 `[params.page.math.katex.macros]` 下面添加自定义宏。
+
+例如：
+
+```toml
+[params.page.math.katex.macros]
+"\\f" = "#1f(#2)" # usage: $\f{a}{b}$
+```
+
+然后在文章中使用：
+
+```tex
+$$
+\f\relax{x} = \int_{-\infty}^\infty
+    \f\hat\xi\,e^{2 \pi i \xi x}
+    \,d\xi
+$$
+```
+
+呈现的输出效果如下：
+
+$$
+\f\relax{x} = \int_{-\infty}^\infty
+    \f\hat\xi\,e^{2 \pi i \xi x}
+    \,d\xi
+$$
 
 ## 15 字符修饰
 

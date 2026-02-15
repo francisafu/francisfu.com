@@ -12,6 +12,35 @@ hasCJKLanguage = true
 [taxonomies]
   _merge = "shallow"
 
+[markup.goldmark]
+
+[markup.goldmark.extensions]
+
+[markup.goldmark.extensions.passthrough]
+enable = true
+
+[markup.goldmark.extensions.passthrough.delimiters]
+block = [
+  [
+    '\[',
+    '\]'
+  ],
+  [
+    '$$',
+    '$$'
+  ]
+]
+inline = [
+  [
+    '\(',
+    '\)'
+  ],
+  [
+    '$',
+    '$'
+  ]
+]
+
 [menu]
   [[menu.main]]
     weight = 1
@@ -56,3 +85,66 @@ hasCJKLanguage = true
     GitHub = "https://github.com/francisafu"
     Email = "mail@francisfu.com"
     RSS = true 
+  [params.page]
+    [params.page.math]
+      enable = true
+      # mathematical formulas rendering engines, optional values: ["katex", "mathjax"]
+      type = "katex"
+
+      # KaTeX server-side rendering (https://katex.org)
+      # KaTeX partial config: https://gohugo.io/functions/transform/tomath/#options
+    [params.page.math.katex]
+      # KaTeX extension copy-tex
+      copyTex = true
+      throwOnError = false
+      errorColor = "#ff4949"
+
+      # custom macros map
+      # syntax: <macro> = <definition>
+    [params.page.math.katex.macros]
+      "\\f" = "#1f(#2)" # usage: $\f{a}{b}$
+
+      # MathJax server-side rendering (https://www.mathjax.org)
+      # MathJax config: https://docs.mathjax.org/en/latest/options/index.html
+    [params.page.math.mathjax]
+      cdn = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+    [params.page.math.mathjax.packages]
+    # "[+]" = ['configmacros']
+
+    # custom macros map
+    # syntax: <macro> = <definition>
+    [params.page.math.mathjax.macros]
+    # "bold" = ["{\\bf #1}", 1] # usage: $\bold{math}$
+
+    [params.page.math.mathjax.loader]
+      load = [ "ui/safe" ]
+
+    [params.page.math.mathjax.loader.paths]
+    # custom = "https://cdn.jsdelivr.net/gh/sonoisa/XyJax-v3@3.0.1/build/"
+
+    # more loader config e.g source, dependencies, provides etc.
+
+    [params.page.math.mathjax.options]
+      enableMenu = true
+      # HTML tags that won't be searched for math
+      skipHtmlTags = [
+        "script",
+        "noscript",
+        "style",
+        "textarea",
+        "pre",
+        "code",
+        "math",
+        "select",
+        "option",
+        "mjx-container"
+      ]
+      # class that marks tags not to search
+      ignoreHtmlClass = "mathjax_ignore"
+  
+      # HTML tags that can appear within math
+    [params.page.math.mathjax.options.includeHtmlTags]
+    # "#comment" = ""
+    # br = "\n"
+    # wbr = ""

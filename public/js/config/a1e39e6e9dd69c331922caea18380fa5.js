@@ -1,0 +1,1 @@
+window.config={"comment":{"enable":false},"encryption":{"all":true,"shortcode":false},"version":"v0.4.2"};
