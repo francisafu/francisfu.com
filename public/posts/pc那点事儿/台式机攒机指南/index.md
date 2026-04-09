@@ -9,67 +9,19 @@
 
 ## 0. 配置清单
 
-<table>
-    <tr>
-        <td>类别</td>
-        <td>型号</td>
-        <td>价格</td>
-    </tr>
-    <tr>
-        <td>CPU</td>
-        <td>AMD R7-9700X</td>
-        <td rowspan="2">2716</td>
-    </tr>
-    <tr>
-        <td>主板</td>
-        <td>微星 B850M Gaming Plus WIFI</td>
-    </tr>
-    <tr>
-        <td>显卡</td>
-        <td>映众 4080Super X3</td>
-        <td>7500</td>
-    </tr>
-    <tr>
-        <td>内存</td>
-        <td>阿斯加特 女武神2代 32GB*2</td>
-        <td>1256</td>
-    </tr>
-    <tr>
-        <td>硬盘</td>
-        <td>致态 TiPro7000 2T</td>
-        <td>885</td>
-    </tr>
-    <tr>
-        <td>电源</td>
-        <td>振华 Leadex VIIG 850W</td>
-        <td>859</td>
-    </tr>
-    <tr>
-        <td>散热</td>
-        <td>酷里奥 P60T V2</td>
-        <td>234</td>
-    </tr>
-    <tr>
-        <td>机箱</td>
-        <td>爱国者 星璨小岚</td>
-        <td>209</td>
-    </tr>
-    <tr>
-        <td>屏幕</td>
-        <td>LG 27GP850</td>
-        <td>1999</td>
-    </tr>
-    <tr>
-        <td>其他</td>
-        <td>风扇、网线、扎带、亚克力板</td>
-        <td>523</td>
-    </tr>
-    <tr>
-        <td>合计</td>
-        <td></td>
-        <td>16181</td>
-    </tr>
-</table>
+| 类别  | 型号                        | 价格    |
+|-----|---------------------------|-------|
+| CPU | AMD R7-9700X              | 2716  |
+| 主板  | 微星 B850M Gaming Plus WIFI |  ——  |
+| 显卡  | 映众 4080Super X3           | 7500  |
+| 内存  | 阿斯加特 女武神2代 32GB*2         | 1256  |
+| 硬盘  | 致态 TiPro7000 2T           | 885   |
+| 电源  | 振华 Leadex VIIG 850W       | 859   |
+| 散热  | 酷里奥 P60T V2               | 234   |
+| 机箱  | 爱国者 星璨小岚                  | 209   |
+| 屏幕  | LG 27GP850                | 1999  |
+| 其他  | 风扇、网线、扎带、亚克力板             | 523   |
+| 合计  |                           | 16181 |
 
 ## 1. 需求拟定
 
