@@ -11,30 +11,8 @@ draft: false
 
 <!--more-->
 
-## 0. 系统环境
 
-* Windows 11 25H2
-* Visual Studio Code 1.109.3
-* Node.js 26.01.14
-
-## 1. 安装Chocolatey
-
-以管理员权限打开 **Windows PowerShell**，执行以下命令：
-
-```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-```
-之后会自动安装 Chocolatey。
-
-安装完成后，关闭并重新打开终端，然后执行：
-
-```powershell
-choco --version
-```
-
-看到版本号就说明安装成功了。
-
-## 2. 安装 WezTerm
+## 1. 安装 WezTerm
 
 OpenCode 作为一个终端编辑器，支持如下现代化终端：
 
@@ -45,7 +23,7 @@ OpenCode 作为一个终端编辑器，支持如下现代化终端：
 
 对于 Windows 平台的两款，我个人比较倾向于WezTerm。
 
-在终端运行命令 `choco install wezterm -y` 进行安装。
+打开[官网](https://wezterm.org/index.html)进行下载安装即可。
 
 安装后，继续在终端依次运行如下命令以打开 WezTerm 配置文件：
 
@@ -58,6 +36,7 @@ code "$env:USERPROFILE\.wezterm.lua"
 
 ```lua
 local wezterm = require 'wezterm'
+local mux = wezterm.mux 
 local config = {}
 
 -- 使用更新的配置方式
@@ -66,14 +45,19 @@ if wezterm.config_builder then
 end
 
 -- ============ 基础设置 ============
--- 默认 Shell
+-- 默认 Shell（选择你用的）
 config.default_prog = { 'powershell.exe' }
 -- config.default_prog = { 'pwsh.exe' }  -- PowerShell 7
 -- config.default_prog = { 'wsl.exe', '~' }  -- WSL
 
--- 启动时窗口大小
-config.initial_cols = 120
-config.initial_rows = 30
+wezterm.on('gui-startup', function(cmd)
+  local tab, pane, window = mux.spawn_window(cmd or {})
+  -- 使窗口最大化 (保留 Windows 任务栏)
+  window:gui_window():maximize()
+  
+  -- 如果你想要真正沉浸式的全屏(连任务栏都没有，类似 F11)，使用下面这行代替上一行：
+  -- window:gui_window():toggle_fullscreen()
+end)
 
 -- ============ 字体设置 ============
 config.font = wezterm.font('JetBrains Maple Mono', { weight = 'Medium' })
@@ -134,7 +118,7 @@ config.keys = {
 }
 
 -- ============ 其他设置 ============
--- 关闭提示音
+-- 关闭烦人的提示音
 config.audible_bell = 'Disabled'
 
 -- 光标样式
@@ -144,46 +128,51 @@ config.default_cursor_style = 'BlinkingBar'
 -- 滚动回溯行数
 config.scrollback_lines = 10000
 
--- 关闭更新检查（可选）
-config.check_for_updates = false
-
 return config
 ```
 
 ## 3. 安装 OpenCode
 
-在 WezTerm 终端运行命令 `choco install opencode` 进行安装，安装后在终端输入 `opencode` 以启动。打开时默认是免费的“Big Pickle”模型，在对话框输入以下命令以安装 Oh-My-OpenCode 插件：
+在 WezTerm 终端依次运行以下命令进行安装：
+
+```powershell
+wsl --install -d Ubuntu
+sudo apt update
+sudo apt upgrade -y
+sudo apt install unzip -y
+curl -fsSL https://bun.sh/install | bash
+npm install -g playwright
+npx playwright install-deps chromium
+curl -fsSL https://opencode.ai/install | bash
+```
+
+安装后在终端输入 `opencode` 以启动。打开时默认是免费的“Big Pickle”模型，在对话框输入以下指令以安装 Oh-My-OpenCode 插件：
 
 ```
-按照以下说明安装和配置 oh-my-opencode：
-https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/refs/heads/master/docs/guide/installation.md
+按照以下说明安装和配置 oh-my-openagent：
+https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/refs/heads/dev/docs/guide/installation.md
 ```
 
 之后智能体会自动读取安装说明并进行插件安装。安装过程中会提示是否要启用一些订阅例如 Claude Code、ChatGPT、Gemini、Copilot、ZAI等，如有的话可以接入，没有则全部选择 No。安装好后关闭终端即可。
 
-接下来打开 C:\Users\你的用户名\\.config\opencode路径，里面应该有两个文件：opencode.json和oh-my-opencode.json。根据需求可以进行编辑设置。我个人使用 [AiHubMix](https://aihubmix.com/) 作为 Provider，以下设置仅供参考。
+接下来打开WSL中 ~\\你的用户名\\.config\\opencode 路径，里面应该有两个文件：opencode.json和oh-my-opencode.json。根据需求可以进行编辑设置。我个人使用 [HONE](https://hone.vvvv.ee/) 作为 Provider，以下设置仅供参考。
 
 opencode.json
 ```json
 {
   "$schema": "https://opencode.ai/config.json",
   "plugin": [
-    "oh-my-opencode@latest"
+    "oh-my-opencode@3.14.0"
   ],
-  
-  "model": "aihubmix-claude/claude-opus-4-6",
-  
+  "model": "hone-claude/claude-opus-4-6",
   "provider": {
-    "aihubmix-claude": {
-      "id": "aihubmix-claude",
+    "hone-claude": {
+      "id": "hone-claude",
       "npm": "@ai-sdk/anthropic",
-      "api": "https://aihubmix.com/v1",
-      "name": "AIHUBMIX Claude",
+      "api": "https://hone.vvvv.ee/v1",
+      "name": "HONE Claude",
       "options": {
-        "apiKey": "sk-你的密钥",
-        "headers": {
-          "APP-Code": "WHVL9885"
-        }
+        "apiKey": "sk-你的密钥"
       },
       "models": {
         "claude-opus-4-6": {
@@ -192,165 +181,142 @@ opencode.json
           "attachment": true,
           "reasoning": true,
           "tool_call": true,
-          "temperature": true,
-          "knowledge": "2025-05",
-          "release_date": "2026-02-05",
-          "modalities": { "input": ["text", "image", "pdf"], "output": ["text"] },
-          "cost": { "input": 5, "output": 25, "cache_read": 0.5, "cache_write": 6.25 },
-          "limit": { "context": 200000, "output": 32000 }
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "cost": {
+            "input": 5,
+            "output": 25,
+            "cache_read": 0.5,
+            "cache_write": 10
+          },
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          }
         },
-        "claude-sonnet-4-5": {
-          "id": "claude-sonnet-4-5",
-          "name": "Claude Sonnet 4.5",
+        "claude-sonnet-4-6": {
+          "id": "claude-sonnet-4-6",
+          "name": "Claude Sonnet 4.6",
           "attachment": true,
           "reasoning": true,
           "tool_call": true,
-          "temperature": true,
-          "knowledge": "2025-01-31",
-          "release_date": "2025-09-29",
-          "modalities": { "input": ["text", "image", "pdf"], "output": ["text"] },
-          "cost": { "input": 3.3, "output": 16.5, "cache_read": 0.33, "cache_write": 4.125 },
-          "limit": { "context": 200000, "output": 128000 }
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cache_read": 0.3,
+            "cache_write": 6
+          },
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          }
         },
         "claude-haiku-4-5": {
-          "id": "claude-haiku-4-5",
+          "id": "claude-haiku-4-5-20251001",
           "name": "Claude Haiku 4.5",
           "attachment": true,
           "reasoning": true,
           "tool_call": true,
-          "temperature": true,
-          "knowledge": "2025-02-28",
-          "release_date": "2025-09-29",
-          "modalities": { "input": ["text", "image", "pdf"], "output": ["text"] },
-          "cost": { "input": 1.1, "output": 5.5, "cache_read": 0.11, "cache_write": 1.25 },
-          "limit": { "context": 200000, "output": 128000 }
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "cost": {
+            "input": 1.1,
+            "output": 5.5,
+            "cache_read": 0.11,
+            "cache_write": 2.2
+          },
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          }
         }
       }
     },
-    
-    "aihubmix-openai": {
-      "id": "aihubmix-openai",
+    "hone-openai": {
+      "id": "hone-openai",
       "npm": "@ai-sdk/openai",
-      "api": "https://aihubmix.com/v1",
-      "name": "AIHUBMIX OpenAI",
+      "api": "https://hone.vvvv.ee/v1",
+      "name": "HONE OpenAI",
       "options": {
-        "apiKey": "sk-你的密钥",
-        "headers": {
-          "APP-Code": "WHVL9885"
-        }
+        "apiKey": "sk-你的密钥"
       },
       "models": {
-        "gpt-5.2-codex": {
-          "id": "gpt-5.2-codex",
-          "name": "GPT-5.2 Codex",
+        "gpt-5.3-codex": {
+          "id": "gpt-5.3-codex",
+          "name": "GPT-5.3 Codex",
           "attachment": true,
           "reasoning": true,
           "tool_call": true,
-          "structured_output": true,
-          "temperature": false,
-          "knowledge": "2025-08-31",
-          "release_date": "2026-01-14",
-          "modalities": { "input": ["text", "image", "pdf"], "output": ["text"] },
-          "cost": { "input": 1.75, "output": 14, "cache_read": 0.17 },
-          "limit": { "context": 400000, "output": 128000 }
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "cost": {
+            "input": 1.75,
+            "output": 14,
+            "cache_read": 0.17
+          },
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          }
         },
-        "gpt-5.2": {
-          "id": "gpt-5.2",
-          "name": "GPT-5.2",
+        "gpt-5.4": {
+          "id": "gpt-5.4",
+          "name": "GPT-5.4",
           "attachment": true,
           "reasoning": true,
           "tool_call": true,
-          "temperature": false,
-          "knowledge": "2025-08-31",
-          "release_date": "2025-12-11",
-          "modalities": { "input": ["text", "image"], "output": ["text"] },
-          "cost": { "input": 1.75, "output": 14, "cache_read": 0.175 },
-          "limit": { "context": 400000, "output": 128000 }
-        }
-      }
-    },
-    
-    "aihubmix-gemini": {
-      "id": "aihubmix-gemini",
-      "npm": "@ai-sdk/google",
-      "api": "https://aihubmix.com/gemini/v1beta",
-      "name": "AIHUBMIX Gemini",
-      "options": {
-        "apiKey": "sk-你的密钥",
-        "headers": {
-          "APP-Code": "WHVL9885"
-        }
-      },
-      "models": {
-        "gemini-3-pro-preview": {
-          "id": "gemini-3-pro-preview",
-          "name": "Gemini 3 Pro Preview",
-          "attachment": true,
-          "reasoning": true,
-          "tool_call": true,
-          "temperature": true,
-          "knowledge": "2025-01-31",
-          "release_date": "2025-11-19",
-          "modalities": { "input": ["text", "image", "audio", "video"], "output": ["text"] },
-          "cost": { "input": 2, "output": 12, "cache_read": 0.2 },
-          "limit": { "context": 1000000, "output": 65000 }
-        }
-      }
-    },
-    
-    "aihubmix-compat": {
-      "id": "aihubmix-compat",
-      "npm": "@ai-sdk/openai-compatible",
-      "api": "https://aihubmix.com/v1",
-      "name": "AIHUBMIX Compatible",
-      "options": {
-        "apiKey": "sk-你的密钥",
-        "headers": {
-          "APP-Code": "WHVL9885"
-        }
-      },
-      "models": {
-        "kimi-k2.5": {
-          "id": "kimi-k2.5",
-          "name": "Kimi K2.5",
-          "attachment": true,
-          "reasoning": true,
-          "tool_call": true,
-          "interleaved": { "field": "reasoning_content" },
-          "temperature": true,
-          "knowledge": "2025-01-31",
-          "release_date": "2026-01-27",
-          "modalities": { "input": ["text", "image", "video"], "output": ["text"] },
-          "cost": { "input": 0.6, "output": 3, "cache_read": 0.1 },
-          "limit": { "context": 256000, "output": 256000 }
-        },
-        "minimax-m2.5": {
-          "id": "coding-minimax-m2.5",
-          "name": "MiniMax M2.5",
-          "attachment": false,
-          "reasoning": true,
-          "tool_call": true,
-          "interleaved": { "field": "reasoning_content" },
-          "temperature": true,
-          "knowledge": "2024-06-30",
-          "release_date": "2026-02-13",
-          "modalities": { "input": ["text"], "output": ["text"] },
-          "cost": { "input": 0.2, "output": 0.2 },
-          "limit": { "context": 200000, "output": 128000 }
-        },
-        "glm-5": {
-          "id": "coding-glm-5",
-          "name": "GLM 5",
-          "attachment": false,
-          "reasoning": true,
-          "tool_call": true,
-          "interleaved": { "field": "reasoning_content" },
-          "temperature": true,
-          "knowledge": "2024-12-31",
-          "release_date": "2026-02-12",
-          "modalities": { "input": ["text"], "output": ["text"] },
-          "cost": { "input": 0.06, "output": 0.22, "cache_read": 0.01 },
-          "limit": { "context": 200000, "output": 128000 }
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "cost": {
+            "input": 2.5,
+            "output": 15,
+            "cache_read": 0.25
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          }
         }
       }
     }
@@ -358,90 +324,153 @@ opencode.json
 }
 ```
 
-oh-my-opencode.json
-```json
+oh-my-opencode.jsonc
+```jsonc
 {
-  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
-  
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/dev/assets/oh-my-opencode.schema.json",
+
+  // ==========================================
+  // 1. Agents 核心配置 (根据你的精确要求)
+  // ==========================================
   "agents": {
+    // ---- Claude 统治区 (指令遵循) ----
     "sisyphus": {
-      "model": "aihubmix-claude/claude-opus-4-6",
-      "thinking": {
-        "type": "enabled",
-        "budgetTokens": 100000
-      }
-    },
-    "hephaestus": {
-      "model": "aihubmix-openai/gpt-5.2-codex",
-      "reasoningEffort": "medium"
-    },
-    "oracle": {
-      "model": "aihubmix-openai/gpt-5.2",
-      "reasoningEffort": "medium"
-    },
-    "librarian": {
-      "model": "aihubmix-claude/claude-sonnet-4-5"
-    },
-    "explore": {
-      "model": "aihubmix-claude/claude-haiku-4-5"
-    },
-    "multimodal-looker": {
-      "model": "aihubmix-gemini/gemini-3-pro-preview"
-    },
-    "prometheus": {
-      "model": "aihubmix-compat/glm-5"
+      "model": "hone-claude/claude-opus-4-6",
+      "variant": "max",
+      "ultrawork": { "model": "hone-claude/claude-opus-4-6", "variant": "max" }
     },
     "metis": {
-      "model": "aihubmix-compat/kimi-k2.5"
+      "model": "hone-claude/claude-opus-4-6",
+      "variant": "max"
     },
-    "momus": {
-      "model": "aihubmix-compat/kimi-k2.5"
+
+    // ---- 战略规划与编排区 (双流派) ----
+    "prometheus": {
+      "model": "hone-claude/claude-opus-4-6",
+      "variant": "max"
     },
     "atlas": {
-      "model": "aihubmix-compat/minimax-m2.5"
+      "model": "hone-claude/claude-sonnet-4-6",
+      "variant": "max"
+    },
+
+    // ---- 深度编码与核实区 (GPT 统治区) ----
+    "hephaestus": {
+      "model": "hone-openai/gpt-5.3-codex",
+      "variant": "medium"
+    },
+    "oracle": {
+      "model": "hone-openai/gpt-5.4",
+      "variant": "high"
+    },
+    "momus": {
+      "model": "hone-openai/gpt-5.4",
+      "variant": "high"
+    },
+
+    // ---- 效用与多模态区 ----
+    "explore": {
+      "model": "hone-claude/claude-sonnet-4-6"
+    },
+    "librarian": {
+      "model": "hone-claude/claude-sonnet-4-6"
+    },
+    "multimodal-looker": {
+      "model": "hone-claude/claude-opus-4-6",
+      "variant": "max"
     }
   },
-  
+
+  // ==========================================
+  // 2. Categories 类别配置
+  // (必须配置！这是 Sisyphus 自动下发子任务时的模型池)
+  // ==========================================
   "categories": {
     "visual-engineering": {
-      "model": "aihubmix-gemini/gemini-3-pro-preview"
+      "model": "hone-openai/gpt-5.3-codex",
+      "variant": "xhigh"
     },
     "ultrabrain": {
-      "model": "aihubmix-openai/gpt-5.2-codex",
-      "reasoningEffort": "high"
+      "model": "hone-openai/gpt-5.3-codex",
+      "variant": "xhigh"
     },
     "deep": {
-      "model": "aihubmix-openai/gpt-5.2-codex",
-      "reasoningEffort": "high"
+      "model": "hone-openai/gpt-5.3-codex",
+      "variant": "medium"
     },
     "artistry": {
-      "model": "aihubmix-gemini/gemini-3-pro-preview"
+      "model": "hone-openai/gpt-5.3-codex",
+      "variant": "xhigh"
     },
     "quick": {
-      "model": "aihubmix-compat/kimi-k2.5"
+      "model": "hone-claude/claude-haiku-4-5"
     },
     "unspecified-low": {
-      "model": "aihubmix-compat/kimi-k2.5"
+      "model": "hone-claude/claude-sonnet-4-6"
     },
     "unspecified-high": {
-      "model": "aihubmix-compat/glm-5"
+      "model": "hone-openai/gpt-5.4",
+      "variant": "high"
     },
     "writing": {
-      "model": "aihubmix-compat/kimi-k2.5"
+      "model": "hone-claude/claude-sonnet-4-6"
     }
   },
-  
-  "sisyphus_agent": {
+
+  // ==========================================
+  // 3. 背景任务与并发限制
+  // (强烈建议配置，避免多 Agent 狂暴运行直接刷爆账单或触发 API 墙)
+  // ==========================================
+  "background_task": {
+    "defaultConcurrency": 5, // 全局最多跑 5 个并发
+    "staleTimeoutMs": 180000,
+    "providerConcurrency": {
+      "hone-claude": 3,
+      "hone-openai": 3
+    }
+  },
+
+  // ==========================================
+  // 4. Sisyphus 任务系统 & 高级特性开关
+  // ==========================================
+   "sisyphus_agent": {
     "disabled": false,
     "default_builder_enabled": false,
     "planner_enabled": true,
     "replace_plan": true
   },
-  
-  "git_master": {
-    "commit_footer": false,
-    "include_co_authored_by": false
+
+  "sisyphus": {
+    "tasks": {
+      "enabled": true, // 开启强力的跨会话任务追踪
+      "storage_path": ".sisyphus/tasks"
+    }
+  },
+
+  // 备用模型故障自动转移 (极力推荐)
+  "runtime_fallback": {
+    "enabled": true,
+    "max_fallback_attempts": 3,
+    "cooldown_seconds": 60,
+    "notify_on_fallback": true
+  },
+
+  // 是否在 Tmux 新面板里弹出子任务观察其输出（如果你不用 Tmux 可设为 false）
+  "tmux": {
+    "enabled": false
+  },
+
+  // 实验性特性提升上下文利用率
+  "experimental": {
+    "aggressive_truncation": true,
+    "task_system": true,
+    "dynamic_context_pruning": {
+      "enabled": true,
+      "turn_protection": { "enabled": true, "turns": 3 }
+    }
   }
 }
+
 ```
-之后打开 WezTerm 终端并输入 opencode，就可以愉快的使用了！
+
+之后打开 WezTerm 终端，启动WSL并输入“opencode”，就可以愉快的使用了！

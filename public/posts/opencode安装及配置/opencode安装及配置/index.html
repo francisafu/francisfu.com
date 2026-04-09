@@ -11,7 +11,7 @@
   <meta itemprop="description" content="最近的几年来，我的 AI 辅助编程工具先后从 Copilot -&gt; Cursor -&gt; KiloCode ，再转到近期使用了 OpenCode。体验到了 OpenCode 加上 Oh-My-OpenCode 的强大之处，可以说用上就再也回不去了。在此对 Windows 系统上的环境配置作一记录。">
   <meta itemprop="datePublished" content="2026-02-14T00:00:00+00:00">
   <meta itemprop="dateModified" content="2026-02-14T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1347">
+  <meta itemprop="wordCount" content="1941">
   <meta itemprop="image" content="https://francisfu.com/icon.png"><meta property="og:url" content="https://francisfu.com/posts/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/">
   <meta property="og:site_name" content="CRuffians">
   <meta property="og:title" content="OpenCode安装及配置">
@@ -41,7 +41,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/francisfu.com\/posts\/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE\/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE\/"
-    },"genre": "posts","wordcount":  1347 ,
+    },"genre": "posts","wordcount":  1941 ,
     "url": "https:\/\/francisfu.com\/posts\/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE\/opencode%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE\/","datePublished": "2026-02-14T00:00:00+00:00","dateModified": "2026-02-14T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -80,7 +80,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>OpenCode安装及配置</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://francisfu.com/" title="作者" target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img class="avatar" src='/images/icon.png' alt="Francis Fu" height="16" width="16">&nbsp;Francis Fu</a></span></div><div class="post-meta-line"><span title="发布于 2026-02-14 00:00:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i><time datetime="2026-02-14">2026-02-14</time></span>&nbsp;<span title="1347 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>约 1400 字</span>&nbsp;<span><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span class="post-author"><a href="https://francisfu.com/" title="作者" target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img class="avatar" src='/images/icon.png' alt="Francis Fu" height="16" width="16">&nbsp;Francis Fu</a></span></div><div class="post-meta-line"><span title="发布于 2026-02-14 00:00:00"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i><time datetime="2026-02-14">2026-02-14</time></span>&nbsp;<span title="1941 字"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>约 2000 字</span>&nbsp;<span><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -88,46 +88,13 @@
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#0-系统环境">0. 系统环境</a></li>
-    <li><a href="#1-安装chocolatey">1. 安装Chocolatey</a></li>
-    <li><a href="#2-安装-wezterm">2. 安装 WezTerm</a></li>
+    <li><a href="#1-安装-wezterm">1. 安装 WezTerm</a></li>
     <li><a href="#3-安装-opencode">3. 安装 OpenCode</a></li>
   </ul>
 </nav></div>
       </div><div class="content" id="content"><p>最近的几年来，我的 AI 辅助编程工具先后从 Copilot -&gt; Cursor -&gt; KiloCode ，再转到近期使用了 OpenCode。体验到了 OpenCode 加上 Oh-My-OpenCode 的强大之处，可以说用上就再也回不去了。在此对 Windows 系统上的环境配置作一记录。</p>
-<h2 class="heading-element" id="0-系统环境"><span>0. 系统环境</span>
-  <a href="#0-%e7%b3%bb%e7%bb%9f%e7%8e%af%e5%a2%83" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h2><ul>
-<li>Windows 11 25H2</li>
-<li>Visual Studio Code 1.109.3</li>
-<li>Node.js 26.01.14</li>
-</ul>
-<h2 class="heading-element" id="1-安装chocolatey"><span>1. 安装Chocolatey</span>
-  <a href="#1-%e5%ae%89%e8%a3%85chocolatey" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h2><p>以管理员权限打开 <strong>Windows PowerShell</strong>，执行以下命令：</p>
-<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
-<div class="code-header language-powershell"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="切换行号" role="button" title="切换行号"><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行"><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板"><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Set-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="n">-Scope</span> <span class="k">Process</span> <span class="n">-Force</span><span class="p">;</span> <span class="p">[</span><span class="no">System.Net.ServicePointManager</span><span class="p">]::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Net.ServicePointManager</span><span class="p">]::</span><span class="n">SecurityProtocol</span> <span class="o">-bor</span> <span class="mf">3072</span><span class="p">;</span> <span class="nb">iex </span><span class="p">((</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="py">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="py">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://community.chocolatey.org/install.ps1&#39;</span><span class="p">))</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>之后会自动安装 Chocolatey。</p>
-<p>安装完成后，关闭并重新打开终端，然后执行：</p>
-<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
-<div class="code-header language-powershell"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="切换行号" role="button" title="切换行号"><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行"><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板"><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">choco</span> <span class="p">-</span><span class="n">-version</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>看到版本号就说明安装成功了。</p>
-<h2 class="heading-element" id="2-安装-wezterm"><span>2. 安装 WezTerm</span>
-  <a href="#2-%e5%ae%89%e8%a3%85-wezterm" class="heading-mark">
+<h2 class="heading-element" id="1-安装-wezterm"><span>1. 安装 WezTerm</span>
+  <a href="#1-%e5%ae%89%e8%a3%85-wezterm" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>OpenCode 作为一个终端编辑器，支持如下现代化终端：</p>
@@ -138,7 +105,7 @@
 <li>Kitty，Linux 和 macOS</li>
 </ul>
 <p>对于 Windows 平台的两款，我个人比较倾向于WezTerm。</p>
-<p>在终端运行命令 <code>choco install wezterm -y</code> 进行安装。</p>
+<p>打开<a href="https://wezterm.org/index.html" target="_blank" rel="external nofollow noopener noreferrer">官网<i class="fa-solid fa-external-link-alt fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>进行下载安装即可。</p>
 <p>安装后，继续在终端依次运行如下命令以打开 WezTerm 配置文件：</p>
 <div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
 <div class="code-header language-powershell"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="切换行号" role="button" title="切换行号"><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行"><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板"><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
@@ -243,9 +210,13 @@
 </span><span class="lnt">89
 </span><span class="lnt">90
 </span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">wezterm</span> <span class="o">=</span> <span class="n">require</span> <span class="s1">&#39;wezterm&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">mux</span> <span class="o">=</span> <span class="n">wezterm.mux</span> 
 </span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">-- 使用更新的配置方式</span>
@@ -254,14 +225,19 @@
 </span></span><span class="line"><span class="cl"><span class="kr">end</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">-- ============ 基础设置 ============</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 默认 Shell</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 默认 Shell（选择你用的）</span>
 </span></span><span class="line"><span class="cl"><span class="n">config.default_prog</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;powershell.exe&#39;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="c1">-- config.default_prog = { &#39;pwsh.exe&#39; }  -- PowerShell 7</span>
 </span></span><span class="line"><span class="cl"><span class="c1">-- config.default_prog = { &#39;wsl.exe&#39;, &#39;~&#39; }  -- WSL</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">-- 启动时窗口大小</span>
-</span></span><span class="line"><span class="cl"><span class="n">config.initial_cols</span> <span class="o">=</span> <span class="mi">120</span>
-</span></span><span class="line"><span class="cl"><span class="n">config.initial_rows</span> <span class="o">=</span> <span class="mi">30</span>
+</span></span><span class="line"><span class="cl"><span class="n">wezterm.on</span><span class="p">(</span><span class="s1">&#39;gui-startup&#39;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">local</span> <span class="n">tab</span><span class="p">,</span> <span class="n">pane</span><span class="p">,</span> <span class="n">window</span> <span class="o">=</span> <span class="n">mux.spawn_window</span><span class="p">(</span><span class="n">cmd</span> <span class="ow">or</span> <span class="p">{})</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">-- 使窗口最大化 (保留 Windows 任务栏)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">window</span><span class="p">:</span><span class="n">gui_window</span><span class="p">():</span><span class="n">maximize</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1">-- 如果你想要真正沉浸式的全屏(连任务栏都没有，类似 F11)，使用下面这行代替上一行：</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">-- window:gui_window():toggle_fullscreen()</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">-- ============ 字体设置 ============</span>
 </span></span><span class="line"><span class="cl"><span class="n">config.font</span> <span class="o">=</span> <span class="n">wezterm.font</span><span class="p">(</span><span class="s1">&#39;JetBrains Maple Mono&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="n">weight</span> <span class="o">=</span> <span class="s1">&#39;Medium&#39;</span> <span class="p">})</span>
@@ -322,7 +298,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">-- ============ 其他设置 ============</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 关闭提示音</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 关闭烦人的提示音</span>
 </span></span><span class="line"><span class="cl"><span class="n">config.audible_bell</span> <span class="o">=</span> <span class="s1">&#39;Disabled&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">-- 光标样式</span>
@@ -332,30 +308,342 @@
 </span></span><span class="line"><span class="cl"><span class="c1">-- 滚动回溯行数</span>
 </span></span><span class="line"><span class="cl"><span class="n">config.scrollback_lines</span> <span class="o">=</span> <span class="mi">10000</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">-- 关闭更新检查（可选）</span>
-</span></span><span class="line"><span class="cl"><span class="n">config.check_for_updates</span> <span class="o">=</span> <span class="kc">false</span>
-</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kr">return</span> <span class="n">config</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="展开或折叠代码块" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
 </div>
 </div><h2 class="heading-element" id="3-安装-opencode"><span>3. 安装 OpenCode</span>
   <a href="#3-%e5%ae%89%e8%a3%85-opencode" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><p>在 WezTerm 终端运行命令 <code>choco install opencode</code> 进行安装，安装后在终端输入 <code>opencode</code> 以启动。打开时默认是免费的“Big Pickle”模型，在对话框输入以下命令以安装 Oh-My-OpenCode 插件：</p>
+</h2><p>在 WezTerm 终端依次运行以下命令进行安装：</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-powershell"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="切换行号" role="button" title="切换行号"><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行"><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板"><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">wsl</span> <span class="p">-</span><span class="n">-install</span> <span class="n">-d</span> <span class="n">Ubuntu</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">apt</span> <span class="n">upgrade</span> <span class="n">-y</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">unzip</span> <span class="n">-y</span>
+</span></span><span class="line"><span class="cl"><span class="nb">curl </span><span class="n">-fsSL</span> <span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">bun</span><span class="p">.</span><span class="n">sh</span><span class="p">/</span><span class="n">install</span> <span class="p">|</span> <span class="n">bash</span>
+</span></span><span class="line"><span class="cl"><span class="n">npm</span> <span class="n">install</span> <span class="n">-g</span> <span class="n">playwright</span>
+</span></span><span class="line"><span class="cl"><span class="n">npx</span> <span class="n">playwright</span> <span class="nb">install-deps</span> <span class="n">chromium</span>
+</span></span><span class="line"><span class="cl"><span class="nb">curl </span><span class="n">-fsSL</span> <span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">opencode</span><span class="p">.</span><span class="n">ai</span><span class="p">/</span><span class="n">install</span> <span class="p">|</span> <span class="n">bash</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>安装后在终端输入 <code>opencode</code> 以启动。打开时默认是免费的“Big Pickle”模型，在对话框输入以下指令以安装 Oh-My-OpenCode 插件：</p>
 <div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
 <div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="切换行号" role="button" title="切换行号"><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行"><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板"><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">按照以下说明安装和配置 oh-my-opencode：
-</span></span><span class="line"><span class="cl">https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/refs/heads/master/docs/guide/installation.md</span></span></code></pre></td></tr></table></div>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">按照以下说明安装和配置 oh-my-openagent：
+</span></span><span class="line"><span class="cl">https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/refs/heads/dev/docs/guide/installation.md</span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>之后智能体会自动读取安装说明并进行插件安装。安装过程中会提示是否要启用一些订阅例如 Claude Code、ChatGPT、Gemini、Copilot、ZAI等，如有的话可以接入，没有则全部选择 No。安装好后关闭终端即可。</p>
-<p>接下来打开 C:\Users\你的用户名\.config\opencode路径，里面应该有两个文件：opencode.json和oh-my-opencode.json。根据需求可以进行编辑设置。我个人使用 <a href="https://aihubmix.com/" target="_blank" rel="external nofollow noopener noreferrer">AiHubMix<i class="fa-solid fa-external-link-alt fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> 作为 Provider，以下设置仅供参考。</p>
+<p>接下来打开WSL中 ~\你的用户名\.config\opencode 路径，里面应该有两个文件：opencode.json和oh-my-opencode.json。根据需求可以进行编辑设置。我个人使用 <a href="https://hone.vvvv.ee/" target="_blank" rel="external nofollow noopener noreferrer">HONE<i class="fa-solid fa-external-link-alt fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> 作为 Provider，以下设置仅供参考。</p>
 <p>opencode.json</p>
-<json-viewer value="&#34;{\r\n  \&#34;$schema\&#34;: \&#34;https://opencode.ai/config.json\&#34;,\r\n  \&#34;plugin\&#34;: [\r\n    \&#34;oh-my-opencode@latest\&#34;\r\n  ],\r\n  \r\n  \&#34;model\&#34;: \&#34;aihubmix-claude/claude-opus-4-6\&#34;,\r\n  \r\n  \&#34;provider\&#34;: {\r\n    \&#34;aihubmix-claude\&#34;: {\r\n      \&#34;id\&#34;: \&#34;aihubmix-claude\&#34;,\r\n      \&#34;npm\&#34;: \&#34;@ai-sdk/anthropic\&#34;,\r\n      \&#34;api\&#34;: \&#34;https://aihubmix.com/v1\&#34;,\r\n      \&#34;name\&#34;: \&#34;AIHUBMIX Claude\&#34;,\r\n      \&#34;options\&#34;: {\r\n        \&#34;apiKey\&#34;: \&#34;sk-你的密钥\&#34;,\r\n        \&#34;headers\&#34;: {\r\n          \&#34;APP-Code\&#34;: \&#34;WHVL9885\&#34;\r\n        }\r\n      },\r\n      \&#34;models\&#34;: {\r\n        \&#34;claude-opus-4-6\&#34;: {\r\n          \&#34;id\&#34;: \&#34;claude-opus-4-6\&#34;,\r\n          \&#34;name\&#34;: \&#34;Claude Opus 4.6\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;temperature\&#34;: true,\r\n          \&#34;knowledge\&#34;: \&#34;2025-05\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2026-02-05\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;, \&#34;image\&#34;, \&#34;pdf\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 5, \&#34;output\&#34;: 25, \&#34;cache_read\&#34;: 0.5, \&#34;cache_write\&#34;: 6.25 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 200000, \&#34;output\&#34;: 32000 }\r\n        },\r\n        \&#34;claude-sonnet-4-5\&#34;: {\r\n          \&#34;id\&#34;: \&#34;claude-sonnet-4-5\&#34;,\r\n          \&#34;name\&#34;: \&#34;Claude Sonnet 4.5\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;temperature\&#34;: true,\r\n          \&#34;knowledge\&#34;: \&#34;2025-01-31\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2025-09-29\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;, \&#34;image\&#34;, \&#34;pdf\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 3.3, \&#34;output\&#34;: 16.5, \&#34;cache_read\&#34;: 0.33, \&#34;cache_write\&#34;: 4.125 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 200000, \&#34;output\&#34;: 128000 }\r\n        },\r\n        \&#34;claude-haiku-4-5\&#34;: {\r\n          \&#34;id\&#34;: \&#34;claude-haiku-4-5\&#34;,\r\n          \&#34;name\&#34;: \&#34;Claude Haiku 4.5\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;temperature\&#34;: true,\r\n          \&#34;knowledge\&#34;: \&#34;2025-02-28\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2025-09-29\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;, \&#34;image\&#34;, \&#34;pdf\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 1.1, \&#34;output\&#34;: 5.5, \&#34;cache_read\&#34;: 0.11, \&#34;cache_write\&#34;: 1.25 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 200000, \&#34;output\&#34;: 128000 }\r\n        }\r\n      }\r\n    },\r\n    \r\n    \&#34;aihubmix-openai\&#34;: {\r\n      \&#34;id\&#34;: \&#34;aihubmix-openai\&#34;,\r\n      \&#34;npm\&#34;: \&#34;@ai-sdk/openai\&#34;,\r\n      \&#34;api\&#34;: \&#34;https://aihubmix.com/v1\&#34;,\r\n      \&#34;name\&#34;: \&#34;AIHUBMIX OpenAI\&#34;,\r\n      \&#34;options\&#34;: {\r\n        \&#34;apiKey\&#34;: \&#34;sk-你的密钥\&#34;,\r\n        \&#34;headers\&#34;: {\r\n          \&#34;APP-Code\&#34;: \&#34;WHVL9885\&#34;\r\n        }\r\n      },\r\n      \&#34;models\&#34;: {\r\n        \&#34;gpt-5.2-codex\&#34;: {\r\n          \&#34;id\&#34;: \&#34;gpt-5.2-codex\&#34;,\r\n          \&#34;name\&#34;: \&#34;GPT-5.2 Codex\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;structured_output\&#34;: true,\r\n          \&#34;temperature\&#34;: false,\r\n          \&#34;knowledge\&#34;: \&#34;2025-08-31\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2026-01-14\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;, \&#34;image\&#34;, \&#34;pdf\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 1.75, \&#34;output\&#34;: 14, \&#34;cache_read\&#34;: 0.17 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 400000, \&#34;output\&#34;: 128000 }\r\n        },\r\n        \&#34;gpt-5.2\&#34;: {\r\n          \&#34;id\&#34;: \&#34;gpt-5.2\&#34;,\r\n          \&#34;name\&#34;: \&#34;GPT-5.2\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;temperature\&#34;: false,\r\n          \&#34;knowledge\&#34;: \&#34;2025-08-31\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2025-12-11\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;, \&#34;image\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 1.75, \&#34;output\&#34;: 14, \&#34;cache_read\&#34;: 0.175 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 400000, \&#34;output\&#34;: 128000 }\r\n        }\r\n      }\r\n    },\r\n    \r\n    \&#34;aihubmix-gemini\&#34;: {\r\n      \&#34;id\&#34;: \&#34;aihubmix-gemini\&#34;,\r\n      \&#34;npm\&#34;: \&#34;@ai-sdk/google\&#34;,\r\n      \&#34;api\&#34;: \&#34;https://aihubmix.com/gemini/v1beta\&#34;,\r\n      \&#34;name\&#34;: \&#34;AIHUBMIX Gemini\&#34;,\r\n      \&#34;options\&#34;: {\r\n        \&#34;apiKey\&#34;: \&#34;sk-你的密钥\&#34;,\r\n        \&#34;headers\&#34;: {\r\n          \&#34;APP-Code\&#34;: \&#34;WHVL9885\&#34;\r\n        }\r\n      },\r\n      \&#34;models\&#34;: {\r\n        \&#34;gemini-3-pro-preview\&#34;: {\r\n          \&#34;id\&#34;: \&#34;gemini-3-pro-preview\&#34;,\r\n          \&#34;name\&#34;: \&#34;Gemini 3 Pro Preview\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;temperature\&#34;: true,\r\n          \&#34;knowledge\&#34;: \&#34;2025-01-31\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2025-11-19\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;, \&#34;image\&#34;, \&#34;audio\&#34;, \&#34;video\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 2, \&#34;output\&#34;: 12, \&#34;cache_read\&#34;: 0.2 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 1000000, \&#34;output\&#34;: 65000 }\r\n        }\r\n      }\r\n    },\r\n    \r\n    \&#34;aihubmix-compat\&#34;: {\r\n      \&#34;id\&#34;: \&#34;aihubmix-compat\&#34;,\r\n      \&#34;npm\&#34;: \&#34;@ai-sdk/openai-compatible\&#34;,\r\n      \&#34;api\&#34;: \&#34;https://aihubmix.com/v1\&#34;,\r\n      \&#34;name\&#34;: \&#34;AIHUBMIX Compatible\&#34;,\r\n      \&#34;options\&#34;: {\r\n        \&#34;apiKey\&#34;: \&#34;sk-你的密钥\&#34;,\r\n        \&#34;headers\&#34;: {\r\n          \&#34;APP-Code\&#34;: \&#34;WHVL9885\&#34;\r\n        }\r\n      },\r\n      \&#34;models\&#34;: {\r\n        \&#34;kimi-k2.5\&#34;: {\r\n          \&#34;id\&#34;: \&#34;kimi-k2.5\&#34;,\r\n          \&#34;name\&#34;: \&#34;Kimi K2.5\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;interleaved\&#34;: { \&#34;field\&#34;: \&#34;reasoning_content\&#34; },\r\n          \&#34;temperature\&#34;: true,\r\n          \&#34;knowledge\&#34;: \&#34;2025-01-31\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2026-01-27\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;, \&#34;image\&#34;, \&#34;video\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 0.6, \&#34;output\&#34;: 3, \&#34;cache_read\&#34;: 0.1 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 256000, \&#34;output\&#34;: 256000 }\r\n        },\r\n        \&#34;minimax-m2.5\&#34;: {\r\n          \&#34;id\&#34;: \&#34;coding-minimax-m2.5\&#34;,\r\n          \&#34;name\&#34;: \&#34;MiniMax M2.5\&#34;,\r\n          \&#34;attachment\&#34;: false,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;interleaved\&#34;: { \&#34;field\&#34;: \&#34;reasoning_content\&#34; },\r\n          \&#34;temperature\&#34;: true,\r\n          \&#34;knowledge\&#34;: \&#34;2024-06-30\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2026-02-13\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 0.2, \&#34;output\&#34;: 0.2 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 200000, \&#34;output\&#34;: 128000 }\r\n        },\r\n        \&#34;glm-5\&#34;: {\r\n          \&#34;id\&#34;: \&#34;coding-glm-5\&#34;,\r\n          \&#34;name\&#34;: \&#34;GLM 5\&#34;,\r\n          \&#34;attachment\&#34;: false,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;interleaved\&#34;: { \&#34;field\&#34;: \&#34;reasoning_content\&#34; },\r\n          \&#34;temperature\&#34;: true,\r\n          \&#34;knowledge\&#34;: \&#34;2024-12-31\&#34;,\r\n          \&#34;release_date\&#34;: \&#34;2026-02-12\&#34;,\r\n          \&#34;modalities\&#34;: { \&#34;input\&#34;: [\&#34;text\&#34;], \&#34;output\&#34;: [\&#34;text\&#34;] },\r\n          \&#34;cost\&#34;: { \&#34;input\&#34;: 0.06, \&#34;output\&#34;: 0.22, \&#34;cache_read\&#34;: 0.01 },\r\n          \&#34;limit\&#34;: { \&#34;context\&#34;: 200000, \&#34;output\&#34;: 128000 }\r\n        }\r\n      }\r\n    }\r\n  }\r\n}&#34;" expand-depth="1" boxed copyable="{&#34;copiedText&#34;:&#34;已复制&#34;,&#34;copyText&#34;:&#34;复制&#34;}"></json-viewer><p>oh-my-opencode.json</p>
-<json-viewer value="&#34;{\r\n  \&#34;$schema\&#34;: \&#34;https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json\&#34;,\r\n  \r\n  \&#34;agents\&#34;: {\r\n    \&#34;sisyphus\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-claude/claude-opus-4-6\&#34;,\r\n      \&#34;thinking\&#34;: {\r\n        \&#34;type\&#34;: \&#34;enabled\&#34;,\r\n        \&#34;budgetTokens\&#34;: 100000\r\n      }\r\n    },\r\n    \&#34;hephaestus\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-openai/gpt-5.2-codex\&#34;,\r\n      \&#34;reasoningEffort\&#34;: \&#34;medium\&#34;\r\n    },\r\n    \&#34;oracle\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-openai/gpt-5.2\&#34;,\r\n      \&#34;reasoningEffort\&#34;: \&#34;medium\&#34;\r\n    },\r\n    \&#34;librarian\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-claude/claude-sonnet-4-5\&#34;\r\n    },\r\n    \&#34;explore\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-claude/claude-haiku-4-5\&#34;\r\n    },\r\n    \&#34;multimodal-looker\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-gemini/gemini-3-pro-preview\&#34;\r\n    },\r\n    \&#34;prometheus\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-compat/glm-5\&#34;\r\n    },\r\n    \&#34;metis\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-compat/kimi-k2.5\&#34;\r\n    },\r\n    \&#34;momus\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-compat/kimi-k2.5\&#34;\r\n    },\r\n    \&#34;atlas\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-compat/minimax-m2.5\&#34;\r\n    }\r\n  },\r\n  \r\n  \&#34;categories\&#34;: {\r\n    \&#34;visual-engineering\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-gemini/gemini-3-pro-preview\&#34;\r\n    },\r\n    \&#34;ultrabrain\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-openai/gpt-5.2-codex\&#34;,\r\n      \&#34;reasoningEffort\&#34;: \&#34;high\&#34;\r\n    },\r\n    \&#34;deep\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-openai/gpt-5.2-codex\&#34;,\r\n      \&#34;reasoningEffort\&#34;: \&#34;high\&#34;\r\n    },\r\n    \&#34;artistry\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-gemini/gemini-3-pro-preview\&#34;\r\n    },\r\n    \&#34;quick\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-compat/kimi-k2.5\&#34;\r\n    },\r\n    \&#34;unspecified-low\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-compat/kimi-k2.5\&#34;\r\n    },\r\n    \&#34;unspecified-high\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-compat/glm-5\&#34;\r\n    },\r\n    \&#34;writing\&#34;: {\r\n      \&#34;model\&#34;: \&#34;aihubmix-compat/kimi-k2.5\&#34;\r\n    }\r\n  },\r\n  \r\n  \&#34;sisyphus_agent\&#34;: {\r\n    \&#34;disabled\&#34;: false,\r\n    \&#34;default_builder_enabled\&#34;: false,\r\n    \&#34;planner_enabled\&#34;: true,\r\n    \&#34;replace_plan\&#34;: true\r\n  },\r\n  \r\n  \&#34;git_master\&#34;: {\r\n    \&#34;commit_footer\&#34;: false,\r\n    \&#34;include_co_authored_by\&#34;: false\r\n  }\r\n}&#34;" expand-depth="1" boxed copyable="{&#34;copiedText&#34;:&#34;已复制&#34;,&#34;copyText&#34;:&#34;复制&#34;}"></json-viewer><p>之后打开 WezTerm 终端并输入 opencode，就可以愉快的使用了！</p></div><div class="post-footer" id="post-footer">
+<json-viewer value="&#34;{\r\n  \&#34;$schema\&#34;: \&#34;https://opencode.ai/config.json\&#34;,\r\n  \&#34;plugin\&#34;: [\r\n    \&#34;oh-my-opencode@3.14.0\&#34;\r\n  ],\r\n  \&#34;model\&#34;: \&#34;hone-claude/claude-opus-4-6\&#34;,\r\n  \&#34;provider\&#34;: {\r\n    \&#34;hone-claude\&#34;: {\r\n      \&#34;id\&#34;: \&#34;hone-claude\&#34;,\r\n      \&#34;npm\&#34;: \&#34;@ai-sdk/anthropic\&#34;,\r\n      \&#34;api\&#34;: \&#34;https://hone.vvvv.ee/v1\&#34;,\r\n      \&#34;name\&#34;: \&#34;HONE Claude\&#34;,\r\n      \&#34;options\&#34;: {\r\n        \&#34;apiKey\&#34;: \&#34;sk-你的密钥\&#34;\r\n      },\r\n      \&#34;models\&#34;: {\r\n        \&#34;claude-opus-4-6\&#34;: {\r\n          \&#34;id\&#34;: \&#34;claude-opus-4-6\&#34;,\r\n          \&#34;name\&#34;: \&#34;Claude Opus 4.6\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;modalities\&#34;: {\r\n            \&#34;input\&#34;: [\r\n              \&#34;text\&#34;,\r\n              \&#34;image\&#34;,\r\n              \&#34;pdf\&#34;\r\n            ],\r\n            \&#34;output\&#34;: [\r\n              \&#34;text\&#34;\r\n            ]\r\n          },\r\n          \&#34;cost\&#34;: {\r\n            \&#34;input\&#34;: 5,\r\n            \&#34;output\&#34;: 25,\r\n            \&#34;cache_read\&#34;: 0.5,\r\n            \&#34;cache_write\&#34;: 10\r\n          },\r\n          \&#34;limit\&#34;: {\r\n            \&#34;context\&#34;: 200000,\r\n            \&#34;output\&#34;: 128000\r\n          }\r\n        },\r\n        \&#34;claude-sonnet-4-6\&#34;: {\r\n          \&#34;id\&#34;: \&#34;claude-sonnet-4-6\&#34;,\r\n          \&#34;name\&#34;: \&#34;Claude Sonnet 4.6\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;modalities\&#34;: {\r\n            \&#34;input\&#34;: [\r\n              \&#34;text\&#34;,\r\n              \&#34;image\&#34;,\r\n              \&#34;pdf\&#34;\r\n            ],\r\n            \&#34;output\&#34;: [\r\n              \&#34;text\&#34;\r\n            ]\r\n          },\r\n          \&#34;cost\&#34;: {\r\n            \&#34;input\&#34;: 3,\r\n            \&#34;output\&#34;: 15,\r\n            \&#34;cache_read\&#34;: 0.3,\r\n            \&#34;cache_write\&#34;: 6\r\n          },\r\n          \&#34;limit\&#34;: {\r\n            \&#34;context\&#34;: 200000,\r\n            \&#34;output\&#34;: 128000\r\n          }\r\n        },\r\n        \&#34;claude-haiku-4-5\&#34;: {\r\n          \&#34;id\&#34;: \&#34;claude-haiku-4-5-20251001\&#34;,\r\n          \&#34;name\&#34;: \&#34;Claude Haiku 4.5\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;modalities\&#34;: {\r\n            \&#34;input\&#34;: [\r\n              \&#34;text\&#34;,\r\n              \&#34;image\&#34;,\r\n              \&#34;pdf\&#34;\r\n            ],\r\n            \&#34;output\&#34;: [\r\n              \&#34;text\&#34;\r\n            ]\r\n          },\r\n          \&#34;cost\&#34;: {\r\n            \&#34;input\&#34;: 1.1,\r\n            \&#34;output\&#34;: 5.5,\r\n            \&#34;cache_read\&#34;: 0.11,\r\n            \&#34;cache_write\&#34;: 2.2\r\n          },\r\n          \&#34;limit\&#34;: {\r\n            \&#34;context\&#34;: 200000,\r\n            \&#34;output\&#34;: 64000\r\n          }\r\n        }\r\n      }\r\n    },\r\n    \&#34;hone-openai\&#34;: {\r\n      \&#34;id\&#34;: \&#34;hone-openai\&#34;,\r\n      \&#34;npm\&#34;: \&#34;@ai-sdk/openai\&#34;,\r\n      \&#34;api\&#34;: \&#34;https://hone.vvvv.ee/v1\&#34;,\r\n      \&#34;name\&#34;: \&#34;HONE OpenAI\&#34;,\r\n      \&#34;options\&#34;: {\r\n        \&#34;apiKey\&#34;: \&#34;sk-你的密钥\&#34;\r\n      },\r\n      \&#34;models\&#34;: {\r\n        \&#34;gpt-5.3-codex\&#34;: {\r\n          \&#34;id\&#34;: \&#34;gpt-5.3-codex\&#34;,\r\n          \&#34;name\&#34;: \&#34;GPT-5.3 Codex\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;modalities\&#34;: {\r\n            \&#34;input\&#34;: [\r\n              \&#34;text\&#34;,\r\n              \&#34;image\&#34;,\r\n              \&#34;pdf\&#34;\r\n            ],\r\n            \&#34;output\&#34;: [\r\n              \&#34;text\&#34;\r\n            ]\r\n          },\r\n          \&#34;cost\&#34;: {\r\n            \&#34;input\&#34;: 1.75,\r\n            \&#34;output\&#34;: 14,\r\n            \&#34;cache_read\&#34;: 0.17\r\n          },\r\n          \&#34;limit\&#34;: {\r\n            \&#34;context\&#34;: 400000,\r\n            \&#34;output\&#34;: 128000\r\n          }\r\n        },\r\n        \&#34;gpt-5.4\&#34;: {\r\n          \&#34;id\&#34;: \&#34;gpt-5.4\&#34;,\r\n          \&#34;name\&#34;: \&#34;GPT-5.4\&#34;,\r\n          \&#34;attachment\&#34;: true,\r\n          \&#34;reasoning\&#34;: true,\r\n          \&#34;tool_call\&#34;: true,\r\n          \&#34;modalities\&#34;: {\r\n            \&#34;input\&#34;: [\r\n              \&#34;text\&#34;,\r\n              \&#34;image\&#34;\r\n            ],\r\n            \&#34;output\&#34;: [\r\n              \&#34;text\&#34;\r\n            ]\r\n          },\r\n          \&#34;cost\&#34;: {\r\n            \&#34;input\&#34;: 2.5,\r\n            \&#34;output\&#34;: 15,\r\n            \&#34;cache_read\&#34;: 0.25\r\n          },\r\n          \&#34;limit\&#34;: {\r\n            \&#34;context\&#34;: 1000000,\r\n            \&#34;output\&#34;: 128000\r\n          }\r\n        }\r\n      }\r\n    }\r\n  }\r\n}&#34;" expand-depth="1" boxed copyable="{&#34;copiedText&#34;:&#34;已复制&#34;,&#34;copyText&#34;:&#34;复制&#34;}"></json-viewer><p>oh-my-opencode.jsonc</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-jsonc"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="切换行号" role="button" title="切换行号"><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="切换自动换行" role="button" title="切换自动换行"><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="copy-btn" aria-label="复制到剪贴板" role="button" title="复制到剪贴板"><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="3" style="--fi-max-shown-lines:10;--fi-line-digit:3;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsonc" data-lang="jsonc"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;$schema&#34;</span><span class="p">:</span> <span class="s2">&#34;https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/dev/assets/oh-my-opencode.schema.json&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// ==========================================
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// 1. Agents 核心配置 (根据你的精确要求)
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// ==========================================
+</span></span></span><span class="line"><span class="cl">  <span class="nt">&#34;agents&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ---- Claude 统治区 (指令遵循) ----
+</span></span></span><span class="line"><span class="cl">    <span class="nt">&#34;sisyphus&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-claude/claude-opus-4-6&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;variant&#34;</span><span class="p">:</span> <span class="s2">&#34;max&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;ultrawork&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-claude/claude-opus-4-6&#34;</span><span class="p">,</span> <span class="nt">&#34;variant&#34;</span><span class="p">:</span> <span class="s2">&#34;max&#34;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;metis&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-claude/claude-opus-4-6&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;variant&#34;</span><span class="p">:</span> <span class="s2">&#34;max&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// ---- 战略规划与编排区 (双流派) ----
+</span></span></span><span class="line"><span class="cl">    <span class="nt">&#34;prometheus&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-claude/claude-opus-4-6&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;variant&#34;</span><span class="p">:</span> <span class="s2">&#34;max&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;atlas&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-claude/claude-sonnet-4-6&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;variant&#34;</span><span class="p">:</span> <span class="s2">&#34;max&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// ---- 深度编码与核实区 (GPT 统治区) ----
+</span></span></span><span class="line"><span class="cl">    <span class="nt">&#34;hephaestus&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-openai/gpt-5.3-codex&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;variant&#34;</span><span class="p">:</span> <span class="s2">&#34;medium&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;oracle&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-openai/gpt-5.4&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;variant&#34;</span><span class="p">:</span> <span class="s2">&#34;high&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;momus&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-openai/gpt-5.4&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;variant&#34;</span><span class="p">:</span> <span class="s2">&#34;high&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// ---- 效用与多模态区 ----
+</span></span></span><span class="line"><span class="cl">    <span class="nt">&#34;explore&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-claude/claude-sonnet-4-6&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;librarian&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-claude/claude-sonnet-4-6&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;multimodal-looker&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-claude/claude-opus-4-6&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;variant&#34;</span><span class="p">:</span> <span class="s2">&#34;max&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// ==========================================
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// 2. Categories 类别配置
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// (必须配置！这是 Sisyphus 自动下发子任务时的模型池)
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// ==========================================
+</span></span></span><span class="line"><span class="cl">  <span class="nt">&#34;categories&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;visual-engineering&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-openai/gpt-5.3-codex&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;variant&#34;</span><span class="p">:</span> <span class="s2">&#34;xhigh&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ultrabrain&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-openai/gpt-5.3-codex&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;variant&#34;</span><span class="p">:</span> <span class="s2">&#34;xhigh&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;deep&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-openai/gpt-5.3-codex&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;variant&#34;</span><span class="p">:</span> <span class="s2">&#34;medium&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;artistry&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-openai/gpt-5.3-codex&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;variant&#34;</span><span class="p">:</span> <span class="s2">&#34;xhigh&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;quick&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-claude/claude-haiku-4-5&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;unspecified-low&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-claude/claude-sonnet-4-6&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;unspecified-high&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-openai/gpt-5.4&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;variant&#34;</span><span class="p">:</span> <span class="s2">&#34;high&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;writing&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;hone-claude/claude-sonnet-4-6&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// ==========================================
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// 3. 背景任务与并发限制
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// (强烈建议配置，避免多 Agent 狂暴运行直接刷爆账单或触发 API 墙)
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// ==========================================
+</span></span></span><span class="line"><span class="cl">  <span class="nt">&#34;background_task&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;defaultConcurrency&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="c1">// 全局最多跑 5 个并发
+</span></span></span><span class="line"><span class="cl">    <span class="nt">&#34;staleTimeoutMs&#34;</span><span class="p">:</span> <span class="mi">180000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;providerConcurrency&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;hone-claude&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;hone-openai&#34;</span><span class="p">:</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// ==========================================
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// 4. Sisyphus 任务系统 &amp; 高级特性开关
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// ==========================================
+</span></span></span><span class="line"><span class="cl">   <span class="nt">&#34;sisyphus_agent&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;disabled&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;default_builder_enabled&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;planner_enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;replace_plan&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;sisyphus&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;tasks&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 开启强力的跨会话任务追踪
+</span></span></span><span class="line"><span class="cl">      <span class="nt">&#34;storage_path&#34;</span><span class="p">:</span> <span class="s2">&#34;.sisyphus/tasks&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// 备用模型故障自动转移 (极力推荐)
+</span></span></span><span class="line"><span class="cl">  <span class="nt">&#34;runtime_fallback&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;max_fallback_attempts&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;cooldown_seconds&#34;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;notify_on_fallback&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// 是否在 Tmux 新面板里弹出子任务观察其输出（如果你不用 Tmux 可设为 false）
+</span></span></span><span class="line"><span class="cl">  <span class="nt">&#34;tmux&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;enabled&#34;</span><span class="p">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// 实验性特性提升上下文利用率
+</span></span></span><span class="line"><span class="cl">  <span class="nt">&#34;experimental&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;aggressive_truncation&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;task_system&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;dynamic_context_pruning&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;turn_protection&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nt">&#34;turns&#34;</span><span class="p">:</span> <span class="mi">3</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="展开或折叠代码块" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
+</div>
+</div><p>之后打开 WezTerm 终端，启动WSL并输入“opencode”，就可以愉快的使用了！</p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod"><span title="更新于 2026-02-14 00:00:00">更新于 2026-02-14&nbsp;</span>
@@ -385,9 +673,7 @@
         <h2 class="toc-title">目录</h2>
         <div class="toc-content" id="toc-content-drawer"><nav >
   <ul>
-    <li><a href="#0-系统环境">0. 系统环境</a></li>
-    <li><a href="#1-安装chocolatey">1. 安装Chocolatey</a></li>
-    <li><a href="#2-安装-wezterm">2. 安装 WezTerm</a></li>
+    <li><a href="#1-安装-wezterm">1. 安装 WezTerm</a></li>
     <li><a href="#3-安装-opencode">3. 安装 OpenCode</a></li>
   </ul>
 </nav></div>
